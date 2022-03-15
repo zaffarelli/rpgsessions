@@ -1,0 +1,272 @@
+@import 'basics';
+
+$color_current: violet;
+$color_current_hover: mediumorchid;
+$color_frame: lightgrey;
+$color_frame_hover: cyan;
+$day_color: lightcyan;
+$color_off: lightyellow;
+$color_off_hover: yellow;
+
+
+body {
+  font-family: Texte;
+  @include body_background;
+  color: $body_color;
+  //min-height: 98%;
+  font-family: quicksand;
+}
+
+
+.subsection {
+  font-weight: bold;
+  color: #DBCA86;
+  text-decoration: underline;
+}
+
+.pdflink {
+  color: #E5DECA;
+  text-decoration: none;
+  background: #1d1d1d;
+  display: inline-block;
+  padding: 3px;
+}
+
+.ping {
+  background: orange;
+}
+
+
+.toggle_name {
+  font-weight: bold;
+  font-style: normal;
+  font-family: Titre;
+  width: auto;
+  display: inline-block;
+}
+
+
+.waiting {
+  cursor: progress;
+  opacity: 0.95;
+}
+
+.golden {
+  color: #ffcc22;
+}
+
+.blank {
+  color: #C0C0C0;
+  opacity: 0.5;
+}
+
+.embedded_link {
+  color: #DBCA86;
+  text-decoration: none;
+}
+
+.custom_glance {
+  cursor: help;
+}
+
+.shown {
+  display: block;
+}
+
+.noPDF:before {
+  content: '(x) ';
+}
+
+.hidden {
+  display: none;
+}
+
+
+@media all and (min-width: 1024px) {
+  body {
+    margin: 0;
+    padding: 2px 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+    row-gap: 1px;
+    column-gap: 1px;
+
+    .menuzone {
+      background: $st_color;
+      border: 1px solid black;
+      min-height: 40px;
+      width: 100%;
+      order: 1;
+      padding: 5px;
+    }
+
+    .userzone {
+      padding: 5px;
+      background: $st_color;
+      border: 1px solid black;
+      min-height: 20px;
+      width: 100%;
+      order: 2;
+      text-align: right;
+      font-size: 8pt;
+    }
+
+    .wrapper {
+      order: 3;
+      background: $st_color;
+      border: 1px solid black;
+      width: 100%;
+      min-height: 400px;
+      heigth: auto;
+    }
+
+    .eventzone {
+      order: 4;
+      min-height: 40px;
+      background: $st_color;
+      border: 1px solid black;
+      width: 100%;
+      padding: 5px;
+    }
+
+
+  }
+}
+
+.wrapper {
+  font-size: 10pt;
+
+  .omonth {
+    width: 1150px;
+    height: auto;
+    padding: 20px 2px;
+    margin: auto 0;
+    background: $st_color;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    gap: 3px 3px;
+
+    & .month_info {
+      order: 1;
+      background: $st_color;
+    }
+
+    & .month_body {
+      order: 2;
+      background: $st_color;
+
+      .oweek {
+        border-radius: 5px;
+        order: 2;
+
+        height: auto;
+        padding: 4px 2px;
+        margin: auto 2px;
+        background: $color_frame;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: stretch;
+        align-content: center;
+        align-items: stretch;
+        gap: 1px 1px;
+
+        & .week_info {
+          order: 1;
+          background: $color_frame;
+          margin: 0 4px;
+          text-align:right;
+        }
+
+        & .week_body {
+          order: 2;
+          background: $color_frame;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: flex-start;
+          align-content: flex-start;
+          align-items: stretch;
+          gap: 3px 3px;
+
+          & .oday {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+            align-items: stretch;
+            background: $color_frame;
+            gap: 0 0;
+            border: 3px solid silver;
+
+            &:hover {
+              border-color: $color_frame_hover;
+            }
+
+            & .day_info {
+              order: 1;
+              height: 3em;
+              width: 150px;
+              border: 1px solid transparent;
+              background: $day_color;
+            }
+
+            & .day_body {
+              flex-flow: column wrap;
+              justify-content: flex-start;
+              align-content: flex-start;
+              align-items: stretch;
+              background: white;
+              gap: 0 0;
+              order: 2;
+              width: 150px;
+              //height: 150px;
+              background: $day_color;
+              border: 1px solid transparent;
+              & .hour{
+                border-top:1px solid black;
+                font-size:8pt;
+                height:1.4em;
+                background:white;
+                text-align:left;
+              }
+
+            }
+
+            &.day_off {
+              & .day_info {
+                background: $color_off;
+              }
+
+              & .day_body {
+                background: $color_off;
+              }
+
+              &:hover {
+                border-color: $color_off_hover;
+              }
+            }
+
+            &.current_day {
+              border-color: $color_current;
+              &:hover {
+                border-color: $color_current_hover;
+              }
+
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+

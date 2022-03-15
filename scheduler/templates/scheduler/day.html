@@ -1,0 +1,12 @@
+{% load static %}
+{% load global_filters %}
+
+
+<div class="oday {{ c.day_off | as_day_off }} {{ c.current_day | as_current_day }}">
+    <div class="day_info">{{ c.day_info|safe }}</div>
+    <div class="day_body">
+        {% for t in c.day_body.hours %}
+            <div class="hour">{{ t.t }}</div>
+        {% endfor %}
+    </div>
+</div>

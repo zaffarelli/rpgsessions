@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{%  load static %}
+
+{% block userzone %}
+{{ user }}
+{% endblock userzone %}
+
+{% block eventzone %}
+Events zone
+{% endblock eventzone %}
+
+{% block wrapper %}
+{% include "scheduler/month.html" with c=month %}
+{% endblock wrapper %}
+
+{% block custom_js %}
+    <script>
+        _.defer(function () {
+            let co = new Scheduler()
+            co.perform();
+            co.revealUI();
+            console.log("Frontend loaded")
+        });
+    </script>
+{% endblock custom_js %}

@@ -1,0 +1,11 @@
+{% load static %}
+<center>
+<div class="omonth">
+    <div class="month_info"><strong>{{ c.month_name }}</strong></div>
+    <div class="month_body">
+        {% for w in c.weeks %}
+            {% include "scheduler/week.html" with c=w %}
+        {% endfor %}
+    </div>
+</div>
+</center>

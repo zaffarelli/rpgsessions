@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset='utf-8'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <title>{% block title %}Hephaïstos - RPGSessions{% endblock %}</title>
+    {% load static %}
+    <link rel='icon' href='{% static "collector/hephaistos.ico" %}'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/solid.css'
+          integrity='sha384-Rw5qeepMFvJVEZdSo1nDQD5B6wX0m7c5Z/pLNvjkB14W6Yki1hKbSEQaX9ffUbWe' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css'
+          integrity='sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV' crossorigin='anonymous'>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src='{% static "js/scheduler.es6" %}'></script>
+    {% for font in fontset %}
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family={{font}}">
+    {% endfor %}
+    {% load compress %}
+    {% compress css %}
+    <link rel='stylesheet' type='text/x-scss' href='{% static "scheduler/css/main.scss" %}'/>
+    {% endcompress %}
+</head>
+<body>
+
+<div class='menuzone hidden'>
+{% block menuzone %}
+    Hephaïstos
+{% endblock menuzone %}
+</div>
+
+<div class='userzone hidden'>
+{% block userzone %}
+{% endblock userzone %}
+</div>
+
+<div class='wrapper hidden'>
+{% block wrapper %}
+{% endblock wrapper %}
+</div>
+
+<div class='eventzone hidden'>
+{% block eventzone %}
+{% endblock eventzone %}
+</div>
+
+{% block javascript %}
+{% endblock javascript %}
+
+{% block custom_js %}
+{% endblock custom_js %}
+
+</body>
+</html>
