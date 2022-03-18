@@ -30,7 +30,7 @@ body {
     }
 
     & .corpus {
-      width:1200px;
+      width:1150px;
       flex-shrink:1;
       order:2;
       margin: 0;
@@ -74,6 +74,32 @@ body {
         text-align: right;
         font-size: 8pt;
         border-radius: 5px 5px 0 0;
+
+        & .logo{
+          order:2;
+        }
+        & .title{
+          order: 3;
+        }
+        & .title, & .pretitle{
+
+
+          font-size:32pt;
+          & strong{
+            font-family:Gruppo;
+            font-weight:bold;
+            color:$panel_text;
+          }
+          & em{
+            font-family:Hubballi;
+            color:lighten($panel_text,10%);
+            font-style: normal;
+          }
+        }
+        & .pretitle{
+          order: 1;
+
+        }
       }
 
       .wrapper {
@@ -88,12 +114,30 @@ body {
 
       .eventzone {
         order: 4;
+        font-family:roboto;
+        font-size:8pt;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: stretch;
+        align-content: stretch;
+        align-items: stretch;
         min-height: 40px;
         background: $panel_background;
-        color: $panel_color;
+        color: $panel_text;
         border: 1px solid transparent;
         width: 100%;
         padding: 5px;
+        border-radius: 0 0 5px 5px;
+        & .eblock{
+          order:5;
+          width:120px;
+          text-align:center;
+        }
+        & .zblock {
+          order: 10;
+          width:120px;
+          text-align:center;
+        }
       }
 
 
@@ -150,9 +194,9 @@ body {
           & .week_info {
             order: 1;
             background: $panel_smooth_background;
-            color: $panel_color;
+            color: $panel_text;
             margin: 0 4px;
-            text-align: right;
+            text-align: center;
           }
 
 
@@ -185,9 +229,10 @@ body {
               width: 150px;
               gap: 0 0;
               border: 3px solid $panel_border;
+              border-top-width: 8px;
 
               &:hover {
-                border-color: $color_frame_hover;
+                border-color: $color_highlight;
               }
 
 
@@ -381,7 +426,8 @@ body {
     color: $button_color;
     border: 1px solid $button_border;
     border-radius: 5px;
-    text-align: left;
+    text-align: center;
+    vertical-align: middle;
 
     &:hover {
       background: $color_highlight;
@@ -389,6 +435,9 @@ body {
     }
 
     cursor: pointer;
+    &.compact{
+      width:auto;
+    }
   }
 
 }

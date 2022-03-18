@@ -2,5 +2,5 @@ from django.conf import settings
 
 
 def commons(request):
-    context = {}
+    context = {"version":settings.VERSION}
     return context

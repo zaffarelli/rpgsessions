@@ -1,6 +1,6 @@
 {% load static %}
 <div class="oweek">
-    <div class="week_info">Semaine {{ c.week_number }}</div>
+    <div class="week_info">Semaine {{ c.week_number_prev }} à {{ c.week_number }}</div>
     <div class="week_body">
         {% for d in c.week %}
             {% include "scheduler/day.html" with c=d %}

@@ -87,6 +87,7 @@ class Scheduler {
                     //     console.log(anwwer);
                     // }
                     $('.wrapper').html(answer.data)
+                    $('.menuzone').html(answer.menu)
                     me.rebootLinks();
                 },
                 error: function (answer) {

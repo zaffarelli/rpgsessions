@@ -1,11 +1,11 @@
 from datetime import datetime, timedelta, time, date
-from scheduler.utils.mechanics import MONTHES, DOWS, HOUR_PIXELS
+from scheduler.utils.mechanics import MONTHS, MONTHS_COLORS, DOWS, HOUR_PIXELS
 
 
-def build_month(d):
+def build_month(d, day_offset=0):
     num_week = 5
     current_month = d.month
-    context = {'month_name': MONTHES[current_month - 1], 'weeks_count': num_week, 'weeks': []}
+    context = {'month_name': MONTHS[current_month - 1], 'weeks_count': num_week, 'weeks': []}
 
     current_day = d.day
     weeks_back = int(current_day / 7)
@@ -21,6 +21,8 @@ def build_month(d):
 def build_week(d):
     context = {}
     context['week_number'] = d.isocalendar()[1]
+    dprev = d - timedelta(days=7)
+    context['week_number_prev'] = dprev.isocalendar()[1]
     dow = d.weekday()
     # 2 3 4 5 6 0 1
     # M J V S D L M
@@ -40,7 +42,9 @@ def build_week(d):
                'day_off': day_off,
                'current_day': current_day,
                'day': cur_day.strftime("%Y-%m-%d"),
-               'day_body': bod}
+               'day_body': bod,
+               'month_color': MONTHS_COLORS[cur_day.month]
+               }
         context['week'].append(day)
     return context
 

@@ -1,7 +1,11 @@
 @charset "UTF-8";
 $body_color: #101010;
 $body_background: #808080;
-$panel_background: #405050;
+// Main colors
+$panel_background: #E0D0F0;
+$button_background: #603090;
+
+$panel_text: #202020;
 $panel_color: lighten(desaturate($panel_background,70%),50%);
 $panel_border: darken($panel_color,40%);
 $panel_shadow: darken($panel_background, 50%);
@@ -18,7 +22,7 @@ $st_color: #F0F0F0;
 $st_background: #305030;
 
 $button_color: #F0F0F0;
-$button_background: #112233;
+
 $button_border: #224466;
 
 $color_current: violet;
@@ -64,3 +68,5 @@ $focus_color: #22C0F0;
 .hidden {
   display: none;
 }
+
+

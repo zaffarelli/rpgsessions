@@ -35,7 +35,9 @@ def display_day(request, slug=None):
         return render(request, 'scheduler/registration/login_error.html')
     context = prepare_day(request, slug)
     # print(context)
+    template = get_template('scheduler/menu_dayzoom.html')
+    menu_html = template.render({}, request)
     template = get_template('scheduler/day_zoom.html')
     html = template.render(context, request)
-    response = {'data': html}
+    response = {'data': html, 'menu': menu_html}
     return JsonResponse(response)

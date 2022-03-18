@@ -5,28 +5,24 @@
 {% block userzone %}
 <div class="bar">
     <div class='lefters'>
-        {% include "scheduler/svg/logo.svg" %}
+        <div class="pretitle">
+            <em>JdR</em>
+        </div>
+        <div class="logo">{% include "scheduler/svg/logo.svg" %}</div>
+        <div class="title">
+            <em>TraqueTables</em>
+        </div>
+
     </div>
     <div class='righters'>
-        <div class="button">{% include "scheduler/player_shortcut.html" with c=user.profile %}&nbsp;{{user.profile.nickname }}</div>
+        <div class="button compact">{% include "scheduler/player_shortcut.html" with c=user.profile %}</div>
     </div>
 </div>
 {% endblock userzone %}
 
 
 {% block menuzone %}
-<div class="bar">
-    <div class='lefters'>
-
-        <div class="button"><i class="fas fa-question"></i>&nbsp;Aide</div>
-    </div>
-    <div class='righters'>
-        <div class="button"><i class="fas fa-backward"></i>&nbsp;-4 semaines</div>
-        <div class="button"><i class="fas fa-caret-left"></i>&nbsp;-1 semaine</div>
-        <div class="button"><i class="fas fa-caret-right"></i>&nbsp;+1 semaine</div>
-        <div class="button"><i class="fas fa-forward"></i>&nbsp;+4 semaines</div>
-    </div>
-</div>
+{% include "scheduler/base_menu.html" with c=user.profile %}
 {% endblock menuzone %}
 
 {% block eventzone %}

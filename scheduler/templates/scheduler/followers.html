@@ -1,11 +1,19 @@
 {% load static %}
 
-Profils suivis:
-{% for x in c.following %}
+<div class="eblock">
+    Traqués<br/>
+    {% for x in c.following %}
     {% include "scheduler/player_shortcut.html" with c=x %}
-{% endfor %}
+    {% endfor %}
+</div>
 
-Ils vous suivent:
-{% for x in c.groupies %}
+<div class="eblock">
+    Traqueurs<br/>
+    {% for x in c.groupies %}
     {% include "scheduler/player_shortcut.html" with c=x %}
-{% endfor %}
+    {% endfor %}
+</div>
+
+<div class="zblock">
+    version<br>{{version}}
+</div>
