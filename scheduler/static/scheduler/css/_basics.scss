@@ -1,22 +1,40 @@
 @charset "UTF-8";
-$panel_background: #474747;
+$body_color: #101010;
+$body_background: #808080;
+$panel_background: #405050;
 $panel_color: lighten(desaturate($panel_background,70%),50%);
 $panel_border: darken($panel_color,40%);
 $panel_shadow: darken($panel_background, 50%);
 $panel_plank_background: darken($panel_background, 5%);
 $panel_shard_background: darken($panel_background, 15%);
 $panel_smooth_background: grayscale($panel_background);
-$dead_background: #FF4;
-$missing_background: #F4F;
+$panel_day_background: darken($panel_background,25%);
+
+$panel_week_background: darken($panel_background, 5%);
+
+$color_highlight: #ff9100;
 
 $st_color: #F0F0F0;
 $st_background: #305030;
 
-$button_color: #2d2614;
-$button_background: #bd851c;
+$button_color: #F0F0F0;
+$button_background: #112233;
+$button_border: #224466;
+
+$color_current: violet;
+$color_current_hover: mediumorchid;
+$color_frame: lightgrey;
+$color_frame_hover: cyan;
+$panel_day_background: #86b2b2;
+$panel_day_off_background: #afaf68;
+$panel_day_current_background: #577057;
+$color_off_hover: yellow;
 
 
-$body_color: #101010;
+$env_text: black;
+
+
+
 $plate_color: lighten($panel_color,10%);
 $plate_highlight: #FFFFFF;
 $plate: #3a343e;
@@ -25,34 +43,6 @@ $plate_selected: complement($panel_background);
 $dark_plate: darken($plate, 5%);
 $very_dark_plate: darken($dark_plate, 5%);
 $focus_color: #22C0F0;
-
-
-$list_width: 260px;
-$ghost_opacity: 0.0;
-
-
-$wyld_fill: #c264d4;
-$weaver_fill: #334ba9;
-$wyrm_fill: #221338;
-$mortal_fill: #4e4e4e;
-$garou_fill: #382b18;
-$kindred_fill: #870931;
-$mage_fill: #3c18de;
-$wraith_fill: #2f3345;
-$changeling_fill: #684203;
-
-$ghoul_fill: desaturate($kindred_fill,50%);
-$kinfolk_fill: desaturate($garou_fill,50%);
-$fomori_fill: #C0D43B;
-
-
-$camarilla_fill: #104010;
-$sabbat_fill: #401010;
-$inconnu_fill: #5d3636;
-$anarchs_fill: #252572;
-$independants_fill: #104c5e;
-
-
 
 @mixin panel {
   background: $panel_background;
@@ -65,103 +55,12 @@ $independants_fill: #104c5e;
   font-size: 10pt;
 }
 
-@mixin wawwod_panel {
-  @include panel
-  transition: all 0.3s ease;
-
-  & .plank {
-    text-align: center;
-    color: $panel_color;
-    background: $panel_background;
-    border: 1px solid $panel_plank_background;
-    padding: 2px;
-    border-radius: 3px;
-
-    &.text {
-      font-width: "Syne Mono";
-      background: $panel_shadow;
-      word-wrap: normal;
-      text-align: justify;
-
-    }
-  }
-  & .shard {
-    background: $panel_smooth_background;
-    color: $panel_color;
-    border: 1px solid $panel_shadow;
-    padding: 2px;
-    border-radius: 3px;
-  }
-  & .tag {
-    background: $panel_smooth_background;
-  }
-  & .data {
-    font-width: "Syne Mono";
-    background: $panel_shadow;
-    word-wrap: normal;
-    text-align: justify;
-
-    &:hover {
-      border-color: $panel_color;
-    }
-  }
-}
-
 @mixin body_background {
   //background: transparent url('../colorful-grunge-texture-10.jpg') fixed; // 100% 100% no-repeat fixed;
-  background: #FFFFFF;
+  background: $body_background;
+  color: $body_color;
 }
 
-
-@mixin kinfolk_taint {
-  background: repeating-linear-gradient(90deg, $garou_fill, $mortal_fill 50%, $panel_background 100%);
-}
-
-@mixin mortal_taint {
-  background: repeating-linear-gradient(90deg, $mortal_fill, $mortal_fill 50%, $panel_background 100%);
-}
-
-@mixin ghoul_taint {
-  background: repeating-linear-gradient(90deg, $kindred_fill, $mortal_fill 50%, $panel_background 100%);
-}
-
-@mixin fomori_taint {
-  background: repeating-linear-gradient(90deg, $wyrm_fill, $mortal_fill 50%, $panel_background 100%);
-}
-
-
-@mixin pentex_taint {
-  background: repeating-linear-gradient(90deg, $wyrm_fill, $garou_fill 50%, $panel_background 100%);
-}
-
-@mixin garou_taint {
-  background: repeating-linear-gradient(90deg, $garou_fill, $garou_fill 50%, $panel_background 100%);
-}
-
-@mixin sabbat_taint {
-  background: repeating-linear-gradient(90deg, $sabbat_fill, $kindred_fill 50%, $panel_background 100%);
-}
-
-@mixin camarilla_taint {
-  background: repeating-linear-gradient(90deg, $camarilla_fill, $kindred_fill 50%, $panel_background 100%);
-}
-
-@mixin inconnu_taint {
-  background: repeating-linear-gradient(90deg, $inconnu_fill, $kindred_fill 50%, $panel_background 100%);
-}
-
-@mixin anarchs_taint {
-  background: repeating-linear-gradient(90deg, $anarchs_fill, $kindred_fill 50%, $panel_background 100%);
-}
-
-@mixin changeling_taint {
-  background: repeating-linear-gradient(90deg, $changeling_fill, $panel_background 50%, $panel_background 100%);
-}
-
-@mixin wraith_taint {
-  background: repeating-linear-gradient(90deg, $wraith_fill, $panel_background 50%, $panel_background 100%);
-}
-
-@mixin mage_taint {
-  background: repeating-linear-gradient(90deg, $mage_fill, $panel_background 50%, $panel_background 100%);
+.hidden {
+  display: none;
 }

@@ -1,11 +1,23 @@
 {% extends "base.html" %}
 {%  load static %}
 
+
 {% block userzone %}
-    <div class="bar">
+<div class="bar">
     <div class='lefters'>
-        {% include "scheduler/player_shortcut.html" with c=user.profile %}
-        <div class="button"><i class="fas fa-user"></i>&nbsp;{{ user }}</div>
+        {% include "scheduler/svg/logo.svg" %}
+    </div>
+    <div class='righters'>
+        <div class="button">{% include "scheduler/player_shortcut.html" with c=user.profile %}&nbsp;{{user.profile.nickname }}</div>
+    </div>
+</div>
+{% endblock userzone %}
+
+
+{% block menuzone %}
+<div class="bar">
+    <div class='lefters'>
+
         <div class="button"><i class="fas fa-question"></i>&nbsp;Aide</div>
     </div>
     <div class='righters'>
@@ -14,11 +26,11 @@
         <div class="button"><i class="fas fa-caret-right"></i>&nbsp;+1 semaine</div>
         <div class="button"><i class="fas fa-forward"></i>&nbsp;+4 semaines</div>
     </div>
-    </div>
-{% endblock userzone %}
+</div>
+{% endblock menuzone %}
 
 {% block eventzone %}
-Events zone
+{% include "scheduler/followers.html" with c=user.profile %}
 {% endblock eventzone %}
 
 {% block wrapper %}
@@ -26,12 +38,12 @@ Events zone
 {% endblock wrapper %}
 
 {% block custom_js %}
-    <script>
-        _.defer(function () {
-            let co = new Scheduler()
-            co.perform();
-            co.revealUI();
-            console.log("Frontend loaded")
-        });
-    </script>
+<script>
+    _.defer(function () {
+        let co = new Scheduler()
+        co.perform();
+        co.revealUI();
+        console.log("Frontend loaded")
+    });
+</script>
 {% endblock custom_js %}

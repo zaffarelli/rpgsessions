@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib import admin
 from datetime import datetime
+from django.utils.timezone import now
 from scheduler.models.profile import Profile
 from scheduler.models.session import Session
 import json
@@ -9,7 +10,7 @@ import json
 class Inscription(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     session = models.ForeignKey(Session, on_delete=models.CASCADE)
-    date_pub = models.DateTimeField(default=datetime.now())
+    date_pub = models.DateTimeField(default=now())
     pending = models.BooleanField(default=True)
 
     def __str__(self):

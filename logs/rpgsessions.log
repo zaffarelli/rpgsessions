@@ -7062,3 +7062,1169 @@ AttributeError: 'datetime.time' object has no attribute '__dict__'
 [18:053127] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 70590
 [18:053214] Watching for file changes with StatReloader
 [18:053224] Watching for file changes with StatReloader
+[18:053340] Watching for file changes with StatReloader
+[18:053343] "GET /admin/scheduler/profile/2/change/ HTTP/1.1" 200 13995
+[18:053343] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[18:053343] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[18:053343] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[18:053343] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[18:053343] "GET /static/colorfield/jscolor/jscolor.js HTTP/1.1" 304 0
+[18:053343] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[18:053343] "GET /static/colorfield/colorfield.js HTTP/1.1" 304 0
+[18:053343] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:053343] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[18:053343] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[18:053343] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[18:053343] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[18:053343] "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[18:053343] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[18:053343] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+[18:053343] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[18:053343] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[18:053405] "POST /admin/scheduler/profile/2/change/ HTTP/1.1" 302 0
+[18:053406] "GET /admin/scheduler/profile/ HTTP/1.1" 200 11925
+[18:053406] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:053409] "GET / HTTP/1.1" 200 49723
+[18:053409] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:053409] "GET /static/CACHE/css/main.6803aa8577d2.css HTTP/1.1" 200 12041
+[18:053414] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 70590
+[18:115702] "GET / HTTP/1.1" 200 49723
+[18:115702] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:115702] "GET /static/CACHE/css/main.6803aa8577d2.css HTTP/1.1" 200 12041
+[18:115705] Internal Server Error: /ajax/display/dayzoom/2022_03_26/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: '#'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 39, in display_day
+    html = template.render(context, request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 207, in select_template
+    return self.get_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 176, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 158, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 17: '#'. Did you forget to register or load this tag?
+[18:115705] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 500 258821
+[18:115726] "GET / HTTP/1.1" 200 49723
+[18:115726] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:115726] "GET /static/CACHE/css/main.6803aa8577d2.css HTTP/1.1" 200 12041
+[18:115727] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 84015
+[18:115823] "GET / HTTP/1.1" 200 49723
+[18:115823] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:115823] "GET /static/CACHE/css/main.6803aa8577d2.css HTTP/1.1" 200 12041
+[18:115830] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55194
+[18:120024] "GET / HTTP/1.1" 200 49723
+[18:120024] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:120024] "GET /static/CACHE/css/main.6803aa8577d2.css HTTP/1.1" 200 12041
+[18:120028] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55189
+[18:120129] "GET /admin/scheduler/profile/5/change/ HTTP/1.1" 200 14010
+[18:120130] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:120143] "POST /admin/scheduler/profile/5/change/ HTTP/1.1" 302 0
+[18:120143] "GET /admin/scheduler/profile/ HTTP/1.1" 200 11929
+[18:120143] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:120145] "GET /admin/scheduler/profile/5/change/ HTTP/1.1" 200 14010
+[18:120145] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:120209] "POST /admin/scheduler/profile/5/change/ HTTP/1.1" 302 0
+[18:120209] "GET /admin/scheduler/profile/ HTTP/1.1" 200 11929
+[18:120209] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:120213] "GET / HTTP/1.1" 200 49723
+[18:120213] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:120213] "GET /static/CACHE/css/main.6803aa8577d2.css HTTP/1.1" 200 12041
+[18:120216] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55189
+[18:120841] "GET / HTTP/1.1" 200 49723
+[18:120842] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:120842] "GET /static/CACHE/css/main.5399867ae37f.css HTTP/1.1" 200 10849
+[18:120932] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 21, in index
+    return render(request, 'scheduler/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/templatetags/compress.py", line 151, in render
+    return self.render_compressed(context, self.kind, self.mode, forced=forced, log=log, verbosity=verbosity)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/templatetags/compress.py", line 121, in render_compressed
+    rendered_output = compressor.output(mode, forced=forced, basename=file_basename)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/css.py", line 46, in output
+    ret.append(subnode.output(*args, **kwargs))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/css.py", line 48, in output
+    return super().output(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/base.py", line 323, in output
+    output = '\n'.join(self.filter_input(forced))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/base.py", line 263, in filter_input
+    for hunk in self.hunks(forced):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/base.py", line 237, in hunks
+    precompiled, value = self.precompile(value, **options)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/base.py", line 304, in precompile
+    return True, filter.input(**kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django_libsass.py", line 148, in input
+    return compile(filename=self.filename,
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django_libsass.py", line 135, in compile
+    output = sass.compile(**kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib64/python3.10/site-packages/sass.py", line 738, in compile
+    raise CompileError(v)
+sass.CompileError: Error: Undefined variable: "$body-background".
+        on line 48:15 of scheduler/static/scheduler/css/_basics.scss, in mixin `body-background`
+        from line 5:12 of scheduler/static/scheduler/css/main.scss
+>>   background: $body_background;
+
+   --------------^
+
+[18:120932] "GET / HTTP/1.1" 500 319248
+[18:121016] "GET / HTTP/1.1" 200 49723
+[18:121016] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:121016] "GET /static/CACHE/css/main.5f3920797b5c.css HTTP/1.1" 200 10867
+[18:121204] "GET / HTTP/1.1" 200 49723
+[18:121204] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:121204] "GET /static/CACHE/css/main.797ae2bb7eb9.css HTTP/1.1" 200 10885
+[18:121302] "GET / HTTP/1.1" 200 49723
+[18:121302] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:121302] "GET /static/CACHE/css/main.256b1f3e3dc3.css HTTP/1.1" 200 10885
+[18:121409] "GET / HTTP/1.1" 200 49723
+[18:121409] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:121409] "GET /static/CACHE/css/main.366324c4c1c5.css HTTP/1.1" 200 10885
+[18:121426] "GET / HTTP/1.1" 200 49723
+[18:121426] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:121426] "GET /static/CACHE/css/main.915c2498f014.css HTTP/1.1" 200 10883
+[18:121435] "GET / HTTP/1.1" 200 49723
+[18:121436] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:121436] "GET /static/CACHE/css/main.30996452b0ac.css HTTP/1.1" 200 10883
+[18:121512] "GET / HTTP/1.1" 200 49723
+[18:121513] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:121513] "GET /static/CACHE/css/main.fe03e49457d4.css HTTP/1.1" 200 10881
+[18:121534] "GET / HTTP/1.1" 200 49723
+[18:121534] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:121534] "GET /static/CACHE/css/main.b7239a8aba30.css HTTP/1.1" 200 10931
+[18:121607] "GET / HTTP/1.1" 200 49723
+[18:121607] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:121607] "GET /static/CACHE/css/main.dc0a8212b7bc.css HTTP/1.1" 200 10928
+[18:121622] "GET / HTTP/1.1" 200 49723
+[18:121622] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:121622] "GET /static/CACHE/css/main.10166bd5ff28.css HTTP/1.1" 200 10924
+[18:121706] "GET / HTTP/1.1" 200 49723
+[18:121706] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:121706] "GET /static/CACHE/css/main.528172a7a8d5.css HTTP/1.1" 200 10941
+[18:121800] "GET / HTTP/1.1" 200 49723
+[18:121800] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:121800] "GET /static/CACHE/css/main.e604871349dc.css HTTP/1.1" 200 10941
+[18:121934] "GET / HTTP/1.1" 200 49723
+[18:121934] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:121934] "GET /static/CACHE/css/main.ec0cb15c4ad9.css HTTP/1.1" 200 10938
+[18:122149] "GET / HTTP/1.1" 200 49723
+[18:122149] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:122149] "GET /static/CACHE/css/main.b03908ee65e4.css HTTP/1.1" 200 10936
+[18:122244] "GET / HTTP/1.1" 200 49723
+[18:122244] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:122244] "GET /static/CACHE/css/main.58c6c4ac2572.css HTTP/1.1" 200 11050
+[18:122347] "GET / HTTP/1.1" 200 49723
+[18:122347] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:122347] "GET /static/CACHE/css/main.420404c70930.css HTTP/1.1" 200 11046
+[18:122411] "GET / HTTP/1.1" 200 49723
+[18:122411] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:122411] "GET /static/CACHE/css/main.2ade07b1825f.css HTTP/1.1" 200 11089
+[18:122413] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55189
+[18:122902] "GET / HTTP/1.1" 200 49904
+[18:122902] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:122902] "GET /static/CACHE/css/main.89282ed1cbd3.css HTTP/1.1" 200 12145
+[18:123147] "GET / HTTP/1.1" 200 49904
+[18:123147] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:123147] "GET /static/CACHE/css/main.0d339ff38257.css HTTP/1.1" 200 12120
+[18:123228] "GET / HTTP/1.1" 200 49904
+[18:123228] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:123228] "GET /static/CACHE/css/main.9872a976dbe9.css HTTP/1.1" 200 12188
+[18:123400] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55189
+[18:124820] "GET / HTTP/1.1" 200 49868
+[18:124821] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:124821] "GET /static/CACHE/css/main.9872a976dbe9.css HTTP/1.1" 200 12188
+[18:124842] "GET / HTTP/1.1" 200 49868
+[18:124842] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:124842] "GET /static/CACHE/css/main.9872a976dbe9.css HTTP/1.1" 200 12188
+[18:124946] "GET / HTTP/1.1" 200 49868
+[18:124946] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:124946] "GET /static/CACHE/css/main.9872a976dbe9.css HTTP/1.1" 200 12188
+[18:125233] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 21, in index
+    return render(request, 'scheduler/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 176, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 158, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 226, in do_block
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'block' tag with name 'menuzone' appears more than once
+[18:125233] "GET / HTTP/1.1" 500 207654
+[18:125345] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 21, in index
+    return render(request, 'scheduler/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 176, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 158, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 226, in do_block
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'block' tag with name 'menuzone' appears more than once
+[18:125345] "GET / HTTP/1.1" 500 207654
+[18:125513] "GET / HTTP/1.1" 200 49855
+[18:125513] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:125513] "GET /static/CACHE/css/main.597be98558c3.css HTTP/1.1" 200 12188
+[18:125733] "GET / HTTP/1.1" 200 49961
+[18:125733] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:125733] "GET /static/CACHE/css/main.61be1215b9c6.css HTTP/1.1" 200 12416
+[18:125757] "GET / HTTP/1.1" 200 49938
+[18:125758] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:125758] "GET /static/CACHE/css/main.61be1215b9c6.css HTTP/1.1" 200 12416
+[18:125809] "GET / HTTP/1.1" 200 49923
+[18:125809] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:125809] "GET /static/CACHE/css/main.61be1215b9c6.css HTTP/1.1" 200 12416
+[18:125849] "GET / HTTP/1.1" 200 49923
+[18:125849] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:125849] "GET /static/CACHE/css/main.694e3a2d4d9a.css HTTP/1.1" 200 12416
+[18:125915] "GET / HTTP/1.1" 200 49923
+[18:125915] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:125915] "GET /static/CACHE/css/main.c1db2656e059.css HTTP/1.1" 200 12416
+[18:130016] "GET / HTTP/1.1" 200 49923
+[18:130016] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130016] "GET /static/CACHE/css/main.fb928072b817.css HTTP/1.1" 200 12400
+[18:130042] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55189
+[18:130128] "GET / HTTP/1.1" 200 49923
+[18:130129] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130129] "GET /static/CACHE/css/main.f14772483209.css HTTP/1.1" 200 12426
+[18:130133] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55189
+[18:130229] "GET / HTTP/1.1" 200 49923
+[18:130229] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130229] "GET /static/CACHE/css/main.881c57cad36d.css HTTP/1.1" 200 12400
+[18:130403] "GET / HTTP/1.1" 200 49923
+[18:130403] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130403] "GET /static/CACHE/css/main.9da31e61264d.css HTTP/1.1" 200 12396
+[18:130451] "GET / HTTP/1.1" 200 49923
+[18:130451] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130451] "GET /static/CACHE/css/main.3f44805e32eb.css HTTP/1.1" 200 12393
+[18:130522] "GET / HTTP/1.1" 200 49923
+[18:130522] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130522] "GET /static/CACHE/css/main.b09255065c4f.css HTTP/1.1" 200 12393
+[18:130612] "GET / HTTP/1.1" 200 49923
+[18:130612] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130612] "GET /static/CACHE/css/main.b58d0cee7ef3.css HTTP/1.1" 200 12390
+[18:130621] "GET / HTTP/1.1" 200 49923
+[18:130622] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130622] "GET /static/CACHE/css/main.45b327706292.css HTTP/1.1" 200 12390
+[18:130645] "GET / HTTP/1.1" 200 49923
+[18:130645] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130645] "GET /static/CACHE/css/main.cc3bf4d72454.css HTTP/1.1" 200 12389
+[18:130654] "GET / HTTP/1.1" 200 49923
+[18:130654] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130654] "GET /static/CACHE/css/main.8779d9680962.css HTTP/1.1" 200 12385
+[18:130717] "GET / HTTP/1.1" 200 49923
+[18:130717] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130717] "GET /static/CACHE/css/main.4f034b194d8b.css HTTP/1.1" 200 12393
+[18:130736] "GET / HTTP/1.1" 200 49923
+[18:130736] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130736] "GET /static/CACHE/css/main.72c7ec795526.css HTTP/1.1" 200 12389
+[18:130758] "GET / HTTP/1.1" 200 49923
+[18:130758] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130758] "GET /static/CACHE/css/main.77216a9bc5bb.css HTTP/1.1" 200 12387
+[18:130809] "GET / HTTP/1.1" 200 49923
+[18:130809] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130809] "GET /static/CACHE/css/main.959874c2d967.css HTTP/1.1" 200 12383
+[18:130908] "GET / HTTP/1.1" 200 49923
+[18:130908] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130908] "GET /static/CACHE/css/main.0c9aa8166b29.css HTTP/1.1" 200 12412
+[18:130954] "GET / HTTP/1.1" 200 49923
+[18:130954] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:130954] "GET /static/CACHE/css/main.e0b05f54e282.css HTTP/1.1" 200 12543
+[18:131006] "GET / HTTP/1.1" 200 49923
+[18:131006] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:131006] "GET /static/CACHE/css/main.8aa02737e8ad.css HTTP/1.1" 200 12563
+[18:131036] "GET / HTTP/1.1" 200 49923
+[18:131036] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:131036] "GET /static/CACHE/css/main.0c1c412bb52f.css HTTP/1.1" 200 12567
+[18:131048] "GET / HTTP/1.1" 200 49923
+[18:131048] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:131048] "GET /static/CACHE/css/main.f3e316b873e3.css HTTP/1.1" 200 12571
+[18:131104] "GET / HTTP/1.1" 200 49923
+[18:131105] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:131105] "GET /static/CACHE/css/main.4cce8481047b.css HTTP/1.1" 200 12567
+[18:131109] "GET / HTTP/1.1" 200 49923
+[18:131109] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:131109] "GET /static/CACHE/css/main.4cce8481047b.css HTTP/1.1" 200 12567
+[18:131206] "GET / HTTP/1.1" 200 49923
+[18:131206] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:131206] "GET /static/CACHE/css/main.12a65e5f29b9.css HTTP/1.1" 200 12567
+[18:131217] "GET / HTTP/1.1" 200 49923
+[18:131217] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:131217] "GET /static/CACHE/css/main.00ce217072f1.css HTTP/1.1" 200 12567
+[18:131232] "GET / HTTP/1.1" 200 49923
+[18:131232] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:131232] "GET /static/CACHE/css/main.a88b9ff1cb2b.css HTTP/1.1" 200 12567
+[18:131301] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55189
+[18:131351] "GET / HTTP/1.1" 200 49923
+[18:131351] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:131351] "GET /static/CACHE/css/main.b358d4172f2f.css HTTP/1.1" 200 12567
+[18:131429] "GET / HTTP/1.1" 200 49923
+[18:131429] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:131429] "GET /static/CACHE/css/main.51b8a85f18bf.css HTTP/1.1" 200 12603
+[18:131735] "GET / HTTP/1.1" 200 49923
+[18:131735] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:131735] "GET /static/CACHE/css/main.40058b8d5229.css HTTP/1.1" 200 12602
+[18:131759] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55189
+[18:131915] "GET / HTTP/1.1" 200 49923
+[18:131915] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:131915] "GET /static/CACHE/css/main.40058b8d5229.css HTTP/1.1" 200 12602
+[18:131916] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55255
+[18:131932] "GET /admin/scheduler/session/ HTTP/1.1" 200 14055
+[18:131932] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:131937] "GET /admin/scheduler/session/3/change/ HTTP/1.1" 200 19711
+[18:131937] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:131945] "POST /admin/scheduler/session/3/change/ HTTP/1.1" 302 0
+[18:131945] "GET /admin/scheduler/session/ HTTP/1.1" 200 14278
+[18:131945] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:131951] "GET /admin/scheduler/session/1/change/ HTTP/1.1" 200 19727
+[18:131951] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:132001] "POST /admin/scheduler/session/1/change/ HTTP/1.1" 302 0
+[18:132001] "GET /admin/scheduler/session/ HTTP/1.1" 200 14280
+[18:132001] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:132004] "GET / HTTP/1.1" 200 49923
+[18:132004] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:132004] "GET /static/CACHE/css/main.40058b8d5229.css HTTP/1.1" 200 12602
+[18:132006] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55255
+[18:132113] "GET / HTTP/1.1" 200 49923
+[18:132113] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:132113] "GET /static/CACHE/css/main.a98fa8dd2a60.css HTTP/1.1" 200 12801
+[18:132115] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55255
+[18:132318] "GET / HTTP/1.1" 200 49923
+[18:132318] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:132318] "GET /static/CACHE/css/main.5304863b692f.css HTTP/1.1" 200 12615
+[18:132329] "GET /ajax/display/dayzoom/2022_03_18/ HTTP/1.1" 200 10414
+[18:132350] "GET / HTTP/1.1" 200 49923
+[18:132350] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:132350] "GET /static/CACHE/css/main.5304863b692f.css HTTP/1.1" 200 12615
+[18:132352] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55255
+[18:132652] "GET / HTTP/1.1" 200 49923
+[18:132652] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:132652] "GET /static/CACHE/css/main.38a4fa23c992.css HTTP/1.1" 200 12633
+[18:132714] "GET / HTTP/1.1" 200 49923
+[18:132714] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:132714] "GET /static/CACHE/css/main.94ec89caec77.css HTTP/1.1" 200 12666
+[18:132718] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55255
+[18:132900] "GET / HTTP/1.1" 200 49923
+[18:132900] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:132900] "GET /static/CACHE/css/main.9ef785cede02.css HTTP/1.1" 200 12644
+[18:132917] "GET / HTTP/1.1" 200 49923
+[18:132917] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:132917] "GET /static/CACHE/css/main.517f72b88f29.css HTTP/1.1" 200 12644
+[18:132943] "GET / HTTP/1.1" 200 49923
+[18:132943] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:132943] "GET /static/CACHE/css/main.a82dee8f155d.css HTTP/1.1" 200 12646
+[18:132958] /home/zaffarelli/Perso/github/rpgsessions/scheduler/utils/mechanics.py changed, reloading.
+[18:132959] Watching for file changes with StatReloader
+[18:133001] "GET / HTTP/1.1" 200 50011
+[18:133001] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:133001] "GET /static/CACHE/css/main.a82dee8f155d.css HTTP/1.1" 200 12646
+[18:133025] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55255
+[18:133050] "GET / HTTP/1.1" 200 50011
+[18:133050] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:133050] "GET /static/CACHE/css/main.b96ee00b2fad.css HTTP/1.1" 200 12646
+[18:133155] "GET / HTTP/1.1" 200 50011
+[18:133155] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:133155] "GET /static/CACHE/css/main.9266b1536397.css HTTP/1.1" 200 12631
+[18:133205] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55255
+[18:133226] "GET / HTTP/1.1" 200 50011
+[18:133226] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:133226] "GET /static/CACHE/css/main.ce35f58e2309.css HTTP/1.1" 200 12631
+[18:133239] "GET / HTTP/1.1" 200 50011
+[18:133239] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:133239] "GET /static/CACHE/css/main.c71616b8f249.css HTTP/1.1" 200 12627
+[18:133317] "GET / HTTP/1.1" 200 50011
+[18:133317] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:133317] "GET /static/CACHE/css/main.cdb690db53a6.css HTTP/1.1" 200 12631
+[18:133332] "GET / HTTP/1.1" 200 50011
+[18:133332] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:133332] "GET /static/CACHE/css/main.e2777ce3e7ab.css HTTP/1.1" 200 12615
+[18:133336] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55255
+[18:133400] "GET / HTTP/1.1" 200 50011
+[18:133400] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:133400] "GET /static/CACHE/css/main.1ba2618c451d.css HTTP/1.1" 200 12631
+[18:133442] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55255
+[18:150716] Watching for file changes with StatReloader
+[18:150729] "GET /admin/scheduler/session/ HTTP/1.1" 200 14055
+[18:150730] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[18:150730] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[18:150730] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[18:150730] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[18:150730] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[18:150730] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[18:150730] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[18:150730] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:150730] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[18:150730] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[18:150730] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[18:150730] "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+[18:150730] "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[18:150730] Not Found: /favicon.ico
+[18:150805] /home/zaffarelli/Perso/github/rpgsessions/scheduler/admin.py changed, reloading.
+[18:150806] Watching for file changes with StatReloader
+[18:150811] Watching for file changes with StatReloader
+[18:150814] "GET /admin/scheduler/session/ HTTP/1.1" 200 14375
+[18:150814] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[18:150814] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[18:150814] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[18:150814] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[18:150814] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[18:150814] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[18:150814] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[18:150814] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[18:150814] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:150814] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[18:150814] "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[18:150814] "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+[18:150814] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[18:151022] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py changed, reloading.
+[18:151023] Watching for file changes with StatReloader
+[18:151025] "GET /admin/scheduler/session/ HTTP/1.1" 200 14376
+[18:151025] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[18:151025] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[18:151025] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[18:151025] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[18:151025] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:151025] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[18:151025] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[18:151025] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[18:151025] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[18:151025] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[18:151025] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[18:151025] "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[18:151025] "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+[18:151035] "GET /admin/scheduler/availability/ HTTP/1.1" 200 6676
+[18:151035] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:151037] "GET /admin/scheduler/availability/add/ HTTP/1.1" 200 9948
+[18:151037] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:151051] "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 1094
+[18:151055] Internal Server Error: /admin/scheduler/availability/add/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 683, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1885, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1745, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1803, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 921, in log_addition
+    object_repr=str(obj),
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py", line 17, in __str__
+    return f'{self.profile.nickname} -> {self.session.when.strftime("%Y-%m-%d")}'
+AttributeError: 'Availability' object has no attribute 'session'
+[18:151055] "POST /admin/scheduler/availability/add/ HTTP/1.1" 500 127112
+[18:151103] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py changed, reloading.
+[18:151103] Watching for file changes with StatReloader
+[18:151106] "POST /admin/scheduler/availability/add/ HTTP/1.1" 302 0
+[18:151106] "GET /admin/scheduler/availability/ HTTP/1.1" 200 8696
+[18:151106] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[18:151106] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[18:151106] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[18:151106] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[18:151106] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[18:151106] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[18:151106] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[18:151106] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[18:151106] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:151106] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[18:151106] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[18:151125] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py changed, reloading.
+[18:151126] Watching for file changes with StatReloader
+[18:151130] Watching for file changes with StatReloader
+[18:151224] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py changed, reloading.
+[18:151224] Watching for file changes with StatReloader
+[18:151339] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py changed, reloading.
+[18:151339] Watching for file changes with StatReloader
+[18:151349] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py changed, reloading.
+[18:151349] Watching for file changes with StatReloader
+[18:151356] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/inscription.py changed, reloading.
+[18:151356] Watching for file changes with StatReloader
+[18:151402] Watching for file changes with StatReloader
+[18:151409] Internal Server Error: /admin/scheduler/availability/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 683, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2063, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+  File "/usr/lib64/python3.10/sqlite3/dbapi2.py", line 64, in convert_date
+    return datetime.date(*map(int, val.split(b"-")))
+ValueError: invalid literal for int() with base 10: b'19 14:10:23'
+[18:151409] "GET /admin/scheduler/availability/ HTTP/1.1" 500 160933
+[18:151433] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/inscription.py changed, reloading.
+[18:151434] Watching for file changes with StatReloader
+[18:151456] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py changed, reloading.
+[18:151457] Watching for file changes with StatReloader
+[18:151459] Internal Server Error: /admin/scheduler/availability/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 683, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2063, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+  File "/usr/lib64/python3.10/sqlite3/dbapi2.py", line 64, in convert_date
+    return datetime.date(*map(int, val.split(b"-")))
+ValueError: invalid literal for int() with base 10: b'19 14:10:23'
+[18:151459] "GET /admin/scheduler/availability/ HTTP/1.1" 500 160933
+[18:151505] Watching for file changes with StatReloader
+[18:151607] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py changed, reloading.
+[18:151608] Watching for file changes with StatReloader
+[18:151624] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/inscription.py changed, reloading.
+[18:151625] Watching for file changes with StatReloader
+[18:151632] Watching for file changes with StatReloader
+[18:151659] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/inscription.py changed, reloading.
+[18:151700] Watching for file changes with StatReloader
+[18:151706] Watching for file changes with StatReloader
+[18:151805] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/inscription.py changed, reloading.
+[18:151805] Watching for file changes with StatReloader
+[18:152101] "GET / HTTP/1.1" 200 50011
+[18:152101] "GET /static/js/scheduler.es6 HTTP/1.1" 200 19235
+[18:152101] "GET /static/CACHE/css/main.931e9f919c9b.css HTTP/1.1" 200 12631
+[18:152132] "GET / HTTP/1.1" 200 50011
+[18:152132] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:152132] "GET /static/CACHE/css/main.089393433cf7.css HTTP/1.1" 200 12627
+[18:152206] "GET / HTTP/1.1" 200 50011
+[18:152206] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:152206] "GET /static/CACHE/css/main.c5cc7248c844.css HTTP/1.1" 200 12627
+[18:152217] "GET / HTTP/1.1" 200 50011
+[18:152217] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:152217] "GET /static/CACHE/css/main.067e3b8ed754.css HTTP/1.1" 200 12627
+[18:152230] "GET / HTTP/1.1" 200 50011
+[18:152230] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:152230] "GET /static/CACHE/css/main.8aa0ffd00eed.css HTTP/1.1" 200 12631
+[18:152304] "GET / HTTP/1.1" 200 50011
+[18:152304] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:152304] "GET /static/CACHE/css/main.29570ff5bdb7.css HTTP/1.1" 200 12627
+[18:152319] "GET / HTTP/1.1" 200 50011
+[18:152319] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:152319] "GET /static/CACHE/css/main.be0e35a0cd56.css HTTP/1.1" 200 12623
+[18:152326] "GET / HTTP/1.1" 200 50011
+[18:152326] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:152326] "GET /static/CACHE/css/main.425b59d60158.css HTTP/1.1" 200 12631
+[18:152338] "GET / HTTP/1.1" 200 50011
+[18:152338] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:152338] "GET /static/CACHE/css/main.29b5e38bcfa5.css HTTP/1.1" 200 12631
+[18:152350] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55255
+[18:152529] "GET / HTTP/1.1" 200 50011
+[18:152530] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:152530] "GET /static/CACHE/css/main.6fefd601e2e9.css HTTP/1.1" 200 12631
+[18:152551] "GET / HTTP/1.1" 200 50011
+[18:152551] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:152551] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:153004] /home/zaffarelli/Perso/github/rpgsessions/scheduler/admin.py changed, reloading.
+[18:153004] Watching for file changes with StatReloader
+[18:153015] Watching for file changes with StatReloader
+[18:153040] Watching for file changes with StatReloader
+[18:153146] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/follower.py changed, reloading.
+[18:153146] Watching for file changes with StatReloader
+[18:153200] Watching for file changes with StatReloader
+[18:153204] "GET / HTTP/1.1" 200 50011
+[18:153204] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:153204] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:153207] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55255
+[18:153428] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 21, in index
+    return render(request, 'scheduler/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 207, in select_template
+    return self.get_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 176, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 158, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/defaulttags.py", line 853, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 701, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '()' from 'follower_set.all()'
+[18:153428] "GET / HTTP/1.1" 500 350414
+[18:153437] "GET / HTTP/1.1" 200 50004
+[18:153437] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:153437] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:153442] "GET /admin/scheduler/availability/add/ HTTP/1.1" 200 9420
+[18:153442] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[18:153442] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[18:153442] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[18:153443] Not Found: /favicon.ico
+[18:153445] "GET /admin/scheduler/follower/ HTTP/1.1" 200 6950
+[18:153445] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:153446] Not Found: /favicon.ico
+[18:153448] "GET /admin/scheduler/follower/add/ HTTP/1.1" 200 10399
+[18:153448] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:153455] Internal Server Error: /admin/scheduler/follower/add/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 683, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1885, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1745, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1803, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 921, in log_addition
+    object_repr=str(obj),
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/models/follower.py", line 15, in __str__
+    return f'{self.profile.nickname} follows {self.target.profile.nickname}'
+AttributeError: 'Profile' object has no attribute 'profile'
+[18:153455] "POST /admin/scheduler/follower/add/ HTTP/1.1" 500 126438
+[18:153455] Not Found: /favicon.ico
+[18:153545] Internal Server Error: /admin/scheduler/follower/add/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 683, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1885, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1745, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1803, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 921, in log_addition
+    object_repr=str(obj),
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/models/follower.py", line 15, in __str__
+    return f'{self.profile.nickname} follows {self.target.profile.nickname}'
+AttributeError: 'Profile' object has no attribute 'profile'
+[18:153545] "POST /admin/scheduler/follower/add/ HTTP/1.1" 500 126438
+[18:153608] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/follower.py changed, reloading.
+[18:153608] Watching for file changes with StatReloader
+[18:153611] Internal Server Error: /admin/scheduler/follower/add/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 683, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1885, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1745, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1803, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 921, in log_addition
+    object_repr=str(obj),
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/models/follower.py", line 15, in __str__
+    return f'{self.nickname} follows {self.target.nickname}'
+AttributeError: 'Follower' object has no attribute 'nickname'
+[18:153611] "POST /admin/scheduler/follower/add/ HTTP/1.1" 500 126420
+[18:153626] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/follower.py changed, reloading.
+[18:153627] Watching for file changes with StatReloader
+[18:153630] "POST /admin/scheduler/follower/add/ HTTP/1.1" 302 0
+[18:153630] "GET /admin/scheduler/follower/ HTTP/1.1" 200 8962
+[18:153630] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[18:153630] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[18:153630] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[18:153630] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[18:153630] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[18:153630] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[18:153630] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[18:153630] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[18:153630] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:153630] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[18:153630] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[18:153630] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[18:153630] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[18:153630] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[18:153635] "GET /admin/scheduler/follower/add/ HTTP/1.1" 200 10399
+[18:153635] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:153644] "POST /admin/scheduler/follower/add/ HTTP/1.1" 302 0
+[18:153645] "GET /admin/scheduler/follower/add/ HTTP/1.1" 200 10670
+[18:153645] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:153657] "POST /admin/scheduler/follower/add/ HTTP/1.1" 302 0
+[18:153657] "GET /admin/scheduler/follower/ HTTP/1.1" 200 9782
+[18:153658] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:153703] "GET / HTTP/1.1" 200 50004
+[18:153703] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:153703] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:153724] "GET / HTTP/1.1" 200 50004
+[18:153725] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:153725] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:153739] "GET / HTTP/1.1" 200 50004
+[18:153739] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:153739] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:153746] "GET / HTTP/1.1" 200 50009
+[18:153746] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:153746] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:153755] "GET / HTTP/1.1" 200 50027
+[18:153755] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:153755] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:153815] "GET / HTTP/1.1" 200 50027
+[18:153815] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:153815] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:154058] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py changed, reloading.
+[18:154059] Watching for file changes with StatReloader
+[18:154102] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 21, in index
+    return render(request, 'scheduler/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 208, in render
+    return template.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 177, in render
+    return self._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/defaulttags.py", line 193, in render
+    values = list(values)
+TypeError: 'RelatedManager' object is not iterable
+[18:154102] "GET / HTTP/1.1" 500 358034
+[18:154111] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py changed, reloading.
+[18:154112] Watching for file changes with StatReloader
+[18:154119] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py changed, reloading.
+[18:154119] Watching for file changes with StatReloader
+[18:154122] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 21, in index
+    return render(request, 'scheduler/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 208, in render
+    return template.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 177, in render
+    return self._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/defaulttags.py", line 193, in render
+    values = list(values)
+TypeError: 'RelatedManager' object is not iterable
+[18:154122] "GET / HTTP/1.1" 500 358034
+[18:154219] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py changed, reloading.
+[18:154219] Watching for file changes with StatReloader
+[18:154245] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py changed, reloading.
+[18:154245] Watching for file changes with StatReloader
+[18:154259] "GET / HTTP/1.1" 200 65821
+[18:154259] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:154259] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:154333] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py changed, reloading.
+[18:154334] Watching for file changes with StatReloader
+[18:154403] "GET / HTTP/1.1" 200 65814
+[18:154403] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:154403] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:154446] "GET / HTTP/1.1" 200 65812
+[18:154447] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:154447] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:154509] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 55255
+[18:154612] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py changed, reloading.
+[18:154613] Watching for file changes with StatReloader
+[18:154616] "GET / HTTP/1.1" 200 65832
+[18:154616] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:154616] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:154631] "GET /admin/scheduler/profile/ HTTP/1.1" 200 12337
+[18:154631] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:154632] "GET /admin/scheduler/profile/5/change/ HTTP/1.1" 200 14635
+[18:154633] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:154635] "GET /admin/scheduler/follower/ HTTP/1.1" 200 9554
+[18:154635] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:154638] "GET /admin/scheduler/follower/add/ HTTP/1.1" 200 10399
+[18:154638] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:154652] "POST /admin/scheduler/follower/add/ HTTP/1.1" 302 0
+[18:154652] "GET /admin/scheduler/follower/ HTTP/1.1" 200 10183
+[18:154652] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[18:154707] "GET / HTTP/1.1" 200 70696
+[18:154707] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:154707] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631
+[18:154716] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py changed, reloading.
+[18:154717] Watching for file changes with StatReloader
+[18:154718] "GET / HTTP/1.1" 200 70696
+[18:154719] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[18:154719] "GET /static/CACHE/css/main.9ba286c39695.css HTTP/1.1" 200 12631

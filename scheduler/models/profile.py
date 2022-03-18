@@ -31,6 +31,24 @@ class Profile(models.Model):
         jstr = json.loads(json.dumps(self, default=json_default, sort_keys=True, indent=4))
         return jstr
 
+    @property
+    def following(self):
+        from scheduler.models.follower import Follower
+        list = []
+        all = Follower.objects.filter(profile=self)
+        for x in all:
+            list.append(x.target.to_json)
+        return list
+
+    @property
+    def groupies(self):
+        from scheduler.models.follower import Follower
+        list = []
+        all = Follower.objects.filter(target=self)
+        for x in all:
+            list.append(x.profile.to_json)
+        return list
+
 
 class ProfileAdmin(admin.ModelAdmin):
     ordering = ['nickname']

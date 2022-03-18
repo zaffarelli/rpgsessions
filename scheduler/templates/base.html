@@ -23,32 +23,39 @@
 </head>
 <body>
 
-<div class='menuzone hidden'>
-{% block menuzone %}
-    {% include "scheduler/svg/logo.svg" %}
-{% endblock menuzone %}
+<div class="spare_left"></div>
+<div class="corpus">
+
+    <div class='userzone hidden'>
+        {% block userzone %}
+        {% endblock userzone %}
+    </div>
+
+    <div class='menuzone hidden'>
+        {% block menuzone %}
+        {% endblock menuzone %}
+    </div>
+
+
+    <div class='wrapper hidden'>
+        {% block wrapper %}
+        {% endblock wrapper %}
+    </div>
+
+    <div class='eventzone hidden'>
+        {% block eventzone %}
+        {% endblock eventzone %}
+    </div>
+
+    {% block javascript %}
+    {% endblock javascript %}
+
+    {% block custom_js %}
+    {% endblock custom_js %}
+
 </div>
+<div class="spare_right"></div>
 
-<div class='userzone hidden'>
-{% block userzone %}
-{% endblock userzone %}
-</div>
-
-<div class='wrapper hidden'>
-{% block wrapper %}
-{% endblock wrapper %}
-</div>
-
-<div class='eventzone hidden'>
-{% block eventzone %}
-{% endblock eventzone %}
-</div>
-
-{% block javascript %}
-{% endblock javascript %}
-
-{% block custom_js %}
-{% endblock custom_js %}
 
 </body>
 </html>

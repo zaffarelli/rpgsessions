@@ -1,0 +1,11 @@
+{% load static %}
+
+Profils suivis:
+{% for x in c.following %}
+    {% include "scheduler/player_shortcut.html" with c=x %}
+{% endfor %}
+
+Ils vous suivent:
+{% for x in c.groupies %}
+    {% include "scheduler/player_shortcut.html" with c=x %}
+{% endfor %}

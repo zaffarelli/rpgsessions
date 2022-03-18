@@ -1,353 +1,333 @@
 @import 'basics';
 
-$color_current: violet;
-$color_current_hover: mediumorchid;
-$color_frame: lightgrey;
-$color_frame_hover: cyan;
-$day_color: lightcyan;
-$color_off: lightyellow;
-$color_off_hover: yellow;
-
-
 body {
-  font-family: Texte;
   @include body_background;
   color: $body_color;
-  //min-height: 98%;
   font-family: Acme;
 }
 
-
-.subsection {
-  font-weight: bold;
-  color: #DBCA86;
-  text-decoration: underline;
-}
-
-.pdflink {
-  color: #E5DECA;
-  text-decoration: none;
-  background: #1d1d1d;
-  display: inline-block;
-  padding: 3px;
-}
-
-.ping {
-  background: orange;
-}
-
-
-.toggle_name {
-  font-weight: bold;
-  font-style: normal;
-  font-family: Titre;
-  width: auto;
-  display: inline-block;
-}
-
-
-.waiting {
-  cursor: progress;
-  opacity: 0.95;
-}
-
-.golden {
-  color: #ffcc22;
-}
-
-.blank {
-  color: #C0C0C0;
-  opacity: 0.5;
-}
-
-.embedded_link {
-  color: #DBCA86;
-  text-decoration: none;
-}
-
-.custom_glance {
-  cursor: help;
-}
-
-.shown {
-  display: block;
-}
-
-.noPDF:before {
-  content: '(x) ';
-}
-
-.hidden {
-  display: none;
-}
-
-
 @media all and (min-width: 1024px) {
   body {
-    margin: 0;
-    padding: 2px 2px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-flow: row wrap;
+    justify-content: center;
     align-content: flex-start;
     align-items: stretch;
     row-gap: 1px;
     column-gap: 1px;
 
-    .menuzone {
-      background: $st_color;
-      border: 1px solid transparent;
-      min-height: 40px;
-      width: 100%;
-      order: 1;
-      padding: 5px;
+    & .spare_left {
+      order:1;
+      flex-shrink:2;
+      background:red;
     }
 
-    .userzone {
-      padding: 5px;
-      background: $st_color;
-      border: 1px solid transparent;
-      min-height: 20px;
-      width: 100%;
-      order: 2;
-      text-align: right;
-      font-size: 8pt;
+    & .spare_right {
+      order:3;
+      flex-shrink:2;
+      background:blue;
+
     }
 
-    .wrapper {
-      order: 3;
-      background: $st_color;
-      border: 1px solid transparent;
-      width: 100%;
-      min-height: 400px;
-      heigth: auto;
-    }
-
-    .eventzone {
-      order: 4;
-      min-height: 40px;
-      background: $st_color;
-      border: 1px solid transparent;
-      width: 100%;
-      padding: 5px;
-    }
+    & .corpus {
+      width:1200px;
+      flex-shrink:1;
+      order:2;
+      margin: 0;
+      padding: 2px 2px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      align-items: stretch;
+      row-gap: 1px;
+      column-gap: 1px;
 
 
-  }
-}
-
-.wrapper {
-  font-size: 10pt;
-
-  .omonth {
-    width: 1150px;
-    height: auto;
-    padding: 20px 2px;
-    margin: auto 0;
-    background: $st_color;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: flex-start;
-    align-content: stretch;
-    align-items: stretch;
-    gap: 3px 3px;
-
-    & .month_info {
-      order: 1;
-      background: $st_color;
-    }
-
-    & .month_body {
-      order: 2;
-      background: $st_color;
-
-      .oweek {
-        border-radius: 5px;
+      .menuzone {
+        background: $panel_background;
+        color: $panel_color;
+        border: 1px solid transparent;
+        min-height: 40px;
+        width: 100%;
         order: 2;
-
-        height: auto;
-        padding: 4px 2px;
-        margin: auto 2px;
-        background: $color_frame;
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: stretch;
+        padding: 5px;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
         align-content: flex-start;
         align-items: stretch;
-        gap: 1px 1px;
+        row-gap: 1px;
+        column-gap: 1px;
+      }
 
-        & .week_info {
-          order: 1;
-          background: $color_frame;
-          margin: 0 4px;
-          text-align: right;
-        }
+      .userzone {
+        padding: 5px;
+        background: $panel_background;
+        color: $panel_color;
+        border: 1px solid transparent;
+        min-height: 20px;
+        width: 100%;
+        order: 1;
+        text-align: right;
+        font-size: 8pt;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .wrapper {
+        order: 3;
+        background: $panel_background;
+        color: $panel_color;
+        border: 1px solid transparent;
+        width: 100%;
+        min-height: 400px;
+        heigth: auto;
+      }
+
+      .eventzone {
+        order: 4;
+        min-height: 40px;
+        background: $panel_background;
+        color: $panel_color;
+        border: 1px solid transparent;
+        width: 100%;
+        padding: 5px;
+      }
 
 
-        & .week_body {
+    }
+  }
+
+  .wrapper {
+    font-size: 10pt;
+
+    .omonth {
+      width: auto;
+      height: auto;
+      padding: 0;
+      margin: auto 0;
+      background: transparent;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: flex-start;
+      align-content: stretch;
+      align-items: stretch;
+      gap: 0 0;
+
+      & .month_info {
+        order: 1;
+        background: $panel_shard_background;
+      }
+
+      & .month_body {
+        order: 2;
+        background: $panel_smooth_background;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: stretch;
+        gap: 1px 0;
+
+
+        .oweek {
+          border-radius: 5px;
           order: 2;
-          background: $color_frame;
+          height: auto;
+          padding: 4px 2px;
+          margin: auto 2px;
+          background: $panel_smooth_background;
+          color: $panel_color;
           display: flex;
-          flex-flow: row wrap;
-          justify-content: flex-start;
-          align-content: flex-start;
+          flex-flow: column wrap;
+          justify-content: stretch;
+          align-content: stretch;
           align-items: stretch;
-          gap: 3px 3px;
+          gap: 1px 1px;
 
-          & .day_actions {
-            order: 8;
-            border: 3px solid lightsalmon;
-
-            width: 500px;
+          & .week_info {
+            order: 1;
+            background: $panel_smooth_background;
+            color: $panel_color;
+            margin: 0 4px;
+            text-align: right;
           }
 
-          & .oday {
+
+          & .week_body {
+            order: 2;
+            background: transparent;
+            color: $panel_color;
             display: flex;
-            flex-flow: column wrap;
-            justify-content: flex-start;
-            align-content: stretch;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-content: flex-start;
             align-items: stretch;
-            background: $color_frame;
-            width: 150px;
-            gap: 0 0;
-            border: 3px solid silver;
+            gap: 3px 3px;
 
-            &:hover {
-              border-color: $color_frame_hover;
+            & .day_actions {
+              order: 8;
+              border: 3px solid lightsalmon;
+
+              width: 500px;
             }
 
-
-            & .day_info {
-              order: 1;
-              height: 3em;
-              border: 1px solid transparent;
-              background: $day_color;
-            }
-
-
-            & .day_body {
+            & .oday {
               display: flex;
-              flex-flow: row nowrap;
+              flex-flow: column wrap;
               justify-content: flex-start;
-              align-content: flex-start;
+              align-content: stretch;
               align-items: stretch;
-              gap: 2px 3px;
-              order: 2;
-              min-height: 150px;
-              background: $day_color;
-              border: 1px solid transparent;
-              width: auto;
-              padding:0;
+              background: $panel_smooth_background;
+              color: $panel_color;
+              width: 150px;
+              gap: 0 0;
+              border: 3px solid $panel_border;
 
-              & .chrono {
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: center;
-                align-content: flex-start;
-                align-items: flex-start;
-                order:1;
-                border-right: 1px dashed black;
-
-                & .hour {
-                  border-top: 1px solid black;
-                  border-bottom: 1px solid transparent;
-                  font-size: 8pt;
-                  height: 30px;
-                  width: 100px;
-                  text-align: center;
-                  padding: 0;
-                  background: white;
-                }
-              }
-
-              & .sessions {
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: flex-start;
-                align-content: center;
-                align-items: flex-end;
-                background:transparent;
-                gap:2px 2px;
-                order:2;
-
-                & .session_column {
-                  display: flex;
-                  flex-flow: column nowrap;
-                  justify-content: flex-start;
-                  align-content: flex-start;
-                  align-items: stretch;
-                  border: 1px solid lightsteelblue;
-                  border-right: 1px dotted black;
-                  font-size: 8pt;
-                  height: 100%;
-                  width:90px;
-
-                  text-align: center;
-                  padding: 0;
-                  border-radius: 0;
-                  background: transparent;
-
-                  & .session {
-                    order: 2;
-                    width:calc(100% - 6px);
-                    background: lightgoldenrodyellow;
-                    border-radius:5px;
-                    padding:3px;
-                    border:1px solid black;
-                  }
-
-
-
-                  & .timefill {
-                    background: lightgrey;
-                    width:100%;
-                    color:black;
-
-                    &.pre {
-                      order: 1;
-
-                    }
-
-                    &.post {
-                      order: 3;
-                    }
-                  }
-                }
+              &:hover {
+                border-color: $color_frame_hover;
               }
 
 
-            }
-
-            &.day_off {
               & .day_info {
-                background: $color_off;
+                order: 1;
+                height: 3em;
+                border: 1px solid transparent;
+                background: $panel_day_background;
+                color: $env_text;
+                cursor:pointer;
               }
+
 
               & .day_body {
-                background: $color_off;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-content: flex-start;
+                align-items: stretch;
+                gap: 2px 3px;
+                order: 2;
+                min-height: 50px;
+                background: $panel_day_background;
+                color: $env_text;
+                border: 1px solid transparent;
+                width: auto;
+                padding: 0;
+
+                & .chrono {
+                  display: flex;
+                  flex-flow: column nowrap;
+                  justify-content: center;
+                  align-content: flex-start;
+                  align-items: flex-start;
+                  order: 1;
+                  border-right: 1px dashed black;
+
+                  & .hour {
+                    border-top: 1px solid black;
+                    border-bottom: 1px solid transparent;
+                    font-size: 8pt;
+                    height: 30px;
+                    width: 100px;
+                    text-align: center;
+                    padding: 0;
+                    background: white;
+                  }
+                }
+
+                & .sessions {
+                  display: flex;
+                  flex-flow: row nowrap;
+                  justify-content: flex-start;
+                  align-content: center;
+                  align-items: flex-end;
+                  background: transparent;
+                  gap: 2px 2px;
+                  order: 2;
+
+                  & .session_column {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: flex-start;
+                    align-content: flex-start;
+                    align-items: stretch;
+                    border: 1px solid lightsteelblue;
+                    border-right: 1px dotted black;
+                    font-size: 8pt;
+                    height: 100%;
+                    width: 90px;
+
+                    text-align: center;
+                    padding: 0;
+                    border-radius: 0;
+                    background: transparent;
+
+                    & .session {
+                      order: 2;
+                      width: calc(100% - 6px);
+                      background: lightgoldenrodyellow;
+                      border-radius: 5px;
+                      padding: 3px;
+                      border: 1px solid black;
+                      cursor: pointer;
+                    }
+
+
+                    & .timefill {
+                      background: lightgrey;
+                      width: 100%;
+                      color: black;
+
+                      &.pre {
+                        order: 1;
+
+                      }
+
+                      &.post {
+                        order: 3;
+                      }
+                    }
+                  }
+                }
+
+
               }
 
-              &:hover {
-                border-color: $color_off_hover;
+              &.day_off {
+                & .day_info {
+                  background: $panel_day_off_background;
+                }
+
+                & .day_body {
+                  background: $panel_day_off_background;
+                }
+
+
               }
-            }
 
-            &.current_day {
-              border-color: $color_current;
+              &.current_day {
+                & .day_info {
+                  background: $panel_day_current_background;
+                }
 
-              &:hover {
-                border-color: $color_current_hover;
+                & .day_body {
+                  background: $panel_day_current_background;
+                }
+
               }
 
-            }
+              &.large {
+                width: 600px;
+                justify-content: flex-start;
+                &:hover{
+                  border-color:inherit;
+                }
+                & .day_body,
+                & .day_info {
 
-            &.large {
-              width: 600px;
-
-              & .day_body,
-              & .day_info {
-
+                }
               }
             }
           }
@@ -392,19 +372,19 @@ body {
   }
 
   & .button {
-    font-family: Abel;
+    font-family: Roboto;
     font-size: 10pt;
-    width: 14ex;
+    width: 16ex;
     height: 1.5em;
     padding: 3px;
-    background: $color_frame;
-    color: black;
-    border: 1px solid black;
+    background: $button_background;
+    color: $button_color;
+    border: 1px solid $button_border;
     border-radius: 5px;
     text-align: left;
 
     &:hover {
-      background: $color_frame_hover;
+      background: $color_highlight;
       color: black;
     }
 
@@ -414,8 +394,8 @@ body {
 }
 
 
-.player_shortcut{
+.player_shortcut {
   //border:1px solid black;
   //background:#505050;
-  display:inline-block;
+  display: inline-block;
 }

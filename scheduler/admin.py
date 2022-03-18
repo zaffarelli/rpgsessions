@@ -15,3 +15,9 @@ admin.site.register(Profile, ProfileAdmin)
 
 from scheduler.models.inscription import Inscription, InscriptionAdmin
 admin.site.register(Inscription, InscriptionAdmin)
+
+from scheduler.models.availability import Availability, AvailabilityAdmin
+admin.site.register(Availability, AvailabilityAdmin)
+
+from scheduler.models.follower import Follower, FollowerAdmin
+admin.site.register(Follower, FollowerAdmin)
