@@ -1,0 +1,16 @@
+<div class="session_column">
+    <div class="session_shortcut" title="{{ c.mj.nickname }} mène une partie de {{ c.game.name }} ({{ c.title }})">
+        <div class="timefill pre" style="height: {{c.game.pre_size}}px"></div>
+        <div class="session" style="height: {{c.game.size}}px">
+            {% include "scheduler/session_shortcut.html" with c=c %}
+            Places Requises: {{c.s.mandatory_spots}}
+            Places Libres: {{c.s.optional_spots}}
+            <br/>
+            {% for i in c.inscriptions %}
+                {% include "scheduler/player_shortcut.html" with c=i %}
+            {% endfor %}
+            {% include "scheduler/svg/player_unknown.svg"%}
+        </div>
+        <div class="timefill post"  style="height: {{c.game.post_size}}px"></div>
+    </div>
+</div>

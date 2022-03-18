@@ -2,7 +2,19 @@
 {%  load static %}
 
 {% block userzone %}
-{{ user }}
+    <div class="bar">
+    <div class='lefters'>
+        {% include "scheduler/player_shortcut.html" with c=user.profile %}
+        <div class="button"><i class="fas fa-user"></i>&nbsp;{{ user }}</div>
+        <div class="button"><i class="fas fa-question"></i>&nbsp;Aide</div>
+    </div>
+    <div class='righters'>
+        <div class="button"><i class="fas fa-backward"></i>&nbsp;-4 semaines</div>
+        <div class="button"><i class="fas fa-caret-left"></i>&nbsp;-1 semaine</div>
+        <div class="button"><i class="fas fa-caret-right"></i>&nbsp;+1 semaine</div>
+        <div class="button"><i class="fas fa-forward"></i>&nbsp;+4 semaines</div>
+    </div>
+    </div>
 {% endblock userzone %}
 
 {% block eventzone %}

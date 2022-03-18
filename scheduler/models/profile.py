@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib import admin
 from django.contrib.auth.models import User
 from scheduler.models.realm import Realm
+from colorfield.fields import ColorField
+import json
 
 
 class Profile(models.Model):
@@ -11,6 +13,10 @@ class Profile(models.Model):
     need_drop = models.BooleanField(default=False)
     can_drop = models.BooleanField(default=False)
     realm = models.ForeignKey(Realm, on_delete=models.SET_NULL, null=True)
+    is_girl = models.BooleanField(default=False)
+    alpha = ColorField(default='#666666')
+    beta = ColorField(default='#666666')
+    gamma = ColorField(default='#666666')
 
     def __str__(self):
         return f'{self.user.username} Profile'
@@ -18,6 +24,12 @@ class Profile(models.Model):
     @property
     def u_u(self):
         return self.user.username
+
+    @property
+    def to_json(self):
+        from scheduler.utils.mechanics import json_default
+        jstr = json.loads(json.dumps(self, default=json_default, sort_keys=True, indent=4))
+        return jstr
 
 
 class ProfileAdmin(admin.ModelAdmin):

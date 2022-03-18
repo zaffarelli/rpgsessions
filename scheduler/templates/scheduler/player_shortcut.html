@@ -1,0 +1,7 @@
+<div class="player_shortcut" title="{{ c.nickname }}">
+    {% if c.is_girl %}
+    {% include "scheduler/svg/player_girl.svg" with c=c %}
+    {% else %}
+    {% include "scheduler/svg/player.svg" with c=c %}
+    {% endif %}
+</div>

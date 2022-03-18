@@ -14,7 +14,7 @@ body {
   @include body_background;
   color: $body_color;
   //min-height: 98%;
-  font-family: quicksand;
+  font-family: Acme;
 }
 
 
@@ -85,7 +85,7 @@ body {
 @media all and (min-width: 1024px) {
   body {
     margin: 0;
-    padding: 2px 200px;
+    padding: 2px 2px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -97,7 +97,7 @@ body {
 
     .menuzone {
       background: $st_color;
-      border: 1px solid black;
+      border: 1px solid transparent;
       min-height: 40px;
       width: 100%;
       order: 1;
@@ -107,7 +107,7 @@ body {
     .userzone {
       padding: 5px;
       background: $st_color;
-      border: 1px solid black;
+      border: 1px solid transparent;
       min-height: 20px;
       width: 100%;
       order: 2;
@@ -118,7 +118,7 @@ body {
     .wrapper {
       order: 3;
       background: $st_color;
-      border: 1px solid black;
+      border: 1px solid transparent;
       width: 100%;
       min-height: 400px;
       heigth: auto;
@@ -128,7 +128,7 @@ body {
       order: 4;
       min-height: 40px;
       background: $st_color;
-      border: 1px solid black;
+      border: 1px solid transparent;
       width: 100%;
       padding: 5px;
     }
@@ -173,7 +173,7 @@ body {
         display: flex;
         flex-flow: column wrap;
         justify-content: stretch;
-        align-content: center;
+        align-content: flex-start;
         align-items: stretch;
         gap: 1px 1px;
 
@@ -181,8 +181,9 @@ body {
           order: 1;
           background: $color_frame;
           margin: 0 4px;
-          text-align:right;
+          text-align: right;
         }
+
 
         & .week_body {
           order: 2;
@@ -194,13 +195,21 @@ body {
           align-items: stretch;
           gap: 3px 3px;
 
+          & .day_actions {
+            order: 8;
+            border: 3px solid lightsalmon;
+
+            width: 500px;
+          }
+
           & .oday {
             display: flex;
             flex-flow: column wrap;
             justify-content: flex-start;
-            align-content: flex-start;
+            align-content: stretch;
             align-items: stretch;
             background: $color_frame;
+            width: 150px;
             gap: 0 0;
             border: 3px solid silver;
 
@@ -208,33 +217,105 @@ body {
               border-color: $color_frame_hover;
             }
 
+
             & .day_info {
               order: 1;
               height: 3em;
-              width: 150px;
               border: 1px solid transparent;
               background: $day_color;
             }
 
+
             & .day_body {
-              flex-flow: column wrap;
+              display: flex;
+              flex-flow: row nowrap;
               justify-content: flex-start;
               align-content: flex-start;
               align-items: stretch;
-              background: white;
-              gap: 0 0;
+              gap: 2px 3px;
               order: 2;
-              width: 150px;
-              //height: 150px;
+              min-height: 150px;
               background: $day_color;
               border: 1px solid transparent;
-              & .hour{
-                border-top:1px solid black;
-                font-size:8pt;
-                height:1.4em;
-                background:white;
-                text-align:left;
+              width: auto;
+              padding:0;
+
+              & .chrono {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-content: flex-start;
+                align-items: flex-start;
+                order:1;
+                border-right: 1px dashed black;
+
+                & .hour {
+                  border-top: 1px solid black;
+                  border-bottom: 1px solid transparent;
+                  font-size: 8pt;
+                  height: 30px;
+                  width: 100px;
+                  text-align: center;
+                  padding: 0;
+                  background: white;
+                }
               }
+
+              & .sessions {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+                align-content: center;
+                align-items: flex-end;
+                background:transparent;
+                gap:2px 2px;
+                order:2;
+
+                & .session_column {
+                  display: flex;
+                  flex-flow: column nowrap;
+                  justify-content: flex-start;
+                  align-content: flex-start;
+                  align-items: stretch;
+                  border: 1px solid lightsteelblue;
+                  border-right: 1px dotted black;
+                  font-size: 8pt;
+                  height: 100%;
+                  width:90px;
+
+                  text-align: center;
+                  padding: 0;
+                  border-radius: 0;
+                  background: transparent;
+
+                  & .session {
+                    order: 2;
+                    width:calc(100% - 6px);
+                    background: lightgoldenrodyellow;
+                    border-radius:5px;
+                    padding:3px;
+                    border:1px solid black;
+                  }
+
+
+
+                  & .timefill {
+                    background: lightgrey;
+                    width:100%;
+                    color:black;
+
+                    &.pre {
+                      order: 1;
+
+                    }
+
+                    &.post {
+                      order: 3;
+                    }
+                  }
+                }
+              }
+
 
             }
 
@@ -254,12 +335,21 @@ body {
 
             &.current_day {
               border-color: $color_current;
+
               &:hover {
                 border-color: $color_current_hover;
               }
 
             }
 
+            &.large {
+              width: 600px;
+
+              & .day_body,
+              & .day_info {
+
+              }
+            }
           }
         }
       }
@@ -267,6 +357,65 @@ body {
   }
 }
 
+.bar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 3px 3px;
+  background: transparent;
+  width: 100%;
+
+  & .lefters {
+    order: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 3px 3px;
+
+    background: transparent;
+  }
+
+  & .righters {
+    order: 2;
+    display: flex;
+    flex-flow: row wrap-reverse;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: stretch;
+    gap: 3px 3px;
+
+    background: transparent;
+  }
+
+  & .button {
+    font-family: Abel;
+    font-size: 10pt;
+    width: 14ex;
+    height: 1.5em;
+    padding: 3px;
+    background: $color_frame;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: left;
+
+    &:hover {
+      background: $color_frame_hover;
+      color: black;
+    }
+
+    cursor: pointer;
+  }
+
+}
 
 
-
+.player_shortcut{
+  //border:1px solid black;
+  //background:#505050;
+  display:inline-block;
+}

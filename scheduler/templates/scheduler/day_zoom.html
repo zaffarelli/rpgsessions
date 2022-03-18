@@ -1,0 +1,32 @@
+{% load static %}
+{% load global_filters %}
+
+
+<center>
+    <div class="omonth">
+        <div class="month_body">
+            <div class="oweek">
+                <div class="week_body">
+                    <div class="oday large {{ data.day.day_off | as_day_off }} {{ data.day.current_day | as_current_day }}">
+                        <div class="day_info display" action="dayzoom">{{data.day.day_info|safe }}</div>
+                        <div class="day_body">
+                            <div class="chrono">
+                                {% for h in data.hours %}
+                                <div class="hour">{{h.t}}</div>
+                                {% endfor %}
+                            </div>
+                            <div class="sessions">
+                                {% for s in data.sessions %}
+                                {% include "scheduler/session_zoom.html" with c=s %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="day_actions">
+                        test
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>

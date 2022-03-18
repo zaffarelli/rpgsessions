@@ -19,7 +19,7 @@ def as_day_off(value):
     res = ''
     if value:
         res = 'day_off'
-    print(str(value))
+    # print(str(value))
     return res
 
 
@@ -28,5 +28,5 @@ def as_current_day(value):
     res = ''
     if value:
         res = 'current_day'
-    print(str(value))
+    # print(str(value))
     return res

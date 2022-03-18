@@ -46,55 +46,47 @@ class Scheduler {
         $('.display').off().on('click', function (event) {
             let action = $(this).attr('action');
             let param = $(this).attr('param');
+            // console.log(param)
             let option = $(this).attr('option');
             let key = $('#userinput').val();
             let url = 'ajax/display/' + action + '/';
             if (param != undefined) {
-                if (action == 'crossover_sheet') {
+                if (action == 'dayzoom') {
+                    let p = param.replaceAll('-','_');
                     if (option) {
-                        url = 'ajax/display/' + action + '/' + param + '/' + option + '/';
+                        url = 'ajax/display/' + action + '/' + p + '/' + option + '/';
+                    }else{
+                        url = 'ajax/display/' + action + '/' + p + '/' ;
                     }
-                    else{
-                        url = 'ajax/display/' + action + '/' + param + '/' ;
-                    }
-                }
-                if (action == 'kindred_lineage') {
-                    url = 'ajax/display/' + action + '/' + param + '/';
-                }
-            }
-            if (key != '') {
-                if (action == 'crossover_sheet') {
-                    url = 'ajax/display/' + action + '/' + key + '/';
                 }
             }
             $.ajax({
                 url: url,
                 success: function (answer) {
-                    if (action == 'gaia_wheel') {
-                        let d = JSON.parse(answer.data);
-                        me.d3 = new GaiaWheel(d, "#d3area", me);
-                        me.d3.perform();
+                    if (action == 'dayzoom') {
+                        // console.log('Day zoomed. Roger.')
                     }
-                    if (action == 'kindred_lineage') {
-                        let d = JSON.parse(answer.data);
-                        me.d3 = new KindredLineage(d, "#d3area", me);
-                        me.d3.perform();
-                    }
-                    if (action == 'crossover_sheet') {
-                        let s = JSON.parse(answer.settings);
-                        let d = JSON.parse(answer.data);
-                        me.d3 = new CrossOverSheet(s, "#d3area", me);
-                        me.d3.perform(d);
-                    }
-                    if (action == 'storytelling') {
-                        let s = JSON.parse(answer.settings);
-                        let d = JSON.parse(answer.data);
-                        me.d3 = new Storytelling(s, "#d3area", me);
-                        me.d3.perform(d);
-                    }
-                    if (action == 'pdf_story') {
-                        console.log(anwwer);
-                    }
+                    // if (action == 'kindred_lineage') {
+                    //     let d = JSON.parse(answer.data);
+                    //     me.d3 = new KindredLineage(d, "#d3area", me);
+                    //     me.d3.perform();
+                    // }
+                    // if (action == 'crossover_sheet') {
+                    //     let s = JSON.parse(answer.settings);
+                    //     let d = JSON.parse(answer.data);
+                    //     me.d3 = new CrossOverSheet(s, "#d3area", me);
+                    //     me.d3.perform(d);
+                    // }
+                    // if (action == 'storytelling') {
+                    //     let s = JSON.parse(answer.settings);
+                    //     let d = JSON.parse(answer.data);
+                    //     me.d3 = new Storytelling(s, "#d3area", me);
+                    //     me.d3.perform(d);
+                    // }
+                    // if (action == 'pdf_story') { 
+                    //     console.log(anwwer);
+                    // }
+                    $('.wrapper').html(answer.data)
                     me.rebootLinks();
                 },
                 error: function (answer) {

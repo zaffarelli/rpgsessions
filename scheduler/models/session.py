@@ -3,7 +3,10 @@ from django.contrib import admin
 from datetime import datetime, timedelta
 from scheduler.models.realm import Realm
 from scheduler.models.game import Game
+from scheduler.models.profile import Profile
 from django.contrib.auth.models import User
+from colorfield.fields import ColorField
+import json
 
 ADV_LEVEL = (
     ('0', 'Débutants'),
@@ -17,7 +20,7 @@ ADV_LEVEL = (
 class Session(models.Model):
     title = models.CharField(max_length=256)
     episode = models.PositiveIntegerField(default=1)
-    mj = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    mj = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
     campaign = models.CharField(max_length=256, blank=True, null=True)
     game = models.ForeignKey(Game, on_delete=models.SET_NULL, null=True)
     description = models.TextField(max_length=2048, default='', blank=True)
@@ -30,9 +33,12 @@ class Session(models.Model):
     newbies_allowed = models.BooleanField(default=True, verbose_name='noobs')
     one_shot_adventure = models.BooleanField(default=True, verbose_name='oneshot')
     level = models.CharField(max_length=16, default='0', choices=ADV_LEVEL)
+    alpha = ColorField(default='#666666')
+    beta = ColorField(default='#666666')
+    gamma = ColorField(default='#666666')
 
     def __str__(self):
-        return f"{self.title}"
+        return f"{self.title} ({self.episode})"
 
     @property
     def date_end(self):
@@ -40,9 +46,16 @@ class Session(models.Model):
         res = res + timedelta(hours=self.duration)
         return res
 
+    @property
+    def to_json(self):
+        from scheduler.utils.mechanics import json_default
+        jstr = json.loads(json.dumps(self, default=json_default, sort_keys=True, indent=4))
+        return jstr
+
 
 class SessionAdmin(admin.ModelAdmin):
     ordering = ['date_start', 'time_start']
-    list_display = ['title', 'date_start', 'time_start', 'duration', 'date_end', 'mj', 'newbies_allowed', 'one_shot_adventure', 'campaign']
+    list_display = ['title', 'date_start', 'time_start', 'duration', 'date_end', 'mj', 'newbies_allowed',
+                    'one_shot_adventure', 'campaign']
     search_fields = ['title', 'description']
     list_filter = ['campaign', 'level', 'game']

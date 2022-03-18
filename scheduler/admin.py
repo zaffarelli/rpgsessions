@@ -12,3 +12,6 @@ admin.site.register(Realm, RealmAdmin)
 
 from scheduler.models.profile import Profile, ProfileAdmin
 admin.site.register(Profile, ProfileAdmin)
+
+from scheduler.models.inscription import Inscription, InscriptionAdmin
+admin.site.register(Inscription, InscriptionAdmin)
