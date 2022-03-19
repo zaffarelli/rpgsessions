@@ -19,7 +19,6 @@ PyPDF3==1.0.6
 python-bidi==0.4.2
 PyYAML==6.0
 rcssmin==1.1.0
-reportlab==3.6.8
 rjsmin==1.2.0
 six==1.16.0
 sqlparse==0.4.2
