@@ -46,47 +46,26 @@ class Scheduler {
         $('.display').off().on('click', function (event) {
             let action = $(this).attr('action');
             let param = $(this).attr('param');
-            // console.log(param)
             let option = $(this).attr('option');
+            // console.log(action+"|"+param+"|"+option)
             let key = $('#userinput').val();
             let url = 'ajax/display/' + action + '/';
             if (param != undefined) {
-                if (action == 'dayzoom') {
-                    let p = param.replaceAll('-','_');
-                    if (option) {
-                        url = 'ajax/display/' + action + '/' + p + '/' + option + '/';
-                    }else{
-                        url = 'ajax/display/' + action + '/' + p + '/' ;
-                    }
+                let p = param.replaceAll('-', '_');
+                if (option) {
+                    url = 'ajax/display/' + action + '/' + p + '/' + option + '/';
+                } else {
+                    url = 'ajax/display/' + action + '/' + p + '/';
                 }
             }
             $.ajax({
                 url: url,
                 success: function (answer) {
-                    if (action == 'dayzoom') {
-                        // console.log('Day zoomed. Roger.')
+                    if (action == 'session_details'){
+                        $('.day_details').html(answer.data)
+                    }else {
+                        $('.wrapper').html(answer.data)
                     }
-                    // if (action == 'kindred_lineage') {
-                    //     let d = JSON.parse(answer.data);
-                    //     me.d3 = new KindredLineage(d, "#d3area", me);
-                    //     me.d3.perform();
-                    // }
-                    // if (action == 'crossover_sheet') {
-                    //     let s = JSON.parse(answer.settings);
-                    //     let d = JSON.parse(answer.data);
-                    //     me.d3 = new CrossOverSheet(s, "#d3area", me);
-                    //     me.d3.perform(d);
-                    // }
-                    // if (action == 'storytelling') {
-                    //     let s = JSON.parse(answer.settings);
-                    //     let d = JSON.parse(answer.data);
-                    //     me.d3 = new Storytelling(s, "#d3area", me);
-                    //     me.d3.perform(d);
-                    // }
-                    // if (action == 'pdf_story') { 
-                    //     console.log(anwwer);
-                    // }
-                    $('.wrapper').html(answer.data)
                     $('.menuzone').html(answer.menu)
                     me.rebootLinks();
                 },
@@ -103,7 +82,7 @@ class Scheduler {
         $('.action').off().on('click', function (event) {
             let action = $(this).attr('action');
             let param = $(this).attr('param');
-            let stories = me.d3.getStories();
+            // let stories = me.d3.getStories();
             let url = 'ajax/action/' + action + '/' + param + "__" + stories + '/';
             $.ajax({
                 url: url,
@@ -162,9 +141,9 @@ class Scheduler {
                     data: keys_set,
                     success: function (answer) {
                         let d = JSON.parse(answer["changes_on_scenes"])
-                        console.log(answer.changes_on_scenes);
-                        console.log(d['field']);
-                        console.log(d['value']);
+                        // console.log(answer.changes_on_scenes);
+                        // console.log(d['field']);
+                        // console.log(d['value']);
 
                         $("#" + d['field']).html(d['value']);
 
@@ -190,7 +169,7 @@ class Scheduler {
             let bz_field = fields[1];
             $(".storyboard_handler").removeClass('hidden');
             let field_id = "field_" + tgt_id + "__" + bz_field;
-            console.log(field_id)
+            // console.log(field_id)
             let grabbed_data = $("#" + field_id).html();
             // $("#" + field_id).css('border-color','red')
             // console.log(grabbed_data)
@@ -360,7 +339,7 @@ class Scheduler {
 
             $('.toggle_list').off();
             $('.toggle_list').on('click', function (event) {
-                console.log('click');
+                // console.log('click');
                 $('.charlist').addClass('hidden');
                 me.rebootLinks();
             });

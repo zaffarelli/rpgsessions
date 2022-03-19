@@ -1,0 +1,46 @@
+{% load static %}
+{% load global_filters %}
+<H1>{{session.title|safe}}</h1>
+<p>(Episode numéro {{session.episode|safe}}/{{session.max_episodes|safe}})</p>
+<p>Une partie de <strong>{{game.name}} {{game.version}}</strong></p>
+<p>Proposée par <em>{{mj.nickname}}</em> </p>
+<hr/>
+<table>
+    <tr>
+        <th>Meneur de jeu</th>
+        <td>{% include "scheduler/player_shortcut.html" with c=mj %}</td>
+    </tr>
+    <tr>
+        <th>Démarrage</th>
+        <td>{{session.time_start|as_time}}</td>
+    </tr>
+    <tr>
+        <th>Partie unique</th>
+        <td>{{session.description|as_bool|safe}}</td>
+    </tr>
+    <tr>
+        <th>Partie d'initiation</th>
+        <td>{{session.newbies_allowed|as_bool|safe}}</td>
+    </tr>
+    <tr>
+        <th>Difficulté</th>
+        <td>{{session.level|as_level|safe }}</td>
+    </tr>
+    <tr>
+        <th>Sollicités (Wanted)</th>
+        <td>{{session.mandatory_spots }}</td>
+    </tr>
+    <tr>
+        <th>Places disponibles</th>
+        <td>{{session.optional_spots }}</td>
+    </tr>
+</table>
+<hr/>
+<h4>Description</h4>
+{{session.description|safe}}
+<hr/>
+{% if owner %}
+<center>
+<span style="color:brown;">Vous êtes le MJ de cette séance, vous pouvez la modifier.</span>
+</center>
+{% endif %}

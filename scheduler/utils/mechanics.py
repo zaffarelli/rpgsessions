@@ -33,6 +33,21 @@ MONTHS_COLORS = ["#bc2b95",
                  "#ec3323"
                  ]
 
+MONTHS_COLORS_TEXT = ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#000000","#000000","#000000","#000000","#FFFFFF","#FFFFFF"]
+
 DOWS = ['LUNDI', 'MARDI', 'MERCREDI', 'JEUDI', 'VENDREDI', 'SAMEDI', 'DIMANCHE']
 
-HOUR_PIXELS = 32
+HOUR_PIXELS = 50
+
+FMT_TIME = "%H:%M"
+FMT_DATE = "%Y-%m-%d"
+FMT_DATE_PRETTY = "%d/%m/%Y"
+FMT_DATETIME = "%Y-%m-%d %H:%M"
+
+ADV_LEVEL = (
+    ('0', 'Débutants'),
+    ('1', 'Tranquille'),
+    ('2', 'Intermédiaire'),
+    ('3', 'Difficile'),
+    ('4', 'Chevronnés'),
+)

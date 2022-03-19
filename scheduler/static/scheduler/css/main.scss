@@ -163,6 +163,7 @@ body {
       & .month_info {
         order: 1;
         background: $panel_shard_background;
+        color: $panel_text;
       }
 
       & .month_body {
@@ -211,11 +212,39 @@ body {
             align-items: stretch;
             gap: 3px 3px;
 
-            & .day_actions {
+            & .day_details {
               order: 8;
-              border: 3px solid lightsalmon;
-
-              width: 500px;
+              border: 3px solid black;
+              text-align:left;
+              color:$panel_text;
+              width: 510px;
+              height:750px;
+              padding:5px;
+              overflow-y:scroll;
+              & h1{
+                text-align:center;
+              }
+              & p{
+                margin:0;
+                margin-bottom:3px;
+              }
+              & table{
+                border-left: 1px dashed black;
+                border-right: 1px dashed black;
+                width:100%;
+                & tr {
+                  & td{
+                    width:auto;
+                    padding:2px;
+                  }
+                  & th{
+                    width:180px;
+                    background:silver;
+                    padding:2px;
+                    text-align:right;
+                  }
+                }
+              }
             }
 
             & .oday {
@@ -252,7 +281,7 @@ body {
                 justify-content: center;
                 align-content: flex-start;
                 align-items: stretch;
-                gap: 2px 3px;
+                gap: 0 3px;
                 order: 2;
                 min-height: 50px;
                 background: $panel_day_background;
@@ -264,7 +293,7 @@ body {
                 & .chrono {
                   display: flex;
                   flex-flow: column nowrap;
-                  justify-content: center;
+                  justify-content: flex-start;
                   align-content: flex-start;
                   align-items: flex-start;
                   order: 1;
@@ -274,8 +303,8 @@ body {
                     border-top: 1px solid black;
                     border-bottom: 1px solid transparent;
                     font-size: 8pt;
-                    height: 30px;
-                    width: 100px;
+                    height: 48px;
+                    width: 90px;
                     text-align: center;
                     padding: 0;
                     background: white;
@@ -287,9 +316,9 @@ body {
                   flex-flow: row nowrap;
                   justify-content: flex-start;
                   align-content: center;
-                  align-items: flex-end;
+                  align-items: stretch;
                   background: transparent;
-                  gap: 2px 2px;
+                  gap: 0 2px;
                   order: 2;
 
                   & .session_column {
@@ -298,30 +327,31 @@ body {
                     justify-content: flex-start;
                     align-content: flex-start;
                     align-items: stretch;
-                    border: 1px solid lightsteelblue;
                     border-right: 1px dotted black;
                     font-size: 8pt;
                     height: 100%;
                     width: 90px;
-
+                    gap:0;
                     text-align: center;
                     padding: 0;
                     border-radius: 0;
-                    background: transparent;
+                    background: $plate_color;
 
                     & .session {
                       order: 2;
-                      width: calc(100% - 6px);
-                      background: lightgoldenrodyellow;
+                      width: calc(100% - 2px);
+                      background: white;
+                      color:$plate_color;
                       border-radius: 5px;
-                      padding: 3px;
+                      padding:0;
+                      padding-top: 3px;
                       border: 1px solid black;
                       cursor: pointer;
                     }
 
 
                     & .timefill {
-                      background: lightgrey;
+                      background: $plate_color;
                       width: 100%;
                       color: black;
 
@@ -369,7 +399,9 @@ body {
                 &:hover{
                   border-color:inherit;
                 }
-                & .day_body,
+                & .day_body{
+                  justify-content: flex-start;
+                }
                 & .day_info {
 
                 }

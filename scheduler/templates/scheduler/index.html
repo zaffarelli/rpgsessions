@@ -22,7 +22,7 @@
 
 
 {% block menuzone %}
-{% include "scheduler/base_menu.html" with c=user.profile %}
+{% include "scheduler/menu_month.html" with c=month u=user.profile %}
 {% endblock menuzone %}
 
 {% block eventzone %}

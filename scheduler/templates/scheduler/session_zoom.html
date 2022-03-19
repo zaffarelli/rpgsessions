@@ -1,7 +1,7 @@
 <div class="session_column">
     <div class="session_shortcut" title="{{ c.mj.nickname }} mène une partie de {{ c.game.name }} ({{ c.title }})">
         <div class="timefill pre" style="height: {{c.game.pre_size}}px"></div>
-        <div class="session" style="height: {{c.game.size}}px; background: {{c.s.alpha}};">
+        <div class="session display" action="session_details" param="{{c.s.id}}" style="height: calc({{c.game.size}}px - 5px ); background: {{c.s.alpha}};">
             {% include "scheduler/session_shortcut.html" with c=c %}
             {% if c.s.mandatory_spots %}
             Wanted: {{c.s.mandatory_spots}}
