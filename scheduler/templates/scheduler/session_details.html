@@ -12,11 +12,11 @@
     </tr>
     <tr>
         <th>Démarrage</th>
-        <td>{{session.time_start|as_time}}</td>
+        <td>{{session.date_start|as_date}}</td> <td>{{session.time_start|as_time}}</td>
     </tr>
     <tr>
         <th>Partie unique</th>
-        <td>{{session.description|as_bool|safe}}</td>
+        <td>{{session.one_shot_adventure|as_bool|safe}}</td>
     </tr>
     <tr>
         <th>Partie d'initiation</th>
@@ -44,3 +44,4 @@
 <span style="color:brown;">Vous êtes le MJ de cette séance, vous pouvez la modifier.</span>
 </center>
 {% endif %}
+

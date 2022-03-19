@@ -1,6 +1,6 @@
 from django import template
-from datetime import time
-from scheduler.utils.mechanics import FMT_TIME
+from datetime import time, date
+from scheduler.utils.mechanics import FMT_TIME, FMT_DATE
 
 register = template.Library()
 
@@ -37,7 +37,8 @@ def as_current_day(value):
 @register.filter(name='as_bool')
 def as_bool(value):
     res = '<span style="color:red;"><i class="fas fa-times-circle"></i></span>'
-    if value == True:
+    print(value)
+    if str(value)[0] in ['T', 't', '0', '1']:
         res = '<span style="color:green;"><i class="fas fa-check-circle"></i></span>'
     return res
 
@@ -46,6 +47,13 @@ def as_bool(value):
 def as_time(value):
     t = time(hour=value['hour'], minute=value['minute'])
     res = t.strftime(FMT_TIME)
+    return res
+
+
+@register.filter(name='as_date')
+def as_date(value):
+    d = date(year=value['year'], month=value['month'], day=value['day'])
+    res = d.strftime(FMT_DATE)
     return res
 
 

@@ -10203,3 +10203,236 @@ django.db.utils.OperationalError: no such column: scheduler_session.is_ready
 [19:054613] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
 [19:054736] /home/zaffarelli/Perso/github/rpgsessions/rpgsessions/settings.py changed, reloading.
 [19:054736] Watching for file changes with StatReloader
+[19:054925] Watching for file changes with StatReloader
+[19:054927] "GET / HTTP/1.1" 200 72838
+[19:054928] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:054928] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:054941] "GET / HTTP/1.1" 200 72839
+[19:054941] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:054941] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:055103] "GET / HTTP/1.1" 200 72839
+[19:055103] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:055103] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:055115] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39603
+[19:055116] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 8175
+[19:120036] /home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py changed, reloading.
+[19:120036] Watching for file changes with StatReloader
+[19:120045] "GET / HTTP/1.1" 200 72839
+[19:120045] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:120045] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:120157] "GET / HTTP/1.1" 200 72839
+[19:120157] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:120157] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:120201] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39603
+[19:120203] Internal Server Error: /ajax/display/session_details/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 94, in display_session
+    template = get_template('scheduler/session_details.html')
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 176, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 158, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 696, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'as_date'
+[19:120203] "GET /ajax/display/session_details/1/ HTTP/1.1" 500 166286
+[19:120219] /home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py changed, reloading.
+[19:120219] Watching for file changes with StatReloader
+[19:120223] "GET / HTTP/1.1" 200 72839
+[19:120223] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:120223] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:120226] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39603
+[19:120227] Internal Server Error: /ajax/display/session_details/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 95, in display_session
+    html = template.render(context, request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 739, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py", line 54, in as_date
+    d = date(year=value['year'], month=value['month'], day=value['day'])
+NameError: name 'date' is not defined
+[19:120227] "GET /ajax/display/session_details/1/ HTTP/1.1" 500 154377
+[19:120238] /home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py changed, reloading.
+[19:120238] Watching for file changes with StatReloader
+[19:120240] "GET / HTTP/1.1" 200 72839
+[19:120240] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:120240] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:120243] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39603
+[19:120244] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 8195
+[19:120401] "GET /admin/scheduler/session/5/change/ HTTP/1.1" 200 21249
+[19:120401] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[19:120432] "GET / HTTP/1.1" 200 72839
+[19:120432] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:120432] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:120437] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39603
+[19:120438] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 10441
+[19:120518] /home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py changed, reloading.
+[19:120518] Watching for file changes with StatReloader
+[19:120522] "GET / HTTP/1.1" 200 72839
+[19:120522] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:120522] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:120524] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39603
+[19:120526] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 10439
+[19:120552] /home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py changed, reloading.
+[19:120553] Watching for file changes with StatReloader
+[19:120603] /home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py changed, reloading.
+[19:120603] Watching for file changes with StatReloader
+[19:120605] "GET / HTTP/1.1" 200 72839
+[19:120606] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:120606] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:120609] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39603
+[19:120611] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 10441
+[19:120633] /home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py changed, reloading.
+[19:120634] Watching for file changes with StatReloader
+[19:120639] "GET / HTTP/1.1" 200 72839
+[19:120639] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:120639] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:120644] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[19:120646] Internal Server Error: /ajax/display/session_details/4/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 95, in display_session
+    html = template.render(context, request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 739, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py", line 41, in as_bool
+    if str(value)[0] in ['T', 't', '0', '1']:
+IndexError: string index out of range
+[19:120646] "GET /ajax/display/session_details/4/ HTTP/1.1" 500 143014
+[19:120754] "GET / HTTP/1.1" 200 72839
+[19:120754] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:120754] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:120757] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39603
+[19:120758] Internal Server Error: /ajax/display/session_details/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 95, in display_session
+    html = template.render(context, request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 739, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py", line 41, in as_bool
+    if str(value)[0] in ['T', 't', '0', '1']:
+IndexError: string index out of range
+[19:120758] "GET /ajax/display/session_details/1/ HTTP/1.1" 500 154745
+[19:120830] "GET / HTTP/1.1" 200 72839
+[19:120830] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:120830] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:120835] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[19:120836] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 7614
+[19:120838] "GET /ajax/display/session_details/3/ HTTP/1.1" 200 7593
+[19:120841] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 7614
+[19:120844] Not Found: /ajax/display/month//
+[19:120844] "GET /ajax/display/month// HTTP/1.1" 404 3058
+[19:120846] "GET / HTTP/1.1" 200 72839
+[19:120846] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:120846] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:120848] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39603
+[19:120849] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 10443
+[19:122506] "GET / HTTP/1.1" 200 72839
+[19:122506] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[19:122506] "GET /static/CACHE/css/main.2f8e8e60dcaf.css HTTP/1.1" 200 16061
+[19:122512] Watching for file changes with StatReloader
+[19:122754] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/inscription.py changed, reloading.
+[19:122755] Watching for file changes with StatReloader
+[19:122811] Watching for file changes with StatReloader
+[19:122843] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py changed, reloading.
+[19:122843] Watching for file changes with StatReloader
+[19:122913] Watching for file changes with StatReloader
+[19:123153] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/inscription.py changed, reloading.
+[19:123153] Watching for file changes with StatReloader
+[19:123217] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py changed, reloading.
+[19:123217] Watching for file changes with StatReloader
+[19:123228] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py changed, reloading.
+[19:123229] Watching for file changes with StatReloader
+[19:123257] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py changed, reloading.
+[19:123257] Watching for file changes with StatReloader
+[19:123303] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/availability.py changed, reloading.
+[19:123303] Watching for file changes with StatReloader
+[19:123307] Watching for file changes with StatReloader
+[19:123330] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/inscription.py changed, reloading.
+[19:123331] Watching for file changes with StatReloader
+[19:123336] Watching for file changes with StatReloader
+[19:123348] Watching for file changes with StatReloader
+[19:123416] Watching for file changes with StatReloader
