@@ -1,0 +1,11 @@
+.idea/
+.sass-cache/
+__py-cache__/
+__py_cache__
+.~lock.
+logs/*.log
+rubish/
+venv/
+scheduler/static/scheduler/creds.json
+__init__.pyc
+oldies/
