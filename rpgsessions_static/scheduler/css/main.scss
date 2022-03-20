@@ -17,126 +17,140 @@ body {
     column-gap: 1px;
 
     & .spare_left {
-      order:1;
-      flex-shrink:2;
-      background:red;
+      order: 1;
+      flex-shrink: 2;
+      background: red;
     }
 
     & .spare_right {
-      order:3;
-      flex-shrink:2;
-      background:blue;
+      order: 3;
+      flex-shrink: 2;
+      background: blue;
 
     }
 
     & .corpus {
-      width:1150px;
-      flex-shrink:1;
-      order:2;
+      width: 1150px;
+      flex-shrink: 1;
+      order: 2;
       margin: 0;
-      padding: 2px 2px;
+      padding: 0 2px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: flex-start;
       align-content: flex-start;
       align-items: stretch;
-      row-gap: 1px;
-      column-gap: 1px;
+      gap: 0 2px;
 
-
-      .menuzone {
+      & .menuzone, & .eventzone, & .userzone, & .wrapper {
+        border: 1px solid $panel_border;
         background: $panel_background;
         color: $panel_color;
-        border: 1px solid transparent;
-        min-height: 40px;
+      }
+
+      & .menuzone {
+        min-height: 10px;
         width: 100%;
         order: 2;
         padding: 5px;
-        display:flex;
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
         align-content: flex-start;
         align-items: stretch;
-        row-gap: 1px;
-        column-gap: 1px;
+        gap: 1px 1px;
       }
 
-      .userzone {
+      & .userzone {
         padding: 5px;
-        background: $panel_background;
-        color: $panel_color;
-        border: 1px solid transparent;
-        min-height: 20px;
+        min-height: 10px;
         width: 100%;
         order: 1;
         text-align: right;
         font-size: 8pt;
-        border-radius: 5px 5px 0 0;
+        border-radius: 10px 10px 0 0;
 
-        & .logo{
-          order:2;
+        & .logo {
+          order: 2;
         }
-        & .title{
+
+        & .title {
           order: 3;
         }
-        & .title, & .pretitle{
+
+        & .title, & .pretitle {
 
 
-          font-size:32pt;
-          & strong{
-            font-family:Gruppo;
-            font-weight:bold;
-            color:$panel_text;
+          font-size: 32pt;
+
+          & strong {
+            font-family: Gruppo;
+            font-weight: bold;
+            color: $panel_color;
           }
-          & em{
-            font-family:Hubballi;
-            color:lighten($panel_text,10%);
+
+          & em {
+            font-family: Hubballi;
+            color: darken($panel_color, 40%);
             font-style: normal;
           }
         }
-        & .pretitle{
+
+        & .pretitle {
           order: 1;
 
         }
       }
 
-      .wrapper {
+      & .wrapper {
         order: 3;
-        background: $panel_background;
-        color: $panel_color;
-        border: 1px solid transparent;
         width: 100%;
         min-height: 400px;
         heigth: auto;
       }
 
-      .eventzone {
+      & .eventzone {
         order: 4;
-        font-family:roboto;
-        font-size:8pt;
+        font-family: roboto;
+        font-size: 8pt;
         display: flex;
         flex-flow: row wrap;
         justify-content: stretch;
         align-content: stretch;
         align-items: stretch;
-        min-height: 40px;
-        background: $panel_background;
-        color: $panel_text;
-        border: 1px solid transparent;
+        min-height: 10px;
         width: 100%;
         padding: 5px;
+        gap: 0 3px;
         border-radius: 0 0 5px 5px;
-        & .eblock{
-          order:5;
-          width:120px;
-          text-align:center;
+
+        & .ablock, & .eblock, & .zblock{
+          border: 1px solid transparent;
+          background: $panel1_background;
+          color: $panel1_color;
+          border-color: $panel1_border;
         }
+
+        & .ablock {
+          order: 1;
+          width: 120px;
+          text-align: center;
+           border-radius: 5px 0 0 5px;
+        }
+
+        & .eblock {
+          order: 5;
+          width: 120px;
+          text-align: center;
+        }
+
         & .zblock {
           order: 10;
-          width:120px;
-          text-align:center;
+          width: 120px;
+          text-align: center;
+          border-radius: 0 5px 5px 0;
         }
       }
 
@@ -162,40 +176,40 @@ body {
 
       & .month_info {
         order: 1;
-        background: $panel_shard_background;
-        color: $panel_text;
+
       }
 
       & .month_body {
         order: 2;
-        background: $panel_smooth_background;
+        background: transparent;
         display: flex;
         flex-flow: column wrap;
         justify-content: flex-start;
         align-content: stretch;
         align-items: stretch;
-        gap: 1px 0;
+        gap: 5px 0;
 
 
         .oweek {
-          border-radius: 5px;
+          border-radius: 10px;
           order: 2;
           height: auto;
           padding: 4px 2px;
           margin: auto 2px;
-          background: $panel_smooth_background;
-          color: $panel_color;
+          background: $panel1_background;
+          color: $panel1_color;
+          border-color: $panel1_border;
           display: flex;
           flex-flow: column wrap;
           justify-content: stretch;
           align-content: stretch;
           align-items: stretch;
-          gap: 1px 1px;
+          gap: 2px 2px;
 
           & .week_info {
             order: 1;
-            background: $panel_smooth_background;
-            color: $panel_text;
+            background: transparent;
+            color: $panel2_color;
             margin: 0 4px;
             text-align: center;
           }
@@ -204,7 +218,7 @@ body {
           & .week_body {
             order: 2;
             background: transparent;
-            color: $panel_color;
+            color: $panel2_color;
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
@@ -214,34 +228,40 @@ body {
 
             & .day_details {
               order: 8;
-              border: 3px solid black;
-              text-align:left;
-              color:$panel_text;
+              background: $paper_background;
+              border: 3px solid $paper_border;
+              text-align: left;
+              color: $paper_color;
               width: 510px;
-              height:750px;
-              padding:5px;
-              overflow-y:scroll;
-              & h1{
-                text-align:center;
+              height: 624px;
+              padding: 5px;
+              overflow-y: scroll;
+
+              & h1 {
+                text-align: center;
               }
-              & p{
-                margin:0;
-                margin-bottom:3px;
+
+              & p {
+                margin: 0;
+                margin-bottom: 3px;
               }
-              & table{
+
+              & table {
                 border-left: 1px dashed black;
                 border-right: 1px dashed black;
-                width:100%;
+                width: 100%;
+
                 & tr {
-                  & td{
-                    width:auto;
-                    padding:2px;
+                  & td {
+                    width: auto;
+                    padding: 2px;
                   }
-                  & th{
-                    width:180px;
-                    background:silver;
-                    padding:2px;
-                    text-align:right;
+
+                  & th {
+                    width: 180px;
+                    background: silver;
+                    padding: 2px;
+                    text-align: right;
                   }
                 }
               }
@@ -261,7 +281,7 @@ body {
               border-top-width: 8px;
 
               &:hover {
-                border-color: $color_highlight;
+                border-color: $highlight_background;
               }
 
 
@@ -271,7 +291,7 @@ body {
                 border: 1px solid transparent;
                 background: $panel_day_background;
                 color: $env_text;
-                cursor:pointer;
+                cursor: pointer;
               }
 
 
@@ -303,7 +323,7 @@ body {
                     border-top: 1px solid black;
                     border-bottom: 1px solid transparent;
                     font-size: 8pt;
-                    height: 48px;
+                    height: calc(42px - 2px);
                     width: 90px;
                     text-align: center;
                     padding: 0;
@@ -331,7 +351,7 @@ body {
                     font-size: 8pt;
                     height: 100%;
                     width: 90px;
-                    gap:0;
+                    gap: 0;
                     text-align: center;
                     padding: 0;
                     border-radius: 0;
@@ -341,9 +361,9 @@ body {
                       order: 2;
                       width: calc(100% - 2px);
                       background: white;
-                      color:$plate_color;
+                      color: $plate_color;
                       border-radius: 5px;
-                      padding:0;
+                      padding: 0;
                       padding-top: 3px;
                       border: 1px solid black;
                       cursor: pointer;
@@ -378,8 +398,6 @@ body {
                 & .day_body {
                   background: $panel_day_off_background;
                 }
-
-
               }
 
               &.current_day {
@@ -396,12 +414,15 @@ body {
               &.large {
                 width: 600px;
                 justify-content: flex-start;
-                &:hover{
-                  border-color:inherit;
+
+                &:hover {
+                  border-color: inherit;
                 }
-                & .day_body{
+
+                & .day_body {
                   justify-content: flex-start;
                 }
+
                 & .day_info {
 
                 }
@@ -432,7 +453,6 @@ body {
     align-items: flex-start;
     align-content: flex-start;
     gap: 3px 3px;
-
     background: transparent;
   }
 
@@ -462,13 +482,15 @@ body {
     vertical-align: middle;
 
     &:hover {
-      background: $color_highlight;
-      color: black;
+      background: $highlight_background;
+      color: $highlight_color;
+      border-color: $highlight_border;
     }
 
     cursor: pointer;
-    &.compact{
-      width:auto;
+
+    &.compact {
+      width: auto;
     }
   }
 

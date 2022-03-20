@@ -2,52 +2,74 @@
 $body_color: #101010;
 $body_background: #808080;
 // Main colors
-$panel_background: #E0D0F0;
-$button_background: #603090;
+$theme1: #1d1f1f;
+$theme2: #94550a;
+$theme3: #e18c0c;
 
+
+$body_background: grayscale(darken($theme3,10%));
+$panel_background: $theme1;
+$button_background: saturate($theme2,75%);
+$highlight_background: saturate($theme3,75%);
+
+$panel_complement: complement($theme2);
 $panel_text: #202020;
-$panel_color: lighten(desaturate($panel_background,70%),50%);
-$panel_border: darken($panel_color,40%);
-$panel_shadow: darken($panel_background, 50%);
+
+$panel_shadow: lighten($panel_background, 50%);
 $panel_plank_background: darken($panel_background, 5%);
 $panel_shard_background: darken($panel_background, 15%);
 $panel_smooth_background: grayscale($panel_background);
 $panel_day_background: darken($panel_background,25%);
-
 $panel_week_background: darken($panel_background, 5%);
 
-$color_highlight: #ff9100;
-
-$st_color: #F0F0F0;
-$st_background: #305030;
-
-$button_color: #F0F0F0;
-
-$button_border: #224466;
+// Panels levels
+$panel1_background: lighten($panel_background,10%);
+$panel2_background: lighten($panel_background,20%);
+$panel3_background: lighten($panel_background,30%);
+$panel_color: lighten($panel_background,75%);
+$panel_border: lighten($panel_background,10%);
+$panel1_color: lighten($panel1_background,75%);
+$panel1_border: lighten($panel1_background,10%);
+$panel2_color: lighten($panel2_background,75%);
+$panel2_border: lighten($panel2_background,10%);
+$panel3_color: lighten($panel3_background,75%);
+$panel3_border: lighten($panel3_background,10%);
+// Paperzone
+$paper_background: #887959;
+$paper_color: #261909;
+$paper_border:darken($paper_background,10%);
+// Highlight
+$highlight_color: lighten($highlight_background,75%);
+$highlight_border: lighten($highlight_background,10%);
+// Buttons
+$button_color: lighten($button_background,75%);
+$button_border: lighten($button_background,10%);
 
 $color_current: violet;
 $color_current_hover: mediumorchid;
 $color_frame: lightgrey;
 $color_frame_hover: cyan;
-$panel_day_background: #86b2b2;
-$panel_day_off_background: #afaf68;
-$panel_day_current_background: #577057;
+$panel_day_background: #c4c4b6;
+$panel_day_off_background: lighten($panel_day_background, 10%);
+$panel_day_current_background: complement($panel_day_background);
 $color_off_hover: yellow;
 
+$hour_pixel: 42;
 
 $env_text: black;
 
 
 
 $plate_color: lighten($panel_color,10%);
-$plate_highlight: #FFFFFF;
-$plate: #3a343e;
-$plate_shadow: #101010;
-$plate_selected: complement($panel_background);
-$dark_plate: darken($plate, 5%);
-$very_dark_plate: darken($dark_plate, 5%);
-$focus_color: #22C0F0;
+//$plate_highlight: #FFFFFF;
+//$plate: #3a343e;
+//$plate_shadow: #101010;
+//$plate_selected: complement($panel_background);
+//$dark_plate: darken($plate, 5%);
+//$very_dark_plate: darken($dark_plate, 5%);
+//$focus_color: #22C0F0;
 
+/*
 @mixin panel {
   background: $panel_background;
   color: $panel_color;
@@ -58,10 +80,11 @@ $focus_color: #22C0F0;
   font-family: Roboto;
   font-size: 10pt;
 }
-
+*/
 @mixin body_background {
   //background: transparent url('../colorful-grunge-texture-10.jpg') fixed; // 100% 100% no-repeat fixed;
-  background: $body_background;
+  //background: $body_background;
+  background-image: linear-gradient(to bottom right, grayscale($theme3), $theme3);
   color: $body_color;
 }
 
