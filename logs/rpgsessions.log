@@ -11958,3 +11958,893 @@ sass.CompileError: Error: Function lighten is missing argument $amount.
 [20:030803] /home/zaffarelli/Perso/github/rpgsessions/rpgsessions/settings.py changed, reloading.
 [20:030803] Watching for file changes with StatReloader
 [20:030808] Watching for file changes with StatReloader
+[20:153543] Watching for file changes with StatReloader
+[20:183319] "GET / HTTP/1.1" 200 66883
+[20:183319] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:183319] "GET /static/CACHE/css/main.eef78a32deec.css HTTP/1.1" 200 16843
+[20:183345] "GET /admin/ HTTP/1.1" 200 9811
+[20:183345] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[20:183345] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[20:183348] "GET /admin/logout/ HTTP/1.1" 302 0
+[20:183348] "GET / HTTP/1.1" 302 0
+[20:183348] "GET /accounts/login/?next=/ HTTP/1.1" 200 2556
+[20:183348] "GET /static/CACHE/css/main.eef78a32deec.css HTTP/1.1" 200 16843
+[20:183614] "GET /accounts/login/?next=/ HTTP/1.1" 200 2533
+[20:183614] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:183614] "GET /static/CACHE/css/main.30fae5d7aba8.css HTTP/1.1" 200 16839
+[20:183626] "GET /accounts/login/?next=/ HTTP/1.1" 200 2533
+[20:183626] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:183626] "GET /static/CACHE/css/main.dfcaabfa2ed3.css HTTP/1.1" 200 16840
+[20:183628] "GET /accounts/login/?next=/ HTTP/1.1" 200 2533
+[20:183628] "GET /static/js/scheduler.es6 HTTP/1.1" 200 18252
+[20:183628] "GET /static/CACHE/css/main.dfcaabfa2ed3.css HTTP/1.1" 200 16840
+[20:183628] "GET /static/collector/hephaistos.ico HTTP/1.1" 404 1828
+[20:183850] "GET /accounts/login/?next=/ HTTP/1.1" 200 2662
+[20:183850] "GET /static/js/scheduler.es6 HTTP/1.1" 200 18475
+[20:183850] "GET /static/CACHE/css/main.eef78a32deec.css HTTP/1.1" 200 16843
+[20:183959] "GET /accounts/login/?next=/ HTTP/1.1" 200 2662
+[20:183959] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:183959] "GET /static/CACHE/css/main.16821586b927.css HTTP/1.1" 200 17192
+[20:184110] "GET /accounts/login/?next=/ HTTP/1.1" 200 2662
+[20:184110] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:184110] "GET /static/CACHE/css/main.16821586b927.css HTTP/1.1" 200 17192
+[20:184208] "GET /accounts/login/?next=/ HTTP/1.1" 200 2775
+[20:184208] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:184208] "GET /static/CACHE/css/main.f064cd1f4385.css HTTP/1.1" 200 17227
+[20:184235] "GET /accounts/login/?next=/ HTTP/1.1" 200 2775
+[20:184235] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:184235] "GET /static/CACHE/css/main.929177d00384.css HTTP/1.1" 200 17248
+[20:184311] "GET /accounts/login/?next=/ HTTP/1.1" 200 2775
+[20:184311] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:184311] "GET /static/CACHE/css/main.c7ec38d0aec4.css HTTP/1.1" 200 17252
+[20:184400] "GET /accounts/login/?next=/ HTTP/1.1" 200 2775
+[20:184401] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:184401] "GET /static/CACHE/css/main.2fb28c0fd0f9.css HTTP/1.1" 200 17267
+[20:184541] "GET /accounts/login/?next=/ HTTP/1.1" 200 2775
+[20:184541] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:184541] "GET /static/CACHE/css/main.95b982ceafb5.css HTTP/1.1" 200 17097
+[20:184623] "GET /accounts/login/?next=/ HTTP/1.1" 200 2775
+[20:184623] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:184623] "GET /static/CACHE/css/main.de76c2eb1df3.css HTTP/1.1" 200 17241
+[20:184653] "GET /accounts/login/?next=/ HTTP/1.1" 200 2775
+[20:184654] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:184654] "GET /static/CACHE/css/main.6dd98165ae08.css HTTP/1.1" 200 17242
+[20:184725] "GET /accounts/login/?next=/ HTTP/1.1" 200 2652
+[20:184725] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:184725] "GET /static/CACHE/css/main.6dd98165ae08.css HTTP/1.1" 200 17242
+[20:184936] "GET /accounts/login/?next=/ HTTP/1.1" 200 2841
+[20:184936] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:184936] "GET /static/CACHE/css/main.fd4732ed13b0.css HTTP/1.1" 200 17831
+[20:184955] "GET /accounts/login/?next=/ HTTP/1.1" 200 2841
+[20:185029] "GET /accounts/login/?next=/ HTTP/1.1" 200 2841
+[20:185029] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:185029] "GET /static/CACHE/css/main.bb6f7303a9e5.css HTTP/1.1" 200 17859
+[20:204749] "GET /accounts/login/?next=/ HTTP/1.1" 200 2841
+[20:204749] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:204749] "GET /static/CACHE/css/main.bb6f7303a9e5.css HTTP/1.1" 200 17859
+[20:205925] Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 176, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 158, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 238, in do_block
+    parser.invalid_block_tag(endblock, "endblock", acceptable_endblocks)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 41: 'endblock', expected 'endblock' or 'endblock adminzone'. Did you forget to register or load this tag?
+[20:205925] "GET /accounts/login/?next=/ HTTP/1.1" 500 166458
+[20:205946] "GET /accounts/login/?next=/ HTTP/1.1" 200 2920
+[20:205946] "GET /static/js/scheduler.es6 HTTP/1.1" 200 18519
+[20:205946] "GET /static/CACHE/css/main.bb6f7303a9e5.css HTTP/1.1" 200 17859
+[20:210142] "GET /accounts/login/?next=/ HTTP/1.1" 200 2920
+[20:210142] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:210142] "GET /static/CACHE/css/main.bf87f1fe6057.css HTTP/1.1" 200 18253
+[20:210144] "GET /accounts/login/?next=/ HTTP/1.1" 200 2920
+[20:210144] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:210144] "GET /static/CACHE/css/main.bf87f1fe6057.css HTTP/1.1" 200 18253
+[20:210146] "GET /accounts/login/?next=/ HTTP/1.1" 200 2920
+[20:210146] "GET /static/js/scheduler.es6 HTTP/1.1" 200 18519
+[20:210146] "GET /static/CACHE/css/main.bf87f1fe6057.css HTTP/1.1" 200 18253
+[20:210147] "GET /static/collector/hephaistos.ico HTTP/1.1" 404 1828
+[20:210206] "GET /accounts/login/?next=/ HTTP/1.1" 200 2920
+[20:210206] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:210206] "GET /static/CACHE/css/main.c85e56488bb4.css HTTP/1.1" 200 18278
+[20:210416] "GET /accounts/login/?next=/ HTTP/1.1" 200 2928
+[20:210416] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:210416] "GET /static/CACHE/css/main.1965edf3dbca.css HTTP/1.1" 200 18063
+[20:210449] "GET /accounts/login/?next=/ HTTP/1.1" 200 2928
+[20:210449] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:210449] "GET /static/CACHE/css/main.a047eee32712.css HTTP/1.1" 200 18040
+[20:210515] "GET /accounts/login/?next=/ HTTP/1.1" 200 2928
+[20:210515] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:210515] "GET /static/CACHE/css/main.066ba7f798cf.css HTTP/1.1" 200 17995
+[20:210600] "GET /accounts/login/?next=/ HTTP/1.1" 200 2928
+[20:210600] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:210600] "GET /static/CACHE/css/main.a9270e44b399.css HTTP/1.1" 200 17992
+[20:210658] "GET /accounts/login/?next=/ HTTP/1.1" 200 2928
+[20:210658] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:210658] "GET /static/CACHE/css/main.a9270e44b399.css HTTP/1.1" 200 17992
+[20:210846] "GET /accounts/login/?next=/ HTTP/1.1" 200 2928
+[20:210846] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:210846] "GET /static/CACHE/css/main.e3627771dcaf.css HTTP/1.1" 200 18052
+[20:210858] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:210858] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:210858] "GET /static/CACHE/css/main.e3627771dcaf.css HTTP/1.1" 200 18052
+[20:210923] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:210923] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:210923] "GET /static/CACHE/css/main.e0db2aef6098.css HTTP/1.1" 200 18048
+[20:210936] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:210936] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:210936] "GET /static/CACHE/css/main.2ba8e4592d2d.css HTTP/1.1" 200 18054
+[20:210951] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:210951] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:210951] "GET /static/CACHE/css/main.95b402b8c74b.css HTTP/1.1" 200 18053
+[20:211039] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:211039] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211039] "GET /static/CACHE/css/main.b0f20960c13f.css HTTP/1.1" 200 17974
+[20:211123] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:211123] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211123] "GET /static/CACHE/css/main.9e528fa7fd77.css HTTP/1.1" 200 18065
+[20:211148] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:211148] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211148] "GET /static/CACHE/css/main.cd5aa8ddbb01.css HTTP/1.1" 200 18123
+[20:211208] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:211208] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211208] "GET /static/CACHE/css/main.31fe577e3088.css HTTP/1.1" 200 18190
+[20:211217] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:211217] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211217] "GET /static/CACHE/css/main.c49f829e7bce.css HTTP/1.1" 200 18214
+[20:211231] "GET /accounts/password_reset/ HTTP/1.1" 200 1947
+[20:211243] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:211319] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:211319] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211319] "GET /static/CACHE/css/main.2b04a08de4b7.css HTTP/1.1" 200 18229
+[20:211338] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:211338] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211338] "GET /static/CACHE/css/main.2345280ab4fa.css HTTP/1.1" 200 18227
+[20:211414] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:211414] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211414] "GET /static/CACHE/css/main.ffa3d4ecb0e2.css HTTP/1.1" 200 18415
+[20:211424] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:211424] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211424] "GET /static/CACHE/css/main.c81c28354365.css HTTP/1.1" 200 18416
+[20:211435] "GET /accounts/login/?next=/ HTTP/1.1" 200 2929
+[20:211435] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211435] "GET /static/CACHE/css/main.868ffc691dae.css HTTP/1.1" 200 18416
+[20:211541] "GET /accounts/login/?next=/ HTTP/1.1" 200 3012
+[20:211541] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211541] "GET /static/CACHE/css/main.868ffc691dae.css HTTP/1.1" 200 18416
+[20:211720] "GET /accounts/login/?next=/ HTTP/1.1" 200 3012
+[20:211720] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211720] "GET /static/CACHE/css/main.324c5984ed98.css HTTP/1.1" 200 18570
+[20:211746] "GET /accounts/login/?next=/ HTTP/1.1" 200 3012
+[20:211746] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211746] "GET /static/CACHE/css/main.ed76662cb17a.css HTTP/1.1" 200 18591
+[20:211749] "GET /accounts/login/?next=/ HTTP/1.1" 200 3012
+[20:211749] "GET /static/js/scheduler.es6 HTTP/1.1" 200 18519
+[20:211749] "GET /static/CACHE/css/main.ed76662cb17a.css HTTP/1.1" 200 18591
+[20:211749] "GET /static/collector/hephaistos.ico HTTP/1.1" 404 1828
+[20:211802] "GET /accounts/login/?next=/ HTTP/1.1" 200 3012
+[20:211802] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211802] "GET /static/CACHE/css/main.1f1a946c7fe0.css HTTP/1.1" 200 18552
+[20:211810] "GET /accounts/login/?next=/ HTTP/1.1" 200 3012
+[20:211810] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211810] "GET /static/CACHE/css/main.9effe894cd6c.css HTTP/1.1" 200 18570
+[20:211839] "GET /accounts/login/?next=/ HTTP/1.1" 200 3029
+[20:211839] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211839] "GET /static/CACHE/css/main.9effe894cd6c.css HTTP/1.1" 200 18570
+[20:211908] "GET /accounts/login/?next=/ HTTP/1.1" 200 3076
+[20:211908] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211908] "GET /static/CACHE/css/main.9effe894cd6c.css HTTP/1.1" 200 18570
+[20:211926] "GET /accounts/login/?next=/ HTTP/1.1" 200 3114
+[20:211926] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:211926] "GET /static/CACHE/css/main.9effe894cd6c.css HTTP/1.1" 200 18570
+[20:212008] "GET /accounts/login/?next=/ HTTP/1.1" 200 3123
+[20:212008] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:212008] "GET /static/CACHE/css/main.9effe894cd6c.css HTTP/1.1" 200 18570
+[20:212113] "GET /accounts/login/?next=/ HTTP/1.1" 200 3123
+[20:212113] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:212113] "GET /static/CACHE/css/main.e12db5df09d5.css HTTP/1.1" 200 18593
+[20:212323] "GET /accounts/login/?next=/ HTTP/1.1" 200 3123
+[20:212323] "GET /static/js/scheduler.es6 HTTP/1.1" 200 18531
+[20:212323] "GET /static/CACHE/css/main.e12db5df09d5.css HTTP/1.1" 200 18593
+[20:212325] "GET /accounts/login/?next=/ HTTP/1.1" 200 3123
+[20:212325] "GET /static/js/scheduler.es6 HTTP/1.1" 200 18531
+[20:212325] "GET /static/CACHE/css/main.e12db5df09d5.css HTTP/1.1" 200 18593
+[20:212325] "GET /static/collector/hephaistos.ico HTTP/1.1" 404 1828
+[20:212524] Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/templatetags/compress.py", line 151, in render
+    return self.render_compressed(context, self.kind, self.mode, forced=forced, log=log, verbosity=verbosity)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/templatetags/compress.py", line 121, in render_compressed
+    rendered_output = compressor.output(mode, forced=forced, basename=file_basename)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/css.py", line 46, in output
+    ret.append(subnode.output(*args, **kwargs))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/css.py", line 48, in output
+    return super().output(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/base.py", line 323, in output
+    output = '\n'.join(self.filter_input(forced))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/base.py", line 263, in filter_input
+    for hunk in self.hunks(forced):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/base.py", line 237, in hunks
+    precompiled, value = self.precompile(value, **options)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/base.py", line 304, in precompile
+    return True, filter.input(**kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django_libsass.py", line 148, in input
+    return compile(filename=self.filename,
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django_libsass.py", line 135, in compile
+    output = sass.compile(**kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib64/python3.10/site-packages/sass.py", line 738, in compile
+    raise CompileError(v)
+sass.CompileError: Error: property "flex-flow" must be followed by a ':'
+        on line 44:9 of scheduler/static/scheduler/css/main.scss
+>>         flex-flow row wrap;
+
+   --------^
+
+[20:212524] "GET /accounts/login/?next=/ HTTP/1.1" 500 209903
+[20:212544] "GET /accounts/login/?next=/ HTTP/1.1" 200 3123
+[20:212544] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:212544] "GET /static/CACHE/css/main.b9f077b1b0d7.css HTTP/1.1" 200 18576
+[20:212702] "GET /accounts/login/?next=/ HTTP/1.1" 200 3123
+[20:212702] "GET /static/CACHE/css/main.c9d47e9ebb11.css HTTP/1.1" 200 18600
+[20:212704] "GET /accounts/login/?next=/ HTTP/1.1" 200 3123
+[20:212704] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:212704] "GET /static/CACHE/css/main.c9d47e9ebb11.css HTTP/1.1" 200 18600
+[20:212948] "GET /accounts/login/?next=/ HTTP/1.1" 200 3123
+[20:212948] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:212948] "GET /static/CACHE/css/main.b9f077b1b0d7.css HTTP/1.1" 200 18576
+[20:213140] "GET /accounts/login/?next=/ HTTP/1.1" 200 3123
+[20:213140] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:213140] "GET /static/CACHE/css/main.79284f3f170a.css HTTP/1.1" 200 18587
+[20:213203] "POST /accounts/login/ HTTP/1.1" 302 0
+[20:213203] "GET / HTTP/1.1" 200 67146
+[20:213203] "GET /static/CACHE/css/main.79284f3f170a.css HTTP/1.1" 200 18587
+[20:213248] "GET / HTTP/1.1" 200 67146
+[20:213248] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:213248] "GET /static/CACHE/css/main.9efcb153d796.css HTTP/1.1" 200 18587
+[20:213302] "GET / HTTP/1.1" 200 67146
+[20:213302] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:213302] "GET /static/CACHE/css/main.79284f3f170a.css HTTP/1.1" 200 18587
+[20:213322] "GET / HTTP/1.1" 200 67146
+[20:213322] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:213322] "GET /static/CACHE/css/main.70b5a18b7f6f.css HTTP/1.1" 200 18585
+[20:213324] "GET / HTTP/1.1" 200 67146
+[20:213324] "GET /static/js/scheduler.es6 HTTP/1.1" 200 18531
+[20:213324] "GET /static/CACHE/css/main.70b5a18b7f6f.css HTTP/1.1" 200 18585
+[20:213324] "GET /static/collector/hephaistos.ico HTTP/1.1" 404 1828
+[20:213350] "GET / HTTP/1.1" 200 67146
+[20:213350] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:213350] "GET /static/CACHE/css/main.5201b0741723.css HTTP/1.1" 200 18564
+[20:213941] "GET / HTTP/1.1" 200 67146
+[20:213941] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:213941] "GET /static/CACHE/css/main.63d630ee7cc6.css HTTP/1.1" 200 18585
+[20:214014] "GET / HTTP/1.1" 200 67146
+[20:214014] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:214014] "GET /static/CACHE/css/main.977051a8671b.css HTTP/1.1" 200 18607
+[20:214058] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39602
+[20:214101] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 8202
+[20:214159] "GET / HTTP/1.1" 200 67146
+[20:214159] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:214159] "GET /static/CACHE/css/main.977051a8671b.css HTTP/1.1" 200 18607
+[20:214201] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[20:214203] "GET /ajax/display/session_details/3/ HTTP/1.1" 200 6683
+[20:214213] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6670
+[20:222751] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[20:222751] Watching for file changes with StatReloader
+[20:222754] "GET / HTTP/1.1" 200 67146
+[20:222754] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:222754] "GET /static/CACHE/css/main.977051a8671b.css HTTP/1.1" 200 18607
+[20:222756] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39602
+[20:222757] Internal Server Error: /ajax/display/session_details/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 98, in display_session
+    context = prepare_session(request,id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 88, in prepare_session
+    'day_info': f'{DOWS[cur_date.weekday()]}<BR/><small>{cur_date.strftime(FMT_DATE_PRETTY)}</small>'
+NameError: name 'DOWS' is not defined
+[20:222757] "GET /ajax/display/session_details/1/ HTTP/1.1" 500 91283
+[20:222814] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[20:222814] Watching for file changes with StatReloader
+[20:222816] "GET / HTTP/1.1" 200 67146
+[20:222816] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:222816] "GET /static/CACHE/css/main.977051a8671b.css HTTP/1.1" 200 18607
+[20:222818] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39602
+[20:222819] Internal Server Error: /ajax/display/session_details/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 98, in display_session
+    context = prepare_session(request,id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 88, in prepare_session
+    'day_info': f'{DOWS[cur_date.weekday()]}<BR/><small>{cur_date.strftime(FMT_DATE_PRETTY)}</small>'
+NameError: name 'FMT_DATE_PRETTY' is not defined
+[20:222819] "GET /ajax/display/session_details/1/ HTTP/1.1" 500 91327
+[20:222831] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[20:222831] Watching for file changes with StatReloader
+[20:222834] "GET / HTTP/1.1" 200 67146
+[20:222834] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:222834] "GET /static/CACHE/css/main.977051a8671b.css HTTP/1.1" 200 18607
+[20:222836] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39602
+[20:222837] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 8232
+[20:222839] "GET /ajax/display/month/2022_03_20/ HTTP/1.1" 200 41439
+[20:222841] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39602
+[20:222843] "GET /ajax/display/month/2022_04_09/ HTTP/1.1" 200 26475
+[20:222845] "GET /ajax/display/dayzoom/2022_04_16/ HTTP/1.1" 200 10859
+[20:222848] "GET /ajax/display/month/2022_04_16/ HTTP/1.1" 200 26475
+[20:222906] "GET /ajax/display/dayzoom/2022_04_16/ HTTP/1.1" 200 10859
+[20:225004] "GET /ajax/display/month/2022_04_16/ HTTP/1.1" 200 26475
+[20:225007] "GET /ajax/display/dayzoom/2022_04_16/ HTTP/1.1" 200 10859
+[20:225009] "GET /ajax/display/month/2022_04_16/ HTTP/1.1" 200 26475
+[20:225013] "GET /ajax/display/month/2022_04_09/ HTTP/1.1" 200 26475
+[20:225013] "GET /ajax/display/month/2022_04_02/ HTTP/1.1" 200 41443
+[20:225015] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[20:225016] "GET /ajax/display/month/2022_03_26/ HTTP/1.1" 200 48927
+[20:225517] "GET / HTTP/1.1" 200 67146
+[20:225517] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:225517] "GET /static/CACHE/css/main.977051a8671b.css HTTP/1.1" 200 18607
+[20:225519] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[20:225521] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6692
+[20:225529] "GET /accounts/login/?next=/ HTTP/1.1" 200 3123
+[20:225605] "GET / HTTP/1.1" 200 67146
+[20:225605] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:225605] "GET /static/CACHE/css/main.2a597a283163.css HTTP/1.1" 200 18607
+[20:225611] "GET / HTTP/1.1" 200 67146
+[20:225611] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:225611] "GET /static/CACHE/css/main.2a597a283163.css HTTP/1.1" 200 18607
+[20:225615] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[20:225624] "GET / HTTP/1.1" 200 67146
+[20:225624] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:225624] "GET /static/CACHE/css/main.e517a82a098b.css HTTP/1.1" 200 18607
+[20:225628] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[20:225642] "GET / HTTP/1.1" 200 67146
+[20:225642] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:225642] "GET /static/CACHE/css/main.977051a8671b.css HTTP/1.1" 200 18607
+[20:225644] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[20:225651] "GET / HTTP/1.1" 200 67146
+[20:225651] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:225651] "GET /static/CACHE/css/main.4ad80afa7267.css HTTP/1.1" 200 18607
+[20:225652] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[20:225701] "GET / HTTP/1.1" 200 67146
+[20:225702] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:225702] "GET /static/CACHE/css/main.69f0d9c72f16.css HTTP/1.1" 200 18607
+[20:225704] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[20:225706] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6692
+[20:225754] "GET / HTTP/1.1" 200 67146
+[20:225754] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:225754] "GET /static/CACHE/css/main.8ba66afe74b2.css HTTP/1.1" 200 18607
+[20:225756] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[20:225758] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6692
+[20:225823] "GET / HTTP/1.1" 200 67146
+[20:225823] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:225823] "GET /static/CACHE/css/main.20633d0adf6f.css HTTP/1.1" 200 18607
+[20:225825] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[20:225826] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6692
+[20:225847] "GET / HTTP/1.1" 200 67146
+[20:225847] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:225847] "GET /static/CACHE/css/main.711eafe46b6c.css HTTP/1.1" 200 18607
+[20:225849] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[20:225850] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6692
+[20:225857] "GET / HTTP/1.1" 200 67146
+[20:225857] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:225857] "GET /static/CACHE/css/main.b096279d3c03.css HTTP/1.1" 200 18607
+[20:225858] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[20:225900] "GET /ajax/display/session_details/3/ HTTP/1.1" 200 6705
+[20:230003] "GET /ajax/display/month/2022_03_20/ HTTP/1.1" 200 41439
+[20:230023] /home/zaffarelli/Perso/github/rpgsessions/rpgsessions/settings.py changed, reloading.
+[20:230023] Watching for file changes with StatReloader
+[20:230025] "GET / HTTP/1.1" 200 67146
+[20:230025] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:230025] "GET /static/CACHE/css/main.b096279d3c03.css HTTP/1.1" 200 18607
+[20:230214] "GET / HTTP/1.1" 200 67178
+[20:230214] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:230214] "GET /static/CACHE/css/main.b096279d3c03.css HTTP/1.1" 200 18607
+[20:230218] Not Found: /ajax/display/user/1/
+[20:230218] "GET /ajax/display/user/1/ HTTP/1.1" 404 3058
+[20:230306] /home/zaffarelli/Perso/github/rpgsessions/scheduler/urls.py changed, reloading.
+[20:230306] Watching for file changes with StatReloader
+[20:230531] /home/zaffarelli/Perso/github/rpgsessions/scheduler/urls.py changed, reloading.
+[20:230532] Watching for file changes with StatReloader
+[20:230818] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[20:230818] Watching for file changes with StatReloader
+[20:230821] "GET / HTTP/1.1" 200 67178
+[20:230821] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:230821] "GET /static/CACHE/css/main.b096279d3c03.css HTTP/1.1" 200 18607
+[20:230824] Internal Server Error: /ajax/display/user/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 137, in display_user
+    context = prepare_user(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 112, in prepare_user
+    all = Profile.objects.filter(pk=id)
+NameError: name 'Profile' is not defined
+[20:230824] "GET /ajax/display/user/1/ HTTP/1.1" 500 85345
+[20:230856] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[20:230857] Watching for file changes with StatReloader
+[20:230859] "GET / HTTP/1.1" 200 67178
+[20:230859] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:230859] "GET /static/CACHE/css/main.b096279d3c03.css HTTP/1.1" 200 18607
+[20:230904] "GET /ajax/display/user/1/ HTTP/1.1" 200 8331
+[20:230942] "GET / HTTP/1.1" 200 67178
+[20:230942] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:230942] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:230944] "GET /ajax/display/user/1/ HTTP/1.1" 200 8331
+[20:231119] "GET / HTTP/1.1" 200 67178
+[20:231119] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:231119] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:231121] "GET /ajax/display/user/1/ HTTP/1.1" 200 571
+[20:231210] "GET /ajax/display/month/2022_03_20/ HTTP/1.1" 200 41439
+[20:231212] "GET /ajax/display/user/1/ HTTP/1.1" 200 418
+[20:231217] "GET / HTTP/1.1" 200 67178
+[20:231217] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:231217] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:231219] "GET /ajax/display/user/1/ HTTP/1.1" 200 418
+[20:231227] "GET / HTTP/1.1" 200 67178
+[20:231227] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:231227] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:231229] "GET /ajax/display/user/1/ HTTP/1.1" 200 558
+[20:231256] "GET / HTTP/1.1" 200 67178
+[20:231256] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:231256] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:231258] "GET /ajax/display/user/1/ HTTP/1.1" 200 548
+[20:231347] "GET / HTTP/1.1" 200 67178
+[20:231347] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:231347] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:231349] "GET /ajax/display/user/1/ HTTP/1.1" 200 543
+[20:231450] "GET / HTTP/1.1" 200 67178
+[20:231450] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:231450] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:231452] "GET /ajax/display/user/1/ HTTP/1.1" 200 677
+[20:231618] "GET / HTTP/1.1" 200 67178
+[20:231618] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:231618] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:231620] "GET /ajax/display/user/1/ HTTP/1.1" 200 687
+[20:231705] "GET / HTTP/1.1" 200 67178
+[20:231705] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:231705] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:231717] "GET / HTTP/1.1" 200 67178
+[20:231717] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:231717] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:231720] "GET /ajax/display/user/1/ HTTP/1.1" 200 684
+[20:231824] "GET / HTTP/1.1" 200 67178
+[20:231824] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:231824] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:231826] "GET /ajax/display/user/1/ HTTP/1.1" 200 688
+[20:231929] "GET / HTTP/1.1" 200 67178
+[20:231929] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:231929] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:231931] "GET /ajax/display/user/1/ HTTP/1.1" 200 740
+[20:232015] "GET / HTTP/1.1" 200 67178
+[20:232015] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:232015] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:232016] "GET /ajax/display/user/1/ HTTP/1.1" 200 734
+[20:232151] "GET / HTTP/1.1" 200 67178
+[20:232151] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:232151] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:232153] "GET /ajax/display/user/1/ HTTP/1.1" 200 833
+[20:232234] "GET / HTTP/1.1" 200 67178
+[20:232234] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:232234] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:232237] "GET /ajax/display/user/1/ HTTP/1.1" 200 829
+[20:232328] "GET / HTTP/1.1" 200 67178
+[20:232329] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:232329] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:232331] "GET /ajax/display/user/1/ HTTP/1.1" 200 830
+[20:232339] "GET / HTTP/1.1" 200 67178
+[20:232339] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:232339] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:232344] "GET /ajax/display/user/1/ HTTP/1.1" 200 829
+[20:233015] "GET / HTTP/1.1" 200 67178
+[20:233015] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:233015] "GET /static/CACHE/css/main.d409231b9c70.css HTTP/1.1" 200 18628
+[20:233017] "GET /ajax/display/user/1/ HTTP/1.1" 200 997
+[20:233125] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 22, in index
+    return render(request, 'scheduler/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/templatetags/compress.py", line 151, in render
+    return self.render_compressed(context, self.kind, self.mode, forced=forced, log=log, verbosity=verbosity)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/templatetags/compress.py", line 121, in render_compressed
+    rendered_output = compressor.output(mode, forced=forced, basename=file_basename)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/css.py", line 46, in output
+    ret.append(subnode.output(*args, **kwargs))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/css.py", line 48, in output
+    return super().output(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/base.py", line 323, in output
+    output = '\n'.join(self.filter_input(forced))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/base.py", line 263, in filter_input
+    for hunk in self.hunks(forced):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/base.py", line 237, in hunks
+    precompiled, value = self.precompile(value, **options)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/compressor/base.py", line 304, in precompile
+    return True, filter.input(**kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django_libsass.py", line 148, in input
+    return compile(filename=self.filename,
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django_libsass.py", line 135, in compile
+    output = sass.compile(**kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib64/python3.10/site-packages/sass.py", line 738, in compile
+    raise CompileError(v)
+sass.CompileError: Error: Top-level selectors may not contain the parent selector "&".
+        on line 541 of scheduler/static/scheduler/css/main.scss
+>> & table {
+
+   ^
+
+[20:233125] "GET / HTTP/1.1" 500 319287
+[20:233125] Not Found: /favicon.ico
+[20:233134] "GET / HTTP/1.1" 200 67178
+[20:233134] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:233134] "GET /static/CACHE/css/main.d0964479d17f.css HTTP/1.1" 200 18224
+[20:233140] "GET /ajax/display/user/1/ HTTP/1.1" 200 997
+[20:233210] "GET / HTTP/1.1" 200 67178
+[20:233210] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:233210] "GET /static/CACHE/css/main.f1264c9fec03.css HTTP/1.1" 200 18242
+[20:233212] "GET /ajax/display/user/1/ HTTP/1.1" 200 997
+[20:233255] "GET / HTTP/1.1" 200 67178
+[20:233255] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:233255] "GET /static/CACHE/css/main.a993e786a34b.css HTTP/1.1" 200 18267
+[20:233257] "GET /ajax/display/user/1/ HTTP/1.1" 200 997
+[20:233317] "GET / HTTP/1.1" 200 67178
+[20:233317] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:233317] "GET /static/CACHE/css/main.519d909a223b.css HTTP/1.1" 200 18268
+[20:233319] "GET /ajax/display/user/1/ HTTP/1.1" 200 997
+[20:233336] "GET / HTTP/1.1" 200 67178
+[20:233336] "GET /static/js/scheduler.es6 HTTP/1.1" 200 18531
+[20:233336] "GET /static/CACHE/css/main.a66ac7b367a0.css HTTP/1.1" 200 18270
+[20:233336] "GET /static/collector/hephaistos.ico HTTP/1.1" 404 1828
+[20:233339] "GET /ajax/display/user/1/ HTTP/1.1" 200 997
+[20:233436] "GET /admin/ HTTP/1.1" 200 9811
+[20:233436] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[20:233436] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[20:233838] "GET / HTTP/1.1" 200 67178
+[20:233838] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:233838] "GET /static/CACHE/css/main.a66ac7b367a0.css HTTP/1.1" 200 18270
+[20:233840] "GET /ajax/display/user/1/ HTTP/1.1" 200 1007
+[20:233908] "GET / HTTP/1.1" 200 67178
+[20:233908] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:233908] "GET /static/CACHE/css/main.a66ac7b367a0.css HTTP/1.1" 200 18270
+[20:233914] "GET /ajax/display/user/1/ HTTP/1.1" 200 1106
+[20:234039] "GET /admin/scheduler/profile/ HTTP/1.1" 200 12337
+[20:234039] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[20:234040] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[20:234040] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[20:234040] Not Found: /favicon.ico
+[20:234048] "GET /admin/scheduler/profile/1/change/ HTTP/1.1" 200 14635
+[20:234048] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[20:234048] "GET /static/colorfield/colorfield.js HTTP/1.1" 200 408
+[20:234048] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[20:234048] "GET /static/colorfield/jscolor/jscolor.js HTTP/1.1" 304 0
+[20:234237] "GET / HTTP/1.1" 200 67178
+[20:234237] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:234237] "GET /static/CACHE/css/main.a66ac7b367a0.css HTTP/1.1" 200 18270
+[20:234239] Internal Server Error: /ajax/display/user/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 142, in display_user
+    template = get_template('scheduler/user_details.html')
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 176, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/engine.py", line 158, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 696, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'as_bool'
+[20:234239] "GET /ajax/display/user/1/ HTTP/1.1" 500 148529
+[20:234309] "GET / HTTP/1.1" 200 67178
+[20:234309] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:234309] "GET /static/CACHE/css/main.a66ac7b367a0.css HTTP/1.1" 200 18270
+[20:234312] "GET /ajax/display/user/1/ HTTP/1.1" 200 1474
+[20:234630] "GET / HTTP/1.1" 200 67178
+[20:234631] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:234631] "GET /static/CACHE/css/main.a66ac7b367a0.css HTTP/1.1" 200 18270
+[20:234633] "GET /ajax/display/user/1/ HTTP/1.1" 200 1747
+[20:234720] "GET / HTTP/1.1" 200 67178
+[20:234720] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:234720] "GET /static/CACHE/css/main.a66ac7b367a0.css HTTP/1.1" 200 18270
+[20:234723] "GET /ajax/display/user/1/ HTTP/1.1" 200 1967
+[20:234824] /home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py changed, reloading.
+[20:234825] Watching for file changes with StatReloader
+[20:234904] /home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py changed, reloading.
+[20:234905] Watching for file changes with StatReloader
+[20:234910] "GET / HTTP/1.1" 200 67178
+[20:234910] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:234910] "GET /static/CACHE/css/main.a66ac7b367a0.css HTTP/1.1" 200 18270
+[20:234912] "GET /ajax/display/user/1/ HTTP/1.1" 200 1951
+[20:235021] /home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py changed, reloading.
+[20:235022] Watching for file changes with StatReloader
+[20:235026] "GET / HTTP/1.1" 200 67178
+[20:235026] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:235026] "GET /static/CACHE/css/main.a66ac7b367a0.css HTTP/1.1" 200 18270
+[20:235028] "GET /ajax/display/user/1/ HTTP/1.1" 200 1956
+[20:235036] /home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py changed, reloading.
+[20:235037] Watching for file changes with StatReloader
+[20:235040] "GET / HTTP/1.1" 200 67178
+[20:235040] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:235040] "GET /static/CACHE/css/main.a66ac7b367a0.css HTTP/1.1" 200 18270
+[20:235042] "GET /ajax/display/user/1/ HTTP/1.1" 200 1956
+[20:235159] "GET / HTTP/1.1" 200 67178
+[20:235159] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:235159] "GET /static/CACHE/css/main.864f6dd396c2.css HTTP/1.1" 200 18295
+[20:235205] "GET /ajax/display/user/1/ HTTP/1.1" 200 1956
+[20:235337] "POST /admin/scheduler/profile/1/change/ HTTP/1.1" 302 0
+[20:235337] "GET /admin/scheduler/profile/ HTTP/1.1" 200 12687
+[20:235337] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[20:235337] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[20:235337] Not Found: /favicon.ico
+[20:235344] "GET /ajax/display/user/1/ HTTP/1.1" 200 2107
+[20:235514] "GET / HTTP/1.1" 200 67178
+[20:235514] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:235514] "GET /static/CACHE/css/main.864f6dd396c2.css HTTP/1.1" 200 18295
+[20:235518] "GET /ajax/display/user/1/ HTTP/1.1" 200 2160
+[20:235556] "GET /accounts/login/?next=/ HTTP/1.1" 200 3211
+[20:235601] "GET /accounts/login/?next=/ HTTP/1.1" 200 3211
+[20:235601] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:235601] "GET /static/CACHE/css/main.864f6dd396c2.css HTTP/1.1" 200 18295
+[20:235608] "POST /accounts/login/ HTTP/1.1" 302 0
+[20:235608] "GET / HTTP/1.1" 200 67178
+[20:235608] "GET /static/CACHE/css/main.864f6dd396c2.css HTTP/1.1" 200 18295
+[20:235611] "GET / HTTP/1.1" 200 67178
+[20:235611] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[20:235611] "GET /static/CACHE/css/main.864f6dd396c2.css HTTP/1.1" 200 18295
+[20:235616] "GET /ajax/display/user/1/ HTTP/1.1" 200 2160
+[20:235904] "GET /ajax/display/month/2022_03_20/ HTTP/1.1" 200 41439
+[20:235906] "GET /ajax/display/user/1/ HTTP/1.1" 200 2160
+[21:000513] "GET /ajax/display/month/2022_03_20/ HTTP/1.1" 200 41439
+[21:000516] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[21:000518] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6692
+[21:000521] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 41440
+[21:000614] "GET / HTTP/1.1" 200 67179
+[21:000614] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:000614] "GET /static/CACHE/css/main.90d1bd99ad60.css HTTP/1.1" 200 18443
+[21:000618] "GET /ajax/display/user/1/ HTTP/1.1" 200 2160
+[21:000620] "GET / HTTP/1.1" 200 67179
+[21:000620] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:000620] "GET /static/CACHE/css/main.90d1bd99ad60.css HTTP/1.1" 200 18443
+[21:000622] "GET /ajax/display/user/1/ HTTP/1.1" 200 2160
+[21:000633] "GET / HTTP/1.1" 200 67179
+[21:000633] "GET /static/js/scheduler.es6 HTTP/1.1" 200 18531
+[21:000633] "GET /static/CACHE/css/main.7cfc5787ab17.css HTTP/1.1" 200 18443
+[21:000634] "GET /static/collector/hephaistos.ico HTTP/1.1" 404 1828
+[21:000638] "GET /ajax/display/user/1/ HTTP/1.1" 200 2160
+[21:000645] "GET /accounts/login/?next=/ HTTP/1.1" 200 3123
+[21:000701] "GET / HTTP/1.1" 200 67179
+[21:000701] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:000701] "GET /static/CACHE/css/main.6a1857f568f2.css HTTP/1.1" 200 18444
+[21:000703] "GET /ajax/display/user/1/ HTTP/1.1" 200 2160
+[21:000712] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 41440
+[21:000716] "GET /ajax/display/user/1/ HTTP/1.1" 200 2160
+[21:000718] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 41440
+[21:000719] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[21:000735] "GET / HTTP/1.1" 200 67179
+[21:000735] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:000735] "GET /static/CACHE/css/main.9c26b89e46ac.css HTTP/1.1" 200 18295
+[21:000738] "GET / HTTP/1.1" 200 67179
+[21:000738] "GET /static/js/scheduler.es6 HTTP/1.1" 200 18531
+[21:000738] "GET /static/CACHE/css/main.9c26b89e46ac.css HTTP/1.1" 200 18295
+[21:000739] "GET /static/collector/hephaistos.ico HTTP/1.1" 404 1828
+[21:000744] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[21:000749] "GET /ajax/display/user/1/ HTTP/1.1" 200 2160
+[21:000752] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 41440
+[21:000753] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[21:000754] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6692
+[21:000755] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 41440
+[21:000812] "GET / HTTP/1.1" 200 67179
+[21:000812] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:000812] "GET /static/CACHE/css/main.9c26b89e46ac.css HTTP/1.1" 200 18295
+[21:000815] "GET /ajax/display/user/1/ HTTP/1.1" 200 2160
+[21:000817] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 41440
+[21:000819] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[21:000820] "GET /ajax/display/month/2022_03_26/ HTTP/1.1" 200 48927
+[21:000821] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39602
+[21:000822] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 8228
+[21:000824] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 41440
+[21:000825] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[21:000827] "GET /ajax/display/session_details/3/ HTTP/1.1" 200 6705
+[21:000827] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6692
+[21:000829] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 41440
+[21:000830] "GET /ajax/display/user/1/ HTTP/1.1" 200 2160
+[21:000831] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 41440
+[21:001038] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 39602
+[21:001039] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 8228
+[21:001601] "GET /admin/scheduler/session/ HTTP/1.1" 200 15982
+[21:001601] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:001601] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[21:001601] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[21:001605] "GET /admin/scheduler/session/add/ HTTP/1.1" 200 20933
+[21:001605] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:001605] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[21:001605] "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+[21:001605] "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+[21:001605] "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[21:001737] "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 1094
+[21:001824] "POST /admin/scheduler/session/add/ HTTP/1.1" 302 0
+[21:001824] "GET /admin/scheduler/session/ HTTP/1.1" 200 17050
+[21:001824] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:001824] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[21:001824] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[21:001824] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[21:001830] "GET /admin/scheduler/session/6/change/ HTTP/1.1" 200 21214
+[21:001830] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:001834] "GET /admin/scheduler/session/ HTTP/1.1" 200 16838
+[21:001838] "GET /admin/scheduler/session/add/ HTTP/1.1" 200 20933
+[21:001838] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:001922] "POST /admin/scheduler/session/add/ HTTP/1.1" 302 0
+[21:001922] "GET /admin/scheduler/session/ HTTP/1.1" 200 17819
+[21:001922] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:001922] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[21:001922] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[21:001922] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[21:001930] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 56386
+[21:001934] "GET /ajax/display/dayzoom/2022_04_02/ HTTP/1.1" 200 18958
+[21:001948] "GET /admin/scheduler/game/ HTTP/1.1" 200 12067
+[21:001948] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:001950] "GET /admin/scheduler/game/3/change/ HTTP/1.1" 200 11524
+[21:001950] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:002008] "POST /admin/scheduler/game/3/change/ HTTP/1.1" 302 0
+[21:002008] "GET /admin/scheduler/game/ HTTP/1.1" 200 12288
+[21:002008] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:002016] "GET /ajax/display/month/2022_04_02/ HTTP/1.1" 200 56389
+[21:002025] "GET /admin/scheduler/game/ HTTP/1.1" 200 12067
+[21:002025] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:002029] "GET /admin/scheduler/game/3/change/ HTTP/1.1" 200 11524
+[21:002029] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:002056] "POST /admin/scheduler/game/3/change/ HTTP/1.1" 302 0
+[21:002056] "GET /admin/scheduler/game/ HTTP/1.1" 200 12288
+[21:002056] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:002056] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[21:002059] "GET /admin/scheduler/game/5/change/ HTTP/1.1" 200 11508
+[21:002059] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:002109] "POST /admin/scheduler/game/5/change/ HTTP/1.1" 302 0
+[21:002109] "GET /admin/scheduler/game/ HTTP/1.1" 200 12284
+[21:002109] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:002114] "GET /ajax/display/dayzoom/2022_04_16/ HTTP/1.1" 200 10859
+[21:002115] "GET /ajax/display/month/2022_04_16/ HTTP/1.1" 200 26475
+[21:002124] "GET /ajax/display/month/2022_04_09/ HTTP/1.1" 200 41421
+[21:002125] "GET /ajax/display/month/2022_04_02/ HTTP/1.1" 200 56389
+[21:002135] "GET /admin/scheduler/session/ HTTP/1.1" 200 17607
+[21:002135] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:002135] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[21:002135] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[21:002139] "GET /admin/scheduler/session/7/change/ HTTP/1.1" 200 21214
+[21:002140] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:002140] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[21:002150] "POST /admin/scheduler/session/7/change/ HTTP/1.1" 302 0
+[21:002150] "GET /admin/scheduler/session/ HTTP/1.1" 200 17821
+[21:002150] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:002153] "GET / HTTP/1.1" 200 81199
+[21:002153] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:002153] "GET /static/CACHE/css/main.9c26b89e46ac.css HTTP/1.1" 200 18295
+[21:002312] "GET /admin/scheduler/game/ HTTP/1.1" 200 12067
+[21:002312] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:005328] Watching for file changes with StatReloader

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, Http404, JsonResponse, HttpResponseRedirect
 from django.template.loader import get_template
-from scheduler.utils.mechanics import FONTSET, FMT_TIME, FMT_DATE, FMT_DATETIME
+from scheduler.utils.mechanics import FONTSET, FMT_TIME, FMT_DATE, FMT_DATETIME, DOWS, FMT_DATE_PRETTY
 from scheduler.utils.organizer import build_month, build_zoomed_day
 from datetime import datetime, date
 
@@ -70,6 +70,7 @@ def display_month(request, slug=None):
 def prepare_session(request,id=None):
     from scheduler.models.session import Session
     all = Session.objects.filter(pk=id)
+    cur_date = datetime.now()
     context = {'status': 'KO'}
     if len(all) == 1:
         context['status'] = 'OK'
@@ -78,6 +79,15 @@ def prepare_session(request,id=None):
         context['game'] = that.game.to_json
         context['mj'] = that.mj.to_json
         context['owner'] = that.mj.user == request.user
+    day_off = cur_date.weekday() > 4
+    current_day = cur_date.day == datetime.today().day
+    day = {'date': cur_date,
+           'day_off': day_off,
+           'current_day': current_day,
+           'day': cur_date.strftime(FMT_DATE),
+           'day_info': f'{DOWS[cur_date.weekday()]}<BR/><small>{cur_date.strftime(FMT_DATE_PRETTY)}</small>'
+           }
+    context['day'] = day
     return context
 
 
@@ -92,6 +102,44 @@ def display_session(request, id=None):
         template = get_template('scheduler/menu_session.html')
         menu_html = template.render(context, request)
         template = get_template('scheduler/session_details.html')
+        html = template.render(context, request)
+    response = {'data': html, 'menu': menu_html}
+    return JsonResponse(response)
+
+
+def prepare_user(request,id=None):
+    from scheduler.models.profile import Profile
+    all = Profile.objects.filter(pk=id)
+    cur_date = datetime.now()
+    context = {'status': 'KO'}
+    if len(all) == 1:
+        context['status'] = 'OK'
+        that = all.first()
+        context['profile'] = that.to_json
+
+    day_off = cur_date.weekday() > 4
+    current_day = cur_date.day == datetime.today().day
+    day = {'date': cur_date,
+           'day_off': day_off,
+           'current_day': current_day,
+           'day': cur_date.strftime(FMT_DATE),
+           'day_info': f'{DOWS[cur_date.weekday()]}<BR/><small>{cur_date.strftime(FMT_DATE_PRETTY)}</small>'
+           }
+    context['day'] = day
+    return context
+
+
+@login_required
+def display_user(request, id=None):
+    if not request.user.is_authenticated:
+        return render(request, 'scheduler/registration/login_error.html')
+    context = prepare_user(request, id)
+    html = 'WTF?'
+    menu_html = 'WTF?'
+    if context['status'] == 'OK':
+        template = get_template('scheduler/menu_user.html')
+        menu_html = template.render(context, request)
+        template = get_template('scheduler/user_details.html')
         html = template.render(context, request)
     response = {'data': html, 'menu': menu_html}
     return JsonResponse(response)

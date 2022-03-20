@@ -42,6 +42,15 @@ def as_bool(value):
         res = '<span style="color:green;"><i class="fas fa-check-circle"></i></span>'
     return res
 
+@register.filter(name='as_gender')
+def as_gender(value):
+    res = '<span style="color:orange;"><i class="fas fa-mars"></i></span>'
+    print(value)
+    if str(value)[0] in ['T', 't', '0', '1']:
+        res = '<span style="color:violet;"><i class="fas fa-venus"></i></span>'
+    return res
+
+
 
 @register.filter(name='as_time')
 def as_time(value):

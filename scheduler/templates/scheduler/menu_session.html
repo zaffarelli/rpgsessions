@@ -5,10 +5,10 @@
     </div>
     <div class='righters'>
         {% if owner %}
-        <div class="button compact display" action="month" param="{{day.day}}"><i class="fas fa-dice"></i>&nbsp;Modifier</div>
-        <div class="button compact display" action="month" param="{{day.day}}"><i class="fas fa-minus-circle"></i>&nbsp;Supprimer</div>
+        <div class="button compact action" action="session_edit" param="{{session.id}}"><i class="fas fa-dice"></i>&nbsp;Modifier</div>
+        <div class="button compact action" action="session_delete" param="{{session.id}}"><i class="fas fa-minus-circle"></i>&nbsp;Supprimer</div>
         {% else %}
-        <div class="button compact display" action="month" param="{{day.day}}"><i class="fas fa-plus-circle"></i>&nbsp;Postuler</div>
+        <div class="button compact action" action="session_subscribe" param="{{session.id}}"><i class="fas fa-plus-circle"></i>&nbsp;Postuler</div>
         {% endif %}
         <div class="button compact display" action="month" param="{{day.day}}"><i class="fas fa-undo"></i>&nbsp;Retour</div>
     </div>

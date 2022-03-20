@@ -35,8 +35,8 @@ $panel2_border: lighten($panel2_background,10%);
 $panel3_color: lighten($panel3_background,75%);
 $panel3_border: lighten($panel3_background,10%);
 // Paperzone
-$paper_background: #887959;
-$paper_color: #261909;
+$paper_background: #b2b0a7;
+$paper_color: darken(complement($paper_background),50%);
 $paper_border:darken($paper_background,10%);
 // Highlight
 $highlight_color: lighten($highlight_background,75%);
@@ -85,11 +85,12 @@ $plate_color: lighten($panel_color,10%);
   //background: transparent url('../colorful-grunge-texture-10.jpg') fixed; // 100% 100% no-repeat fixed;
   //background: $body_background;
   background-image: linear-gradient(to bottom right, grayscale($theme3), $theme3);
+  background: grayscale($theme3);
   color: $body_color;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 

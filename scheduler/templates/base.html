@@ -13,6 +13,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src='{% static "js/scheduler.es6" %}'></script>
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Roboto">
     {% for font in fontset %}
     <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family={{font}}">
     {% endfor %}
@@ -22,40 +23,43 @@
     {% endcompress %}
 </head>
 <body>
+<div class="world">
+    <div class="spare_left"></div>
+    <div class="corpus">
+        <div class="adminzone hidden">
+            {% block adminzone %}
+            {% endblock adminzone %}
+        </div>
+        <div class='userzone hidden'>
+            {% block userzone %}
+            {% endblock userzone %}
+        </div>
 
-<div class="spare_left"></div>
-<div class="corpus">
+        <div class='menuzone hidden'>
+            {% block menuzone %}
+            {% endblock menuzone %}
+        </div>
 
-    <div class='userzone hidden'>
-        {% block userzone %}
-        {% endblock userzone %}
+
+        <div class='wrapper hidden'>
+            {% block wrapper %}
+            {% endblock wrapper %}
+        </div>
+
+        <div class='eventzone hidden'>
+            {% block eventzone %}
+            {% endblock eventzone %}
+        </div>
+
+        {% block javascript %}
+        {% endblock javascript %}
+
+        {% block custom_js %}
+        {% endblock custom_js %}
+
     </div>
-
-    <div class='menuzone hidden'>
-        {% block menuzone %}
-        {% endblock menuzone %}
-    </div>
-
-
-    <div class='wrapper hidden'>
-        {% block wrapper %}
-        {% endblock wrapper %}
-    </div>
-
-    <div class='eventzone hidden'>
-        {% block eventzone %}
-        {% endblock eventzone %}
-    </div>
-
-    {% block javascript %}
-    {% endblock javascript %}
-
-    {% block custom_js %}
-    {% endblock custom_js %}
-
+    <div class="spare_right"></div>
 </div>
-<div class="spare_right"></div>
-
 
 </body>
 </html>

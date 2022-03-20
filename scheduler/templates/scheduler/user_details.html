@@ -1,0 +1,49 @@
+{% load static %}
+{% load global_filters %}
+<div class="user_details">
+    <center>
+    <table style="width: 600px;">
+        <tr>
+            <th>
+                Nickname
+            </th>
+            <td>
+                {{profile.nickname|safe}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Présentation
+            </th>
+            <td>
+                {{profile.presentation | safe}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Sexe
+            </th>
+            <td>
+                {{profile.is_girl|as_gender|safe}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Sans véhicle
+            </th>
+            <td>
+                {{profile.need_drop|as_bool|safe}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Peut véhiculer
+            </th>
+            <td>
+                {{profile.can_drop|as_bool|safe}}
+            </td>
+        </tr>
+
+    </table>
+    </center>
+</div>

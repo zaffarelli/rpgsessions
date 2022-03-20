@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
-{% block userzone %}
-<div id="user_wrapper">
-    <div id="user_panel">
+{% block adminzone %}
+<div class="adminzone">
+    <div class="user_spare1"></div>
+    <div class="user_panel">
         {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
         {% endif %}
@@ -12,7 +13,7 @@
         <p>Your account doesn't have access to this page. To proceed,
             please login with an account that has access.</p>
         {% else %}
-        <p>What a Wonderful World of Darkness</p>
+        <p><strong>RPG</strong>Sessions</p>
         {% endif %}
         {% endif %}
 
@@ -28,12 +29,27 @@
                     <td>{{ form.password }}</td>
                 </tr>
             </table>
-            <input type="submit" value="login"/>
+            <center>
+                <input type="submit" value="connexion"/>
             <input type="hidden" name="next" value="{{ next }}"/>
+            </center>
         </form>
-
+        <center>
         {# Assumes you setup the password_reset view in your URLconf #}
-        <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+        <p><a href="{% url 'password_reset' %}">Mot de passe perdu?</a></p>
+            </center>
     </div>
+    <div class="user_spare2"></div>
 </div>
-{% endblock userzone %}
+{% endblock adminzone %}
+
+{% block custom_js %}
+<script>
+    _.defer(function () {
+        let co = new Scheduler()
+        co.perform();
+        co.revealLog();
+
+    });
+</script>
+{% endblock custom_js %}

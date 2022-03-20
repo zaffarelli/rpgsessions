@@ -41,6 +41,15 @@ class Scheduler {
     }
 
 
+    revealLog() {
+        let me = this;
+        // $('.menuzone').addClass('hidden');
+        // $('.eventzone').addClass('hidden');
+        // $('.userzone').addClass('hidden');
+        // $('.wrapper').addClass('hidden');
+        $('.adminzone').removeClass('hidden');
+    }
+
     registerDisplay() {
         let me = this;
         $('.display').off().on('click', function (event) {
