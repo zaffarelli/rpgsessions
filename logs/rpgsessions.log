@@ -12848,3 +12848,36 @@ django.template.exceptions.TemplateSyntaxError: Invalid filter: 'as_bool'
 [21:002312] "GET /admin/scheduler/game/ HTTP/1.1" 200 12067
 [21:002312] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
 [21:005328] Watching for file changes with StatReloader
+[21:010743] Watching for file changes with StatReloader
+[21:010750] /home/zaffarelli/Perso/github/rpgsessions/rpgsessions/settings.py changed, reloading.
+[21:010751] Watching for file changes with StatReloader
+[21:010757] "GET / HTTP/1.1" 200 81461
+[21:010757] "GET /static/js/scheduler.es6 HTTP/1.1" 200 18531
+[21:010757] "GET /static/CACHE/css/main.9c26b89e46ac.css HTTP/1.1" 200 18295
+[21:010838] "GET / HTTP/1.1" 200 81551
+[21:010838] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:010838] "GET /static/CACHE/css/main.9c26b89e46ac.css HTTP/1.1" 200 18295
+[21:010915] "GET / HTTP/1.1" 200 81584
+[21:010915] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:010915] "GET /static/CACHE/css/main.9c26b89e46ac.css HTTP/1.1" 200 18295
+[21:010930] "GET / HTTP/1.1" 200 81584
+[21:010930] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:010930] "GET /static/CACHE/css/main.9c26b89e46ac.css HTTP/1.1" 200 18295
+[21:010949] "GET / HTTP/1.1" 200 81594
+[21:010949] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:010949] "GET /static/CACHE/css/main.9c26b89e46ac.css HTTP/1.1" 200 18295
+[21:011055] "GET / HTTP/1.1" 200 81594
+[21:011055] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:011055] "GET /static/CACHE/css/main.9c26b89e46ac.css HTTP/1.1" 200 18295
+[21:011102] "GET / HTTP/1.1" 200 81585
+[21:011102] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:011102] "GET /static/CACHE/css/main.9c26b89e46ac.css HTTP/1.1" 200 18295
+[21:011118] "GET / HTTP/1.1" 200 81606
+[21:011118] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:011118] "GET /static/CACHE/css/main.9c26b89e46ac.css HTTP/1.1" 200 18295
+[21:011128] "GET / HTTP/1.1" 200 81606
+[21:011128] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:011128] "GET /static/CACHE/css/main.9c26b89e46ac.css HTTP/1.1" 200 18295
+[21:011223] "GET /ajax/display/month/2022_04_18/ HTTP/1.1" 200 33948
+[21:011226] "GET /ajax/display/dayzoom/2022_04_16/ HTTP/1.1" 200 10859
+[21:011227] "GET /ajax/display/session_details/5/ HTTP/1.1" 200 6964
