@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from colorfield.fields import ColorField
 import json
 from scheduler.utils.mechanics import ADV_LEVEL
+from scheduler.models.campaign import Campaign
 
 
 class Session(models.Model):
@@ -15,7 +16,8 @@ class Session(models.Model):
     episode = models.PositiveIntegerField(default=1)
     max_episodes = models.PositiveIntegerField(default=1)
     mj = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
-    campaign = models.CharField(max_length=256, blank=True, null=True)
+    # campaign = models.CharField(max_length=256, null=True, blank=True)
+    campaign = models.ForeignKey(Campaign, on_delete=models.SET_NULL, null=True, blank=True)
     game = models.ForeignKey(Game, on_delete=models.SET_NULL, null=True)
     description = models.TextField(max_length=2048, default='', blank=True)
     date_start = models.DateField(default=datetime.now)
@@ -51,7 +53,7 @@ class Session(models.Model):
 
 class SessionAdmin(admin.ModelAdmin):
     ordering = ['date_start', 'time_start']
-    list_display = ['title', 'date_start', 'time_start','is_ready', 'duration', 'date_end', 'mj', 'newbies_allowed',
-                    'one_shot_adventure', 'campaign']
-    search_fields = ['title', 'description']
-    list_filter = ['campaign', 'level', 'game']
+    list_display = ['title', 'campaign', 'date_start', 'time_start','is_ready', 'duration', 'date_end', 'mj', 'newbies_allowed',
+                    'one_shot_adventure']
+    search_fields = ['title', 'description', 'campaign']
+    list_filter = ['level', 'game', 'campaign']

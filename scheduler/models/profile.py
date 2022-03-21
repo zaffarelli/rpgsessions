@@ -19,7 +19,7 @@ class Profile(models.Model):
     gamma = ColorField(default='#666666')
 
     def __str__(self):
-        return f'{self.user.username} Profile'
+        return f'{self.nickname}*'
 
     @property
     def u_u(self):

@@ -51,7 +51,7 @@ $color_frame: lightgrey;
 $color_frame_hover: cyan;
 $panel_day_background: #c4c4b6;
 $panel_day_off_background: lighten($panel_day_background, 10%);
-$panel_day_current_background: complement($panel_day_background);
+$panel_day_current_background: saturate(complement($panel_day_background),50%);
 $color_off_hover: yellow;
 
 $hour_pixel: 42;

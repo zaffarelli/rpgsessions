@@ -21,3 +21,6 @@ admin.site.register(Availability, AvailabilityAdmin)
 
 from scheduler.models.follower import Follower, FollowerAdmin
 admin.site.register(Follower, FollowerAdmin)
+
+from scheduler.models.campaign import Campaign, CampaignAdmin
+admin.site.register(Campaign, CampaignAdmin)

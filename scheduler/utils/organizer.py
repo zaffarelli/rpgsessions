@@ -1,6 +1,30 @@
 from datetime import datetime, timedelta, time, date
-from scheduler.utils.mechanics import MONTHS, MONTHS_COLORS,MONTHS_COLORS_TEXT, DOWS, HOUR_PIXELS, FONTSET, FMT_TIME, FMT_DATE, \
+from scheduler.utils.mechanics import MONTHS, MONTHS_COLORS, MONTHS_COLORS_TEXT, DOWS, HOUR_PIXELS, FONTSET, FMT_TIME, \
+    FMT_DATE, \
     FMT_DATETIME, FMT_DATE_PRETTY
+
+
+def gimme_day(d):
+    is_current_day = (d.strftime(FMT_DATE) == datetime.today().strftime(FMT_DATE))
+    day_body = build_day(d)
+    context = {'day_info': f'{DOWS[d.weekday()]}<BR/><small>{d.strftime(FMT_DATE_PRETTY)}</small>',
+               'day_off': d.weekday() > 4,
+               'current_day': is_current_day,
+               'day': d.strftime(FMT_DATE),
+               'day_body': day_body,
+               'month_color': MONTHS_COLORS[d.month - 1]
+               }
+    return context
+
+
+def gimme_session(id):
+    context = {}
+    return context
+
+
+def gimme_profile(id):
+    context = {}
+    return context
 
 
 def build_month(date_str):
@@ -46,20 +70,22 @@ def build_week(d):
     elif dow > 2:
         day0 = d - timedelta(days=(dow - 2))
     context['week'] = []
-
     for x in range(7):
         cur_day = day0 + timedelta(days=x)
-        day_off = cur_day.weekday() > 4
-        current_day = (cur_day.strftime(FMT_DATE) == datetime.today().strftime(FMT_DATE))
-        bod = build_day(cur_day)
-        day = {'day_info': f'{DOWS[cur_day.weekday()]}<BR/><small>{cur_day.strftime(FMT_DATE_PRETTY)}</small>',
-               'day_off': day_off,
-               'current_day': current_day,
-               'day': cur_day.strftime(FMT_DATE),
-               'day_body': bod,
-               'month_color': MONTHS_COLORS[cur_day.month-1]
-               }
+        day = gimme_day(cur_day)
         context['week'].append(day)
+    return context
+
+def gimme_all_followers(id):
+    from scheduler.models.follower import Follower
+    context = {}
+    f_list = []
+    all_profiles = Profile.objecst.all().order_by('profile__user_id')
+    all_followers = Follower.objects.filter(profile__user_id=id)
+    for f in all_followers:
+        f_list.add(f.target.user_id)
+    for p in all_profiles:
+        context.append({'profile':p.to_json, 'is_follower': p.user_id in f_list})
     return context
 
 
@@ -120,13 +146,6 @@ def build_zoomed_day(d):
         t = time.fromisoformat(f'{x:02}:00:00')
         hours.append({'t': t.strftime(FMT_TIME)})
     context['hours'] = hours
-    day_off = cur_date.weekday() > 4
-    current_day = cur_date.day == datetime.today().day
-    day = {'date': cur_date,
-           'day_off': day_off,
-           'current_day': current_day,
-           'day': cur_date.strftime(FMT_DATE),
-           'day_info': f'{DOWS[cur_date.weekday()]}<BR/><small>{cur_date.strftime(FMT_DATE_PRETTY)}</small>'
-           }
+    day = gimme_day(cur_day)
     context['day'] = day
     return context

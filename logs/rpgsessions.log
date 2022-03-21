@@ -13888,3 +13888,437 @@ NameError: name 'profile' is not defined
 [21:033710] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6805
 [21:033842] /home/zaffarelli/Perso/github/rpgsessions/rpgsessions/settings.py changed, reloading.
 [21:033842] Watching for file changes with StatReloader
+[21:173604] Watching for file changes with StatReloader
+[21:173645] "GET / HTTP/1.1" 200 81631
+[21:173645] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:173645] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:173723] "GET /ajax/display/user/1/ HTTP/1.1" 200 2160
+[21:174146] /home/zaffarelli/Perso/github/rpgsessions/scheduler/admin.py changed, reloading.
+[21:174147] Watching for file changes with StatReloader
+[21:174153] Watching for file changes with StatReloader
+[21:174201] /home/zaffarelli/Perso/github/rpgsessions/scheduler/admin.py changed, reloading.
+[21:174201] Watching for file changes with StatReloader
+[21:174204] Watching for file changes with StatReloader
+[21:174213] "GET /admin/ HTTP/1.1" 200 10212
+[21:174213] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[21:174213] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[21:174213] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[21:174213] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[21:174213] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[21:174213] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[21:174221] "GET /admin/scheduler/campaign/ HTTP/1.1" 200 7254
+[21:174221] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:174221] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[21:174226] "GET /admin/scheduler/campaign/add/ HTTP/1.1" 200 10922
+[21:174226] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:174242] "POST /admin/scheduler/campaign/add/ HTTP/1.1" 302 0
+[21:174242] "GET /admin/scheduler/campaign/ HTTP/1.1" 200 9049
+[21:174242] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:174242] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[21:174338] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:174338] Watching for file changes with StatReloader
+[21:174358] Watching for file changes with StatReloader
+[21:174455] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:174455] Watching for file changes with StatReloader
+[21:174501] Watching for file changes with StatReloader
+[21:174514] Internal Server Error: /admin/scheduler/session/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: scheduler_session.camp_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 683, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2063, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: scheduler_session.camp_id
+[21:174514] "GET /admin/scheduler/session/ HTTP/1.1" 500 178994
+[21:174551] Watching for file changes with StatReloader
+[21:174555] "GET /admin/scheduler/campaign/ HTTP/1.1" 200 8831
+[21:174555] Not Found: /favicon.ico
+[21:174605] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:174606] Watching for file changes with StatReloader
+[21:174610] Watching for file changes with StatReloader
+[21:174624] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:174624] Watching for file changes with StatReloader
+[21:174632] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:174632] Watching for file changes with StatReloader
+[21:174635] Watching for file changes with StatReloader
+[21:174657] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:174657] Watching for file changes with StatReloader
+[21:174701] Watching for file changes with StatReloader
+[21:174713] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:174713] Watching for file changes with StatReloader
+[21:174722] Watching for file changes with StatReloader
+[21:174728] "GET /admin/scheduler/campaign/ HTTP/1.1" 200 8831
+[21:174728] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[21:174728] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[21:174728] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[21:174728] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[21:174728] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[21:174728] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[21:174728] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[21:174728] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[21:174728] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:174728] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[21:174733] Internal Server Error: /admin/scheduler/session/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: scheduler_session.camp_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 683, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2063, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: scheduler_session.camp_id
+[21:174733] "GET /admin/scheduler/session/ HTTP/1.1" 500 178526
+[21:174738] "GET /admin/scheduler/campaign/ HTTP/1.1" 200 8831
+[21:174757] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:174757] Watching for file changes with StatReloader
+[21:174806] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:174807] Watching for file changes with StatReloader
+[21:174811] Watching for file changes with StatReloader
+[21:174825] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:174825] Watching for file changes with StatReloader
+[21:174828] Watching for file changes with StatReloader
+[21:174849] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:174852] Watching for file changes with StatReloader
+[21:174856] "GET /admin/scheduler/campaign/ HTTP/1.1" 200 8831
+[21:174856] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[21:174856] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[21:174856] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[21:174856] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[21:174856] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[21:174856] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[21:174856] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[21:174856] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[21:174856] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[21:174856] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:174856] Not Found: /favicon.ico
+[21:174859] "GET /admin/scheduler/session/ HTTP/1.1" 200 17683
+[21:174859] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:174859] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[21:174859] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[21:174859] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[21:174903] "GET /admin/scheduler/session/2/change/ HTTP/1.1" 200 22974
+[21:174903] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:174903] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[21:174904] "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+[21:174904] "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[21:174918] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/campaign.py changed, reloading.
+[21:174918] Watching for file changes with StatReloader
+[21:174935] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/campaign.py changed, reloading.
+[21:174936] Watching for file changes with StatReloader
+[21:174938] "GET /admin/scheduler/session/2/change/ HTTP/1.1" 200 22994
+[21:174938] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[21:174938] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[21:174938] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+[21:174938] "GET /static/colorfield/jscolor/jscolor.js HTTP/1.1" 304 0
+[21:174938] "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+[21:174938] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[21:174938] "GET /static/colorfield/colorfield.js HTTP/1.1" 304 0
+[21:174938] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[21:174938] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:174938] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[21:174939] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[21:174939] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[21:174939] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[21:174939] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[21:174939] "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[21:174939] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[21:174939] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[21:174939] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+[21:174939] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[21:174939] Not Found: /favicon.ico
+[21:175014] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py changed, reloading.
+[21:175014] Watching for file changes with StatReloader
+[21:175017] "GET /admin/scheduler/session/2/change/ HTTP/1.1" 200 22994
+[21:175017] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+[21:175017] "GET /static/colorfield/jscolor/jscolor.js HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[21:175017] "GET /static/colorfield/colorfield.js HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[21:175017] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175017] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[21:175017] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[21:175017] Not Found: /favicon.ico
+[21:175041] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/campaign.py changed, reloading.
+[21:175041] Watching for file changes with StatReloader
+[21:175052] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/campaign.py changed, reloading.
+[21:175053] Watching for file changes with StatReloader
+[21:175100] Watching for file changes with StatReloader
+[21:175107] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/campaign.py changed, reloading.
+[21:175107] Watching for file changes with StatReloader
+[21:175112] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/campaign.py changed, reloading.
+[21:175113] Watching for file changes with StatReloader
+[21:175129] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/campaign.py changed, reloading.
+[21:175129] Watching for file changes with StatReloader
+[21:175151] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py changed, reloading.
+[21:175151] Watching for file changes with StatReloader
+[21:175155] "GET /admin/scheduler/session/2/change/ HTTP/1.1" 200 22915
+[21:175155] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[21:175155] "GET /static/colorfield/jscolor/jscolor.js HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[21:175155] "GET /static/colorfield/colorfield.js HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[21:175155] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175155] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[21:175155] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[21:175204] "POST /admin/scheduler/session/2/change/ HTTP/1.1" 302 0
+[21:175204] "GET /admin/scheduler/session/ HTTP/1.1" 200 17914
+[21:175204] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175204] Not Found: /favicon.ico
+[21:175239] "GET /admin/scheduler/campaign/ HTTP/1.1" 200 8824
+[21:175239] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175242] "GET /admin/scheduler/campaign/add/ HTTP/1.1" 200 10850
+[21:175242] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175255] "POST /admin/scheduler/campaign/add/ HTTP/1.1" 302 0
+[21:175255] "GET /admin/scheduler/campaign/ HTTP/1.1" 200 9364
+[21:175255] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175255] Not Found: /favicon.ico
+[21:175301] "GET /admin/scheduler/session/ HTTP/1.1" 200 17801
+[21:175301] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175301] Not Found: /favicon.ico
+[21:175305] "GET /admin/scheduler/session/6/change/ HTTP/1.1" 200 22904
+[21:175305] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175313] "POST /admin/scheduler/session/6/change/ HTTP/1.1" 302 0
+[21:175313] "GET /admin/scheduler/session/ HTTP/1.1" 200 18036
+[21:175313] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175313] Not Found: /favicon.ico
+[21:175317] "GET /admin/scheduler/session/7/change/ HTTP/1.1" 200 22904
+[21:175317] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175321] "POST /admin/scheduler/session/7/change/ HTTP/1.1" 302 0
+[21:175321] "GET /admin/scheduler/session/ HTTP/1.1" 200 18057
+[21:175321] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175322] Not Found: /favicon.ico
+[21:175519] "GET / HTTP/1.1" 200 81623
+[21:175519] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:175519] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:175535] "GET / HTTP/1.1" 200 81626
+[21:175535] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:175535] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:175549] /home/zaffarelli/Perso/github/rpgsessions/rpgsessions/settings.py changed, reloading.
+[21:175549] Watching for file changes with StatReloader
+[21:175554] "GET / HTTP/1.1" 200 81626
+[21:175554] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:175554] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:175638] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18986
+[21:175737] "GET /ajax/display/month/2022_03_26/ HTTP/1.1" 200 63873
+[21:175741] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:175745] "GET /ajax/display/session_details/7/ HTTP/1.1" 200 6794
+[21:175750] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 37109
+[21:175834] "GET /admin/scheduler/inscription/ HTTP/1.1" 200 10798
+[21:175834] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175834] Not Found: /favicon.ico
+[21:175841] "GET /admin/scheduler/inscription/add/ HTTP/1.1" 200 10913
+[21:175842] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175853] "POST /admin/scheduler/inscription/add/ HTTP/1.1" 302 0
+[21:175853] "GET /admin/scheduler/inscription/ HTTP/1.1" 200 11424
+[21:175853] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175853] Not Found: /favicon.ico
+[21:175856] "GET /admin/scheduler/inscription/add/ HTTP/1.1" 200 10913
+[21:175856] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175856] Not Found: /favicon.ico
+[21:175905] "POST /admin/scheduler/inscription/add/ HTTP/1.1" 302 0
+[21:175905] "GET /admin/scheduler/inscription/ HTTP/1.1" 200 11813
+[21:175905] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:175905] Not Found: /favicon.ico
+[21:175909] "GET / HTTP/1.1" 200 81626
+[21:175910] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:175910] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:175913] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:175915] "GET /ajax/display/session_details/7/ HTTP/1.1" 200 6794
+[21:175928] Not Found: /favicon.ico
+[21:175930] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 56386
+[21:175932] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18986
+[21:175941] "GET /ajax/display/month/2022_03_26/ HTTP/1.1" 200 63873
+[21:175943] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:175945] "GET /ajax/display/month/2022_04_09/ HTTP/1.1" 200 41421
+[21:175948] "GET /ajax/display/month/2022_04_02/ HTTP/1.1" 200 56389
+[21:175950] "GET /ajax/display/dayzoom/2022_04_02/ HTTP/1.1" 200 21347
+[21:175952] "GET /ajax/display/session_details/6/ HTTP/1.1" 200 6794
+[21:192725] /home/zaffarelli/Perso/github/rpgsessions/scheduler/utils/organizer.py changed, reloading.
+[21:192725] Watching for file changes with StatReloader
+[21:192811] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 56386
+[21:201407] /home/zaffarelli/Perso/github/rpgsessions/scheduler/utils/organizer.py changed, reloading.
+[21:201408] Watching for file changes with StatReloader
+[21:202156] "GET / HTTP/1.1" 200 81626
+[21:202156] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:202156] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:202158] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18986
+[21:202159] "GET /ajax/display/month/2022_03_26/ HTTP/1.1" 200 63873
+[21:202300] /home/zaffarelli/Perso/github/rpgsessions/scheduler/utils/organizer.py changed, reloading.
+[21:202301] Watching for file changes with StatReloader
+[21:202320] "GET /ajax/display/month/2022_03_19/ HTTP/1.1" 200 56385
+[21:202321] "GET /ajax/display/month/2022_03_12/ HTTP/1.1" 200 41423
+[21:202321] "GET /ajax/display/month/2022_03_05/ HTTP/1.1" 200 33948
+[21:202321] "GET /ajax/display/month/2022_02_26/ HTTP/1.1" 200 18981
+[21:202321] "GET /ajax/display/month/2022_02_19/ HTTP/1.1" 200 11494
+[21:202322] "GET /ajax/display/month/2022_01_22/ HTTP/1.1" 200 11493
+[21:202322] "GET /ajax/display/month/2021_12_25/ HTTP/1.1" 200 11501
+[21:202322] "GET /ajax/display/month/2021_11_27/ HTTP/1.1" 200 11504
+[21:202322] "GET /ajax/display/month/2021_10_30/ HTTP/1.1" 200 11503
+[21:202322] "GET /ajax/display/month/2021_10_02/ HTTP/1.1" 200 11503
+[21:202323] "GET /ajax/display/month/2021_09_04/ HTTP/1.1" 200 11505
+[21:202323] "GET /ajax/display/month/2021_08_07/ HTTP/1.1" 200 11500
+[21:202323] "GET /ajax/display/month/2021_07_10/ HTTP/1.1" 200 11503
+[21:202323] "GET /ajax/display/month/2021_06_12/ HTTP/1.1" 200 11500
+[21:202323] "GET /ajax/display/month/2021_05_15/ HTTP/1.1" 200 11499
+[21:202324] "GET /ajax/display/month/2021_04_17/ HTTP/1.1" 200 11501
+[21:202324] "GET /ajax/display/month/2021_03_20/ HTTP/1.1" 200 11499
+[21:202324] "GET /ajax/display/month/2021_02_20/ HTTP/1.1" 200 11494
+[21:202326] "GET /ajax/display/month/2021_03_20/ HTTP/1.1" 200 11499
+[21:202326] "GET /ajax/display/month/2021_04_17/ HTTP/1.1" 200 11501
+[21:202326] "GET /ajax/display/month/2021_05_15/ HTTP/1.1" 200 11499
+[21:202326] "GET /ajax/display/month/2021_06_12/ HTTP/1.1" 200 11500
+[21:202326] "GET /ajax/display/month/2021_07_10/ HTTP/1.1" 200 11503
+[21:202327] "GET /ajax/display/month/2021_08_07/ HTTP/1.1" 200 11500
+[21:202327] "GET /ajax/display/month/2021_09_04/ HTTP/1.1" 200 11505
+[21:202327] "GET /ajax/display/month/2021_10_02/ HTTP/1.1" 200 11503
+[21:202327] "GET /ajax/display/month/2021_10_30/ HTTP/1.1" 200 11503
+[21:202328] "GET /ajax/display/month/2021_11_27/ HTTP/1.1" 200 11504
+[21:202328] "GET /ajax/display/month/2021_12_25/ HTTP/1.1" 200 11501
+[21:202328] "GET /ajax/display/month/2022_01_22/ HTTP/1.1" 200 11493
+[21:202329] "GET /ajax/display/month/2022_02_19/ HTTP/1.1" 200 11494
+[21:202329] "GET /ajax/display/month/2022_03_19/ HTTP/1.1" 200 56385
+[21:202329] "GET /ajax/display/month/2022_04_16/ HTTP/1.1" 200 33948
+[21:202330] "GET /ajax/display/month/2022_05_14/ HTTP/1.1" 200 11499
+[21:202331] "GET /ajax/display/month/2022_04_16/ HTTP/1.1" 200 33948
+[21:202331] "GET /ajax/display/month/2022_03_19/ HTTP/1.1" 200 56385
+[21:202332] "GET /ajax/display/month/2022_03_26/ HTTP/1.1" 200 63873
+[21:202335] "GET / HTTP/1.1" 200 81626
+[21:202335] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:202335] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:202457] "GET / HTTP/1.1" 200 81626
+[21:202457] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:202457] "GET /static/CACHE/css/main.998dd6438aa8.css HTTP/1.1" 200 18338
+[21:202500] "GET / HTTP/1.1" 200 81626
+[21:202500] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:202500] "GET /static/CACHE/css/main.998dd6438aa8.css HTTP/1.1" 200 18338
+[21:202526] "GET / HTTP/1.1" 200 81626
+[21:202526] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:202526] "GET /static/CACHE/css/main.997238438af1.css HTTP/1.1" 200 18338
+[21:202545] "GET / HTTP/1.1" 200 81626
+[21:202545] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:202545] "GET /static/CACHE/css/main.997238438af1.css HTTP/1.1" 200 18338
+[21:203640] "GET /ajax/display/user/1/ HTTP/1.1" 200 2160
+[21:203836] /home/zaffarelli/Perso/github/rpgsessions/scheduler/utils/organizer.py changed, reloading.
+[21:203836] Watching for file changes with StatReloader
+[21:203919] /home/zaffarelli/Perso/github/rpgsessions/scheduler/utils/organizer.py changed, reloading.
+[21:203920] Watching for file changes with StatReloader
+[21:205200] /home/zaffarelli/Perso/github/rpgsessions/scheduler/utils/organizer.py changed, reloading.
+[21:205200] Watching for file changes with StatReloader
+[21:205222] /home/zaffarelli/Perso/github/rpgsessions/scheduler/utils/organizer.py changed, reloading.
+[21:205222] Watching for file changes with StatReloader
+[21:205235] Watching for file changes with StatReloader
+[21:205244] "GET / HTTP/1.1" 200 81626
+[21:205244] "GET /static/CACHE/css/main.997238438af1.css HTTP/1.1" 200 18338
+[21:205244] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
