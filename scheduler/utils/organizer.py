@@ -146,6 +146,6 @@ def build_zoomed_day(d):
         t = time.fromisoformat(f'{x:02}:00:00')
         hours.append({'t': t.strftime(FMT_TIME)})
     context['hours'] = hours
-    day = gimme_day(cur_day)
+    day = gimme_day(cur_date)
     context['day'] = day
     return context
