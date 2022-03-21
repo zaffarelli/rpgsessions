@@ -67,8 +67,9 @@ def display_month(request, slug=None):
     return JsonResponse(response)
 
 
-def prepare_session(request,id=None):
+def prepare_session(request, id=None):
     from scheduler.models.session import Session
+    from scheduler.models.profile import Profile
     all = Session.objects.filter(pk=id)
     cur_date = datetime.now()
     context = {'status': 'KO'}
@@ -79,6 +80,16 @@ def prepare_session(request,id=None):
         context['game'] = that.game.to_json
         context['mj'] = that.mj.to_json
         context['owner'] = that.mj.user == request.user
+        wanted = []
+        if len(that.wanted) > 0:
+            wanted_players = that.wanted.split(';')
+            for wp in wanted_players:
+                # print('>> ', wp)
+                _set = Profile.objects.filter(pk=wp)
+                if len(_set) == 1:
+                    this = _set.first()
+                    wanted.append(this.to_json)
+        context['wanted'] = wanted
     day_off = cur_date.weekday() > 4
     current_day = cur_date.day == datetime.today().day
     day = {'date': cur_date,
@@ -88,6 +99,7 @@ def prepare_session(request,id=None):
            'day_info': f'{DOWS[cur_date.weekday()]}<BR/><small>{cur_date.strftime(FMT_DATE_PRETTY)}</small>'
            }
     context['day'] = day
+
     return context
 
 
@@ -95,7 +107,7 @@ def prepare_session(request,id=None):
 def display_session(request, id=None):
     if not request.user.is_authenticated:
         return render(request, 'scheduler/registration/login_error.html')
-    context = prepare_session(request,id)
+    context = prepare_session(request, id)
     html = 'WTF?'
     menu_html = 'WTF?'
     if context['status'] == 'OK':
@@ -107,7 +119,7 @@ def display_session(request, id=None):
     return JsonResponse(response)
 
 
-def prepare_user(request,id=None):
+def prepare_user(request, id=None):
     from scheduler.models.profile import Profile
     all = Profile.objects.filter(pk=id)
     cur_date = datetime.now()

@@ -28,7 +28,14 @@
     </tr>
     <tr>
         <th>Sollicités (Wanted)</th>
-        <td>{{session.mandatory_spots }}</td>
+        <td>{{session.mandatory_spots }}
+            {% if session.mandatory_spots %}
+            <i class="fa fa-arrow-circle-right"></i>
+            {% for w in wanted %}
+                {% include "scheduler/player_shortcut.html" with c=w %}
+            {% endfor %}
+            {% endif %}
+        </td>
     </tr>
     <tr>
         <th>Places disponibles</th>

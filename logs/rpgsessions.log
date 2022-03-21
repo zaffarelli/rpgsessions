@@ -12881,3 +12881,1010 @@ django.template.exceptions.TemplateSyntaxError: Invalid filter: 'as_bool'
 [21:011223] "GET /ajax/display/month/2022_04_18/ HTTP/1.1" 200 33948
 [21:011226] "GET /ajax/display/dayzoom/2022_04_16/ HTTP/1.1" 200 10859
 [21:011227] "GET /ajax/display/session_details/5/ HTTP/1.1" 200 6964
+[21:020353] Watching for file changes with StatReloader
+[21:020402] "GET / HTTP/1.1" 200 81606
+[21:020402] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:020402] "GET /static/CACHE/css/main.8d9b6e0f24ad.css HTTP/1.1" 200 18295
+[21:020405] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18977
+[21:020407] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6692
+[21:020452] "GET / HTTP/1.1" 200 81606
+[21:020452] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:020452] "GET /static/CACHE/css/main.8d9b6e0f24ad.css HTTP/1.1" 200 18295
+[21:020454] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18986
+[21:020545] "GET / HTTP/1.1" 200 81606
+[21:020545] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:020545] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:020546] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18986
+[21:020549] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6692
+[21:020610] "GET /ajax/display/session_details/3/ HTTP/1.1" 200 6705
+[21:020612] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6692
+[21:020613] "GET /ajax/display/session_details/3/ HTTP/1.1" 200 6705
+[21:022655] "GET /admin/auth/user/ HTTP/1.1" 200 14695
+[21:022655] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[21:022655] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[21:022655] "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[21:022655] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[21:022655] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[21:022655] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[21:022655] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[21:022655] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[21:022655] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[21:022655] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[21:022655] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[21:022655] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:022655] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[21:022655] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[21:022655] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[21:022655] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[21:022655] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[21:022655] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[21:022655] Not Found: /favicon.ico
+[21:022705] "GET /admin/auth/user/5/change/ HTTP/1.1" 200 19649
+[21:022705] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:022705] "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+[21:022705] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+[21:022705] "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+[21:022705] "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+[21:022705] "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+[21:022705] "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[21:022705] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[21:022705] "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+[21:022705] "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+[21:022705] "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+[21:022705] "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+[21:022817] "GET / HTTP/1.1" 200 81627
+[21:022817] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:022817] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:022821] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47767
+[21:022824] "GET /ajax/display/session_details/7/ HTTP/1.1" 200 6684
+[21:022844] "GET / HTTP/1.1" 200 81631
+[21:022844] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:022844] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:022846] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:022937] /home/zaffarelli/Perso/github/rpgsessions/rpgsessions/settings.py changed, reloading.
+[21:022938] Watching for file changes with StatReloader
+[21:023027] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:023028] Watching for file changes with StatReloader
+[21:023039] Watching for file changes with StatReloader
+[21:023057] "GET /admin/scheduler/session/ HTTP/1.1" 200 17607
+[21:023057] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:023057] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[21:023057] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[21:023100] "GET /admin/scheduler/session/1/change/ HTTP/1.1" 200 22897
+[21:023100] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:023100] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[21:023100] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[21:023127] "POST /admin/scheduler/session/1/change/ HTTP/1.1" 302 0
+[21:023127] "GET /admin/scheduler/session/ HTTP/1.1" 200 17833
+[21:023127] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:023712] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:023712] Watching for file changes with StatReloader
+[21:023733] Watching for file changes with StatReloader
+[21:023738] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:023738] Watching for file changes with StatReloader
+[21:023741] "GET /admin/scheduler/session/1/change/ HTTP/1.1" 200 22913
+[21:023741] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[21:023741] "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+[21:023741] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[21:023741] "GET /static/colorfield/jscolor/jscolor.js HTTP/1.1" 304 0
+[21:023741] "GET /static/colorfield/colorfield.js HTTP/1.1" 304 0
+[21:023741] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[21:023741] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+[21:023741] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[21:023741] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[21:023741] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:023741] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[21:023741] "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[21:023741] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[21:023741] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[21:023741] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[21:023741] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[21:023741] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[21:023741] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[21:023741] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[21:023750] "POST /admin/scheduler/session/1/change/ HTTP/1.1" 302 0
+[21:023750] "GET /admin/scheduler/session/ HTTP/1.1" 200 17833
+[21:023750] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:023754] "GET / HTTP/1.1" 200 81631
+[21:023754] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:023754] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:023759] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:023801] Internal Server Error: /ajax/display/session_details/7/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request,id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 85, in prepare_session
+    x = User.objects.filter(pk=wp)
+NameError: name 'User' is not defined
+[21:023801] "GET /ajax/display/session_details/7/ HTTP/1.1" 500 89217
+[21:023836] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:023836] Watching for file changes with StatReloader
+[21:023842] "GET / HTTP/1.1" 200 81631
+[21:023842] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:023842] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:023846] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:023848] Internal Server Error: /ajax/display/session_details/7/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1988, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 110, in display_session
+    context = prepare_session(request,id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 86, in prepare_session
+    x = User.objects.filter(pk=wp)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1071, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1089, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1096, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1466, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1496, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1412, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1242, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1990, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[21:023848] "GET /ajax/display/session_details/7/ HTTP/1.1" 500 146438
+[21:023936] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:023936] Watching for file changes with StatReloader
+[21:024003] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:024003] Watching for file changes with StatReloader
+[21:024011] "GET / HTTP/1.1" 200 81631
+[21:024011] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:024011] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:024013] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18986
+[21:024014] Internal Server Error: /ajax/display/session_details/4/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1988, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 108, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 86, in prepare_session
+    x = User.objects.filter(pk=wp)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1071, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1089, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1096, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1466, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1496, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1412, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1242, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1990, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[21:024014] "GET /ajax/display/session_details/4/ HTTP/1.1" 500 146522
+[21:024059] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:024059] Watching for file changes with StatReloader
+[21:024404] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:024404] Watching for file changes with StatReloader
+[21:024413] "GET / HTTP/1.1" 200 81631
+[21:024413] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:024413] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:024415] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:024416] Internal Server Error: /ajax/display/session_details/7/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 86, in prepare_session
+    if wp is integer:
+NameError: name 'integer' is not defined
+[21:024416] "GET /ajax/display/session_details/7/ HTTP/1.1" 500 89471
+[21:024540] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:024540] Watching for file changes with StatReloader
+[21:024544] /home/zaffarelli/Perso/github/rpgsessions/scheduler/models/session.py changed, reloading.
+[21:024544] Watching for file changes with StatReloader
+[21:024548] Watching for file changes with StatReloader
+[21:024612] "GET / HTTP/1.1" 200 81631
+[21:024612] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:024612] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:024614] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:024615] Internal Server Error: /ajax/display/session_details/7/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 86, in prepare_session
+    if wp is integer:
+NameError: name 'integer' is not defined
+[21:024615] "GET /ajax/display/session_details/7/ HTTP/1.1" 500 89471
+[21:024638] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:024638] Watching for file changes with StatReloader
+[21:024643] "GET / HTTP/1.1" 200 81631
+[21:024643] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:024643] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:024645] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:024647] Internal Server Error: /ajax/display/session_details/7/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 86, in prepare_session
+    if wp is Integer:
+NameError: name 'Integer' is not defined
+[21:024647] "GET /ajax/display/session_details/7/ HTTP/1.1" 500 89471
+[21:024745] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:024746] Watching for file changes with StatReloader
+[21:024752] "GET / HTTP/1.1" 200 81631
+[21:024752] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:024752] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:024754] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:024755] "GET /ajax/display/session_details/7/ HTTP/1.1" 200 6686
+[21:025034] "GET / HTTP/1.1" 200 81631
+[21:025034] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:025034] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:025037] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:025049] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 8258
+[21:025121] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:025121] Watching for file changes with StatReloader
+[21:025128] "GET / HTTP/1.1" 200 81631
+[21:025128] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:025128] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:025131] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:025132] Internal Server Error: /ajax/display/session_details/7/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1988, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 87, in prepare_session
+    x = User.objects.filter(pk=wp)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1071, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1089, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1096, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1466, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1496, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1412, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1242, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1990, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[21:025132] "GET /ajax/display/session_details/7/ HTTP/1.1" 500 146491
+[21:025203] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:025203] Watching for file changes with StatReloader
+[21:025206] "GET / HTTP/1.1" 200 81631
+[21:025206] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:025206] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:025208] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:025209] "GET /ajax/display/session_details/7/ HTTP/1.1" 200 6711
+[21:025244] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:025245] Watching for file changes with StatReloader
+[21:025247] "GET / HTTP/1.1" 200 81631
+[21:025247] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:025247] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:025249] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:025252] "GET /ajax/display/session_details/7/ HTTP/1.1" 200 6711
+[21:025255] Internal Server Error: /ajax/display/session_details/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 90, in prepare_session
+    wanted.append(this.profile.to_json)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py", line 31, in to_json
+    jstr = json.loads(json.dumps(self, default=json_default, sort_keys=True, indent=4))
+  File "/usr/lib64/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib64/python3.10/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 436, in _iterencode
+    raise ValueError("Circular reference detected")
+ValueError: Circular reference detected
+[21:025255] "GET /ajax/display/session_details/1/ HTTP/1.1" 500 265342
+[21:025258] Internal Server Error: /ajax/display/session_details/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 90, in prepare_session
+    wanted.append(this.profile.to_json)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py", line 31, in to_json
+    jstr = json.loads(json.dumps(self, default=json_default, sort_keys=True, indent=4))
+  File "/usr/lib64/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib64/python3.10/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 436, in _iterencode
+    raise ValueError("Circular reference detected")
+ValueError: Circular reference detected
+[21:025258] "GET /ajax/display/session_details/1/ HTTP/1.1" 500 265342
+[21:025302] "GET / HTTP/1.1" 200 81631
+[21:025302] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:025302] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:025303] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:025306] Internal Server Error: /ajax/display/session_details/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 90, in prepare_session
+    wanted.append(this.profile.to_json)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py", line 31, in to_json
+    jstr = json.loads(json.dumps(self, default=json_default, sort_keys=True, indent=4))
+  File "/usr/lib64/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib64/python3.10/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 436, in _iterencode
+    raise ValueError("Circular reference detected")
+ValueError: Circular reference detected
+[21:025306] "GET /ajax/display/session_details/1/ HTTP/1.1" 500 265341
+[21:025406] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:025407] Watching for file changes with StatReloader
+[21:025415] "GET /admin/scheduler/session/1/change/ HTTP/1.1" 200 22913
+[21:025415] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:025415] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[21:025415] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[21:025415] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[21:025427] "POST /admin/scheduler/session/1/change/ HTTP/1.1" 302 0
+[21:025427] "GET /admin/scheduler/session/ HTTP/1.1" 200 17833
+[21:025427] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:025431] "GET / HTTP/1.1" 200 81631
+[21:025431] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:025431] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:025434] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:025436] Internal Server Error: /ajax/display/session_details/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 90, in prepare_session
+    wanted.append(this.profile.to_json)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/models/profile.py", line 31, in to_json
+    jstr = json.loads(json.dumps(self, default=json_default, sort_keys=True, indent=4))
+  File "/usr/lib64/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib64/python3.10/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.10/json/encoder.py", line 436, in _iterencode
+    raise ValueError("Circular reference detected")
+ValueError: Circular reference detected
+[21:025436] "GET /ajax/display/session_details/1/ HTTP/1.1" 500 265347
+[21:025526] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:025527] Watching for file changes with StatReloader
+[21:025528] "GET / HTTP/1.1" 200 81631
+[21:025528] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:025528] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:025530] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:025531] Internal Server Error: /ajax/display/session_details/7/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 72, in prepare_session
+    from scheduler.profile.models import Profile
+ModuleNotFoundError: No module named 'scheduler.profile'
+[21:025531] "GET /ajax/display/session_details/7/ HTTP/1.1" 500 85618
+[21:025650] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:025651] Watching for file changes with StatReloader
+[21:025656] "GET / HTTP/1.1" 200 81631
+[21:025656] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:025656] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:025658] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:025700] Internal Server Error: /ajax/display/session_details/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 72, in prepare_session
+    from scheduler.profile.models import Profile
+ModuleNotFoundError: No module named 'scheduler.profile'
+[21:025700] "GET /ajax/display/session_details/1/ HTTP/1.1" 500 85618
+[21:025821] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:025821] Watching for file changes with StatReloader
+[21:025825] "GET / HTTP/1.1" 200 81631
+[21:025825] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:025825] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:025830] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:025836] Internal Server Error: /ajax/display/session_details/7/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 72, in prepare_session
+    from scheduler.profile.models import Profile
+ModuleNotFoundError: No module named 'scheduler.profile'
+[21:025836] "GET /ajax/display/session_details/7/ HTTP/1.1" 500 85618
+[21:025900] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:025901] Watching for file changes with StatReloader
+[21:025929] "GET / HTTP/1.1" 200 81631
+[21:025929] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:025929] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:025932] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:025956] Internal Server Error: /ajax/display/session_details/7/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1988, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 87, in prepare_session
+    x = Profile.objects.filter(pk=wp)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1071, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1089, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1096, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1466, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1496, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1412, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1242, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1990, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[21:025956] "GET /ajax/display/session_details/7/ HTTP/1.1" 500 147092
+[21:030029] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:030030] Watching for file changes with StatReloader
+[21:030031] "GET / HTTP/1.1" 200 81631
+[21:030031] "GET /static/js/scheduler.es6 HTTP/1.1" 200 18531
+[21:030031] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:030031] "GET /static/collector/hephaistos.ico HTTP/1.1" 404 1828
+[21:030033] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:030035] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 8258
+[21:030316] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:030317] Watching for file changes with StatReloader
+[21:030323] Watching for file changes with StatReloader
+[21:030328] "GET / HTTP/1.1" 200 81631
+[21:030328] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:030328] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:030330] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:030332] "GET /ajax/display/session_details/7/ HTTP/1.1" 200 6711
+[21:030333] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 8258
+[21:030354] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:030355] Watching for file changes with StatReloader
+[21:030406] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:030407] Watching for file changes with StatReloader
+[21:030420] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:030420] Watching for file changes with StatReloader
+[21:030432] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:030432] Watching for file changes with StatReloader
+[21:030436] "GET / HTTP/1.1" 200 81631
+[21:030437] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:030437] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:030440] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:030444] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 30498
+[21:030551] "GET / HTTP/1.1" 200 81631
+[21:030551] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:030551] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:030553] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:030554] Internal Server Error: /ajax/display/session_details/7/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1988, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 87, in prepare_session
+    _set = Profile.objects.filter(pk=wp)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1071, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1089, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1096, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1466, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1496, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1412, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1242, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1990, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[21:030554] "GET /ajax/display/session_details/7/ HTTP/1.1" 500 147125
+[21:030556] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 30500
+[21:030614] "GET / HTTP/1.1" 200 81631
+[21:030614] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:030614] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:030623] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:030625] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 30495
+[21:030716] "GET / HTTP/1.1" 200 81631
+[21:030716] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:030716] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:030720] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:030720] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 30531
+[21:030732] "GET / HTTP/1.1" 200 81631
+[21:030732] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:030732] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:030734] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:030736] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 30525
+[21:030808] "GET / HTTP/1.1" 200 81631
+[21:030808] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:030808] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:030809] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:030810] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 30538
+[21:030904] "GET / HTTP/1.1" 200 81631
+[21:030904] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:030904] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:030906] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:030907] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 30613
+[21:030909] Internal Server Error: /ajax/display/session_details/7/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1988, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 109, in display_session
+    context = prepare_session(request, id)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 87, in prepare_session
+    _set = Profile.objects.filter(pk=wp)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1071, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1089, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/query.py", line 1096, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1466, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1496, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1412, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1242, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1990, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[21:030909] "GET /ajax/display/session_details/7/ HTTP/1.1" 500 147124
+[21:031042] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:031042] Watching for file changes with StatReloader
+[21:031051] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:031052] Watching for file changes with StatReloader
+[21:031056] /home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py changed, reloading.
+[21:031056] Watching for file changes with StatReloader
+[21:031059] "GET / HTTP/1.1" 200 81631
+[21:031059] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:031059] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:031100] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:031102] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 30613
+[21:031104] "GET /ajax/display/session_details/7/ HTTP/1.1" 200 6794
+[21:031107] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 30613
+[21:031108] "GET /ajax/display/session_details/7/ HTTP/1.1" 200 6794
+[21:031109] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 30613
+[21:031110] "GET /ajax/display/session_details/7/ HTTP/1.1" 200 6794
+[21:031111] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 30613
+[21:031829] "GET /ajax/display/session_details/7/ HTTP/1.1" 200 6794
+[21:031859] "GET /ajax/display/session_details/7/ HTTP/1.1" 200 6794
+[21:031900] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 30613
+[21:032008] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 30613
+[21:032023] "GET /admin/auth/user/ HTTP/1.1" 200 14695
+[21:032023] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032026] "GET /admin/auth/user/3/change/ HTTP/1.1" 200 19695
+[21:032026] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032026] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[21:032038] "GET /admin/scheduler/session/ HTTP/1.1" 200 17607
+[21:032038] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032042] "GET /admin/scheduler/session/1/change/ HTTP/1.1" 200 22913
+[21:032042] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032042] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[21:032042] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[21:032056] "POST /admin/scheduler/session/1/change/ HTTP/1.1" 302 0
+[21:032056] "GET /admin/scheduler/session/ HTTP/1.1" 200 17833
+[21:032056] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032103] "GET / HTTP/1.1" 200 81631
+[21:032103] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:032103] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:032105] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:032127] "GET /admin/scheduler/session/1/change/ HTTP/1.1" 200 22915
+[21:032127] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032127] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[21:032127] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[21:032127] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[21:032202] "POST /admin/scheduler/session/1/change/ HTTP/1.1" 302 0
+[21:032202] "GET /admin/scheduler/session/ HTTP/1.1" 200 17833
+[21:032202] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032202] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[21:032202] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[21:032206] "GET / HTTP/1.1" 200 81631
+[21:032206] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:032206] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:032208] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:032209] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 37109
+[21:032233] "GET /admin/auth/user/ HTTP/1.1" 200 14695
+[21:032233] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032236] "GET /admin/auth/user/7/change/ HTTP/1.1" 200 19607
+[21:032236] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032236] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[21:032251] "GET /admin/auth/user/ HTTP/1.1" 200 14695
+[21:032251] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032304] "GET /admin/auth/user/4/change/ HTTP/1.1" 200 19616
+[21:032304] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032320] "GET /admin/auth/user/ HTTP/1.1" 200 14695
+[21:032320] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032323] "GET /admin/auth/user/4/change/ HTTP/1.1" 200 19616
+[21:032323] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032326] "GET /admin/auth/user/ HTTP/1.1" 200 14695
+[21:032332] "GET /admin/auth/user/7/change/ HTTP/1.1" 200 19607
+[21:032332] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032340] "GET /admin/scheduler/session/ HTTP/1.1" 200 17607
+[21:032340] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032343] "GET /admin/scheduler/session/2/change/ HTTP/1.1" 200 21725
+[21:032344] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032344] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[21:032344] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[21:032359] "POST /admin/scheduler/session/2/change/ HTTP/1.1" 302 0
+[21:032359] "GET /admin/scheduler/session/ HTTP/1.1" 200 17830
+[21:032359] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032404] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 56386
+[21:032407] "GET /ajax/display/dayzoom/2022_03_18/ HTTP/1.1" 200 10900
+[21:032412] "GET /ajax/display/session_details/2/ HTTP/1.1" 200 34586
+[21:032430] "GET /admin/scheduler/session/2/change/ HTTP/1.1" 200 21743
+[21:032430] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032430] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[21:032436] "POST /admin/scheduler/session/2/change/ HTTP/1.1" 302 0
+[21:032436] "GET /admin/scheduler/session/ HTTP/1.1" 200 17830
+[21:032437] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032524] "GET /admin/scheduler/session/2/change/ HTTP/1.1" 200 21741
+[21:032525] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032525] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[21:032532] "GET / HTTP/1.1" 200 81631
+[21:032532] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:032532] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:032534] "GET /ajax/display/dayzoom/2022_03_18/ HTTP/1.1" 200 10900
+[21:032535] "GET /ajax/display/session_details/2/ HTTP/1.1" 200 28083
+[21:032549] "GET /admin/scheduler/profile/ HTTP/1.1" 200 12470
+[21:032549] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032552] "GET /admin/scheduler/profile/7/change/ HTTP/1.1" 200 14615
+[21:032552] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032611] "POST /admin/scheduler/profile/7/change/ HTTP/1.1" 302 0
+[21:032611] "GET /admin/scheduler/profile/ HTTP/1.1" 200 12682
+[21:032611] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032611] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[21:032614] "GET /admin/scheduler/profile/4/change/ HTTP/1.1" 200 14627
+[21:032614] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032632] "POST /admin/scheduler/profile/4/change/ HTTP/1.1" 302 0
+[21:032632] "GET /admin/scheduler/profile/ HTTP/1.1" 200 12685
+[21:032632] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032636] "GET / HTTP/1.1" 200 81631
+[21:032636] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:032636] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:032638] "GET /ajax/display/dayzoom/2022_03_18/ HTTP/1.1" 200 10900
+[21:032639] "GET /ajax/display/session_details/2/ HTTP/1.1" 200 28083
+[21:032657] "GET /admin/scheduler/profile/7/change/ HTTP/1.1" 200 14615
+[21:032657] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032710] "POST /admin/scheduler/profile/7/change/ HTTP/1.1" 302 0
+[21:032711] "GET /admin/scheduler/profile/ HTTP/1.1" 200 12682
+[21:032711] "GET /admin/jsi18n/ HTTP/1.1" 200 8044
+[21:032715] "GET / HTTP/1.1" 200 81631
+[21:032715] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:032715] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:032719] "GET /ajax/display/dayzoom/2022_03_18/ HTTP/1.1" 200 10900
+[21:032723] "GET /ajax/display/session_details/2/ HTTP/1.1" 200 28083
+[21:032957] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 56386
+[21:032959] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:033016] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 37109
+[21:033356] /home/zaffarelli/Perso/github/rpgsessions/scheduler/utils/organizer.py changed, reloading.
+[21:033356] Watching for file changes with StatReloader
+[21:033359] "GET / HTTP/1.1" 200 81631
+[21:033359] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:033359] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:033404] Internal Server Error: /ajax/display/dayzoom/2022_04_09/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/rpgsessions/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 37, in display_day
+    context = prepare_day(request, slug)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/views/base.py", line 28, in prepare_day
+    data = build_zoomed_day(d)
+  File "/home/zaffarelli/Perso/github/rpgsessions/scheduler/utils/organizer.py", line 95, in build_zoomed_day
+    for i in s.inscription_set.all().order_by(profile.user_id):
+NameError: name 'profile' is not defined
+[21:033404] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 500 91320
+[21:033439] /home/zaffarelli/Perso/github/rpgsessions/scheduler/utils/organizer.py changed, reloading.
+[21:033439] Watching for file changes with StatReloader
+[21:033442] "GET / HTTP/1.1" 200 81631
+[21:033442] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:033442] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:033444] "GET /ajax/display/dayzoom/2022_04_09/ HTTP/1.1" 200 47772
+[21:033455] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 37109
+[21:033536] "GET /ajax/display/session_details/7/ HTTP/1.1" 200 6794
+[21:033537] "GET /ajax/display/session_details/1/ HTTP/1.1" 200 37109
+[21:033546] "GET /ajax/display/month/2022_03_21/ HTTP/1.1" 200 56386
+[21:033548] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18986
+[21:033549] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6805
+[21:033550] "GET /ajax/display/session_details/3/ HTTP/1.1" 200 6735
+[21:033551] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6805
+[21:033659] /home/zaffarelli/Perso/github/rpgsessions/scheduler/templatetags/global_filters.py changed, reloading.
+[21:033659] Watching for file changes with StatReloader
+[21:033701] "GET / HTTP/1.1" 200 81631
+[21:033701] "GET /static/js/scheduler.es6 HTTP/1.1" 304 0
+[21:033701] "GET /static/CACHE/css/main.542ebab8c0f5.css HTTP/1.1" 200 18338
+[21:033704] "GET /ajax/display/dayzoom/2022_03_26/ HTTP/1.1" 200 18986
+[21:033706] "GET /ajax/display/session_details/3/ HTTP/1.1" 200 6735
+[21:033710] "GET /ajax/display/session_details/4/ HTTP/1.1" 200 6805
+[21:033842] /home/zaffarelli/Perso/github/rpgsessions/rpgsessions/settings.py changed, reloading.
+[21:033842] Watching for file changes with StatReloader

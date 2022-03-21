@@ -4,7 +4,7 @@
         <div class="session display" action="session_details" param="{{c.s.id}}" style="height: calc({{c.game.size}}px - 5px ); background: {{c.s.alpha}};">
             {% include "scheduler/session_shortcut.html" with c=c %}
             {% if c.s.mandatory_spots %}
-            Wanted: {{c.s.mandatory_spots}}
+            Sollicités: {{c.s.mandatory_spots}}
             <br/>
             {% for i in c.inscriptions %}
                 {% include "scheduler/player_shortcut.html" with c=i %}

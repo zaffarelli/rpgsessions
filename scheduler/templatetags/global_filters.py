@@ -37,7 +37,7 @@ def as_current_day(value):
 @register.filter(name='as_bool')
 def as_bool(value):
     res = '<span style="color:red;"><i class="fas fa-times-circle"></i></span>'
-    print(value)
+    # print(value)
     if str(value)[0] in ['T', 't', '0', '1']:
         res = '<span style="color:green;"><i class="fas fa-check-circle"></i></span>'
     return res
@@ -45,7 +45,7 @@ def as_bool(value):
 @register.filter(name='as_gender')
 def as_gender(value):
     res = '<span style="color:orange;"><i class="fas fa-mars"></i></span>'
-    print(value)
+    # print(value)
     if str(value)[0] in ['T', 't', '0', '1']:
         res = '<span style="color:violet;"><i class="fas fa-venus"></i></span>'
     return res

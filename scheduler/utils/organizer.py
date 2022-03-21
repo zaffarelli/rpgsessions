@@ -90,9 +90,9 @@ def build_zoomed_day(d):
         # print(s.time_start, delta, delta.total_seconds(), ":", pre_size)
         size = s.duration * HOUR_PIXELS
         post_size = 14 * HOUR_PIXELS - pre_size - size
-        print(pre_size/HOUR_PIXELS, size/HOUR_PIXELS, post_size/HOUR_PIXELS)
+        # print(pre_size/HOUR_PIXELS, size/HOUR_PIXELS, post_size/HOUR_PIXELS)
         inscriptions = []
-        for i in s.inscription_set.all():
+        for i in s.inscription_set.all().order_by('profile__user_id'):
             inscriptions.append(i.profile.to_json)
         sess = {'title': s.title,
                 'date': s.date_start,

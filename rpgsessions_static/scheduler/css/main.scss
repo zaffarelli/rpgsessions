@@ -398,6 +398,7 @@ body {
 
                       & .session {
                         order: 2;
+                        font-family:Roboto;
                         width: calc(100% - 2px);
                         background: white;
                         color: $plate_color;
@@ -556,7 +557,7 @@ table {
 
     & th {
       width: 180px;
-      background: $paper_background;
+      background: $paper_border;
       color: $paper_color;
       padding: 2px;
       border-radius:3px;

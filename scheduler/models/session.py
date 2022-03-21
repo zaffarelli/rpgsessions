@@ -30,6 +30,7 @@ class Session(models.Model):
     alpha = ColorField(default='#666666')
     beta = ColorField(default='#666666')
     gamma = ColorField(default='#666666')
+    wanted = models.CharField(max_length=64, default='', blank=True)
     is_ready = models.BooleanField(default=False, verbose_name='ok')
 
     def __str__(self):
