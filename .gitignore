@@ -10,4 +10,4 @@ venv/
 scheduler/static/scheduler/creds.json
 __init__.pyc
 oldies/
-docker/
+/docker
