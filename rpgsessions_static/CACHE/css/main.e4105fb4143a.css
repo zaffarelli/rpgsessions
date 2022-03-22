@@ -1,0 +1,157 @@
+/* line 4, scheduler/static/scheduler/css/main.scss */
+body {
+  font-family: Texte;
+  background: #FFFFFF;
+  color: #101010;
+  min-height: 98%;
+  font-family: quicksand; }
+
+/* line 13, scheduler/static/scheduler/css/main.scss */
+.subsection {
+  font-weight: bold;
+  color: #DBCA86;
+  text-decoration: underline; }
+
+/* line 19, scheduler/static/scheduler/css/main.scss */
+.pdflink {
+  color: #E5DECA;
+  text-decoration: none;
+  background: #1d1d1d;
+  display: inline-block;
+  padding: 3px; }
+
+/* line 27, scheduler/static/scheduler/css/main.scss */
+.ping {
+  background: orange; }
+
+/* line 32, scheduler/static/scheduler/css/main.scss */
+.toggle_name {
+  font-weight: bold;
+  font-style: normal;
+  font-family: Titre;
+  width: auto;
+  display: inline-block; }
+
+/* line 41, scheduler/static/scheduler/css/main.scss */
+.waiting {
+  cursor: progress;
+  opacity: 0.95; }
+
+/* line 46, scheduler/static/scheduler/css/main.scss */
+.golden {
+  color: #ffcc22; }
+
+/* line 50, scheduler/static/scheduler/css/main.scss */
+.blank {
+  color: #C0C0C0;
+  opacity: 0.5; }
+
+/* line 55, scheduler/static/scheduler/css/main.scss */
+.embedded_link {
+  color: #DBCA86;
+  text-decoration: none; }
+
+/* line 60, scheduler/static/scheduler/css/main.scss */
+.custom_glance {
+  cursor: help; }
+
+/* line 64, scheduler/static/scheduler/css/main.scss */
+.shown {
+  display: block; }
+
+/* line 68, scheduler/static/scheduler/css/main.scss */
+.noPDF:before {
+  content: '(x) '; }
+
+/* line 72, scheduler/static/scheduler/css/main.scss */
+.hidden {
+  display: none; }
+
+@media all and (min-width: 1024px) {
+  /* line 78, scheduler/static/scheduler/css/main.scss */
+  body {
+    margin: 0;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+    row-gap: 1px;
+    column-gap: 1px; }
+    /* line 92, scheduler/static/scheduler/css/main.scss */
+    body .menuzone {
+      background: #F0F0F0;
+      border: 1px solid black;
+      min-height: 40px;
+      width: 100%;
+      order: 1; }
+    /* line 100, scheduler/static/scheduler/css/main.scss */
+    body .userzone {
+      background: #F0F0F0;
+      border: 1px solid black;
+      min-height: 20px;
+      width: 100%;
+      order: 2;
+      text-align: right;
+      font-size: 8pt; }
+    /* line 110, scheduler/static/scheduler/css/main.scss */
+    body .wrapper {
+      order: 3;
+      background: #F0F0F0;
+      border: 1px solid black;
+      width: 100%;
+      min-height: 400px;
+      heigth: auto; }
+    /* line 119, scheduler/static/scheduler/css/main.scss */
+    body .eventzone {
+      order: 4;
+      min-height: 40px;
+      background: #F0F0F0;
+      border: 1px solid black;
+      width: 100%; } }
+
+/* line 132, scheduler/static/scheduler/css/main.scss */
+.wrapper .oweek {
+  width: calc(120*7);
+  margin: auto 0;
+  background: orange;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: stretch;
+  row-gap: 1px;
+  column-gap: 1px; }
+  /* line 145, scheduler/static/scheduler/css/main.scss */
+  .wrapper .oweek .week_info {
+    order: 1;
+    background: silver; }
+  /* line 150, scheduler/static/scheduler/css/main.scss */
+  .wrapper .oweek .week_body {
+    order: 2;
+    background: lime;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+    gap: 3px; }
+    /* line 161, scheduler/static/scheduler/css/main.scss */
+    .wrapper .oweek .week_body .oday {
+      display: flex;
+      flex-flow: column wrap;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      align-items: stretch;
+      row-gap: 1px;
+      column-gap: 1px;
+      background: yellow; }
+      /* line 173, scheduler/static/scheduler/css/main.scss */
+      .wrapper .oweek .week_body .oday .day_info {
+        order: 1;
+        height: 30px;
+        width: 120px; }

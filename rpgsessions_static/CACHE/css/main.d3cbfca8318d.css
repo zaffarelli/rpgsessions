@@ -1,0 +1,799 @@
+@font-face {
+  font-family: 'Titre';
+  src: url("/static/scheduler/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'marcellus_sc_regular';
+  src: url("/static/scheduler/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'Texte';
+  src: url("/static/scheduler/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'logo';
+  src: url("/static/scheduler/fonts/ShadowsIntoLight-Regular.ttf"); }
+
+@font-face {
+  font-family: 'wyld';
+  src: url("/static/scheduler/fonts/fanjofey.ttf"); }
+
+@font-face {
+  font-family: 'weaver';
+  src: url("/static/scheduler/fonts/plank.ttf"); }
+
+@font-face {
+  font-family: 'wyrm';
+  src: url("/static/scheduler/fonts/another_danger.otf"); }
+
+@font-face {
+  font-family: 'TexteLibre';
+  src: url("/static/scheduler/fonts/Lato-Regular.ttf"); }
+
+/* line 4, scheduler/static/scheduler/css/main.scss */
+body {
+  font-family: Texte;
+  background: transparent url("/static/scheduler/colorful-grunge-texture-10.jpg") fixed;
+  color: #101010;
+  min-height: 98%; }
+
+/* line 12, scheduler/static/scheduler/css/main.scss */
+.subsection {
+  font-weight: bold;
+  color: #DBCA86;
+  text-decoration: underline; }
+
+/* line 18, scheduler/static/scheduler/css/main.scss */
+.pdflink {
+  color: #E5DECA;
+  text-decoration: none;
+  background: #1d1d1d;
+  display: inline-block;
+  padding: 3px; }
+
+/* line 26, scheduler/static/scheduler/css/main.scss */
+.ping {
+  background: orange; }
+
+/* line 31, scheduler/static/scheduler/css/main.scss */
+.toggle_name {
+  font-weight: bold;
+  font-style: normal;
+  font-family: Titre;
+  width: auto;
+  display: inline-block; }
+
+/* line 40, scheduler/static/scheduler/css/main.scss */
+.waiting {
+  cursor: progress;
+  opacity: 0.95; }
+
+/* line 45, scheduler/static/scheduler/css/main.scss */
+.golden {
+  color: #ffcc22; }
+
+/* line 49, scheduler/static/scheduler/css/main.scss */
+.blank {
+  color: #C0C0C0;
+  opacity: 0.5; }
+
+/* line 54, scheduler/static/scheduler/css/main.scss */
+.embedded_link {
+  color: #DBCA86;
+  text-decoration: none; }
+
+/* line 59, scheduler/static/scheduler/css/main.scss */
+.custom_glance {
+  cursor: help; }
+
+/* line 63, scheduler/static/scheduler/css/main.scss */
+.shown {
+  display: block; }
+
+/* line 67, scheduler/static/scheduler/css/main.scss */
+.noPDF:before {
+  content: '(x) '; }
+
+/* Normal --------------------------------------------------------------------*/
+@media all and (min-width: 1024px) {
+  /* line 74, scheduler/static/scheduler/css/main.scss */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hide;
+    overflow-y: scroll; }
+    /* line 80, scheduler/static/scheduler/css/main.scss */
+    body input#userinput, body #text_edit {
+      order: 2;
+      border: 1px solid silver;
+      border-radius: 5px;
+      box-shadow: 0 0 5px black;
+      display: inline-block;
+      font-size: 12px;
+      padding: 3px;
+      margin: 1px 3px 1px 3px;
+      height: 18px;
+      background: #C0C0C0;
+      color: black; }
+    /* line 94, scheduler/static/scheduler/css/main.scss */
+    body #text_edit {
+      height: 18em; }
+  /* line 98, scheduler/static/scheduler/css/main.scss */
+  .wrapper {
+    background: transparent url(/static/scheduler/css?397c371f4381) 100% 100% no-repeat fixed;
+    z-index: 60;
+    width: 100%;
+    min-height: 1200px;
+    padding-top: 0;
+    margin: 0; }
+    /* line 107, scheduler/static/scheduler/css/main.scss */
+    .wrapper.hidden {
+      display: none; }
+    /* line 111, scheduler/static/scheduler/css/main.scss */
+    .wrapper .caine_roots {
+      background: transparent;
+      width: 100%;
+      display: block;
+      z-index: 60;
+      padding: 0;
+      margin: 0; }
+    /* line 120, scheduler/static/scheduler/css/main.scss */
+    .wrapper .details {
+      background: transparent;
+      width: auto;
+      right: 10px;
+      left: auto;
+      top: auto;
+      bottom: 0px;
+      display: block;
+      position: fixed;
+      z-index: 110;
+      transition: all 0.3s ease;
+      box-shadow: -5px -5px 10px #2d2830; }
+      /* line 133, scheduler/static/scheduler/css/main.scss */
+      .wrapper .details.hidden {
+        transition: all 0.3s ease;
+        transform: translateX(1000px); } }
+
+/* line 142, scheduler/static/scheduler/css/main.scss */
+.charlist {
+  background: #474747;
+  color: #c7c7c7;
+  border: 1px solid #616161;
+  border-radius: 3px;
+  padding: 3px;
+  box-shadow: 0 0 3px black;
+  font-family: Roboto;
+  font-size: 10pt;
+  background: #474747;
+  color: #c7c7c7;
+  border: 1px solid #616161;
+  border-radius: 3px;
+  padding: 3px;
+  box-shadow: 0 0 3px black;
+  font-family: Roboto;
+  font-size: 10pt;
+  border-radius: 5px;
+  width: 260px;
+  display: block;
+  position: fixed;
+  z-index: 70;
+  padding-top: 0px;
+  margin: auto;
+  top: 0;
+  bottom: auto;
+  right: 5px;
+  left: auto;
+  box-shadow: 0 0 5px #201d22;
+  transition: all 0.3s ease;
+  border-color: #616161; }
+  /* line 145, scheduler/static/scheduler/css/main.scss */
+  .charlist .pagination {
+    text-align: center;
+    margin-top: 1em;
+    width: 260px; }
+    /* line 150, scheduler/static/scheduler/css/main.scss */
+    .charlist .pagination a, .charlist .pagination strong, .charlist .pagination span.nav {
+      background: #474747;
+      color: #c7c7c7;
+      border: 1px solid #616161;
+      border-radius: 3px;
+      padding: 3px;
+      box-shadow: 0 0 3px black;
+      font-family: Roboto;
+      font-size: 10pt;
+      margin: 0 0.2em;
+      display: inline-block;
+      color: #FFFFFF;
+      font-size: 0.7em;
+      font-family: 'TexteLibre';
+      padding: 0.3em 0.4em;
+      text-decoration: none;
+      cursor: pointer;
+      background: #201d22;
+      border-radius: 5px;
+      width: 2ex; }
+  /* line 166, scheduler/static/scheduler/css/main.scss */
+  .charlist .avatar_link {
+    background: #474747;
+    color: #c7c7c7;
+    border: 1px solid #616161;
+    border-radius: 3px;
+    padding: 3px;
+    box-shadow: 0 0 3px black;
+    font-family: Roboto;
+    font-size: 10pt;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 0 0 5px 0;
+    border-color: #141414; }
+    /* line 175, scheduler/static/scheduler/css/main.scss */
+    .charlist .avatar_link a {
+      text-decoration: none; }
+  /* line 180, scheduler/static/scheduler/css/main.scss */
+  .charlist ul {
+    width: 260px;
+    text-indent: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+    /* line 187, scheduler/static/scheduler/css/main.scss */
+    .charlist ul li {
+      padding: 0;
+      margin: 0; }
+  /* line 214, scheduler/static/scheduler/css/main.scss */
+  .charlist.hidden {
+    transform: translateY(-1800px);
+    transition: all 0.3s ease; }
+
+/* Details - Creature Block */
+/* line 224, scheduler/static/scheduler/css/main.scss */
+.creature {
+  font-size: 9pt;
+  border-radius: 8px;
+  background: transparent; }
+  /* line 243, scheduler/static/scheduler/css/main.scss */
+  .creature strong {
+    font-family: Titre;
+    font-weight: normal;
+    font-size: 2em;
+    line-height: 1.4em; }
+  /* line 250, scheduler/static/scheduler/css/main.scss */
+  .creature table {
+    font-family: Texte;
+    color: black;
+    background: #303030;
+    border: 1px solid transparent;
+    border-radius: 10px 0 0 0;
+    box-shadow: -2px -2px 8px black;
+    margin: auto; }
+    /* line 259, scheduler/static/scheduler/css/main.scss */
+    .creature table tr {
+      padding: 0;
+      margin: 0; }
+      /* line 263, scheduler/static/scheduler/css/main.scss */
+      .creature table tr th {
+        padding: 5px;
+        background: #474747;
+        color: #c7c7c7;
+        font-size: 8pt;
+        font-family: TexteLibre;
+        font-weight: normal;
+        margin: 0;
+        border: none;
+        width: 110px;
+        border: 1px solid #201d22;
+        padding: 1px;
+        height: auto;
+        padding: 0; }
+        /* line 266, scheduler/static/scheduler/css/main.scss */
+        .creature table tr th[colspan='5'] {
+          background: #201d22;
+          height: 90px;
+          padding: 0;
+          padding-left: 3ex;
+          text-align: left; }
+        /* line 274, scheduler/static/scheduler/css/main.scss */
+        .creature table tr th.clan_logo {
+          background: #201d22;
+          overflow: hidden;
+          padding: 0;
+          height: 50px;
+          overflow-y: hidden; }
+          /* line 281, scheduler/static/scheduler/css/main.scss */
+          .creature table tr th.clan_logo img {
+            width: 80px;
+            filter: invert(75%); }
+        /* line 287, scheduler/static/scheduler/css/main.scss */
+        .creature table tr th.back {
+          background: #201d22; }
+        /* line 306, scheduler/static/scheduler/css/main.scss */
+        .creature table tr th.tainted {
+          border-color: transparent; }
+      /* line 312, scheduler/static/scheduler/css/main.scss */
+      .creature table tr:first-child th {
+        border-radius: 3px 6px 0 0; }
+      /* line 316, scheduler/static/scheduler/css/main.scss */
+      .creature table tr:last-child th {
+        border-radius: 0 0 3px 6px; }
+      /* line 320, scheduler/static/scheduler/css/main.scss */
+      .creature table tr td {
+        font-size: 8pt;
+        font-family: TexteLibre;
+        text-align: left;
+        margin: 0;
+        padding: 1px;
+        width: 110px;
+        background: transparent;
+        border: 1px solid transparent;
+        color: #c7c7c7;
+        text-align: center; }
+        /* line 332, scheduler/static/scheduler/css/main.scss */
+        .creature table tr td[colspan='2'], .creature table tr td[colspan='8'] {
+          border-radius: 5px;
+          background: black;
+          color: #c7c7c7;
+          text-align: center;
+          font-family: "Marcellus SC";
+          font-size: 12pt; }
+        /* line 341, scheduler/static/scheduler/css/main.scss */
+        .creature table tr td.topic {
+          background: transparent;
+          font-size: 8pt;
+          font-family: TexteLibre;
+          text-align: left;
+          margin: 0;
+          padding: 1px; }
+        /* line 351, scheduler/static/scheduler/css/main.scss */
+        .creature table tr td.editable.userinput.focus {
+          border-color: #22C0F0; }
+    /* line 358, scheduler/static/scheduler/css/main.scss */
+    .creature table.freewidth tr td {
+      width: auto; }
+
+/* line 369, scheduler/static/scheduler/css/main.scss */
+table tr.tainted th.tainted {
+  border: none;
+  background: transparent; }
+
+/* line 378, scheduler/static/scheduler/css/main.scss */
+.mortal table tr.tainted {
+  background: repeating-linear-gradient(90deg, #4e4e4e, #4e4e4e 50%, #474747 100%); }
+
+/* line 386, scheduler/static/scheduler/css/main.scss */
+.fomori table tr.tainted {
+  background: repeating-linear-gradient(90deg, #221338, #4e4e4e 50%, #474747 100%); }
+
+/* line 394, scheduler/static/scheduler/css/main.scss */
+.Camarilla.kindred table tr.tainted {
+  background: repeating-linear-gradient(90deg, #104010, #870931 50%, #474747 100%); }
+
+/* line 402, scheduler/static/scheduler/css/main.scss */
+.changeling table tr.tainted {
+  background: repeating-linear-gradient(90deg, #684203, #474747 50%, #474747 100%); }
+
+/* line 410, scheduler/static/scheduler/css/main.scss */
+.wraith table tr.tainted {
+  background: repeating-linear-gradient(90deg, #2f3345, #474747 50%, #474747 100%); }
+
+/* line 418, scheduler/static/scheduler/css/main.scss */
+.mage table tr.tainted {
+  background: repeating-linear-gradient(90deg, #3c18de, #474747 50%, #474747 100%); }
+
+/* line 427, scheduler/static/scheduler/css/main.scss */
+.Sabbat.kindred table tr.tainted {
+  background: repeating-linear-gradient(90deg, #401010, #870931 50%, #474747 100%); }
+
+/* line 436, scheduler/static/scheduler/css/main.scss */
+.ghoul table tr.tainted {
+  background: repeating-linear-gradient(90deg, #870931, #4e4e4e 50%, #474747 100%); }
+
+/* line 444, scheduler/static/scheduler/css/main.scss */
+.garou table tr.tainted {
+  background: repeating-linear-gradient(90deg, #382b18, #382b18 50%, #474747 100%); }
+
+/* line 452, scheduler/static/scheduler/css/main.scss */
+.kinfolk table tr.tainted {
+  background: repeating-linear-gradient(90deg, #382b18, #4e4e4e 50%, #474747 100%); }
+
+/* line 460, scheduler/static/scheduler/css/main.scss */
+.Pentex table tr.tainted {
+  background: repeating-linear-gradient(90deg, #221338, #382b18 50%, #474747 100%); }
+
+/* line 467, scheduler/static/scheduler/css/main.scss */
+.list .goodies {
+  width: auto;
+  height: auto;
+  margin: 5px;
+  text-align: center;
+  padding: 5px; }
+  /* line 474, scheduler/static/scheduler/css/main.scss */
+  .list .goodies span {
+    cursor: pointer;
+    font-family: Titre; }
+
+/* line 481, scheduler/static/scheduler/css/main.scss */
+.bar {
+  position: fixed;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  top: 0;
+  padding: 3px;
+  height: auto;
+  background: transparent;
+  margin: 0;
+  color: white;
+  z-index: 100; }
+  /* line 497, scheduler/static/scheduler/css/main.scss */
+  .bar .pull_down {
+    order: 1;
+    display: inline-block;
+    font-family: TexteLibre;
+    font-size: 12px;
+    height: 24px;
+    margin: 0 3px 0 3px;
+    width: 300px;
+    background: #474747;
+    color: #c7c7c7;
+    border: 1px solid #616161;
+    border-radius: 3px;
+    padding: 3px;
+    box-shadow: 0 0 3px black;
+    font-family: Roboto;
+    font-size: 10pt; }
+    /* line 510, scheduler/static/scheduler/css/main.scss */
+    .bar .pull_down.chronicle {
+      font-family: Titre;
+      font-size: 16px;
+      text-align: center; }
+    /* line 516, scheduler/static/scheduler/css/main.scss */
+    .bar .pull_down ul.drop_down {
+      display: none;
+      list-style-type: none;
+      text-indent: 0;
+      margin-left: 0;
+      padding-left: 2ex; }
+      /* line 524, scheduler/static/scheduler/css/main.scss */
+      .bar .pull_down ul.drop_down li {
+        color: #e0e0e0;
+        padding: 2px;
+        margin: 2px;
+        border-radius: 5px; }
+    /* line 532, scheduler/static/scheduler/css/main.scss */
+    .bar .pull_down:hover {
+      height: auto; }
+      /* line 537, scheduler/static/scheduler/css/main.scss */
+      .bar .pull_down:hover ul.drop_down {
+        display: block; }
+        /* line 541, scheduler/static/scheduler/css/main.scss */
+        .bar .pull_down:hover ul.drop_down li.wod {
+          background: #474747; }
+        /* line 546, scheduler/static/scheduler/css/main.scss */
+        .bar .pull_down:hover ul.drop_down li:hover {
+          color: #FFFFFF;
+          background: #474747;
+          cursor: pointer; }
+  /* line 554, scheduler/static/scheduler/css/main.scss */
+  .bar.hidden {
+    display: none; }
+
+/* line 560, scheduler/static/scheduler/css/main.scss */
+#caine_roots {
+  text-align: center;
+  font-size: 14px; }
+
+/* line 565, scheduler/static/scheduler/css/main.scss */
+svg.lineage {
+  margin: 10px;
+  border: 1px dashed #CCC;
+  background: transparent;
+  margin-top: 50px; }
+  /* line 573, scheduler/static/scheduler/css/main.scss */
+  svg.lineage .node .property {
+    font-family: "Roboto";
+    font-size: 9pt;
+    stroke: #888;
+    fill: #fff;
+    stroke-width: 0.6px; }
+  /* line 582, scheduler/static/scheduler/css/main.scss */
+  svg.lineage .node rect.band {
+    fill: #333;
+    stroke: #666;
+    stroke-width: 0.5pt; }
+  /* line 590, scheduler/static/scheduler/css/main.scss */
+  svg.lineage .node rect.frame {
+    fill: transparent;
+    stroke: #FFF;
+    stroke-width: 1pt; }
+  /* line 596, scheduler/static/scheduler/css/main.scss */
+  svg.lineage .node rect.plate {
+    fill: #444;
+    stroke: #888;
+    stroke-width: 0.5pt; }
+    /* line 601, scheduler/static/scheduler/css/main.scss */
+    svg.lineage .node rect.plate.Camarilla {
+      fill: #104010; }
+    /* line 605, scheduler/static/scheduler/css/main.scss */
+    svg.lineage .node rect.plate.Anarchs {
+      fill: #252572; }
+    /* line 609, scheduler/static/scheduler/css/main.scss */
+    svg.lineage .node rect.plate.Sabbat {
+      fill: #401010; }
+    /* line 613, scheduler/static/scheduler/css/main.scss */
+    svg.lineage .node rect.plate.Independants {
+      fill: #104c5e; }
+  /* line 622, scheduler/static/scheduler/css/main.scss */
+  svg.lineage .node.dead rect.frame {
+    stroke: #FF4;
+    stroke-width: 3pt;
+    stroke-linecap: butt;
+    stroke-opacity: 0.25; }
+  /* line 630, scheduler/static/scheduler/css/main.scss */
+  svg.lineage .node.dead rect.band {
+    stroke-width: 0;
+    fill-opacity: 0.25; }
+  /* line 635, scheduler/static/scheduler/css/main.scss */
+  svg.lineage .node.dead rect.plate {
+    stroke-width: 0;
+    fill-opacity: 0.25; }
+  /* line 644, scheduler/static/scheduler/css/main.scss */
+  svg.lineage .node.missing rect.frame {
+    stroke: #F4F;
+    stroke-width: 3pt;
+    stroke-linecap: butt;
+    stroke-opacity: 0.25; }
+  /* line 651, scheduler/static/scheduler/css/main.scss */
+  svg.lineage .node.missing rect.band {
+    stroke-width: 0;
+    fill-opacity: 0.75; }
+  /* line 656, scheduler/static/scheduler/css/main.scss */
+  svg.lineage .node.missing rect.plate {
+    stroke-width: 0;
+    fill-opacity: 0.75; }
+  /* line 663, scheduler/static/scheduler/css/main.scss */
+  svg.lineage .node .ghost {
+    opacity: 0; }
+  /* line 669, scheduler/static/scheduler/css/main.scss */
+  svg.lineage .link {
+    fill: #822;
+    fill-opacity: 0.15;
+    stroke: #822;
+    stroke-width: 3pt; }
+    /* line 675, scheduler/static/scheduler/css/main.scss */
+    svg.lineage .link.ghost {
+      opacity: 0; }
+
+/* line 682, scheduler/static/scheduler/css/main.scss */
+.tooltip {
+  position: absolute;
+  opacity: 0;
+  text-align: center;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2px;
+  width: 160px;
+  height: 180px;
+  pointer-events: none;
+  font-family: "TexteLibre";
+  font-size: 8pt;
+  background: #C0C0C0;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-shadow: 0 0 15px #222;
+  zindex: 45000; }
+  /* line 701, scheduler/static/scheduler/css/main.scss */
+  .tooltip strong {
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 1.6em; }
+  /* line 707, scheduler/static/scheduler/css/main.scss */
+  .tooltip ol {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    text-align: left; }
+
+/* line 720, scheduler/static/scheduler/css/main.scss */
+svg .node_circle {
+  stroke: #22C0F0;
+  stroke-width: 3pt; }
+  /* line 726, scheduler/static/scheduler/css/main.scss */
+  svg .node_circle.garou {
+    fill: #382b18; }
+  /* line 730, scheduler/static/scheduler/css/main.scss */
+  svg .node_circle.kinfolk {
+    fill: #282828; }
+  /* line 734, scheduler/static/scheduler/css/main.scss */
+  svg .node_circle.kindred {
+    fill: #870931; }
+  /* line 739, scheduler/static/scheduler/css/main.scss */
+  svg .node_circle.ghoul {
+    fill: #632d3e; }
+  /* line 743, scheduler/static/scheduler/css/main.scss */
+  svg .node_circle.fomori {
+    fill: #C0D43B; }
+  /* line 747, scheduler/static/scheduler/css/main.scss */
+  svg .node_circle.mage {
+    fill: #3c18de; }
+  /* line 751, scheduler/static/scheduler/css/main.scss */
+  svg .node_circle.changeling {
+    fill: #684203; }
+  /* line 755, scheduler/static/scheduler/css/main.scss */
+  svg .node_circle.wraith {
+    fill: #2f3345; }
+  /* line 759, scheduler/static/scheduler/css/main.scss */
+  svg .node_circle.mortal {
+    fill: #4e4e4e; }
+  /* line 763, scheduler/static/scheduler/css/main.scss */
+  svg .node_circle.balanced {
+    stroke-width: 1pt;
+    stroke: #c7c7c7; }
+
+/* line 769, scheduler/static/scheduler/css/main.scss */
+.footnote {
+  text-align: center;
+  width: 100%;
+  background: transparent;
+  color: white;
+  padding: 5px;
+  font-family: TexteLibre;
+  font-size: 11px; }
+  /* line 778, scheduler/static/scheduler/css/main.scss */
+  .footnote span.display {
+    color: #22C0F0;
+    cursor: pointer; }
+  /* line 783, scheduler/static/scheduler/css/main.scss */
+  .footnote a {
+    color: red; }
+    /* line 784, scheduler/static/scheduler/css/main.scss */
+    .footnote a:visited, .footnote alink, .footnote a:active, .footnote a :hover {
+      color: red; }
+
+/* line 793, scheduler/static/scheduler/css/main.scss */
+td.editable.updown i.blank.focus {
+  color: #22C0F0; }
+
+/* line 798, scheduler/static/scheduler/css/main.scss */
+#d3area {
+  width: 90%; }
+
+/* line 802, scheduler/static/scheduler/css/main.scss */
+div.creature_links {
+  display: inline-block;
+  float: right; }
+  /* line 806, scheduler/static/scheduler/css/main.scss */
+  div.creature_links i {
+    margin-left: 1ex; }
+    /* line 809, scheduler/static/scheduler/css/main.scss */
+    div.creature_links i:hover {
+      color: #22C0F0; }
+
+/* line 818, scheduler/static/scheduler/css/main.scss */
+.avatar_link.ghoul {
+  background: #632d3e; }
+
+/* line 822, scheduler/static/scheduler/css/main.scss */
+.avatar_link.kinfolk {
+  background: #282828; }
+
+/* line 826, scheduler/static/scheduler/css/main.scss */
+.avatar_link.kindred {
+  background: #870931; }
+
+/* line 830, scheduler/static/scheduler/css/main.scss */
+.avatar_link.garou {
+  background: #382b18; }
+
+/* line 834, scheduler/static/scheduler/css/main.scss */
+.avatar_link.mage {
+  background: #3c18de; }
+
+/* line 838, scheduler/static/scheduler/css/main.scss */
+.avatar_link.wraith {
+  background: #2f3345; }
+
+/* line 842, scheduler/static/scheduler/css/main.scss */
+.avatar_link.changeling {
+  background: #684203; }
+
+/* line 848, scheduler/static/scheduler/css/main.scss */
+.creature_img {
+  filter: invert(90%);
+  box-shadow: 2px 2px 5px #111; }
+
+/* line 855, scheduler/static/scheduler/css/main.scss */
+text.kindred_name tspan {
+  font-family: "Philosopher";
+  font-size: 12pt;
+  font-variant: small-caps;
+  fill: #FFF;
+  stroke: #DDD; }
+  /* line 862, scheduler/static/scheduler/css/main.scss */
+  text.kindred_name tspan.property tspan {
+    font-family: "Philosopher";
+    font-size: 9pt;
+    fill: #EEE;
+    stroke: #CCC; }
+
+/* line 873, scheduler/static/scheduler/css/main.scss */
+.node {
+  fill: steelblue;
+  stroke: none; }
+
+/* line 878, scheduler/static/scheduler/css/main.scss */
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1px; }
+
+/* line 884, scheduler/static/scheduler/css/main.scss */
+#user_wrapper {
+  position: absolute;
+  display: flex;
+  flex-flow: row no-wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  background: #10101060;
+  z-index: 10000; }
+  /* line 897, scheduler/static/scheduler/css/main.scss */
+  #user_wrapper #user_panel {
+    flex-order: 1;
+    flex-grow: 1;
+    z-index: 10001;
+    position: absolute;
+    padding: 5px;
+    margin: auto;
+    width: 400px;
+    height: 200px;
+    border: 3px solid #616161;
+    border-radius: 20px;
+    background: #474747;
+    color: #c7c7c7;
+    opacity: 1.0;
+    box-shadow: 0 0 10px #000000;
+    text-align: center; }
+    /* line 914, scheduler/static/scheduler/css/main.scss */
+    #user_wrapper #user_panel table {
+      width: 100%; }
+    /* line 918, scheduler/static/scheduler/css/main.scss */
+    #user_wrapper #user_panel A {
+      color: #22C0F0;
+      text-decoration: none; }
+    /* line 923, scheduler/static/scheduler/css/main.scss */
+    #user_wrapper #user_panel input {
+      background: #000;
+      color: #FFF;
+      padding: 5px;
+      border: 2px groove #616161; }
+      /* line 929, scheduler/static/scheduler/css/main.scss */
+      #user_wrapper #user_panel input[type='submit'] {
+        border: 2px ridge #616161;
+        border-radius: 3px; }
+
+/* line 937, scheduler/static/scheduler/css/main.scss */
+body {
+  display: flex;
+  flex-flow: vertical no-wrap; }
+
+/* line 943, scheduler/static/scheduler/css/main.scss */
+.userzone {
+  background: red;
+  order: 2; }
+
+/* line 948, scheduler/static/scheduler/css/main.scss */
+.menuzone {
+  background: blue;
+  order: 1; }
+
+/* line 953, scheduler/static/scheduler/css/main.scss */
+.eventzone {
+  order: 4;
+  background: yellow; }

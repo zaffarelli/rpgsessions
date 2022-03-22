@@ -1,0 +1,335 @@
+/* line 63, scheduler/static/scheduler/css/_basics.scss */
+.hidden {
+  display: none; }
+
+/* line 3, scheduler/static/scheduler/css/main.scss */
+body {
+  background: #101010;
+  color: #F0F0F0;
+  color: #F0F0F0;
+  font-family: Acme; }
+
+@media all and (min-width: 1024px) {
+  /* line 10, scheduler/static/scheduler/css/main.scss */
+  body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: stretch;
+    row-gap: 1px;
+    column-gap: 1px; }
+    /* line 19, scheduler/static/scheduler/css/main.scss */
+    body .spare_left {
+      order: 1;
+      flex-shrink: 2;
+      background: red; }
+    /* line 25, scheduler/static/scheduler/css/main.scss */
+    body .spare_right {
+      order: 3;
+      flex-shrink: 2;
+      background: blue; }
+    /* line 32, scheduler/static/scheduler/css/main.scss */
+    body .corpus {
+      width: 1200px;
+      flex-shrink: 1;
+      order: 2;
+      margin: 0;
+      padding: 2px 2px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      align-items: stretch;
+      row-gap: 1px;
+      column-gap: 1px; }
+      /* line 48, scheduler/static/scheduler/css/main.scss */
+      body .corpus .menuzone {
+        background: #2f1e21;
+        color: #a6a6a6;
+        border: 1px solid transparent;
+        min-height: 40px;
+        width: 100%;
+        order: 2;
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        align-items: stretch;
+        row-gap: 1px;
+        column-gap: 1px; }
+      /* line 66, scheduler/static/scheduler/css/main.scss */
+      body .corpus .userzone {
+        padding: 5px;
+        background: #2f1e21;
+        color: #a6a6a6;
+        border: 1px solid transparent;
+        min-height: 20px;
+        width: 100%;
+        order: 1;
+        text-align: right;
+        font-size: 8pt;
+        border-radius: 5px 5px 0 0; }
+      /* line 79, scheduler/static/scheduler/css/main.scss */
+      body .corpus .wrapper {
+        order: 3;
+        background: #2f1e21;
+        color: #a6a6a6;
+        border: 1px solid transparent;
+        width: 100%;
+        min-height: 400px;
+        heigth: auto; }
+      /* line 89, scheduler/static/scheduler/css/main.scss */
+      body .corpus .eventzone {
+        order: 4;
+        min-height: 40px;
+        background: #2f1e21;
+        color: #a6a6a6;
+        border: 1px solid transparent;
+        width: 100%;
+        padding: 5px; }
+  /* line 103, scheduler/static/scheduler/css/main.scss */
+  .wrapper {
+    font-size: 10pt; }
+    /* line 106, scheduler/static/scheduler/css/main.scss */
+    .wrapper .omonth {
+      width: auto;
+      height: auto;
+      padding: 0;
+      margin: auto 0;
+      background: transparent;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: flex-start;
+      align-content: stretch;
+      align-items: stretch;
+      gap: 0 0; }
+      /* line 119, scheduler/static/scheduler/css/main.scss */
+      .wrapper .omonth .month_info {
+        order: 1;
+        background: black; }
+      /* line 124, scheduler/static/scheduler/css/main.scss */
+      .wrapper .omonth .month_body {
+        order: 2;
+        background: black;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: stretch;
+        gap: 1px 0; }
+        /* line 135, scheduler/static/scheduler/css/main.scss */
+        .wrapper .omonth .month_body .oweek {
+          border-radius: 5px;
+          order: 2;
+          height: auto;
+          padding: 4px 2px;
+          margin: auto 2px;
+          background: #1f1416;
+          color: #a6a6a6;
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: stretch;
+          align-content: stretch;
+          align-items: stretch;
+          gap: 1px 1px; }
+          /* line 150, scheduler/static/scheduler/css/main.scss */
+          .wrapper .omonth .month_body .oweek .week_info {
+            order: 1;
+            background: #272727;
+            color: #a6a6a6;
+            margin: 0 4px;
+            text-align: right; }
+          /* line 159, scheduler/static/scheduler/css/main.scss */
+          .wrapper .omonth .month_body .oweek .week_body {
+            order: 2;
+            background: transparent;
+            color: #a6a6a6;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-content: flex-start;
+            align-items: stretch;
+            gap: 3px 3px; }
+            /* line 170, scheduler/static/scheduler/css/main.scss */
+            .wrapper .omonth .month_body .oweek .week_body .day_actions {
+              order: 8;
+              border: 3px solid lightsalmon;
+              width: 500px; }
+            /* line 177, scheduler/static/scheduler/css/main.scss */
+            .wrapper .omonth .month_body .oweek .week_body .oday {
+              display: flex;
+              flex-flow: column wrap;
+              justify-content: flex-start;
+              align-content: stretch;
+              align-items: stretch;
+              background: #272727;
+              color: #a6a6a6;
+              width: 150px;
+              gap: 0 0;
+              border: 3px solid #404040; }
+              /* line 189, scheduler/static/scheduler/css/main.scss */
+              .wrapper .omonth .month_body .oweek .week_body .oday:hover {
+                border-color: cyan; }
+              /* line 194, scheduler/static/scheduler/css/main.scss */
+              .wrapper .omonth .month_body .oweek .week_body .oday .day_info {
+                order: 1;
+                height: 3em;
+                border: 1px solid transparent;
+                background: #86b2b2;
+                color: black;
+                cursor: pointer; }
+              /* line 204, scheduler/static/scheduler/css/main.scss */
+              .wrapper .omonth .month_body .oweek .week_body .oday .day_body {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-content: flex-start;
+                align-items: stretch;
+                gap: 2px 3px;
+                order: 2;
+                min-height: 50px;
+                background: #86b2b2;
+                color: black;
+                border: 1px solid transparent;
+                width: auto;
+                padding: 0; }
+                /* line 219, scheduler/static/scheduler/css/main.scss */
+                .wrapper .omonth .month_body .oweek .week_body .oday .day_body .chrono {
+                  display: flex;
+                  flex-flow: column nowrap;
+                  justify-content: center;
+                  align-content: flex-start;
+                  align-items: flex-start;
+                  order: 1;
+                  border-right: 1px dashed black; }
+                  /* line 228, scheduler/static/scheduler/css/main.scss */
+                  .wrapper .omonth .month_body .oweek .week_body .oday .day_body .chrono .hour {
+                    border-top: 1px solid black;
+                    border-bottom: 1px solid transparent;
+                    font-size: 8pt;
+                    height: 30px;
+                    width: 100px;
+                    text-align: center;
+                    padding: 0;
+                    background: white; }
+                /* line 240, scheduler/static/scheduler/css/main.scss */
+                .wrapper .omonth .month_body .oweek .week_body .oday .day_body .sessions {
+                  display: flex;
+                  flex-flow: row nowrap;
+                  justify-content: flex-start;
+                  align-content: center;
+                  align-items: flex-end;
+                  background: transparent;
+                  gap: 2px 2px;
+                  order: 2; }
+                  /* line 250, scheduler/static/scheduler/css/main.scss */
+                  .wrapper .omonth .month_body .oweek .week_body .oday .day_body .sessions .session_column {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: flex-start;
+                    align-content: flex-start;
+                    align-items: stretch;
+                    border: 1px solid lightsteelblue;
+                    border-right: 1px dotted black;
+                    font-size: 8pt;
+                    height: 100%;
+                    width: 90px;
+                    text-align: center;
+                    padding: 0;
+                    border-radius: 0;
+                    background: transparent; }
+                    /* line 267, scheduler/static/scheduler/css/main.scss */
+                    .wrapper .omonth .month_body .oweek .week_body .oday .day_body .sessions .session_column .session {
+                      order: 2;
+                      width: calc(100% - 6px);
+                      background: lightgoldenrodyellow;
+                      border-radius: 5px;
+                      padding: 3px;
+                      border: 1px solid black;
+                      cursor: pointer; }
+                    /* line 278, scheduler/static/scheduler/css/main.scss */
+                    .wrapper .omonth .month_body .oweek .week_body .oday .day_body .sessions .session_column .timefill {
+                      background: lightgrey;
+                      width: 100%;
+                      color: black; }
+                      /* line 283, scheduler/static/scheduler/css/main.scss */
+                      .wrapper .omonth .month_body .oweek .week_body .oday .day_body .sessions .session_column .timefill.pre {
+                        order: 1; }
+                      /* line 288, scheduler/static/scheduler/css/main.scss */
+                      .wrapper .omonth .month_body .oweek .week_body .oday .day_body .sessions .session_column .timefill.post {
+                        order: 3; }
+              /* line 299, scheduler/static/scheduler/css/main.scss */
+              .wrapper .omonth .month_body .oweek .week_body .oday.day_off .day_info {
+                background: #afaf68; }
+              /* line 303, scheduler/static/scheduler/css/main.scss */
+              .wrapper .omonth .month_body .oweek .week_body .oday.day_off .day_body {
+                background: #afaf68; }
+              /* line 311, scheduler/static/scheduler/css/main.scss */
+              .wrapper .omonth .month_body .oweek .week_body .oday.current_day .day_info {
+                background: #577057; }
+              /* line 315, scheduler/static/scheduler/css/main.scss */
+              .wrapper .omonth .month_body .oweek .week_body .oday.current_day .day_body {
+                background: #577057; }
+              /* line 321, scheduler/static/scheduler/css/main.scss */
+              .wrapper .omonth .month_body .oweek .week_body .oday.large {
+                width: 600px;
+                justify-content: flex-start; }
+                /* line 324, scheduler/static/scheduler/css/main.scss */
+                .wrapper .omonth .month_body .oweek .week_body .oday.large:hover {
+                  border-color: inherit; } }
+
+/* line 340, scheduler/static/scheduler/css/main.scss */
+.bar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 3px 3px;
+  background: transparent;
+  width: 100%; }
+  /* line 350, scheduler/static/scheduler/css/main.scss */
+  .bar .lefters {
+    order: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 3px 3px;
+    background: transparent; }
+  /* line 362, scheduler/static/scheduler/css/main.scss */
+  .bar .righters {
+    order: 2;
+    display: flex;
+    flex-flow: row wrap-reverse;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: stretch;
+    gap: 3px 3px;
+    background: transparent; }
+  /* line 374, scheduler/static/scheduler/css/main.scss */
+  .bar .button {
+    font-family: Roboto;
+    font-size: 10pt;
+    width: 16ex;
+    height: 1.5em;
+    padding: 3px;
+    background: #112233;
+    color: #F0F0F0;
+    border: 1px solid #224466;
+    border-radius: 5px;
+    text-align: left;
+    cursor: pointer; }
+    /* line 386, scheduler/static/scheduler/css/main.scss */
+    .bar .button:hover {
+      background: #ff9100;
+      color: black; }
+
+/* line 397, scheduler/static/scheduler/css/main.scss */
+.player_shortcut {
+  display: inline-block; }

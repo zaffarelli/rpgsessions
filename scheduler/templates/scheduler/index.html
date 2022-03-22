@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{%  load static %}
+
+
+{% block userzone %}
+<div class="bar">
+    <div class='lefters'>
+        <div class="title">
+            <strong>RPG</strong><em>Sessions</em>
+        </div>
+
+    </div>
+    <div class='righters'>
+        <div class="button compact display" action="user" param="{{user.id}}">{% include "scheduler/player_shortcut.html" with c=user.profile %}</div>
+    </div>
+</div>
+{% endblock userzone %}
+
+
+{% block menuzone %}
+{% include "scheduler/menu_month.html" with c=month u=user.profile %}
+{% endblock menuzone %}
+
+{% block eventzone %}
+{% include "scheduler/followers.html" with c=user.profile %}
+{% endblock eventzone %}
+
+{% block wrapper %}
+{% include "scheduler/month.html" with c=month %}
+{% endblock wrapper %}
+
+{% block custom_js %}
+<script>
+    _.defer(function () {
+        let co = new Scheduler()
+        co.perform();
+        co.revealUI();
+        console.log("Frontend loaded")
+    });
+</script>
+{% endblock custom_js %}

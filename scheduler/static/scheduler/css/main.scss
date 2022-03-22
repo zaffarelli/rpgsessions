@@ -1,0 +1,568 @@
+@import 'basics';
+
+body {
+  @include body_background;
+}
+
+@media all and (min-width: 1024px) {
+  body {
+    & .world {
+      color: $body_color;
+      font-family: Acme;
+      //background: red;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-content: flex-start;
+      align-items: stretch;
+      row-gap: 1px;
+      column-gap: 1px;
+
+
+      & .spare_left {
+        order: 1;
+        flex-shrink: 2;
+        //background: red;
+      }
+
+      & .spare_right {
+        order: 3;
+        flex-shrink: 2;
+        //background: blue;
+
+      }
+
+      & .corpus {
+        width: 1150px;
+        flex-shrink: 1;
+        order: 2;
+        margin: 0;
+        padding: 0 2px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        align-items: flex-start;
+        gap: 0 0;
+
+        & .menuzone, & .eventzone, & .userzone, & .wrapper {
+          border: 1px solid $panel_border;
+          background: $panel_background;
+          color: $panel_color;
+        }
+
+        & .menuzone {
+          min-height: 10px;
+          width: 100%;
+          order: 2;
+          padding: 5px;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-content: flex-start;
+          align-items: stretch;
+          gap: 1px 1px;
+        }
+
+
+        & .adminzone {
+          height: auto;
+          background: transparent;
+          width: 100%;
+          order: 0;
+          padding: 5px;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-between;
+          align-content: center;
+          align-items: stretch;
+          gap: 1px 1px;
+
+          & .user_spare1 {
+            order: 1;
+            width: 150px;
+            background: transparent;
+          }
+
+          & .user_panel {
+            order: 2;
+            font-family: Roboto;
+            font-size: 10pt;
+            border-radius: 10px;
+            border: 1px solid yellow;
+            padding: 5px;
+            background: $panel2_background;
+            border-color: $panel2_border;
+            color: $panel2_color;
+            width: auto;
+
+            & a {
+              color: #FFCC44;
+              text-decoration: none;
+            }
+          }
+
+          & .user_spare2 {
+            order: 3;
+            width: 150px;
+            background: transparent;
+          }
+        }
+
+
+        & .userzone {
+          padding: 5px;
+          min-height: 10px;
+          width: 100%;
+          order: 1;
+          text-align: right;
+          font-size: 8pt;
+          border-radius: 10px 10px 0 0;
+
+
+          & .logo {
+            order: 2;
+          }
+
+          & .title {
+            order: 3;
+          }
+
+          & .title, & .pretitle {
+
+
+            font-size: 32pt;
+
+            & strong {
+              font-family: Gruppo;
+              font-weight: bold;
+              color: $panel_color;
+            }
+
+            & em {
+              font-family: Hubballi;
+              color: darken($panel_color, 40%);
+              font-style: normal;
+            }
+          }
+
+          & .pretitle {
+            order: 1;
+
+          }
+        }
+
+        & .wrapper {
+          order: 3;
+          width: 100%;
+          min-height: 700px;
+          heigth: auto;
+          padding: 5px;
+
+          & .user_details{
+
+          }
+
+        }
+
+        & .eventzone {
+          order: 4;
+          font-family: roboto;
+          font-size: 8pt;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: stretch;
+          align-content: stretch;
+          align-items: stretch;
+          min-height: 10px;
+          width: 100%;
+          padding: 5px;
+          gap: 0 3px;
+          border-radius: 0 0 5px 5px;
+
+          & .ablock, & .eblock, & .zblock {
+            border: 1px solid transparent;
+            background: $panel1_background;
+            color: $panel1_color;
+            border-color: $panel1_border;
+          }
+
+          & .ablock {
+            order: 1;
+            width: 120px;
+            text-align: center;
+            border-radius: 5px 0 0 5px;
+          }
+
+          & .eblock {
+            order: 5;
+            width: 120px;
+            text-align: center;
+          }
+
+          & .zblock {
+            order: 10;
+            width: 120px;
+            text-align: center;
+            border-radius: 0 5px 5px 0;
+          }
+        }
+
+
+      }
+    }
+
+    .wrapper {
+      font-size: 10pt;
+
+      .omonth {
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: auto 0;
+        background: transparent;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: stretch;
+        gap: 0 0;
+
+        & .month_info {
+          order: 1;
+          width: 100%;
+        }
+
+        & .month_body {
+          order: 2;
+          background: transparent;
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: flex-start;
+          align-content: stretch;
+          align-items: stretch;
+          gap: 5px 0;
+
+
+          .oweek {
+            border-radius: 10px;
+            order: 2;
+            height: auto;
+            padding: 4px 2px;
+            margin: auto 2px;
+            background: $panel1_background;
+            color: $panel1_color;
+            border-color: $panel1_border;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: stretch;
+            align-content: stretch;
+            align-items: stretch;
+            gap: 2px 2px;
+
+            & .week_info {
+              order: 1;
+              background: transparent;
+              color: $panel2_color;
+              margin: 0 4px;
+              text-align: center;
+            }
+
+
+            & .week_body {
+              order: 2;
+              background: transparent;
+              color: $panel2_color;
+              display: flex;
+              flex-flow: row wrap;
+              justify-content: center;
+              align-content: flex-start;
+              align-items: stretch;
+              gap: 3px 3px;
+
+              & .day_details {
+                order: 8;
+                background: $paper_background;
+                border: 3px solid $paper_border;
+                text-align: left;
+                color: $paper_color;
+                width: 510px;
+                height: 625px;
+                padding: 5px;
+                overflow-y: scroll;
+
+                & h1 {
+                  text-align: center;
+                }
+
+                & p {
+                  margin: 0;
+                  margin-bottom: 3px;
+                }
+
+
+              }
+
+              & .oday {
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: flex-start;
+                align-content: stretch;
+                align-items: stretch;
+                background: $panel_smooth_background;
+                color: $panel_color;
+                width: 150px;
+                gap: 0 0;
+                border: 3px solid $panel_border;
+                border-top-width: 8px;
+
+                &:hover {
+                  border-color: $highlight_background;
+                }
+
+
+                & .day_info {
+                  order: 1;
+                  height: 3em;
+                  border: 1px solid transparent;
+                  background: $panel_day_background;
+                  color: $env_text;
+                  cursor: pointer;
+                }
+
+
+                & .day_body {
+                  display: flex;
+                  flex-flow: row nowrap;
+                  justify-content: center;
+                  align-content: flex-start;
+                  align-items: stretch;
+                  gap: 0 3px;
+                  order: 2;
+                  min-height: 50px;
+                  background: $panel_day_background;
+                  color: $env_text;
+                  border: 1px solid transparent;
+                  width: auto;
+                  padding: 0;
+
+                  & .chrono {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: flex-start;
+                    align-content: flex-start;
+                    align-items: flex-start;
+                    order: 1;
+                    border-right: 1px dashed black;
+
+                    & .hour {
+                      border-top: 1px solid black;
+                      border-bottom: 1px solid transparent;
+                      font-size: 8pt;
+                      height: calc(42px - 2px);
+                      width: 90px;
+                      text-align: center;
+                      padding: 0;
+                      background: white;
+                    }
+                  }
+
+                  & .sessions {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: flex-start;
+                    align-content: center;
+                    align-items: stretch;
+                    background: transparent;
+                    gap: 0 2px;
+                    order: 2;
+
+                    & .session_column {
+                      display: flex;
+                      flex-flow: column nowrap;
+                      justify-content: flex-start;
+                      align-content: flex-start;
+                      align-items: stretch;
+                      border-right: 1px dotted black;
+                      font-size: 8pt;
+                      height: 100%;
+                      width: 90px;
+                      gap: 0;
+                      text-align: center;
+                      padding: 0;
+                      border-radius: 0;
+                      background: $plate_color;
+
+                      & .session {
+                        order: 2;
+                        font-family:Roboto;
+                        width: calc(100% - 2px);
+                        background: white;
+                        color: $plate_color;
+                        border-radius: 5px;
+                        padding: 0;
+                        padding-top: 3px;
+                        border: 1px solid black;
+                        cursor: pointer;
+                      }
+
+
+                      & .timefill {
+                        background: $plate_color;
+                        width: 100%;
+                        color: black;
+
+                        &.pre {
+                          order: 1;
+
+                        }
+
+                        &.post {
+                          order: 3;
+                        }
+                      }
+                    }
+                  }
+
+
+                }
+
+                &.day_off {
+                  & .day_info {
+                    background: $panel_day_off_background;
+                  }
+
+                  & .day_body {
+                    background: $panel_day_off_background;
+                  }
+                }
+
+                &.current_day {
+                  & .day_info {
+                    background: $panel_day_current_background;
+                  }
+
+                  & .day_body {
+                    background: $panel_day_current_background;
+                  }
+
+                }
+
+                &.large {
+                  width: 600px;
+                  justify-content: flex-start;
+
+                  &:hover {
+                    border-color: inherit;
+                  }
+
+                  & .day_body {
+                    justify-content: flex-start;
+                  }
+
+                  & .day_info {
+
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 3px 3px;
+  background: transparent;
+  width: 100%;
+
+  & .lefters {
+    order: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 3px 3px;
+    background: transparent;
+  }
+
+  & .righters {
+    order: 2;
+    display: flex;
+    flex-flow: row wrap-reverse;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: stretch;
+    gap: 3px 3px;
+
+    background: transparent;
+  }
+
+  & .button {
+    font-family: Roboto;
+    font-size: 10pt;
+    width: 16ex;
+    height: 1.5em;
+    padding: 3px;
+    background: $button_background;
+    color: $button_color;
+    border: 1px solid $button_border;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+
+    &:hover {
+      background: $highlight_background;
+      color: $highlight_color;
+      border-color: $highlight_border;
+    }
+
+    cursor: pointer;
+
+    &.compact {
+      width: auto;
+    }
+  }
+}
+
+
+.player_shortcut {
+  //border:1px solid black;
+  //background:#505050;
+  display: inline-block;
+}
+
+
+table {
+  border-left: 1px dashed black;
+  border-right: 1px dashed black;
+  width: 100%;
+
+  & tr {
+    & td {
+      width: auto;
+      padding: 2px;
+    }
+
+    & th {
+      width: 180px;
+      background: $paper_border;
+      color: $paper_color;
+      padding: 2px;
+      border-radius:3px;
+      text-align: center;
+      vertical-align: top;
+    }
+  }
+}
