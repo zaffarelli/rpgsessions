@@ -6,7 +6,8 @@ from scheduler.utils.mechanics import MONTHS, MONTHS_COLORS, MONTHS_COLORS_TEXT,
 
 def gimme_day(d):
     is_current_day = (d.strftime(FMT_DATE) == datetime.today().strftime(FMT_DATE))
-    day_body = build_day(d)
+    day_body = {}
+    day_body['sessions'] = gimme_sessions_of_the_day(d)
     context = {'day_info': f'{DOWS[d.weekday()]}<BR/><small>{d.strftime(FMT_DATE_PRETTY)}</small>',
                'day_off': d.weekday() > 4,
                'current_day': is_current_day,
@@ -17,8 +18,46 @@ def gimme_day(d):
     return context
 
 
-def gimme_session(id):
+def gimme_sessions_of_the_day(d):
+    from scheduler.models.session import Session
+    all = Session.objects.filter(date_start=d).order_by('time_start')
+    sessions = []
+    for s in all:
+        sess = {
+            'session': s.to_json,
+            'mj': s.mj.to_json,
+            'game': s.game.to_json
+        }
+        sessions.append(sess)
+    return sessions
+
+
+def gimme_all_followers(id):
+    from scheduler.models.follower import Follower
     context = {}
+    f_list = []
+    all_profiles = Profile.objecst.all().order_by('profile__user_id')
+    all_followers = Follower.objects.filter(profile__user_id=id)
+    for f in all_followers:
+        f_list.add(f.target.user_id)
+    for p in all_profiles:
+        context.append({'profile': p.to_json, 'is_follower': p.user_id in f_list})
+    return context
+
+
+def gimme_all_availabilities(d):
+    from scheduler.models.availability import Availability
+    context = {}
+    availables = []
+    absents = []
+    here_entries = Profile.objects.filter(when=date(d)).order_by('profile__user_id', absent_mode=False)
+    for here in here_entries:
+        availables.append(here.to_json)
+    off_entries = Profile.objects.filter(when=date(d)).order_by('profile__user_id', absent_mode=True)
+    for off in off_entries:
+        absents.append(off.to_json)
+    context['availables'] = availables
+    context['absents'] = absents
     return context
 
 
@@ -76,31 +115,12 @@ def build_week(d):
         context['week'].append(day)
     return context
 
-def gimme_all_followers(id):
-    from scheduler.models.follower import Follower
-    context = {}
-    f_list = []
-    all_profiles = Profile.objecst.all().order_by('profile__user_id')
-    all_followers = Follower.objects.filter(profile__user_id=id)
-    for f in all_followers:
-        f_list.add(f.target.user_id)
-    for p in all_profiles:
-        context.append({'profile':p.to_json, 'is_follower': p.user_id in f_list})
-    return context
-
 
 def build_day(d):
-    from scheduler.models.session import Session
-    cur_date = date.fromisoformat(d.strftime(FMT_DATE))
-    all = Session.objects.filter(date_start=cur_date).order_by('time_start')
     context = {}
-    sessions = []
-    for s in all:
-        sess = {'title': s.title, 'date': s.date_start, 'time': s.time_start, 'mj': s.mj.to_json,
-                'game': {'name': s.game.name, 'acro': s.game.acronym, 'alpha': s.game.alpha, 'beta': s.game.beta,
-                         'gamma': s.game.gamma}}
-        sessions.append(sess)
-    context['sessions'] = sessions
+    cur_date = date.fromisoformat(d.strftime(FMT_DATE))
+    # context['sessions'] = gimme_sessions_of_the_day(cur_date)
+    context['day'] = gimme_day(cur_date)
     return context
 
 

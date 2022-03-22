@@ -11,8 +11,9 @@ class Availability(models.Model):
     class Meta:
         verbose_name_plural = 'availabilities'
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    when = models.DateField(auto_now=timezone.now())
+    when = models.DateField(default=datetime.today())
     date_pub = models.DateTimeField(auto_now=timezone.now())
+    absent_mode = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.profile.nickname} -> {self.when.strftime("%Y-%m-%d")}'
@@ -29,4 +30,4 @@ class Availability(models.Model):
 
 
 class AvailabilityAdmin(admin.ModelAdmin):
-    list_display = ['this', 'when', 'date_pub', 'profile']
+    list_display = ['this', 'when', 'date_pub', 'profile', 'absent_mode']

@@ -16,7 +16,6 @@ class Session(models.Model):
     episode = models.PositiveIntegerField(default=1)
     max_episodes = models.PositiveIntegerField(default=1)
     mj = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
-    # campaign = models.CharField(max_length=256, null=True, blank=True)
     campaign = models.ForeignKey(Campaign, on_delete=models.SET_NULL, null=True, blank=True)
     game = models.ForeignKey(Game, on_delete=models.SET_NULL, null=True)
     description = models.TextField(max_length=2048, default='', blank=True)
@@ -50,10 +49,24 @@ class Session(models.Model):
         jstr = json.loads(json.dumps(self, default=json_default, sort_keys=True, indent=4))
         return jstr
 
+    @property
+    def episode_tag(self):
+        n = 0
+        t = 0
+        if self.campaign is not None:
+            episodes = Session.objects.filter(campaign=self.campaign).order_by('date_start', 'time_start')
+            t = len(episodes)
+            for e in episodes:
+                n = n + 1
+                if e == self:
+                    break
+        return f'{n}/{t}'
+
 
 class SessionAdmin(admin.ModelAdmin):
     ordering = ['date_start', 'time_start']
-    list_display = ['title', 'campaign', 'date_start', 'time_start','is_ready', 'duration', 'date_end', 'mj', 'newbies_allowed',
-                    'one_shot_adventure']
+    list_display = ['title', 'campaign', 'date_start', 'time_start', 'is_ready', 'duration', 'date_end', 'mj',
+                    'newbies_allowed',
+                    'one_shot_adventure','episode_tag']
     search_fields = ['title', 'description', 'campaign']
     list_filter = ['level', 'game', 'campaign']
