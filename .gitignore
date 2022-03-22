@@ -1,6 +1,7 @@
 .idea/
 .sass-cache/
 __py-cache__/
+__pycache__/
 __py_cache__
 .~lock.
 logs/*.log
