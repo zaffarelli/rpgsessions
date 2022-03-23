@@ -11,7 +11,9 @@
 
     </div>
     <div class='righters'>
-        <div class="button compact display" action="user" param="{{user.id}}">{% include "scheduler/player_shortcut.html" with c=user.profile %}</div>
+        <div class="button compact display" action="user" param="{{user.id}}">
+            {% include "scheduler/player_shortcut.html" with u=user.profile %}
+        </div>
     </div>
 </div>
 {% endblock userzone %}

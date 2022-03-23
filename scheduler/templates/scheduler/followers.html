@@ -3,19 +3,18 @@
 <div class="ablock">
     Traqués<br/>
     {% for x in c.following %}
-    {% include "scheduler/player_shortcut.html" with c=x %}
+        {% include "scheduler/player_shortcut.html" with u=x %}
     {% endfor %}
 </div>
 
 <div class="eblock">
     Traqueurs<br/>
     {% for x in c.groupies %}
-    {% include "scheduler/player_shortcut.html" with c=x %}
+    {% include "scheduler/player_shortcut.html" with u=x %}
     {% endfor %}
 </div>
 
 <div class="eblock" style="padding:8px;">
-
     <div style="display:inline-block;border:1px solid black;background:{{user.profile.alpha}};width:15px; height:15px;">&nbsp;</div>
     <div style="display:inline-block;border:1px solid black;background:{{user.profile.beta}};width:15px; height:15px;">&nbsp;</div>
     <div style="display:inline-block;border:1px solid black;background:{{user.profile.gamma}};width:15px; height:15px;">&nbsp;</div>

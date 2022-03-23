@@ -24,9 +24,9 @@ def gimme_sessions_of_the_day(d):
     sessions = []
     for s in all:
         sess = {
-            'session': s.to_json,
-            'mj': s.mj.to_json,
-            'game': s.game.to_json
+            's': s.to_json,
+            'u': gimme_profile(s.mj),
+            'g': s.game.to_json
         }
         sessions.append(sess)
     return sessions
@@ -36,12 +36,12 @@ def gimme_all_followers(id):
     from scheduler.models.follower import Follower
     context = {}
     f_list = []
-    all_profiles = Profile.objecst.all().order_by('profile__user_id')
+    all_profiles = Profile.objects.all().order_by('profile__user_id')
     all_followers = Follower.objects.filter(profile__user_id=id)
     for f in all_followers:
         f_list.add(f.target.user_id)
     for p in all_profiles:
-        context.append({'profile': p.to_json, 'is_follower': p.user_id in f_list})
+        context.append({'profile': gimme_profile(p), 'is_follower': p.user_id in f_list})
     return context
 
 
@@ -52,17 +52,24 @@ def gimme_all_availabilities(d):
     absents = []
     here_entries = Profile.objects.filter(when=date(d)).order_by('profile__user_id', absent_mode=False)
     for here in here_entries:
-        availables.append(here.to_json)
+        availables.append(gimme_profile(here))
     off_entries = Profile.objects.filter(when=date(d)).order_by('profile__user_id', absent_mode=True)
     for off in off_entries:
-        absents.append(off.to_json)
+        absents.append(gimme_profile(off))
     context['availables'] = availables
     context['absents'] = absents
     return context
 
 
-def gimme_profile(id):
-    context = {}
+def gimme_profile(x):
+    from scheduler.models.profile import Profile
+    context = {'Status': f'The parameter {x} is not a user profile'}
+    if isinstance(x, Profile):
+        context = x.to_json
+        context['status']: ok
+        context['silhouette_symbol'] = x.silhouette_symbol
+        context['shield_symbol'] = x.shield_symbol
+
     return context
 
 
@@ -74,16 +81,16 @@ def build_month(date_str):
     weekback = d - timedelta(days=7)
     weeknext = d + timedelta(days=7)
     monthnext = d + timedelta(days=28)
+
     context = {'month_name': f'{MONTHS[current_month - 1]} {d.strftime("%Y")}',
                'month_color': MONTHS_COLORS[current_month - 1],
                'month_color_text': MONTHS_COLORS_TEXT[current_month - 1],
                'weeks_count': num_week,
-               'weeks': [],
                'date': d.strftime(FMT_DATE),
                'monthback': monthback.strftime(FMT_DATE),
                'weekback': weekback.strftime(FMT_DATE),
                'weeknext': weeknext.strftime(FMT_DATE),
-               'monthnext': monthnext.strftime(FMT_DATE),
+               'monthnext': monthnext.strftime(FMT_DATE)
                }
     weeks_back = 1
     first_day = d - timedelta(days=weeks_back * 7)
@@ -140,21 +147,15 @@ def build_zoomed_day(d):
         inscriptions = []
         for i in s.inscription_set.all().order_by('profile__user_id'):
             inscriptions.append(i.profile.to_json)
-        sess = {'title': s.title,
-                'date': s.date_start,
-                'time': s.time_start,
-                'mj': s.mj.to_json,
-                's': s.to_json,
+        sess = {'s': s.to_json,
+                'u': s.mj.to_json,
                 'inscriptions': inscriptions,
-                'game': {'name': s.game.name,
-                         'acro': s.game.acronym,
-                         'alpha': s.game.alpha,
-                         'beta': s.game.beta,
-                         'gamma': s.game.gamma,
-                         'pre_size': pre_size,
-                         'size': size,
-                         'post_size': post_size,
-                         }
+                'g': s.game.to_json,
+                'timescale': {
+                    'pre_size': pre_size,
+                    'size': size,
+                    'post_size': post_size,
+                }
                 }
         sessions.append(sess)
     context['sessions'] = sessions

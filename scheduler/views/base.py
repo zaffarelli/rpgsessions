@@ -3,13 +3,14 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, Http404, JsonResponse, HttpResponseRedirect
 from django.template.loader import get_template
 from scheduler.utils.mechanics import FONTSET, FMT_TIME, FMT_DATE, FMT_DATETIME, DOWS, FMT_DATE_PRETTY
-from scheduler.utils.organizer import build_month, build_zoomed_day
+from scheduler.utils.organizer import build_month, build_zoomed_day, gimme_profile
 from datetime import datetime, date
 
 
 def prepare_index(request):
     d = datetime.now()
     m = build_month(d.strftime(FMT_DATE))
+    # u = gimme_profile(request.user.profile)
     context = {'fontset': FONTSET, 'month': m}
     return context
 
@@ -154,4 +155,16 @@ def display_user(request, id=None):
         template = get_template('scheduler/user_details.html')
         html = template.render(context, request)
     response = {'data': html, 'menu': menu_html}
+    return JsonResponse(response)
+
+def new_user(request,slug):
+    return {}
+
+def handle_invitation(request, slug=None):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('/')
+    context = prepare_new(request, slug)
+    template = get_template('registration/invite.html')
+    html = template.render(context, request)
+    response = {'data': html}
     return JsonResponse(response)

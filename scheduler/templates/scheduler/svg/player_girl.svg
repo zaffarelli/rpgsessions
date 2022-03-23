@@ -76,7 +76,7 @@
     <g
        id="g4022">
       <rect
-         style="fill:{{c.alpha}};fill-opacity:1;stroke:none;stroke-width:0.0639601;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:{{u.alpha}};fill-opacity:1;stroke:none;stroke-width:0.0639601;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect38346"
          width="3.1749976"
          height="0.79375541"
@@ -84,7 +84,7 @@
          y="93.504303"
          ry="0.39687574" />
       <rect
-         style="fill:{{c.beta}};fill-opacity:1;stroke:none;stroke-width:0.0825717;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:{{u.beta}};fill-opacity:1;stroke:none;stroke-width:0.0825717;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect38346-9"
          width="3.174999"
          height="1.3229122"
@@ -137,12 +137,12 @@
     <g
        id="g3922">
       <path
-         style="fill:{{c.gamma}};fill-opacity:1;stroke:#85540e;stroke-width:0.0461039;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:{{u.gamma}};fill-opacity:1;stroke:#85540e;stroke-width:0.0461039;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 118.51223,90.858472 c -0.51085,0.705707 -0.76829,1.210688 -1.22347,0.595313 -0.004,0 0.009,0.0028 0.0128,0 0.73831,-0.323585 0.92905,-1.061237 1.35967,-0.728527 -0.0159,0.133214 -0.0159,-0.131369 -0.14897,0.133214"
          id="path2116-8"
          sodipodi:nodetypes="ccccc" />
       <path
-         style="fill:{{c.gamma}};;fill-opacity:1;stroke:#85540e;stroke-width:0.065;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:{{u.gamma}};;fill-opacity:1;stroke:#85540e;stroke-width:0.065;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 118.67267,90.772167 c 1.01542,0.705707 1.52712,1.210688 2.4319,0.595313 0.008,0 -0.0174,0.0028 -0.0254,0 -1.46754,-0.323585 -1.84667,-1.061237 -2.70261,-0.728527 0.0315,0.133214 0.0315,-0.131369 0.29611,0.133214"
          id="path2116"
          sodipodi:nodetypes="ccccc" />

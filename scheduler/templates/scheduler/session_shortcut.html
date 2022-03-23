@@ -1,3 +1,3 @@
-<div class="session_shortcut" title="{{ c.mj.nickname }} mène une partie de {{ c.game.name }} ({{ c.session.title }}) ">
-    {% include "scheduler/svg/gamemaster_shield.svg" with c=c.game u=c.mj s=c.session %}
+<div class="session_shortcut" title="{{ u.nickname }} mène une partie de {{ g.name }} ({{ s.title }}) ">
+    {% include u.shield_symbol with u=u s=s g=g %}
 </div>

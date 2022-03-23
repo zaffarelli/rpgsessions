@@ -1,54 +1,60 @@
 {% load static %}
 {% load global_filters %}
-<H1>{{session.title|safe}}</h1>
-<p>(Episode numéro {{session.episode|safe}}/{{session.max_episodes|safe}})</p>
-<p>Une partie de <strong>{{game.name}} {{game.version}}</strong></p>
-<p>Proposée par <em>{{mj.nickname}}</em> </p>
+<H1>{{ session.title|safe }}</h1>
+<p>(Episode numéro {{ session.episode|safe }}/{{ session.max_episodes|safe }})</p>
+<p>Une partie de <strong>{{ game.name }} {{ game.version }}</strong></p>
+<p>Proposée par <em>{{ mj.nickname }}</em></p>
 <hr/>
 <table>
     <tr>
         <th>Meneur de jeu</th>
-        <td>{% include "scheduler/player_shortcut.html" with c=mj %}</td>
+        <td>{% include "scheduler/player_shortcut.html" with u=mj %} {{ mj.nickname }}</td>
     </tr>
     <tr>
         <th>Démarrage</th>
-        <td>{{session.date_start|as_date}}</td> <td>{{session.time_start|as_time}}</td>
+        <td>{{ session.date_start|as_date }}</td>
+        <td>{{ session.time_start|as_time }}</td>
     </tr>
     <tr>
         <th>Partie unique</th>
-        <td>{{session.one_shot_adventure|as_bool|safe}}</td>
+        <td>{{ session.one_shot_adventure|as_bool|safe }}</td>
     </tr>
     <tr>
         <th>Partie d'initiation</th>
-        <td>{{session.newbies_allowed|as_bool|safe}}</td>
+        <td>{{ session.newbies_allowed|as_bool|safe }}</td>
     </tr>
     <tr>
         <th>Difficulté</th>
-        <td>{{session.level|as_level|safe }}</td>
+        <td>{{ session.level|as_level|safe }}</td>
     </tr>
-    <tr>
-        <th>Sollicités (Wanted)</th>
-        <td>{{session.mandatory_spots }}
-            {% if session.mandatory_spots %}
-            <i class="fa fa-arrow-circle-right"></i>
-            {% for w in wanted %}
-                {% include "scheduler/player_shortcut.html" with c=w %}
-            {% endfor %}
-            {% endif %}
-        </td>
-    </tr>
-    <tr>
-        <th>Places disponibles</th>
-        <td>{{session.optional_spots }}</td>
-    </tr>
+    {% if session.mandatory_spots %}
+        <tr>
+            <th>Sollicités</th>
+            <td>{{ session.mandatory_spots }} joueurs :
+                {% if session.mandatory_spots %}
+                    {% for w in wanted %}
+                        <br/>{% include "scheduler/player_shortcut.html" with u=w %}&nbsp;{{ w.nickname }}
+
+                    {% endfor %}
+                {% endif %}
+            </td>
+        </tr>
+    {% endif %}
+    {% if session.optional_spots %}
+        <tr>
+            <th>Libre accès</th>
+            <td>{{ session.optional_spots }} joueurs</td>
+        </tr>
+    {% endif %}
+
 </table>
 <hr/>
 <h4>Description</h4>
-{{session.description|safe}}
+{{ session.description|safe }}
 <hr/>
 {% if owner %}
-<center>
-<span style="color:brown;">Vous êtes le MJ de cette séance, vous pouvez la modifier.</span>
-</center>
+    <center>
+        <span style="color:brown;">Vous êtes le MJ de cette séance, vous pouvez la modifier.</span>
+    </center>
 {% endif %}
 
