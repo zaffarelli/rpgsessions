@@ -1,8 +1,6 @@
 {% load static %}
 {% load global_filters %}
 <H1>{{ session.title|safe }}</h1>
-<p>(Episode numéro {{ session.episode|safe }}/{{ session.max_episodes|safe }})</p>
-<p>Une partie de <strong>{{ game.name }} {{ game.version }}</strong></p>
 <p>Proposée par <em>{{ mj.nickname }}</em></p>
 <hr/>
 <table>
@@ -11,14 +9,23 @@
         <td>{% include "scheduler/player_shortcut.html" with u=mj %} {{ mj.nickname }}</td>
     </tr>
     <tr>
+        <th>Jeu</th>
+        <td>{% include "scheduler/game_shortcut.html" with g=game %} {{ game.name }} ({{ game.version }})</td>
+    </tr>
+    <tr>
         <th>Démarrage</th>
-        <td>{{ session.date_start|as_date }}</td>
-        <td>{{ session.time_start|as_time }}</td>
+        <td>{{ session.date_start|as_date }} <i class="fa fa-arrow-circle-right"></i>
+        {{ session.time_start|as_time }}</td>
+    </tr>
+    <tr>
+        <th>Episode</th>
+        <td>{{ session.episode_tag }}</td>
     </tr>
     <tr>
         <th>Partie unique</th>
         <td>{{ session.one_shot_adventure|as_bool|safe }}</td>
     </tr>
+
     <tr>
         <th>Partie d'initiation</th>
         <td>{{ session.newbies_allowed|as_bool|safe }}</td>
@@ -30,10 +37,10 @@
     {% if session.mandatory_spots %}
         <tr>
             <th>Sollicités</th>
-            <td>{{ session.mandatory_spots }} joueurs :
+            <td>{{ session.mandatory_spots }} joueurs :<br/>
                 {% if session.mandatory_spots %}
-                    {% for w in wanted %}
-                        <br/>{% include "scheduler/player_shortcut.html" with u=w %}&nbsp;{{ w.nickname }}
+                    {% for w in wanted_list %}
+                        &nbsp;{% include "scheduler/player_shortcut.html" with u=w %}
 
                     {% endfor %}
                 {% endif %}
@@ -47,6 +54,16 @@
         </tr>
     {% endif %}
 
+    <tr>
+        <th>Inscrits</th>
+        <td style="background:#ffcc44;">
+
+            {% for w in inscriptions %}
+                &nbsp;{% include "scheduler/player_shortcut.html" with u=w %}
+
+            {% endfor %}
+        </td>
+    </tr>
 </table>
 <hr/>
 <h4>Description</h4>

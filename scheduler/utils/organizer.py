@@ -130,6 +130,11 @@ def build_day(d):
     context['day'] = gimme_day(cur_date)
     return context
 
+def gimme_session(s):
+    context = s.to_json
+    context['episode_tag'] = s.episode_tag
+    print(context)
+    return context
 
 def build_zoomed_day(d):
     from scheduler.models.session import Session
@@ -146,9 +151,9 @@ def build_zoomed_day(d):
         # print(pre_size/HOUR_PIXELS, size/HOUR_PIXELS, post_size/HOUR_PIXELS)
         inscriptions = []
         for i in s.inscription_set.all().order_by('profile__user_id'):
-            inscriptions.append(i.profile.to_json)
-        sess = {'s': s.to_json,
-                'u': s.mj.to_json,
+            inscriptions.append(gimme_profile(i.profile))
+        sess = {'s': gimme_session(s),
+                'u': gimme_profile(s.mj),
                 'inscriptions': inscriptions,
                 'g': s.game.to_json,
                 'timescale': {

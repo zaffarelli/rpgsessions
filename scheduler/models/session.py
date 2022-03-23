@@ -35,7 +35,7 @@ class Session(models.Model):
     is_ready = models.BooleanField(default=False, verbose_name='ok')
 
     def __str__(self):
-        return f"{self.title} ({self.episode})"
+        return f"{self.title} ({self.episode_tag})"
 
     @property
     def date_end(self):
@@ -50,8 +50,22 @@ class Session(models.Model):
         return jstr
 
     @property
+    def wanted_list(self):
+        from scheduler.utils.organizer import gimme_profile
+        list = []
+        if len(self.wanted) > 0:
+            wanted_players = self.wanted.split(';')
+            for wp in wanted_players:
+                _set = Profile.objects.filter(pk=wp)
+                if len(_set) == 1:
+                    this = _set.first()
+                    list.append(gimme_profile(this))
+        return list
+
+    @property
     def episode_tag(self):
         n = 0
+        i = 0
         t = 0
         if self.campaign is not None:
             episodes = Session.objects.filter(campaign=self.campaign).order_by('date_start', 'time_start')
@@ -59,8 +73,8 @@ class Session(models.Model):
             for e in episodes:
                 n = n + 1
                 if e == self:
-                    break
-        return f'{n}/{t}'
+                    i = n
+        return f'- {i}/{t} -'
 
 
 class SessionAdmin(admin.ModelAdmin):

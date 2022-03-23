@@ -71,36 +71,23 @@ def display_month(request, slug=None):
 def prepare_session(request, id=None):
     from scheduler.models.session import Session
     from scheduler.models.profile import Profile
+    from scheduler.utils.organizer import gimme_profile, gimme_session, gimme_day
     all = Session.objects.filter(pk=id)
     cur_date = datetime.now()
     context = {'status': 'KO'}
     if len(all) == 1:
         context['status'] = 'OK'
         that = all.first()
-        context['session'] = that.to_json
+        inscriptions = []
+        for i in that.inscription_set.all().order_by('profile__user_id'):
+            inscriptions.append(gimme_profile(i.profile))
+        context['session'] = gimme_session(that)
         context['game'] = that.game.to_json
-        context['mj'] = that.mj.to_json
+        context['mj'] = gimme_profile(that.mj)
         context['owner'] = that.mj.user == request.user
-        wanted = []
-        if len(that.wanted) > 0:
-            wanted_players = that.wanted.split(';')
-            for wp in wanted_players:
-                # print('>> ', wp)
-                _set = Profile.objects.filter(pk=wp)
-                if len(_set) == 1:
-                    this = _set.first()
-                    wanted.append(this.to_json)
-        context['wanted'] = wanted
-    day_off = cur_date.weekday() > 4
-    current_day = cur_date.day == datetime.today().day
-    day = {'date': cur_date,
-           'day_off': day_off,
-           'current_day': current_day,
-           'day': cur_date.strftime(FMT_DATE),
-           'day_info': f'{DOWS[cur_date.weekday()]}<BR/><small>{cur_date.strftime(FMT_DATE_PRETTY)}</small>'
-           }
-    context['day'] = day
-
+        context['wanted_list'] = that.wanted_list
+        context['inscriptions'] = inscriptions
+    context['day'] = gimme_day(cur_date)
     return context
 
 
