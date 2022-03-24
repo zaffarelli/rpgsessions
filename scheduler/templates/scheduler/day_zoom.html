@@ -8,22 +8,32 @@
             <div class="oweek">
                 <div class="week_body">
                     <div class="oday large {{ data.day.day_off | as_day_off }} {{ data.day.current_day | as_current_day }}">
-                        <div class="day_info display" action="dayzoom">{{data.day.day_info|safe }}</div>
+                        <div class="day_info display" action="dayzoom">{{ data.day.day_info|safe }}</div>
                         <div class="day_body">
                             <div class="chrono">
                                 {% for h in data.hours %}
-                                <div class="hour">{{h.t}}</div>
+                                    <div class="hour">{{ h.t }}</div>
                                 {% endfor %}
                             </div>
                             <div class="sessions">
                                 {% for x in data.sessions %}
-                                {% include "scheduler/session_zoom.html" with c=x  %}
+                                    {% include "scheduler/session_zoom.html" with c=x %}
                                 {% endfor %}
                             </div>
                         </div>
                     </div>
                     <div class="day_details">
-
+                        <hr/>
+                        Disponibles:
+                        {% for x in data.availabilities.availables %}
+                            {% include "scheduler/player_shortcut.html" with u=x%}
+                        {% endfor %}
+                        <hr/>
+                        Absents:
+                        {% for x in data.availabilities.absents %}
+                            {% include "scheduler/player_shortcut.html" with u=x%}
+                        {% endfor %}
+                        <hr/>
                     </div>
                 </div>
             </div>

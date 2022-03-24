@@ -2,12 +2,20 @@
 {% load global_filters %}
 
 
-<div class="oday {{ c.day_off | as_day_off }} {{ c.current_day | as_current_day }}" style="border-top-color: {{c.month_color}};">
-    <div class="day_info display" action="dayzoom" param="{{c.day}}" >{{ c.day_info|safe }}
+<div class="oday {{ c.day_off | as_day_off }} {{ c.current_day | as_current_day }}"
+     style="border-top-color: {{ c.month_color }};">
+    <div class="day_info display" action="dayzoom" param="{{ c.day }}">{{ c.day_info|safe }}
     </div>
     <div class="day_body">
         {% for x in c.day_body.sessions %}
             {% include "scheduler/session_shortcut.html" with s=x.s u=x.u g=x.g %}
         {% endfor %}
+
+        {% if c.availabilities.availables %}
+            <i class="fa fa-circle" title="{{ c.availabilities.availables_title }}" style="color:darkcyan;"></i>
+        {% endif %}
+        {% if c.availabilities.absents %}
+            <i class="fa fa-circle" title="{{ c.availabilities.absents_title }}" style="color:brown;"></i>
+        {% endif %}
     </div>
 </div>

@@ -59,7 +59,7 @@ class Session(models.Model):
                 _set = Profile.objects.filter(pk=wp)
                 if len(_set) == 1:
                     this = _set.first()
-                    list.append(gimme_profile(this))
+                    list.append(gimme_profile(this.id))
         return list
 
     @property

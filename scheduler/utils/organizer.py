@@ -4,10 +4,16 @@ from scheduler.utils.mechanics import MONTHS, MONTHS_COLORS, MONTHS_COLORS_TEXT,
     FMT_DATETIME, FMT_DATE_PRETTY
 
 
-def gimme_day(d):
+def gimme_session(request, s):
+    context = s.to_json
+    context['episode_tag'] = s.episode_tag
+    return context
+
+
+def gimme_day(request, d):
     is_current_day = (d.strftime(FMT_DATE) == datetime.today().strftime(FMT_DATE))
     day_body = {}
-    day_body['sessions'] = gimme_sessions_of_the_day(d)
+    day_body['sessions'] = gimme_sessions_of_the_day(request, d)
     context = {'day_info': f'{DOWS[d.weekday()]}<BR/><small>{d.strftime(FMT_DATE_PRETTY)}</small>',
                'day_off': d.weekday() > 4,
                'current_day': is_current_day,
@@ -15,65 +21,90 @@ def gimme_day(d):
                'day_body': day_body,
                'month_color': MONTHS_COLORS[d.month - 1]
                }
+    context['availabilities'] = gimme_all_availabilities(request, d, request.user.profile.id)
     return context
 
 
-def gimme_sessions_of_the_day(d):
+def gimme_sessions_of_the_day(request, d):
     from scheduler.models.session import Session
     all = Session.objects.filter(date_start=d).order_by('time_start')
     sessions = []
     for s in all:
         sess = {
             's': s.to_json,
-            'u': gimme_profile(s.mj),
+            'u': gimme_profile(s.mj.id),
             'g': s.game.to_json
         }
         sessions.append(sess)
     return sessions
 
 
-def gimme_all_followers(id):
-    from scheduler.models.follower import Follower
-    context = {}
-    f_list = []
-    all_profiles = Profile.objects.all().order_by('profile__user_id')
-    all_followers = Follower.objects.filter(profile__user_id=id)
-    for f in all_followers:
-        f_list.add(f.target.user_id)
-    for p in all_profiles:
-        context.append({'profile': gimme_profile(p), 'is_follower': p.user_id in f_list})
-    return context
+# def gimme_all_followers(id):
+#     from scheduler.models.follower import Follower
+#     context = {}
+#     f_list = []
+#     all_profiles = Profile.objects.all().order_by('profile__user_id')
+#     all_followers = Follower.objects.filter(profile__user_id=id)
+#     for f in all_followers:
+#         f_list.add(f.target.user_id)
+#     for p in all_profiles:
+#         context.append({'profile': gimme_profile(p), 'is_follower': p.user_id in f_list})
+#     return context
 
 
-def gimme_all_availabilities(d):
+def gimme_all_availabilities(request, d, id):
     from scheduler.models.availability import Availability
+    from scheduler.models.follower import Follower
     context = {}
     availables = []
     absents = []
-    here_entries = Profile.objects.filter(when=date(d)).order_by('profile__user_id', absent_mode=False)
+    absents_title = []
+    availables_title = []
+    my_followers = []
+    all_followers = Follower.objects.filter(profile__user_id=id)
+    for f in all_followers:
+        my_followers.append(f.target.id)
+    here_entries = Availability.objects.filter(when=d, absent_mode=False)
+
     for here in here_entries:
-        availables.append(gimme_profile(here))
-    off_entries = Profile.objects.filter(when=date(d)).order_by('profile__user_id', absent_mode=True)
+        if here.id in my_followers:
+            availables.append(gimme_profile(here.id))
+            availables_title.append(gimme_profile(here.id)['nickname'])
+    off_entries = Availability.objects.filter(when=d, absent_mode=True)
     for off in off_entries:
-        absents.append(gimme_profile(off))
+        if off.id in my_followers:
+            absents.append(gimme_profile(off.id))
+            absents_title.append(gimme_profile(off.id)['nickname'])
+    # if len(off_entries)>0:
+    #     print(absents)
     context['availables'] = availables
     context['absents'] = absents
+    if len(absents_title) > 0:
+        context['absents_title'] = "Ils se sont signalés abesnts ce jour là: " + ', '.join(absents_title)
+    else:
+        context['absents_title'] = 'Rien à signaler'
+    if len(availables_title) > 0:
+        context['availables_title'] = "Ils se sont signalés disponibles ce jour là: " + ', '.join(availables_title)
+    else:
+        context['availables_title'] = 'Rien à signaler'
     return context
 
 
 def gimme_profile(x):
     from scheduler.models.profile import Profile
+    elem = Profile.objects.get(pk=x)
     context = {'Status': f'The parameter {x} is not a user profile'}
-    if isinstance(x, Profile):
-        context = x.to_json
-        context['status']: ok
-        context['silhouette_symbol'] = x.silhouette_symbol
-        context['shield_symbol'] = x.shield_symbol
-
+    # print(elem)
+    if isinstance(elem, Profile):
+        context = elem.to_json
+        context['status'] = "ok"
+        context['silhouette_symbol'] = elem.silhouette_symbol
+        context['shield_symbol'] = elem.shield_symbol
     return context
 
 
-def build_month(date_str):
+# Root functions called from views
+def build_month(request, date_str):
     d = date.fromisoformat(date_str)
     num_week = 5
     current_month = d.month
@@ -96,13 +127,13 @@ def build_month(date_str):
     first_day = d - timedelta(days=weeks_back * 7)
     weeks = []
     for i in range(num_week):
-        w = build_week(first_day + timedelta(days=i * 7))
+        w = build_week(request, first_day + timedelta(days=i * 7))
         weeks.append(w)
     context['weeks'] = weeks
     return context
 
 
-def build_week(d):
+def build_week(request, d):
     context = {}
     context['week_number'] = d.isocalendar()[1]
     dprev = d - timedelta(days=7)
@@ -118,25 +149,21 @@ def build_week(d):
     context['week'] = []
     for x in range(7):
         cur_day = day0 + timedelta(days=x)
-        day = gimme_day(cur_day)
+        day = gimme_day(request, cur_day)
         context['week'].append(day)
     return context
 
 
-def build_day(d):
-    context = {}
-    cur_date = date.fromisoformat(d.strftime(FMT_DATE))
-    # context['sessions'] = gimme_sessions_of_the_day(cur_date)
-    context['day'] = gimme_day(cur_date)
-    return context
+# def build_day(request, d):
+#     context = {}
+#     cur_date = date.fromisoformat(d.strftime(FMT_DATE))
+#     context['day'] = gimme_day(cur_date)
+#     context['availabilities'] = gimme_all_availabilities(cur_date, request.user.profile_id)
+#     print(context)
+#     return context
 
-def gimme_session(s):
-    context = s.to_json
-    context['episode_tag'] = s.episode_tag
-    print(context)
-    return context
 
-def build_zoomed_day(d):
+def build_zoomed_day(request, d):
     from scheduler.models.session import Session
     cur_date = date.fromisoformat(d.strftime(FMT_DATE))
     all = Session.objects.filter(date_start=cur_date).order_by('time_start')
@@ -151,9 +178,9 @@ def build_zoomed_day(d):
         # print(pre_size/HOUR_PIXELS, size/HOUR_PIXELS, post_size/HOUR_PIXELS)
         inscriptions = []
         for i in s.inscription_set.all().order_by('profile__user_id'):
-            inscriptions.append(gimme_profile(i.profile))
-        sess = {'s': gimme_session(s),
-                'u': gimme_profile(s.mj),
+            inscriptions.append(gimme_profile(i.profile.id))
+        sess = {'s': gimme_session(request, s),
+                'u': gimme_profile(s.mj.id),
                 'inscriptions': inscriptions,
                 'g': s.game.to_json,
                 'timescale': {
@@ -172,6 +199,6 @@ def build_zoomed_day(d):
         t = time.fromisoformat(f'{x:02}:00:00')
         hours.append({'t': t.strftime(FMT_TIME)})
     context['hours'] = hours
-    day = gimme_day(cur_date)
-    context['day'] = day
+    context['day'] = gimme_day(request, cur_date)
+    context['availabilities'] = gimme_all_availabilities(request, cur_date, request.user)
     return context

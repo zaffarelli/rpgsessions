@@ -39,7 +39,7 @@ class Profile(models.Model):
         list = []
         all = Follower.objects.filter(profile=self)
         for x in all:
-            list.append(gimme_profile(x.target))
+            list.append(gimme_profile(x.target.id))
         return list
 
     @property
@@ -49,7 +49,7 @@ class Profile(models.Model):
         list = []
         all = Follower.objects.filter(target=self)
         for x in all:
-            list.append(gimme_profile(x.profile))
+            list.append(gimme_profile(x.profile.id))
         return list
 
     @property

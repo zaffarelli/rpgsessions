@@ -2,11 +2,12 @@
 {% load global_filters %}
 <H1>{{ session.title|safe }}</h1>
 <p>Proposée par <em>{{ mj.nickname }}</em></p>
-<hr/>
+
+
 <table>
     <tr>
         <th>Meneur de jeu</th>
-        <td>{% include "scheduler/player_shortcut.html" with u=mj %} {{ mj.nickname }}</td>
+        <td>{% include "scheduler/player_shortcut.html" with u=mj %}&nbsp;{{ mj.nickname }}&nbsp;{% include "scheduler/session_shortcut.html" with u=mj g=g s=s %}</td>
     </tr>
     <tr>
         <th>Jeu</th>

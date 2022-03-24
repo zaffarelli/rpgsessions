@@ -9,9 +9,9 @@ from datetime import datetime, date
 
 def prepare_index(request):
     d = datetime.now()
-    m = build_month(d.strftime(FMT_DATE))
-    # u = gimme_profile(request.user.profile)
-    context = {'fontset': FONTSET, 'month': m}
+    m = build_month(request, d.strftime(FMT_DATE))
+    u = gimme_profile(request.user.profile.id)
+    context = {'fontset': FONTSET, 'month': m, 'u': u}
     return context
 
 
@@ -20,13 +20,14 @@ def index(request):
     if not request.user.is_authenticated:
         return render(request, 'scheduler/registration/login_error.html')
     context = prepare_index(request)
+    print(context)
     return render(request, 'scheduler/index.html', context=context)
 
 
 def prepare_day(request, slug=None):
     slug = slug.replace('_', '-')
     d = date.fromisoformat(slug)
-    data = build_zoomed_day(d)
+    data = build_zoomed_day(request, d)
     context = {'data': data}
     return context
 
@@ -50,7 +51,7 @@ def prepare_month(request, slug=None):
     else:
         slug = slug.replace("_", "-")
         d = date.fromisoformat(slug)
-    m = build_month(d.strftime(FMT_DATE))
+    m = build_month(request, d.strftime(FMT_DATE))
     context = {'c': m}
     return context
 
@@ -71,7 +72,7 @@ def display_month(request, slug=None):
 def prepare_session(request, id=None):
     from scheduler.models.session import Session
     from scheduler.models.profile import Profile
-    from scheduler.utils.organizer import gimme_profile, gimme_session, gimme_day
+    from scheduler.utils.organizer import gimme_profile, gimme_session, gimme_day, gimme_all_availabilities
     all = Session.objects.filter(pk=id)
     cur_date = datetime.now()
     context = {'status': 'KO'}
@@ -80,14 +81,15 @@ def prepare_session(request, id=None):
         that = all.first()
         inscriptions = []
         for i in that.inscription_set.all().order_by('profile__user_id'):
-            inscriptions.append(gimme_profile(i.profile))
-        context['session'] = gimme_session(that)
+            inscriptions.append(gimme_profile(i.profile.id))
+        context['session'] = gimme_session(request, that)
         context['game'] = that.game.to_json
-        context['mj'] = gimme_profile(that.mj)
+        context['mj'] = gimme_profile(that.mj.id)
         context['owner'] = that.mj.user == request.user
         context['wanted_list'] = that.wanted_list
         context['inscriptions'] = inscriptions
-    context['day'] = gimme_day(cur_date)
+        context['availabilities'] = gimme_all_availabilities(request, cur_date, request.user.profile.id)
+    context['day'] = gimme_day(request, cur_date)
     return context
 
 
@@ -144,8 +146,10 @@ def display_user(request, id=None):
     response = {'data': html, 'menu': menu_html}
     return JsonResponse(response)
 
-def new_user(request,slug):
+
+def new_user(request, slug):
     return {}
+
 
 def handle_invitation(request, slug=None):
     if request.user.is_authenticated:
