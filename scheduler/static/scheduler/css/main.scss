@@ -1,12 +1,54 @@
 @import 'basics';
 
 body {
+  margin: 0;
+  padding: 0;
   @include body_background;
 }
 
-@media all and (min-width: 1024px) {
+#bad_size {
+  display: none;
+  color: lightgreen;
+  font-family: Cutive Mono;
+  font-weight:bold;
+  font-size:: 9pt;
+
+  padding:2em;
+
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background: black;
+    border-left:5px solid darkgoldenrod;
+
+    #bad_size {
+      display: block;
+    }
+    & .world {
+      display: none !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1149px) {
+  body {
+    background: black;
+
+
+    & .world {
+      display: none !important;
+    }
+  }
+}
+
+
+@media all and (min-width: 1150px) {
   body {
     & .world {
+      margin-top: 5px;
+      z-index: 5;
+      position: absolute;
       color: $body_color;
       font-family: Acme;
       //background: red;
@@ -19,7 +61,7 @@ body {
       align-items: stretch;
       row-gap: 1px;
       column-gap: 1px;
-
+      border-radius: 10px;
 
       & .spare_left {
         order: 1;
@@ -35,17 +77,19 @@ body {
       }
 
       & .corpus {
+        box-shadow: 15px 10px 20px black;
         width: 1150px;
         flex-shrink: 1;
         order: 2;
         margin: 0;
-        padding: 0 2px;
+        padding: 0;
         display: flex;
         flex-flow: column wrap;
         justify-content: flex-start;
         align-content: flex-start;
         align-items: flex-start;
         gap: 0 0;
+        border-radius: 10px;
 
         & .menuzone, & .eventzone, & .userzone, & .wrapper {
           border: 1px solid $panel_border;
@@ -80,6 +124,7 @@ body {
           align-content: center;
           align-items: stretch;
           gap: 1px 1px;
+
 
           & .user_spare1 {
             order: 1;
@@ -125,10 +170,12 @@ body {
 
           & .logo {
             order: 2;
+            border-radius: 10px 10px 0 0;
           }
 
           & .title {
             order: 3;
+
           }
 
           & .title, & .pretitle {
@@ -162,7 +209,7 @@ body {
           heigth: auto;
           padding: 5px;
 
-          & .user_details{
+          & .user_details {
 
           }
 
@@ -234,6 +281,7 @@ body {
         & .month_info {
           order: 1;
           width: 100%;
+          border-radius:10px;
         }
 
         & .month_body {
@@ -398,7 +446,7 @@ body {
 
                       & .session {
                         order: 2;
-                        font-family:Roboto;
+                        font-family: Roboto;
                         width: calc(100% - 2px);
                         background: $session_board;
                         color: black;
@@ -514,13 +562,15 @@ body {
     font-size: 10pt;
     width: 16ex;
     height: 1.5em;
-    padding: 3px;
+    padding: 3px 5px;
     background: $button_background;
     color: $button_color;
     border: 1px solid $button_border;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
     vertical-align: middle;
+    height: auto;
+
 
     &:hover {
       background: $highlight_background;
@@ -554,6 +604,10 @@ table {
       width: auto;
       padding: 2px;
       text-align: center;
+      &.text{
+        text-align:left;
+        white-space: pre-wrap;
+      }
     }
 
     & th {
@@ -561,9 +615,90 @@ table {
       background: $paper_border;
       color: $paper_color;
       padding: 2px;
-      border-radius:3px;
+      border-radius: 3px;
       text-align: center;
       vertical-align: top;
+    }
+  }
+}
+
+
+.raised{
+  top:0;
+}
+
+#overlay {
+
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent url("/static/scheduler/mid.png") repeat;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+  //background-opacity: 0.85;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  //top: -8000px;
+
+  & #dialog {
+    z-index: 100;
+    border: 1px solid $panel_border;
+    background: $panel_background;
+    color: $panel_color;
+    padding: 5px;
+    width: 600px;
+    height: 600px;
+    border-radius: 15px;
+    font-family: Roboto;
+    font-size: 10pt;
+    margin: auto;
+    padding: 15px;
+    box-shadow: 0 0 50px lightgoldenrodyellow;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: stretch;
+    gap:0;
+    & .diag_header{
+      order:1;
+      border-bottom:1px solid white;
+      background:$panel1_background;
+      color:$panel1_color;
+      border-color:$panel1_border;
+      font-size:12px;
+      text-align:center;
+      height:10%;
+      margin:2%;
+      border-radius:10px;
+    }
+    & .diag_body{
+      order:2;
+      border-top:1px solid white;
+      border-bottom:1px solid white;
+      background:$panel1_background;
+      color:$panel1_color;
+      border-color:$panel1_border;
+      width:96%;
+      margin:2%;
+      height:68%;
+      padding:1%;
+      border-radius:5px;
+    }
+    & .diag_footer{
+      order:3;
+      border-top:1px solid white;
+      background:$panel1_background;
+      color:$panel1_color;
+      border-color:$panel1_border;
+      margin:2%;
+      padding:1%;
+      border-radius:10px;
+      height:5%;
     }
   }
 }

@@ -86,6 +86,45 @@ class Scheduler {
         });
     }
 
+    registerOverlay() {
+        let me = this;
+        $('.modal_switch').off().on('click', function (event) {
+            let action = $(this).attr('action');
+            let param = $(this).attr('param');
+            let option = $(this).attr('option');
+            // console.log(action+"|"+param+"|"+option)
+            // let key = $('#userinput').val();
+            $('#callback').html("");
+            let url = 'ajax/overlay/' + action + '/';
+            if (param != undefined) {
+                let p = param.replaceAll('-', '_');
+
+                if (option) {
+                    url = 'ajax/overlay/' + action + '/' + p + '/' + option + '/';
+                } else {
+                    url = 'ajax/overlay/' + action + '/' + p + '/';
+                }
+                console.log(url)
+            }
+            $.ajax({
+                url: url,
+                success: function (answer) {
+                    if (action == 'about'){
+                        $('#overlay').removeClass('hidden');
+
+                    }
+
+                    me.rebootLinks();
+                },
+                error: function (answer) {
+                    console.error(answer);
+                    me.rebootLinks();
+                },
+            });
+        });
+    }
+
+
     registerAction() {
         let me = this;
         $('.action').off().on('click', function (event) {
@@ -305,6 +344,7 @@ class Scheduler {
             me.registerCollectorAction();
             me.registerTriggers();
             me.registerJump();
+            me.registerOverlay();
             $('#go').off();
             $('#go').on('click', function (event) {
                 event.preventDefault();

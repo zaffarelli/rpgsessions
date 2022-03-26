@@ -16,7 +16,7 @@ class Availability(models.Model):
     absent_mode = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.profile.nickname} -> {self.when.strftime("%Y-%m-%d")}'
+        return f'{self.profile.nickname} -> {self.when.strftime("%Y-%m-%d")} (Absent: {self.absent_mode})'
 
     @property
     def this(self):

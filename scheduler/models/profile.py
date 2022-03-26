@@ -9,6 +9,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
     nickname = models.CharField(max_length=256)
     presentation = models.TextField(max_length=2048, default='', blank=True)
+    favorites = models.TextField(max_length=1024, default='', blank=True)
     need_drop = models.BooleanField(default=False)
     can_drop = models.BooleanField(default=False)
     realm = models.ForeignKey(Realm, on_delete=models.SET_NULL, null=True)
@@ -72,4 +73,4 @@ class Profile(models.Model):
 
 class ProfileAdmin(admin.ModelAdmin):
     ordering = ['nickname']
-    list_display = ['u_u', 'nickname', 'realm', 'games_run', 'shield', 'silhouette', 'presentation']
+    list_display = ['u_u', 'nickname', 'realm', 'games_run', 'shield', 'silhouette', 'presentation', 'favorites']

@@ -16,7 +16,7 @@
     <tr>
         <th>Démarrage</th>
         <td>{{ session.date_start|as_date }} <i class="fa fa-arrow-circle-right"></i>
-        {{ session.time_start|as_time }}</td>
+            {{ session.time_start|as_time }}</td>
     </tr>
     <tr>
         <th>Episode</th>
@@ -25,6 +25,10 @@
     <tr>
         <th>Partie unique</th>
         <td>{{ session.one_shot_adventure|as_bool|safe }}</td>
+    </tr>
+    <tr>
+        <th>Lieu</th>
+        <td>{{ session.place|safe }}</td>
     </tr>
 
     <tr>
@@ -65,10 +69,13 @@
             {% endfor %}
         </td>
     </tr>
+    <tr>
+        <th>Présentation</th>
+        <td class="text">{{ session.description|safe }}
+        </td>
+    </tr>
 </table>
-<hr/>
-<h4>Description</h4>
-{{ session.description|safe }}
+
 <hr/>
 {% if owner %}
     <center>

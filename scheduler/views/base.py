@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, Http404, JsonResponse, HttpResponseRedirect
 from django.template.loader import get_template
 from scheduler.utils.mechanics import FONTSET, FMT_TIME, FMT_DATE, FMT_DATETIME, DOWS, FMT_DATE_PRETTY
-from scheduler.utils.organizer import build_month, build_zoomed_day, gimme_profile
+from scheduler.utils.organizer import build_month, build_zoomed_day, gimme_profile, system_flush
 from datetime import datetime, date
 
 
@@ -19,8 +19,8 @@ def prepare_index(request):
 def index(request):
     if not request.user.is_authenticated:
         return render(request, 'scheduler/registration/login_error.html')
+    system_flush
     context = prepare_index(request)
-    print(context)
     return render(request, 'scheduler/index.html', context=context)
 
 
@@ -158,4 +158,28 @@ def handle_invitation(request, slug=None):
     template = get_template('registration/invite.html')
     html = template.render(context, request)
     response = {'data': html}
+    return JsonResponse(response)
+
+
+def prepare_overlay(request, slug):
+    context = {}
+    template_str = ""
+    if slug == "about":
+        template_str = "scheduler/about.html"
+    if slug == 'close':
+        template_str = ""
+    return context, template_str
+
+
+# @login_required
+def display_overlay(request, slug):
+    # if request.user.is_authenticated:
+    #     return HttpResponseRedirect('/')
+    html = ''
+    callback = ''
+    context, target_template = prepare_overlay(request, slug)
+    if target_template:
+        template = get_template(target_template)
+        html = template.render(context, request)
+    response = {'data': html, 'callback': callback}
     return JsonResponse(response)

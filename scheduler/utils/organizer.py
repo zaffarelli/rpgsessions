@@ -67,24 +67,25 @@ def gimme_all_availabilities(request, d, id):
     here_entries = Availability.objects.filter(when=d, absent_mode=False)
 
     for here in here_entries:
-        if here.id in my_followers:
-            availables.append(gimme_profile(here.id))
-            availables_title.append(gimme_profile(here.id)['nickname'])
+        if here.profile.id in my_followers:
+            availables.append(gimme_profile(here.profile.id))
+            availables_title.append(gimme_profile(here.profile.id)['nickname'])
     off_entries = Availability.objects.filter(when=d, absent_mode=True)
+    if len(off_entries) > 0:
+        print(all_followers,my_followers,off_entries)
     for off in off_entries:
-        if off.id in my_followers:
-            absents.append(gimme_profile(off.id))
-            absents_title.append(gimme_profile(off.id)['nickname'])
-    # if len(off_entries)>0:
-    #     print(absents)
+        if off.profile.id in my_followers:
+            absents.append(gimme_profile(off.profile.id))
+            absents_title.append(gimme_profile(off.profile.id)['nickname'])
+
     context['availables'] = availables
     context['absents'] = absents
     if len(absents_title) > 0:
-        context['absents_title'] = "Ils se sont signalés abesnts ce jour là: " + ', '.join(absents_title)
+        context['absents_title'] = "Absent(es): " + ', '.join(absents_title)
     else:
         context['absents_title'] = 'Rien à signaler'
     if len(availables_title) > 0:
-        context['availables_title'] = "Ils se sont signalés disponibles ce jour là: " + ', '.join(availables_title)
+        context['availables_title'] = "Disponible(s): " + ', '.join(availables_title)
     else:
         context['availables_title'] = 'Rien à signaler'
     return context
@@ -202,3 +203,10 @@ def build_zoomed_day(request, d):
     context['day'] = gimme_day(request, cur_date)
     context['availabilities'] = gimme_all_availabilities(request, cur_date, request.user)
     return context
+
+
+def system_flush():
+    from scheduler.models.availability import Availability
+    data_from_the_past = Availability.object.filter(when__lt=datetime.day())
+    for i in data_from_the_past:
+        i.delete()

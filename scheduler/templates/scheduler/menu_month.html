@@ -1,10 +1,11 @@
 <div class="bar">
     <div class='lefters'>
-        <div class="button compact"><i class="fas fa-question"></i>&nbsp;Aide</div>
+        <div class="button compact modal_switch"  action="about"><i class="fas fa-question"></i></div>
     </div>
     <div class='righters'>
         <div class="button compact display" action="month" param="{{c.monthback}}"><i class="fas fa-backward" title="-4 semaines"></i>&nbsp;</div>
         <div class="button compact display" action="month" param="{{c.weekback}}"><i class="fas fa-caret-left" title="-1 semaine"></i>&nbsp;</div>
+        <div class="button compact display" action="month" param="{{c.today}}"><i class="fas fa-square" title="aujourd'hui"></i>&nbsp;</div>
         <div class="button compact display" action="month" param="{{c.weeknext}}"><i class="fas fa-caret-right" title="+1 semaine"></i>&nbsp;</div>
         <div class="button compact display" action="month" param="{{c.monthnext}}"><i class="fas fa-forward" title="+4 semaines"></i>&nbsp</div>
     </div>

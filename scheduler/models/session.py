@@ -23,6 +23,7 @@ class Session(models.Model):
     time_start = models.TimeField(default=datetime.now)
     duration = models.PositiveIntegerField(default=4)
     realm = models.ForeignKey(Realm, on_delete=models.CASCADE, null=True)
+    place = models.CharField(max_length=128, default='', blank=True)
     mandatory_spots = models.PositiveIntegerField(default=4)
     optional_spots = models.PositiveIntegerField(default=0)
     newbies_allowed = models.BooleanField(default=True, verbose_name='noobs')
