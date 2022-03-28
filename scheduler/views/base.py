@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, Http404, JsonResponse, HttpResponseRedirect
 from django.template.loader import get_template
 from scheduler.utils.mechanics import FONTSET, FMT_TIME, FMT_DATE, FMT_DATETIME, DOWS, FMT_DATE_PRETTY
-from scheduler.utils.organizer import build_month, build_zoomed_day, gimme_profile, system_flush
+from scheduler.utils.organizer import build_month, build_zoomed_day, gimme_profile, system_flush, gimme_set_followers
 from datetime import datetime, date
 
 
@@ -19,7 +19,7 @@ def prepare_index(request):
 def index(request):
     if not request.user.is_authenticated:
         return render(request, 'scheduler/registration/login_error.html')
-    system_flush
+    system_flush()
     context = prepare_index(request)
     return render(request, 'scheduler/index.html', context=context)
 
@@ -117,7 +117,7 @@ def prepare_user(request, id=None):
     if len(all) == 1:
         context['status'] = 'OK'
         that = all.first()
-        context['profile'] = that.to_json
+        context['profile'] = gimme_profile(that.id)
 
     day_off = cur_date.weekday() > 4
     current_day = cur_date.day == datetime.today().day
@@ -166,6 +166,9 @@ def prepare_overlay(request, slug):
     template_str = ""
     if slug == "about":
         template_str = "scheduler/about.html"
+    if slug == "followers":
+        context["set_followers"] = gimme_set_followers(request.user.profile.id)
+        template_str = "scheduler/set_followers.html"
     if slug == 'close':
         template_str = ""
     return context, template_str
@@ -182,4 +185,22 @@ def display_overlay(request, slug):
         template = get_template(target_template)
         html = template.render(context, request)
     response = {'data': html, 'callback': callback}
+    return JsonResponse(response)
+
+
+@login_required
+def toggle_follower(request, id):
+    from scheduler.models.follower import Follower
+    from scheduler.models.profile import Profile
+    profile = Profile.objects.get(pk=request.user.profile.id)
+    target = Profile.objects.get(pk=id)
+    html = ''
+    all = Follower.objects.filter(profile=profile, target=target)
+    if len(all) == 1:
+        all.first().delete()
+    else:
+        x = Follower(profile=profile, target=target)
+        x.save()
+        html = gimme_profile(target.id)
+    response = {'data': html}
     return JsonResponse(response)

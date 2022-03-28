@@ -1,11 +1,10 @@
 {% load static %}
 {% load global_filters %}
 <div class="user_details">
-    <center>
     <table style="width: 600px;">
         <tr>
             <th>
-                Nickname
+                Surnom
             </th>
             <td>
                 {{profile.nickname|safe}}
@@ -13,7 +12,23 @@
         </tr>
         <tr>
             <th>
-                Présentation
+                Symbole MJ
+            </th>
+            <td>
+                {% include "scheduler/session_shortcut.html" with u=profile %}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Symbole Joueur
+            </th>
+            <td>
+                {% include "scheduler/player_shortcut.html" with u=profile %}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Notes
             </th>
             <td class="text">
                 {{profile.presentation | safe}}
@@ -45,5 +60,5 @@
         </tr>
 
     </table>
-    </center>
+
 </div>

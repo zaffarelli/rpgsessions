@@ -30,8 +30,10 @@ def gimme_sessions_of_the_day(request, d):
     all = Session.objects.filter(date_start=d).order_by('time_start')
     sessions = []
     for s in all:
+        user_wanted = s.wanted.split(';')
         sess = {
             's': s.to_json,
+            'user_wanted': str(request.user.profile.id) in user_wanted,
             'u': gimme_profile(s.mj.id),
             'g': s.game.to_json
         }
@@ -72,7 +74,7 @@ def gimme_all_availabilities(request, d, id):
             availables_title.append(gimme_profile(here.profile.id)['nickname'])
     off_entries = Availability.objects.filter(when=d, absent_mode=True)
     if len(off_entries) > 0:
-        print(all_followers,my_followers,off_entries)
+        print(all_followers, my_followers, off_entries)
     for off in off_entries:
         if off.profile.id in my_followers:
             absents.append(gimme_profile(off.profile.id))
@@ -121,6 +123,7 @@ def build_month(request, date_str):
                'date': d.strftime(FMT_DATE),
                'monthback': monthback.strftime(FMT_DATE),
                'weekback': weekback.strftime(FMT_DATE),
+               'today': datetime.now().strftime(FMT_DATE),
                'weeknext': weeknext.strftime(FMT_DATE),
                'monthnext': monthnext.strftime(FMT_DATE)
                }
@@ -207,6 +210,21 @@ def build_zoomed_day(request, d):
 
 def system_flush():
     from scheduler.models.availability import Availability
-    data_from_the_past = Availability.object.filter(when__lt=datetime.day())
+    data_from_the_past = Availability.objects.filter(when__lt=datetime.today())
     for i in data_from_the_past:
         i.delete()
+
+
+def gimme_set_followers(id):
+    from scheduler.models.follower import Follower
+    from scheduler.models.profile import Profile
+    f_list = []
+    list = []
+    it = Profile.objects.get(pk=id)
+    all_profiles = Profile.objects.order_by('nickname')
+    all_followers = Follower.objects.filter(profile=it)
+    for f in all_followers:
+        f_list.append(f.target.id)
+    for p in all_profiles:
+        list.append({'profile': gimme_profile(p.id), 'is_follower': p.id in f_list})
+    return list

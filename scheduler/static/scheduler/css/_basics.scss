@@ -39,7 +39,7 @@ $paper_background: #b2b0a7;
 $paper_color: darken(complement($paper_background),50%);
 $paper_border:darken($paper_background,10%);
 // Highlight
-$highlight_color: lighten($highlight_background,75%);
+$highlight_color: darken($highlight_background,75%);
 $highlight_border: lighten($highlight_background,10%);
 // Buttons
 $button_color: lighten($button_background,75%);

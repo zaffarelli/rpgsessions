@@ -1,0 +1,42 @@
+{% load static %}
+
+<div class="diag_header">
+    <h1>Traqués</h1>
+</div>
+
+<div class="diag_body">
+
+        <p>Voici la liste des joueurs que vous traquez actuellement. Rien d'illégal, vous êtes juste abonné à leur
+            activité quand ils se signalent <b>disponibles</b> (<i class="fa fa-circle" style="color:darkcyan;"></i>)
+            ou <b>absents</b>(<i class="fa fa-circle" style="color:brown;"></i>).<BR/>
+            Le classement est alpahbétique par rapport au surnom.</p>
+    <div class="cage" style="overflow-y:scroll; height:200px;">
+        <div class="item_select">
+            {% for x in set_followers %}
+                <div class="item_block {% if x.is_follower %}on{% else %}off{% endif %} toggle" action="toggle_follower"
+                     param="{{ x.profile.id }}" >
+                    {% include "scheduler/player_shortcut.html" with u=x.profile %}
+                    <br/>{{ x.profile.nickname }} ({{x.profile.id}})
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <p>Attention, les données de traque (<b>disponibilité</b> et <b>absence</b>) dans le passé sont nettoyées
+        automatiquement, car elles n'on plus d'utilité pour organiser les parties et prennent de la place inutilement.
+    </p>
+    <p>Petit conseil: vous pouvez vous traquer vous même, ça peut être pratique pour rester cohérent...</p>
+</div>
+
+<div class="diag_footer">
+    <div class="bar">
+        <div class='lefters'>
+
+        </div>
+        <div class='righters'>
+            <div class="button compact modal_switch" action="close"><i class="fas fa-times"></i>&nbsp;Fermer
+            </div>
+        </div>
+
+    </div>
+
+

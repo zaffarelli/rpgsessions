@@ -10,21 +10,22 @@ body {
   display: none;
   color: lightgreen;
   font-family: Cutive Mono;
-  font-weight:bold;
+  font-weight: bold;
   font-size:: 9pt;
 
-  padding:2em;
+  padding: 2em;
 
 }
 
 @media only screen and (max-width: 600px) {
   body {
     background: black;
-    border-left:5px solid darkgoldenrod;
+    border-left: 5px solid darkgoldenrod;
 
     #bad_size {
       display: block;
     }
+
     & .world {
       display: none !important;
     }
@@ -239,7 +240,7 @@ body {
 
           & .ablock {
             order: 1;
-            width: 120px;
+            width: 240px;
             text-align: center;
             border-radius: 5px 0 0 5px;
           }
@@ -252,7 +253,7 @@ body {
 
           & .zblock {
             order: 10;
-            width: 120px;
+            flex-grow: 1;
             text-align: center;
             border-radius: 0 5px 5px 0;
           }
@@ -281,7 +282,7 @@ body {
         & .month_info {
           order: 1;
           width: 100%;
-          border-radius:10px;
+          border-radius: 10px;
         }
 
         & .month_body {
@@ -604,8 +605,9 @@ table {
       width: auto;
       padding: 2px;
       text-align: center;
-      &.text{
-        text-align:left;
+
+      &.text {
+        text-align: left;
         white-space: pre-wrap;
       }
     }
@@ -622,11 +624,6 @@ table {
   }
 }
 
-
-.raised{
-  top:0;
-}
-
 #overlay {
 
   position: fixed;
@@ -636,13 +633,13 @@ table {
   z-index: 10;
   padding: 0;
   margin: 0;
-  background-opacity: 0.85;
+  //background-opacity: 0.85;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-  top: -8000px;
+  //top: -8000px;
 
   & #dialog {
     z-index: 100;
@@ -654,9 +651,101 @@ table {
     height: 600px;
     border-radius: 15px;
     font-family: Roboto;
-    font-size: 9pt;
+    font-size: 10pt;
     margin: auto;
     padding: 15px;
-    box-shadow: 0 0 50px lightgoldenrodyellow;
+    box-shadow: 0 0 50px black;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+
+    & .diag_header {
+      order: 1;
+      border-bottom: 1px solid white;
+      background: $panel1_background;
+      color: $panel1_color;
+      border-color: $panel1_border;
+      font-size: 12px;
+      text-align: center;
+      height: 10%;
+      margin: 2%;
+      border-radius: 10px;
+    }
+
+    & .diag_body {
+      order: 2;
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      background: $panel1_background;
+      color: $panel1_color;
+      border-color: $panel1_border;
+      width: 96%;
+      margin: 2%;
+      height: 68%;
+      padding: 1%;
+      border-radius: 5px;
+    }
+
+    & .diag_footer {
+      order: 3;
+      border-top: 1px solid white;
+      background: $panel1_background;
+      color: $panel1_color;
+      border-color: $panel1_border;
+      margin: 2%;
+      padding: 1%;
+      border-radius: 10px;
+      height: 5%;
+    }
   }
 }
+
+
+.item_select {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: center;
+  gap: 3px;
+
+  & .item_block {
+    width: 16ex;
+    height: 4em;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid transparent;
+    line-heigth: 0.9em;
+    cursor:pointer;
+
+    &.on {
+      background: $highlight_background;
+      border-color: $highlight_border;
+      color: $highlight_color;
+
+    }
+
+    &.off {
+      border-color: $panel1_border;
+    }
+  }
+
+}
+
+.session_of_the_day {
+  border: 3px solid transparent;
+  border-radius: 10px;
+  padding: 3px;
+  background: transparent;
+
+  &.wanted_session {
+    border-color: $highlight_border;
+    background: $highlight_background;
+    color: $highlight_color;
+  }
+
+}
+
