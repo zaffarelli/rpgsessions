@@ -141,9 +141,9 @@ class Scheduler {
                 url: url,
                 success: function (answer) {
                     if (action == 'toggle_follower') {
-                        console.log(answer)
+                        $('#dialog').html(answer.data);
                     } else {
-                        console.log(answer)
+                        $(answer.target).html(answer.data);
                     }
                     me.rebootLinks();
                 },

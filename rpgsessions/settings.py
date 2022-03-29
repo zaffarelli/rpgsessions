@@ -17,6 +17,7 @@ INSTALLED_APPS = [
     'compressor',
     'fixture_magic',
     'colorfield',
+    'fontawesomefree',
 ]
 
 MIDDLEWARE = [
@@ -159,4 +160,4 @@ LOGGING = {
     }
 }
 
-VERSION = "0.6.5"
+VERSION = "0.6.6"

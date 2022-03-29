@@ -1,10 +1,12 @@
 {% load static %}
 <div class="bar">
     <div class='lefters'>
-        <div class="button compact"><i class="fas fa-question"></i>&nbsp;Aide</div>
+{#        <div class="button compact"><i class="fas fa-question"></i>&nbsp;Aide</div>#}
+        <div class="button compact display" action="month" param="{{data.day.day}}"><i class="fas fa-undo"></i>&nbsp;Retour</div>
     </div>
     <div class='righters'>
-        <div class="button compact"><i class="fas fa-plus" title=""></i> Nouvelle partie</div>
-        <div class="button compact display" action="month" param="{{data.day.day}}"><i class="fas fa-undo"></i>&nbsp;Retour</div>
+        <div class="button compact toggle" action="set_absent" param="{{data.day.day}}"><i class="fas fa-circle-exclamation" title=""></i> Absent</div>
+        <div class="button compact toggle" action="set_available" param="{{data.day.day}}"><i class="fa-solid fa-circle-check" title=""></i> Disponible</div>
+        <div class="button compact modal_switch" action="new_session" param="{{data.day.day}}"><i class="fas fa-plus" title=""></i> Nouvelle partie</div>
     </div>
 </div>

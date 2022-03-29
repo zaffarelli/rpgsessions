@@ -192,8 +192,10 @@ def display_overlay(request, slug):
 def toggle_follower(request, id):
     from scheduler.models.follower import Follower
     from scheduler.models.profile import Profile
+    # print("+++ HERE +++", id)
     profile = Profile.objects.get(pk=request.user.profile.id)
     target = Profile.objects.get(pk=id)
+    context = {}
     html = ''
     all = Follower.objects.filter(profile=profile, target=target)
     if len(all) == 1:
@@ -201,6 +203,44 @@ def toggle_follower(request, id):
     else:
         x = Follower(profile=profile, target=target)
         x.save()
-        html = gimme_profile(target.id)
+        # html = gimme_profile(target.id)
+    context["set_followers"] = gimme_set_followers(request.user.profile.id)
+    template = get_template("scheduler/set_followers.html")
+    html = template.render(context, request)
     response = {'data': html}
+    return JsonResponse(response)
+
+
+@login_required
+def simple_toggle(request, action, param):
+    from scheduler.models.availability import Availability
+    from scheduler.utils.organizer import gimme_all_availabilities
+    date_str = param.replace('_', '-')
+    cur_date = date.fromisoformat(date_str)
+    new_mode = action == 'set_absent'
+    all = Availability.objects.filter(when=cur_date, profile=request.user.profile)
+    if len(all) == 0:
+        n = Availability()
+        n.when = cur_date
+        n.profile = request.user.profile
+        n.absent_mode = new_mode
+        n.save()
+    elif len(all) == 1:
+        f = all.first()
+        if f.absent_mode == new_mode:
+            f.delete()
+        else:
+            f.absent_mode = new_mode
+            f.save()
+    else:
+        for a in all:
+            a.delete()
+        n = Availability(when=cur_date, profile=request.user.profile)
+        n.absent_mode = new_mode
+        n.save()
+    context = {'data': {}}
+    context['data']['availabilities'] = gimme_all_availabilities(request, cur_date, request.user.profile.id)
+    template = get_template("scheduler/day_availabilities.html")
+    html = template.render(context, request)
+    response = {'data': html, 'target': '.day_details'}
     return JsonResponse(response)

@@ -1,0 +1,13 @@
+{% load static %}
+
+<hr/>
+Disponibles:
+{% for x in data.availabilities.availables %}
+    {% include "scheduler/player_shortcut.html" with u=x %}
+{% endfor %}
+<hr/>
+Absents:
+{% for x in data.availabilities.absents %}
+    {% include "scheduler/player_shortcut.html" with u=x %}
+{% endfor %}
+<hr/>
