@@ -129,9 +129,6 @@ class Scheduler {
             let param = $(this).attr('param');
             let option = $(this).attr('option');
             let url = 'ajax/toggle/' + action + '/';
-            // if (action == 'toggle_follower') {
-            //     $('.item_select').toggleClass("shadow");
-            // }
             if (param != undefined) {
                 let p = param.replaceAll('-', '_');
                 if (option) {
@@ -146,7 +143,7 @@ class Scheduler {
                     if (action == 'toggle_follower') {
                         $('#dialog').html(answer.data);
                     } else {
-                        console.log(answer)
+                        $(answer.target).html(answer.data);
                     }
                     me.rebootLinks();
                 },

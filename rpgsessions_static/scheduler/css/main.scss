@@ -382,7 +382,13 @@ body {
                   cursor: pointer;
                 }
 
-
+                & .day_bottom {
+                  order: 3;
+                  height: 20px;
+                  background:  $panel2_background;;
+                  color: $env_text;
+                  border: 1px solid transparent;
+                }
                 & .day_body {
                   display: flex;
                   flex-flow: row nowrap;
@@ -609,6 +615,17 @@ table {
       &.text {
         text-align: left;
         white-space: pre-wrap;
+        padding:5px;
+        margin:0;
+
+        font-family:roboto;
+        & p{
+          margin:0;
+          padding:2px;
+          text-indent:3ex;
+          text-align:justify;
+          line-height:0.93em;
+        }
       }
     }
 

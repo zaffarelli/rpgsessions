@@ -12,12 +12,19 @@ class Campaign(models.Model):
     mj = models.ForeignKey(Profile, on_delete=models.CASCADE)
     acronym = models.CharField(max_length=6, default='')
     description = models.TextField(max_length=2048, default='', blank=True)
+    wanted = models.CharField(max_length=64, default='', blank=True)
     alpha = ColorField(default='#666666')
     beta = ColorField(default='#666666')
     gamma = ColorField(default='#666666')
 
     def __str__(self):
         return f'{self.title} ({self.mj})'
+
+    @property
+    def to_json(self):
+        from scheduler.utils.mechanics import json_default
+        jstr = json.loads(json.dumps(self, default=json_default, sort_keys=True, indent=4))
+        return jstr
 
 
 class CampaignAdmin(admin.ModelAdmin):

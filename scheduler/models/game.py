@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib import admin
 from colorfield.fields import ColorField
+from scheduler.models.profile import Profile
 import json
 
 
@@ -9,6 +10,7 @@ class Game(models.Model):
     version = models.CharField(max_length=32, default='')
     acronym = models.CharField(max_length=6, default='')
     description = models.TextField(max_length=2048, default='', blank=True)
+    mj = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
     alpha = ColorField(default='#666666')
     beta = ColorField(default='#666666')
     gamma = ColorField(default='#666666')
@@ -25,4 +27,4 @@ class Game(models.Model):
 
 class GameAdmin(admin.ModelAdmin):
     ordering = ['name', 'version']
-    list_display = ['name', 'version', 'acronym', 'alpha', 'beta', 'gamma', 'description']
+    list_display = ['name', 'version', 'acronym', 'mj', 'alpha', 'beta', 'gamma', 'description']

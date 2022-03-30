@@ -38,7 +38,7 @@ class Profile(models.Model):
         from scheduler.models.follower import Follower
         from scheduler.utils.organizer import gimme_profile
         list = []
-        all = Follower.objects.filter(profile=self)
+        all = Follower.objects.filter(profile=self).order_by('target__nickname')
         for x in all:
             list.append(gimme_profile(x.target.id))
         return list
@@ -48,7 +48,7 @@ class Profile(models.Model):
         from scheduler.models.follower import Follower
         from scheduler.utils.organizer import gimme_profile
         list = []
-        all = Follower.objects.filter(target=self)
+        all = Follower.objects.filter(target=self).order_by('profile__nickname')
         for x in all:
             list.append(gimme_profile(x.profile.id))
         return list

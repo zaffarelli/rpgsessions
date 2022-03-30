@@ -1,9 +1,18 @@
 {% load static %}
 {% load global_filters %}
 <H1>{{ session.title|safe }}</h1>
-<p>Proposée par <em>{{ mj.nickname }}</em></p>
-
-
+{% if session.campaign %}
+    <center>
+        Un épisode de la campagne<br/><strong style="font-size:1.5em;">{{ session.campaign.title|safe }}</strong>
+    </center>
+{% endif %}
+{% if owner %}
+    <center>
+        <span style="color:brown;">Vous êtes le MJ de cette séance, vous pouvez la modifier.</span>
+    </center>
+{% else %}
+    <br/>
+{% endif %}
 <table>
     <tr>
         <th>Meneur de jeu</th>
@@ -39,16 +48,15 @@
         <th>Difficulté</th>
         <td>{{ session.level|as_level|safe }}</td>
     </tr>
-    {% if session.mandatory_spots %}
+    {% if wanted_list %}
         <tr>
             <th>Sollicités</th>
-            <td>{{ session.mandatory_spots }} joueurs :<br/>
-                {% if session.mandatory_spots %}
-                    {% for w in wanted_list %}
-                        &nbsp;{% include "scheduler/player_shortcut.html" with u=w %}
+            <td>
+                {% for w in wanted_list %}
+                    &nbsp;{% include "scheduler/player_shortcut.html" with u=w %}
 
-                    {% endfor %}
-                {% endif %}
+                {% endfor %}
+
             </td>
         </tr>
     {% endif %}
@@ -60,15 +68,22 @@
     {% endif %}
 
     <tr>
-        <th>Inscrits</th>
+        <th>Inscrits (max: {{session.max_players}})</th>
         <td style="background:#ffcc44;">
 
             {% for w in inscriptions %}
                 &nbsp;{% include "scheduler/player_shortcut.html" with u=w %}
-
             {% endfor %}
         </td>
     </tr>
+    {% if session.campaign %}
+    <tr>
+        <th>Campagne</th>
+        <td class="text">{{ session.campaign.description|safe }}
+        </td>
+    </tr>
+    {% endif %}
+
     <tr>
         <th>Présentation</th>
         <td class="text">{{ session.description|safe }}
@@ -77,9 +92,6 @@
 </table>
 
 <hr/>
-{% if owner %}
-    <center>
-        <span style="color:brown;">Vous êtes le MJ de cette séance, vous pouvez la modifier.</span>
-    </center>
-{% endif %}
+
+
 

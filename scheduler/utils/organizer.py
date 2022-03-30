@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, time, date
+from django.template.loader import get_template
 from scheduler.utils.mechanics import MONTHS, MONTHS_COLORS, MONTHS_COLORS_TEXT, DOWS, HOUR_PIXELS, FONTSET, FMT_TIME, \
     FMT_DATE, \
     FMT_DATETIME, FMT_DATE_PRETTY
@@ -7,6 +8,10 @@ from scheduler.utils.mechanics import MONTHS, MONTHS_COLORS, MONTHS_COLORS_TEXT,
 def gimme_session(request, s):
     context = s.to_json
     context['episode_tag'] = s.episode_tag
+    context['user_wanted'] = s.wanted_list
+    context['max_players'] = s.max_players
+    if s.campaign:
+        context['campaign'] = s.campaign.to_json
     return context
 
 
@@ -228,3 +233,63 @@ def gimme_set_followers(id):
     for p in all_profiles:
         list.append({'profile': gimme_profile(p.id), 'is_follower': p.id in f_list})
     return list
+
+
+def toggle_available(request, action, param):
+    from scheduler.models.availability import Availability
+    date_str = param.replace('_', '-')
+    cur_date = date.fromisoformat(date_str)
+    new_mode = action == 'set_absent'
+    all = Availability.objects.filter(when=cur_date, profile=request.user.profile)
+    if len(all) == 0:
+        n = Availability()
+        n.when = cur_date
+        n.profile = request.user.profile
+        n.absent_mode = new_mode
+        n.save()
+    elif len(all) == 1:
+        f = all.first()
+        if f.absent_mode == new_mode:
+            f.delete()
+        else:
+            f.absent_mode = new_mode
+            f.save()
+    else:
+        for a in all:
+            a.delete()
+        n = Availability(when=cur_date, profile=request.user.profile)
+        n.absent_mode = new_mode
+        n.save()
+    context = {'data': {}}
+    context['data']['availabilities'] = gimme_all_availabilities(request, cur_date, request.user.profile.id)
+    template = get_template("scheduler/day_availabilities.html")
+    target = '.day_details'
+    html = template.render(context, request)
+    return html, target
+
+
+def toggle_subscribe(request, action, param):
+    from scheduler.models.inscription import Inscription
+    from scheduler.models.session import Session
+    from scheduler.views.base import prepare_session
+
+    profile = request.user.profile
+    sessions = Session.objects.filter(id=int(param))
+    if len(sessions) == 1:
+        inscriptions = Inscription.objects.filter(profile=profile, session=sessions.first())
+        if len(inscriptions) == 1:
+            print("Unsubscribing")
+            f = inscriptions.first()
+            f.delete()
+        else:
+            print("Subscribing")
+            n = Inscription()
+            n.profile = profile
+            n.session = sessions.first()
+            n.pending = True
+            n.save()
+    context = prepare_session(request, int(param))
+    template = get_template("scheduler/session_details.html")
+    html = template.render(context, request)
+    target = '.day_details'
+    return html, target

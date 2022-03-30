@@ -9,15 +9,22 @@
     <div class="day_body">
         {% for x in c.day_body.sessions %}
             <div class="session_of_the_day {% if x.user_wanted %} wanted_session"  title="Vous êtes sollicités sur cette séance...{% endif %}">
-            {% include "scheduler/session_shortcut.html" with s=x.s u=x.u g=x.g %}
+                {% include "scheduler/session_shortcut.html" with s=x.s u=x.u g=x.g %}
             </div>
         {% endfor %}
 
+
+    </div>
+    <div class="day_bottom">
         {% if c.availabilities.availables %}
-            <i class="fa fa-circle" title="{{ c.availabilities.availables_title }}" style="color:darkcyan;"></i>
+            <div style="display:block;float:right;width:15px;">
+                <i class="fa fa-circle" title="{{ c.availabilities.availables_title }}" style="color:darkcyan;"></i>
+            </div>
         {% endif %}
         {% if c.availabilities.absents %}
+            <div style="display:block;float:left;width:15px;">
             <i class="fa fa-circle" title="{{ c.availabilities.absents_title }}" style="color:brown;"></i>
+            </div>
         {% endif %}
     </div>
 </div>

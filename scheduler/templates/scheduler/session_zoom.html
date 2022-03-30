@@ -4,18 +4,23 @@
         <div class="session display" action="session_details" param="{{c.s.id}}" style="height: calc({{c.timescale.size}}px - 5px ); ">
             {% include "scheduler/game_shortcut.html" with g=c.g %}
             {% include "scheduler/session_shortcut.html" with s=c.s u=c.u g=c.g %}
-            {% if c.s.mandatory_spots %}
-            Sollicités: {{c.s.mandatory_spots}}
+            Sollicités:
+            <br/>
+            {% for w in c.s.user_wanted %}
+                {% include "scheduler/player_shortcut.html" with u=w %}
+            {% endfor %}
+            <br/>
+            {% if c.s.optional_spots %}
+            Places Libres: {{c.s.optional_spots}}
+            <br/>
+            {% endif %}
+            Inscrits:
             <br/>
             {% for x in c.inscriptions %}
                 {% include "scheduler/player_shortcut.html" with u=x %}
             {% endfor %}
             <br/>
-            {% endif %}
-            {% if c.s.optional_spots %}
-            Places Libres: {{c.s.optional_spots}}
-            <br/>
-            {% endif %}
+
 
 
         </div>

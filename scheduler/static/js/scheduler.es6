@@ -106,9 +106,11 @@ class Scheduler {
                         $('#overlay').addClass('hidden');
                         $('#dialog').html("Nope");
                     } else {
-                        $('#overlay').removeClass('hidden');
+
+                        console.log(answer.data)
                         $('#dialog').html(answer.data);
-                        $('#callback').html(answer.callback);
+                        $('#overlay').removeClass('hidden');
+                        // $('#callback').html(answer.callback);
                     }
                     me.rebootLinks();
                 },

@@ -24,7 +24,6 @@ class Session(models.Model):
     duration = models.PositiveIntegerField(default=4)
     realm = models.ForeignKey(Realm, on_delete=models.CASCADE, null=True)
     place = models.CharField(max_length=128, default='', blank=True)
-    mandatory_spots = models.PositiveIntegerField(default=4)
     optional_spots = models.PositiveIntegerField(default=0)
     newbies_allowed = models.BooleanField(default=True, verbose_name='noobs')
     one_shot_adventure = models.BooleanField(default=True, verbose_name='oneshot')
@@ -53,15 +52,29 @@ class Session(models.Model):
     @property
     def wanted_list(self):
         from scheduler.utils.organizer import gimme_profile
+
+        if self.campaign:
+            wanted = self.campaign.wanted
+        else:
+            wanted = self.wanted
         list = []
-        if len(self.wanted) > 0:
-            wanted_players = self.wanted.split(';')
+        if len(wanted) > 0:
+            wanted_players = wanted.split(';')
             for wp in wanted_players:
-                _set = Profile.objects.filter(pk=wp)
+                _set = Profile.objects.filter(pk=int(wp))
                 if len(_set) == 1:
                     this = _set.first()
                     list.append(gimme_profile(this.id))
         return list
+
+    @property
+    def max_players(self):
+        m = self.optional_spots + len(self.wanted_list)
+        return m
+
+    @property
+    def mandatory_spots(self):
+        return len(self.wanted_list)
 
     @property
     def episode_tag(self):
@@ -80,8 +93,7 @@ class Session(models.Model):
 
 class SessionAdmin(admin.ModelAdmin):
     ordering = ['date_start', 'time_start']
-    list_display = ['title', 'campaign', 'date_start', 'time_start', 'is_ready', 'duration', 'date_end', 'mj',
-                    'newbies_allowed',
-                    'one_shot_adventure','episode_tag']
+    list_display = ['title', 'campaign', 'date_start', 'time_start', 'max_players', 'is_ready', 'duration', 'date_end',
+                    'mj', 'newbies_allowed', 'one_shot_adventure', 'episode_tag']
     search_fields = ['title', 'description', 'campaign']
     list_filter = ['level', 'game', 'campaign']

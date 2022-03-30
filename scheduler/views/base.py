@@ -3,7 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, Http404, JsonResponse, HttpResponseRedirect
 from django.template.loader import get_template
 from scheduler.utils.mechanics import FONTSET, FMT_TIME, FMT_DATE, FMT_DATETIME, DOWS, FMT_DATE_PRETTY
-from scheduler.utils.organizer import build_month, build_zoomed_day, gimme_profile, system_flush, gimme_set_followers
+from scheduler.utils.organizer import build_month, build_zoomed_day, gimme_profile, system_flush, gimme_set_followers, \
+    toggle_available, toggle_subscribe
 from datetime import datetime, date
 
 
@@ -161,26 +162,35 @@ def handle_invitation(request, slug=None):
     return JsonResponse(response)
 
 
-def prepare_overlay(request, slug):
+def gimme_new_session(request, param):
+    from scheduler.forms.session_form import SessionForm
+    context = {}
+    form = SessionForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    context['form'] = form
+    return context
+
+
+def prepare_overlay(request, slug, param=None):
     context = {}
     template_str = ""
-    if slug == "about":
+    if slug == "new_session":
+        context = gimme_new_session(request, param)
+        template_str = "scheduler/session_create.html"
+    elif slug == "about":
         template_str = "scheduler/about.html"
-    if slug == "followers":
+    elif slug == "followers":
         context["set_followers"] = gimme_set_followers(request.user.profile.id)
         template_str = "scheduler/set_followers.html"
-    if slug == 'close':
-        template_str = ""
     return context, template_str
 
 
 # @login_required
-def display_overlay(request, slug):
-    # if request.user.is_authenticated:
-    #     return HttpResponseRedirect('/')
+def display_overlay(request, slug, param=None):
     html = ''
     callback = ''
-    context, target_template = prepare_overlay(request, slug)
+    context, target_template = prepare_overlay(request, slug, param)
     if target_template:
         template = get_template(target_template)
         html = template.render(context, request)
@@ -213,34 +223,9 @@ def toggle_follower(request, id):
 
 @login_required
 def simple_toggle(request, action, param):
-    from scheduler.models.availability import Availability
-    from scheduler.utils.organizer import gimme_all_availabilities
-    date_str = param.replace('_', '-')
-    cur_date = date.fromisoformat(date_str)
-    new_mode = action == 'set_absent'
-    all = Availability.objects.filter(when=cur_date, profile=request.user.profile)
-    if len(all) == 0:
-        n = Availability()
-        n.when = cur_date
-        n.profile = request.user.profile
-        n.absent_mode = new_mode
-        n.save()
-    elif len(all) == 1:
-        f = all.first()
-        if f.absent_mode == new_mode:
-            f.delete()
-        else:
-            f.absent_mode = new_mode
-            f.save()
-    else:
-        for a in all:
-            a.delete()
-        n = Availability(when=cur_date, profile=request.user.profile)
-        n.absent_mode = new_mode
-        n.save()
-    context = {'data': {}}
-    context['data']['availabilities'] = gimme_all_availabilities(request, cur_date, request.user.profile.id)
-    template = get_template("scheduler/day_availabilities.html")
-    html = template.render(context, request)
-    response = {'data': html, 'target': '.day_details'}
+    if action in ['set_absent', 'set_available']:
+        html, target = toggle_available(request, action, param)
+    elif action in ['session_subscribe']:
+        html, target = toggle_subscribe(request, action, param)
+    response = {'data': html, 'target': target}
     return JsonResponse(response)
