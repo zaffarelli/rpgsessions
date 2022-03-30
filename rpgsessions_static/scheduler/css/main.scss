@@ -385,10 +385,11 @@ body {
                 & .day_bottom {
                   order: 3;
                   height: 20px;
-                  background:  $panel2_background;;
+                  background: $panel2_background;;
                   color: $env_text;
                   border: 1px solid transparent;
                 }
+
                 & .day_body {
                   display: flex;
                   flex-flow: row nowrap;
@@ -615,16 +616,17 @@ table {
       &.text {
         text-align: left;
         white-space: pre-wrap;
-        padding:5px;
-        margin:0;
+        padding: 5px;
+        margin: 0;
 
-        font-family:roboto;
-        & p{
-          margin:0;
-          padding:2px;
-          text-indent:3ex;
-          text-align:justify;
-          line-height:0.93em;
+        font-family: roboto;
+
+        & p {
+          margin: 0;
+          padding: 2px;
+          text-indent: 3ex;
+          text-align: justify;
+          line-height: 0.93em;
         }
       }
     }
@@ -736,7 +738,7 @@ table {
     text-align: center;
     border: 1px solid transparent;
     line-heigth: 0.9em;
-    cursor:pointer;
+    cursor: pointer;
 
     &.on {
       background: $highlight_background;
@@ -766,6 +768,59 @@ table {
 
 }
 
-.shadow{
-  background:$highlight_border;
+.shadow {
+  background: $highlight_border;
+}
+
+.formblock {
+  overflow-y: scroll;
+  height: 300px;
+
+  & .formset {
+    display: flex;
+    flex-flow: column wrap;
+
+
+
+    & .field_wrapper {
+      list-style-type: none;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      align-items: flex-start;
+      gap: 10px 10px;
+      border: 1px solid transparent;
+
+      & label {
+        order: 1;
+        width: 200px;
+        padding: 2px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background: $panel2_background;
+        color: $panel2_color;
+        border-color: $panel2_border
+
+      }
+
+      & textarea, & input, & select {
+        order: 2;
+        width: auto;
+        background: $paper_background;
+        color: $paper_color;
+        font-size: 9pt;
+
+      }
+
+      & span.helptext {
+        order: 3;
+        width: 95%;
+        padding-top: 0;
+        margin-top: 0;
+        font-size: 8pt;
+        font-style: italic;
+      }
+    }
+  }
 }

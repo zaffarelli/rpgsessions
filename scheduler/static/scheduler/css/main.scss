@@ -773,53 +773,54 @@ table {
 }
 
 .formblock {
-  display: flex;
-  flex-flow: column wrap;
   overflow-y: scroll;
-  height:100%;
+  height: 300px;
 
-  & form {
-
-
-
-  & li {
-    list-style-type: none;
+  & .formset {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    gap: 10px 10px;
-    border:1px solid transparent;
+    flex-flow: column wrap;
 
-    & label {
-      order: 1;
-      width: 200px;
-      padding: 2px;
-      border: 1px solid black;
-      border-radius: 5px;
-      background: $panel2_background;
-      color: $panel2_color;
-      border-color: $panel2_border
 
+
+    & .field_wrapper {
+      list-style-type: none;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      align-items: flex-start;
+      gap: 10px 10px;
+      border: 1px solid transparent;
+
+      & label {
+        order: 1;
+        width: 200px;
+        padding: 2px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background: $panel2_background;
+        color: $panel2_color;
+        border-color: $panel2_border
+
+      }
+
+      & textarea, & input, & select {
+        order: 2;
+        width: auto;
+        background: $paper_background;
+        color: $paper_color;
+        font-size: 9pt;
+
+      }
+
+      & span.helptext {
+        order: 3;
+        width: 95%;
+        padding-top: 0;
+        margin-top: 0;
+        font-size: 8pt;
+        font-style: italic;
+      }
     }
-
-    & textarea, & input, & select {
-      order: 2;
-      width: auto;
-      background: $paper_background;
-      color: $paper_color;
-      font-size: 9pt;
-    }
-
-    & span.helptext{
-      order:3;
-      width:95%;
-      padding-top:0;
-      margin-top:0;
-      font-size:8pt;
-      font-style:italic;
-    }
-  }
   }
 }

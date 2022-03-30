@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib import admin
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, time
 from scheduler.models.realm import Realm
 from scheduler.models.game import Game
 from scheduler.models.profile import Profile
@@ -20,8 +20,8 @@ class Session(models.Model):
     game = models.ForeignKey(Game, on_delete=models.SET_NULL, null=True)
     description = models.TextField(max_length=2048, default='', blank=True)
     date_start = models.DateField(default=datetime.now)
-    time_start = models.TimeField(default=datetime.now)
-    duration = models.PositiveIntegerField(default=4)
+    time_start = models.TimeField(default=time(hour=18, minute=00, second=00))
+    duration = models.PositiveIntegerField(default=6)
     realm = models.ForeignKey(Realm, on_delete=models.CASCADE, null=True)
     place = models.CharField(max_length=128, default='', blank=True)
     optional_spots = models.PositiveIntegerField(default=0)

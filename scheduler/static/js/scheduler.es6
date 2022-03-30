@@ -158,12 +158,78 @@ class Scheduler {
         });
     }
 
+    registerAction() {
+        let me = this;
+        $('.action').off().on('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            let action = $(this).attr('action');
+            let param = $(this).attr('param');
+            let option = $(this).attr('option');
+            let url = 'ajax/action/' + action + '/';
+
+            // if (action == 'submit') {
+            //     document.forms[param].submit();
+            // }
+
+            let formdata = $(param).serialize();
+            let tgt = $('.character_form').attr('form-target');
+
+            $.ajax({
+                url: 'ajax/action/new_session/' + id + '/',
+                type: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: formdata,
+                dataType: 'json',
+                success: function (answer) {
+                    $('#tile_back_' + id).click();
+                    me.rebootLinks();
+                },
+                error: function (answer) {
+                    console.log(answer.responseText);
+                },
+            });
+
+
+            // if (param != undefined) {
+            //     let p = param.replaceAll('-', '_');
+            //     if (option) {
+            //         url = 'ajax/toggle/' + action + '/' + p + '/' + option + '/';
+            //     } else {
+            //         url = 'ajax/toggle/' + action + '/' + p + '/';
+            //     }
+            // }
+            // $.ajax({
+            //     url: url,
+            //     success: function (answer) {
+            //         if (action == 'submit') {
+            //             $('#'+param).submit();
+            //             $('#dialog').html(answer.data);
+            //         } else {
+            //             $(answer.target).html(answer.data);
+            //         }
+            //         me.rebootLinks();
+            //     },
+            //     error: function (answer) {
+            //         console.error(answer);
+            //         me.rebootLinks();
+            //     }
+            // });
+
+        });
+    }
+
+
     rebootLinks() {
         let me = this;
         _.defer(function () {
             me.registerDisplay();
             me.registerOverlay();
             me.registerToggle();
+            me.registerAction();
         });
     }
 

@@ -169,6 +169,7 @@ def gimme_new_session(request, param):
     if form.is_valid():
         form.save()
     context['form'] = form
+    context['date'] = param.replace('_','-')
     return context
 
 
