@@ -48,11 +48,12 @@
         <th>Difficulté</th>
         <td>{{ session.level|as_level|safe }}</td>
     </tr>
-    {% if wanted_list %}
+    {% if session.user_wanted %}
         <tr>
             <th>Sollicités</th>
             <td>
-                {% for w in wanted_list %}
+
+                {% for w in session.user_wanted %}
                     &nbsp;{% include "scheduler/player_shortcut.html" with u=w %}
 
                 {% endfor %}
@@ -68,7 +69,7 @@
     {% endif %}
 
     <tr>
-        <th>Inscrits (max: {{session.max_players}})</th>
+        <th>Inscrits (max: {{ session.max_players }})</th>
         <td style="background:#ffcc44;">
 
             {% for w in inscriptions %}
@@ -77,11 +78,11 @@
         </td>
     </tr>
     {% if session.campaign %}
-    <tr>
-        <th>Campagne</th>
-        <td class="text">{{ session.campaign.description|safe }}
-        </td>
-    </tr>
+        <tr>
+            <th>Campagne</th>
+            <td class="text">{{ session.campaign.description|safe }}
+            </td>
+        </tr>
     {% endif %}
 
     <tr>

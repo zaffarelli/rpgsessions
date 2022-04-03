@@ -8,7 +8,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /etc/nginx/sites-available
-COPY ./docker/nginx/airshield_nginx.conf .
+COPY ./docker/nginx/rpgsessions_nginx.conf .
 #RUN rm default
 
 
@@ -26,7 +26,7 @@ RUN chown -R www-data:www-data /var/log/nginx && \
 
 WORKDIR /etc/nginx/sites-enabled
 RUN rm -r default && \
-    ln -s ../sites-available/airshield_nginx.conf && \
+    ln -s ../sites-available/rpgsessions_nginx.conf && \
     ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 

@@ -7,7 +7,7 @@ services:
     restart: always
     networks:
       db_net:
-        ipv4_address: ${IP_POSA_POSTGRES}
+        ipv4_address: ${IP_POSR_POSTGRES}
     expose:
       - "5432"
     volumes:
@@ -20,44 +20,17 @@ services:
       - rpgsessions_db_password
     user: postgres:postgres
 
-  rpgsessions_rabbit:
-    image: rabbitmq:3
-    expose:
-      - "5672"
-    container_name: rpgsessions_rabbit
-    networks:
-      rabbit_net:
-        ipv4_address: ${IP_RABA_RABBIT}
-
-  rpgsessions_redis:
-    build:
-      context: ${CONTEXT_PATH}
-      dockerfile: ${DOCKER_PATH}redis/Dockerfile
-    container_name: rpgsessions_redis
-    expose:
-      - "6379"
-    volumes:
-#      - redisvol:/usr/local/etc/redis/
-#      - /docker/host/dir:/data
-      - redisvol:/data
-    networks:
-      redis_net:
-        ipv4_address: ${IP_REDA_REDIS}
-
   rpgsessions_web:
     build:
       context: ${CONTEXT_PATH}
       dockerfile: ${DOCKER_PATH}nginx/Dockerfile
     container_name: rpgsessions_web
     restart: always
-#    environment:
-#      IP_UPSTREAM: ${IP_NGIA_rpgsessions}
-#      IP_SERVER: ${IP_NGIA_NGINX}
     ports:
-      - "82:8000"
+      - "85:8000"
     networks:
       web_net:
-        ipv4_address: ${IP_NGIA_NGINX}
+        ipv4_address: ${IP_NGIR_NGINX}
     volumes:
       - appvol:/srv/
 
@@ -69,28 +42,20 @@ services:
     expose:
       - "8080"
     environment:
-      DEBUG: ${rpgsessions_DEBUG}
-      REDIS_BACKEND: ${IP_REDA_REDIS}
-      RABBIT_BROKER: ${IP_RABA_RABBIT}
+      DEBUG: ${RPGSESSIONS_DEBUG}
       DB_HOST: ${IP_POSA_POSTGRES}
-      DB_NAME: cve_aggregation
-      DB_USER: cve-aggregation
+      DB_NAME: extraventures
+      DB_USER: extraventures
       SRV_DIR: "/srv"
       DB_PASSWORD_FILE: /run/secrets/rpgsessions_db_password
       DJANGO_SECRET_FILE: /run/secrets/django_secret
-      rpgsessions_LOG: /var/log/rpgsessions/rpgsessions.log
+      RPGSESSIONS_LOG: /var/log/rpgsessions/rpgsessions.log
       ALLOWED_HOSTS: '*'
-#      CELERY_BROKER_URL: amqp://@${IP_RABA_RABBIT}
-#      CELERY_RESULT_BACKEND: redis://${IP_REDA_REDIS}
     networks:
       db_net:
-        ipv4_address: ${IP_POSA_rpgsessions}
-      rabbit_net:
-        ipv4_address: ${IP_RABA_rpgsessions}
-      redis_net:
-        ipv4_address: ${IP_REDA_rpgsessions}
+        ipv4_address: ${IP_POSR_RPGSESSIONS}
       web_net:
-        ipv4_address: ${IP_NGIA_rpgsessions}
+        ipv4_address: ${IP_NGIR_RPGSESSIONS}
     secrets:
       - rpgsessions_db_password
       - django_secret
@@ -99,8 +64,6 @@ services:
       - /sys/fs/cgroup/:/sys/fs/cgroup:ro
     depends_on:
       - rpgsessions_db
-      - rpgsessions_redis
-      - rpgsessions_rabbit
     privileged: true
     cap_add:
       - SYS_ADMIN
@@ -118,9 +81,6 @@ volumes:
   appvol:
     name: rpgsessions_srv_vol
     external: true
-  redisvol:
-    name: rpgsessions_redis_vol
-    external: true
 
 networks:
   db_net:
@@ -128,37 +88,17 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: ${POSA_SUBNET}
-          gateway: ${POSA_GATEWAY}
+        - subnet: ${POSR_SUBNET}
+          gateway: ${POSR_GATEWAY}
     driver_opts:
-      com.docker.network.bridge.name: dbr-as_db
-
-  rabbit_net:
-    name: rpgsessions_rabbit_net
-    ipam:
-      driver: default
-      config:
-        - subnet: ${RABA_SUBNET}
-          gateway: ${RABA_GATEWAY}
-    driver_opts:
-      com.docker.network.bridge.name: dbr-as_rabbit
-
-  redis_net:
-    name: rpgsessions_redis_net
-    ipam:
-      driver: default
-      config:
-        - subnet: ${REDA_SUBNET}
-          gateway: ${REDA_GATEWAY}
-    driver_opts:
-      com.docker.network.bridge.name: dbr-as_redis
+      com.docker.network.bridge.name: dbr-as_rpgdb
 
   web_net:
     name: rpgsessions_web_net
     ipam:
       driver: default
       config:
-        - subnet: ${NGIA_SUBNET}
-          gateway: ${NGIA_GATEWAY}
+        - subnet: ${NGIR_SUBNET}
+          gateway: ${NGIR_GATEWAY}
     driver_opts:
-      com.docker.network.bridge.name: dbr-as_web
+      com.docker.network.bridge.name: dbr-as_rpgweb

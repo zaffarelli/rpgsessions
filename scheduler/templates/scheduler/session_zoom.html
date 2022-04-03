@@ -1,18 +1,21 @@
 <div class="session_column">
     <div class="session_shortcut" title="{{ c.u.nickname }} mène une partie de {{ c.g.name }} ({{ c.s.title }})">
-        <div class="timefill pre" style="height: {{c.timescale.pre_size}}px"></div>
-        <div class="session display" action="session_details" param="{{c.s.id}}" style="height: calc({{c.timescale.size}}px - 5px ); ">
+        <div class="timefill pre" style="height: {{ c.timescale.pre_size }}px"></div>
+        <div class="session display" action="session_details" param="{{ c.s.id }}"
+             style="height: calc({{ c.timescale.size }}px - 5px ); ">
             {% include "scheduler/game_shortcut.html" with g=c.g %}
             {% include "scheduler/session_shortcut.html" with s=c.s u=c.u g=c.g %}
+            {% if c.s.user_wanted %}
             Sollicités:
             <br/>
-            {% for w in c.s.user_wanted %}
-                {% include "scheduler/player_shortcut.html" with u=w %}
-            {% endfor %}
+                {% for w in c.s.user_wanted %}
+                    {% include "scheduler/player_shortcut.html" with u=w %}
+                {% endfor %}
+            {% endif %}
             <br/>
             {% if c.s.optional_spots %}
-            Places Libres: {{c.s.optional_spots}}
-            <br/>
+                Places Libres: {{ c.s.optional_spots }}
+                <br/>
             {% endif %}
             Inscrits:
             <br/>
@@ -22,8 +25,7 @@
             <br/>
 
 
-
         </div>
-        <div class="timefill post"  style="height: {{c.timescale.post_size}}px"></div>
+        <div class="timefill post" style="height: {{ c.timescale.post_size }}px"></div>
     </div>
 </div>

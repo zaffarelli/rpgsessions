@@ -13,7 +13,7 @@ with open("../.env", 'r') as ref:
     ref.close()
 
 newlines = []
-with open("../nginx/airshield_nginx.template", 'r') as template:
+with open("../nginx/rpgsessions_nginx.template", 'r') as template:
     lines = template.readlines()
     for line in lines:
         newline = line
@@ -23,7 +23,7 @@ with open("../nginx/airshield_nginx.template", 'r') as template:
         newlines.append(newline)
     template.close()
 
-with open("../nginx/airshield_nginx.conf", 'w') as conf:
+with open("../nginx/rpgsessions_nginx.conf", 'w') as conf:
     conf.writelines("".join(newlines))
     conf.close()
 

@@ -222,14 +222,42 @@ class Scheduler {
         });
     }
 
+    registerPseudoLinks() {
+        $('.pseudolink').off().on('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            let action = $(this).attr('action');
+            let param = $(this).attr('param');
+            let url = '';
+            if (param == 'direct') {
+                url = '/' + action + '/';
+                window.location = url;
+            } else {
+                url = 'ajax/' + action + '/';
+            }
+            $.ajax({
+                url: url,
+                type: 'POST',
+                success: function (answer) {
+                    window.location = '/';
+
+                },
+                error: function (answer) {
+                    console.log(answer.responseText);
+                },
+            });
+        });
+    }
 
     rebootLinks() {
         let me = this;
         _.defer(function () {
+            me.prepare_ajax()
             me.registerDisplay();
             me.registerOverlay();
             me.registerToggle();
             me.registerAction();
+            me.registerPseudoLinks();
         });
     }
 

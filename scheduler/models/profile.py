@@ -4,6 +4,20 @@ from django.contrib.auth.models import User
 from scheduler.models.realm import Realm
 from colorfield.fields import ColorField
 
+SHIELD_STYLES = (
+    ('mid', 'Gauche et droite'),
+    ('quad', 'Quadrants NO, NE, SE, SW en damier'),
+    ('half', 'Haut et bas séparés'),
+)
+
+ICON_STYLES = (
+    ('disk', 'Disque'),
+    ('coins', 'Trois deniers'),
+    ('cross', 'Croix'),
+    ('claws', 'Griffure'),
+    ('diamond', 'Losange'),
+)
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
@@ -14,8 +28,11 @@ class Profile(models.Model):
     can_drop = models.BooleanField(default=False)
     realm = models.ForeignKey(Realm, on_delete=models.SET_NULL, null=True)
     is_girl = models.BooleanField(default=False)
-    shield = models.CharField(max_length=256, default='gamemaster_shield')
+    shield = models.CharField(max_length=256, default='shield_base')
     silhouette = models.CharField(max_length=256, default='player')
+    shield_style = models.CharField(max_length=256, default='mid', choices=SHIELD_STYLES)
+    icon_style = models.CharField(max_length=256, default='disk', choices=ICON_STYLES)
+    svg_artefact = models.CharField(max_length=256, default='{}')
     alpha = ColorField(default='#666666')
     beta = ColorField(default='#666666')
     gamma = ColorField(default='#666666')
@@ -69,6 +86,36 @@ class Profile(models.Model):
     @property
     def shield_symbol(self):
         return f"scheduler/svg/{self.shield}.svg"
+
+    def send_pwd_reset_mail(self):
+        from django.core.mail import send_mail
+        send_mail(
+            '[eXtraventures] Réinitialisation de mot de passe.',
+            'Vous avez demandé une réinitialisation de mot de passe. Merci de suivre ce <a href="">lien<a>',
+            'augustus.pepermint@gmail.com',
+            [self.email],
+            fail_silently=True,
+        )
+        return
+
+    def build_svg_artefact(self):
+        artefact = {
+            'shield_back': {
+                'mid': 0.0,
+                'half': 0.0,
+                'quad': 0.0
+            },
+            'icon': {
+                'disk': 0.0,
+                'coins': 0.0,
+                'cross': 0.0,
+                'claws': 0.0,
+                'diamond': 0.0,
+            }
+        }
+        artefact['shield_back'][self.shield_style] = 1.0
+        artefact['icon'][self.icon_style] = 1.0
+        return artefact
 
 
 class ProfileAdmin(admin.ModelAdmin):

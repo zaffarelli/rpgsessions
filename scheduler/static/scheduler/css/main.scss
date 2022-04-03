@@ -78,7 +78,7 @@ body {
       }
 
       & .corpus {
-        box-shadow: 15px 10px 20px black;
+        //box-shadow: 15px 10px 20px black;
         width: 1150px;
         flex-shrink: 1;
         order: 2;
@@ -119,6 +119,7 @@ body {
           width: 100%;
           order: 0;
           padding: 5px;
+          margin-top:100px;
           display: flex;
           flex-flow: row wrap;
           justify-content: space-between;
@@ -140,9 +141,9 @@ body {
             border-radius: 10px;
             border: 1px solid yellow;
             padding: 5px;
-            background: $panel2_background;
-            border-color: $panel2_border;
-            color: $panel2_color;
+            background: $panel_background;
+            border-color: $panel_border;
+            color: $panel_color;
             width: auto;
 
             & a {

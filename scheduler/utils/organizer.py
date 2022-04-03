@@ -108,6 +108,7 @@ def gimme_profile(x):
         context['status'] = "ok"
         context['silhouette_symbol'] = elem.silhouette_symbol
         context['shield_symbol'] = elem.shield_symbol
+        context['artefact'] = elem.build_svg_artefact()
     return context
 
 
