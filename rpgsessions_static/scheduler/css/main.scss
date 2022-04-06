@@ -119,7 +119,7 @@ body {
           width: 100%;
           order: 0;
           padding: 5px;
-          margin-top:100px;
+          margin-top: 100px;
           display: flex;
           flex-flow: row wrap;
           justify-content: space-between;
@@ -393,7 +393,7 @@ body {
 
                 & .day_body {
                   display: flex;
-                  flex-flow: row nowrap;
+                  flex-flow: row wrap;
                   justify-content: center;
                   align-content: flex-start;
                   align-items: stretch;
@@ -667,20 +667,19 @@ table {
     background: $panel_background;
     color: $panel_color;
     padding: 5px;
-    width: 600px;
-    height: 600px;
+    width: 650px;
+    max-height: 800px;
     border-radius: 15px;
     font-family: Roboto;
     font-size: 10pt;
     margin: auto;
-    padding: 15px;
     box-shadow: 0 0 50px black;
     display: flex;
     flex-flow: column wrap;
-    justify-content: space-between;
-    align-content: flex-start;
+    justify-content: stretch;
+    align-content: space-evenly;
     align-items: stretch;
-    gap: 0;
+    gap: 3px 0;
 
     & .diag_header {
       order: 1;
@@ -690,9 +689,12 @@ table {
       border-color: $panel1_border;
       font-size: 12px;
       text-align: center;
-      height: 10%;
-      margin: 2%;
+      flex-basis: 50px;
+      margin: 0;
+      padding: 5px;
       border-radius: 10px;
+      flex-grow: 1;
+      flex-shrink: 5;
     }
 
     & .diag_body {
@@ -702,23 +704,28 @@ table {
       background: $panel1_background;
       color: $panel1_color;
       border-color: $panel1_border;
-      width: 96%;
-      margin: 2%;
-      height: 68%;
-      padding: 1%;
+      width: auto;
+      margin: 0;
+      height: auto;
+      max-height:7000px;
+      padding: 5px;
       border-radius: 5px;
+      flex-grow: 15;
+      flex-shrink: 1;
     }
 
     & .diag_footer {
+      flex-grow: 1;
+      flex-shrink: 5;
       order: 3;
       border-top: 1px solid white;
       background: $panel1_background;
       color: $panel1_color;
       border-color: $panel1_border;
-      margin: 2%;
-      padding: 1%;
+      margin: 0;
+      padding: 5px;
       border-radius: 10px;
-      height: 5%;
+      flex-basis: 50px;
     }
   }
 }
@@ -775,29 +782,25 @@ table {
 
 .formblock {
   overflow-y: scroll;
-  height: 300px;
+  height: 500px;
 
-  & .formset {
-    display: flex;
-    flex-flow: column wrap;
+  //& .formset {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 3px 3px;
+
+  & table.update {
+
+    & tr {
+      & th {
+        & label {
+          order: 1;
+          width: 200px;
+          padding: 2px;
 
 
+        }
 
-    & .field_wrapper {
-      list-style-type: none;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-start;
-      align-content: flex-start;
-      align-items: flex-start;
-      gap: 10px 10px;
-      border: 1px solid transparent;
-
-      & label {
-        order: 1;
-        width: 200px;
-        padding: 2px;
-        border: 1px solid black;
         border-radius: 5px;
         background: $panel2_background;
         color: $panel2_color;
@@ -805,23 +808,60 @@ table {
 
       }
 
-      & textarea, & input, & select {
-        order: 2;
-        width: auto;
-        background: $paper_background;
-        color: $paper_color;
-        font-size: 9pt;
+      & td {
+        text-align: left;
 
-      }
+        & span.helptext {
+          color: #00ffff;
+          display: none;
+        }
 
-      & span.helptext {
-        order: 3;
-        width: 95%;
-        padding-top: 0;
-        margin-top: 0;
-        font-size: 8pt;
-        font-style: italic;
+        & ul.errorlist {
+          order: 4;
+          display: inline-block;
+
+          & li {
+            list-style-type: none;
+            display: inline-block;
+            color: $highlight_color;
+            background: $highlight_background;
+          }
+        }
+
+
       }
     }
+  }
+
+  & .field_wrapper {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+    gap: 10px 10px;
+    border: 1px solid transparent;
+
+
+    & textarea, & input, & select {
+      order: 2;
+      width: auto;
+      background: $paper_background;
+      color: $paper_color;
+      font-size: 9pt;
+
+    }
+
+    & span.helptext {
+      order: 3;
+      width: 95%;
+      padding-top: 0;
+      margin-top: 0;
+      font-size: 8pt;
+      font-style: italic;
+    }
+
+
   }
 }

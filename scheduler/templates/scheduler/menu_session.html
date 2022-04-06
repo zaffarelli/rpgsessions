@@ -6,8 +6,8 @@
     </div>
     <div class='righters'>
         {% if owner %}
-        <div class="button compact action" action="session_edit" param="{{session.id}}"><i class="fas fa-dice"></i>&nbsp;Modifier</div>
-        <div class="button compact action" action="session_delete" param="{{session.id}}"><i class="fas fa-minus-circle"></i>&nbsp;Supprimer</div>
+        <div class="button compact modal_switch" action="edit_session" param="{{session.id}}"><i class="fas fa-dice"></i>&nbsp;Modifier</div>
+        <div class="button compact modal_switch" action="delete_session" param="{{session.id}}"><i class="fas fa-minus-circle"></i>&nbsp;Supprimer</div>
         {% else %}
         <div class="button compact toggle" action="session_subscribe" param="{{session.id}}"><i class="fas fa-plus-circle"></i>&nbsp;S'inscrire</div>
         {% endif %}

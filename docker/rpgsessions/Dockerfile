@@ -35,23 +35,24 @@ RUN mkdir incoming && \
     chown -R $USER:$USER .
 
 WORKDIR /srv/rpgsessions_static
-COPY ./docker/rpgsessions/favicon.ico .
+#COPY ./docker/rpgsessions/favicon.ico .
 
 # Todo: copy source code and scripts to be used by docker or suited for configuration purpose
 WORKDIR /rpgsessions
-COPY ./rpgsessions/ .
+COPY ../ .
 COPY ./docker/rpgsessions/create_rpgsessions_superuser.py ./rpgsessions/.
+COPY ./docker/rpgsessions/postmigrate.py ./rpgsessions/.
 COPY ./docker/rpgsessions/settings.py ./rpgsessions/.
 COPY ./docker/rpgsessions/wsgi.py ./rpgsessions/.
 COPY ./docker/rpgsessions/rpgsessions_entrypoint.sh .
 
 # Todo: install the requirements + gunicorn
 RUN pip install pip --upgrade && \
-    pip install -r ./requirements.txt && \
+    pip install -r ./rpgsessions/requirements.txt && \
     pip install gunicorn && \
     rm -rf /root/.cache/pip/
 
-WORKDIR /rpgsessions
+
 
 # Todo: At this point, it's a typical rpgsessions commands sequence, supposedly redis/rabbit/celery should be up...
-ENTRYPOINT [ "/rpgsessions/rpgsessions_entrypoint.sh" ]
+ENTRYPOINT [ "./rpgsessions_entrypoint.sh" ]

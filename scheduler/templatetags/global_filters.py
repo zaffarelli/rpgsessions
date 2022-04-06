@@ -69,6 +69,8 @@ def as_date(value):
 @register.filter(name='as_level')
 def as_level(value):
     from scheduler.utils.mechanics import ADV_LEVEL
-    res = ADV_LEVEL[int(value)][1]
+    res = '?'
+    if isinstance(value, int):
+        res = ADV_LEVEL[int(value)][1]
     return res
 

@@ -7,6 +7,7 @@ class Realm(models.Model):
     name = models.CharField(max_length=256, unique=True)
     key = models.CharField(max_length=256, default='JdR$31', unique=True)
     description = models.TextField(max_length=2048, default='', blank=True)
+    is_default = models.BooleanField(default=True, blank=True)
 
     def __str__(self):
         return self.name

@@ -1,0 +1,7 @@
+{{ date }}<br/>
+<form method="POST" id='session_form' name='session_form'>
+    {% csrf_token %}
+    <table class='update'>
+        {{ form.as_table }}
+    </table>
+</form>

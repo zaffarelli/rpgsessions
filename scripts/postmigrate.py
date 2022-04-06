@@ -16,10 +16,18 @@ realm.description = 'Ceci est le domaine de la communauté JDR 31.'
 realm.save()
 
 GAMES = [
+{'name': 'Autre',
+     'version': 'Inconnu',
+     'acronym': '???',
+     'description': "Ceci n'est pas un jeu... à sélectionner quand le vôtre n'est pas encore répertorié.",
+     "alpha": "#ff00ff",
+     "beta": "#00ffff",
+     "gamma": "#ff0000"
+     },
     {'name': 'Fading Suns',
      'version': 'Fuzion Interlock Custom System',
      'acronym': 'FS',
-     'description': "A l'aube du sixième millénaire, l'humanité s'est perdue aux confins du cosmos. ",
+     'description': "A l'aube du sixième millénaire, l'Humanité s'est perdue aux confins du cosmos. ",
      "alpha": "#CCCCCC",
      "beta": "#888888",
      "gamma": "#FFCC44"
@@ -40,6 +48,31 @@ GAMES = [
      "beta": "#AA2020",
      "gamma": "#222222"
      },
+    {'name': 'World of Darkness',
+     'version': 'oWoD',
+     'acronym': 'WaWWoD',
+     'description': "",
+     "alpha": "#220022",
+     "beta": "#FFCC44",
+     "gamma": "#220022"
+     },
+    {'name': 'Vampire the Masquerade',
+     'version': '2nd Edition',
+     'acronym': 'VTM',
+     'description': "",
+     "alpha": "#043332",
+     "beta": "#BFD3BA",
+     "gamma": "#043332"
+     },
+    {'name': 'Chroniques Oubliées',
+     'version': 'standard',
+     'acronym': 'CHRO',
+     'description': "",
+     "alpha": "#112233",
+     "beta": "#AA2020",
+     "gamma": "#222222"
+     },
+
 ]
 
 for g in GAMES:

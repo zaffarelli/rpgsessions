@@ -4,8 +4,9 @@ from django.http import HttpResponse, Http404, JsonResponse, HttpResponseRedirec
 from django.template.loader import get_template
 from scheduler.utils.mechanics import FONTSET, FMT_TIME, FMT_DATE, FMT_DATETIME, DOWS, FMT_DATE_PRETTY
 from scheduler.utils.organizer import build_month, build_zoomed_day, gimme_profile, system_flush, gimme_set_followers, \
-    toggle_available, toggle_subscribe
+    toggle_available, toggle_subscribe, gimme_session
 from datetime import datetime, date
+from scheduler.utils.tools import is_ajax
 
 
 def prepare_index(request):
@@ -104,7 +105,7 @@ def display_session(request, id=None):
     if context['status'] == 'OK':
         template = get_template('scheduler/menu_session.html')
         menu_html = template.render(context, request)
-        template = get_template('scheduler/session_details.html')
+        template = get_template('scheduler/session_detail_old.html')
         html = template.render(context, request)
     response = {'data': html, 'menu': menu_html}
     return JsonResponse(response)
@@ -163,35 +164,77 @@ def handle_invitation(request, slug=None):
 
 
 def gimme_new_session(request, param):
-    from scheduler.forms.session_form import SessionForm
-    context = {}
-    form = SessionForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-    context['form'] = form
-    context['date'] = param.replace('_','-')
+    from scheduler.models.session import Session
+    s = Session()
+    s.title = f'Partie créée le {datetime.now()} par {request.user.profile.nickname}'
+    s.mj = request.user.profile
+    s.date_start = date.fromisoformat(param.replace('_', '-'))
+    s.save()
+    context = {'session': s}
     return context
 
 
-def prepare_overlay(request, slug, param=None):
+def gimme_edit_session(request, session):
+    from scheduler.forms.session_form import SessionForm
+    # from scheduler.models.session import Session
+    context = {}
+    form = SessionForm(request.POST or None, instance=session)
+    if is_ajax(request):
+        print('is ajax in gimme_edit_session')
+        if form.is_valid():
+            print("The form is valid")
+            form.save()
+        else:
+            print("The form is NOT valid")
+            context['form'] = form
+            context['session'] = gimme_session(request, session)
+    # context['date'] = form.fields['date_start'].value #strftime(FMT_DATE)
+    return context
+
+
+def prepare_overlay(request, slug, param=None, option=None):
     context = {}
     template_str = ""
     if slug == "new_session":
         context = gimme_new_session(request, param)
-        template_str = "scheduler/session_create.html"
+        template_str = "scheduler/session_create_dialog.html"
+    elif slug == "edit_session":
+        from scheduler.models.session import Session
+        s = Session.objects.get(pk=int(param))
+        context = gimme_edit_session(request, s)
+        template_str = "scheduler/session_edit_dialog.html"
+    # elif slug == "update_session":
+    #     from scheduler.models.session import Session
+    #     s = Session.objects.get(pk=int(param))
+    #     context = gimme_edit_session(request, s)
+    #     template_str = "scheduler/session_edit_dialog.html"
+    elif slug == "delete_session":
+        from scheduler.models.session import Session
+        s = Session.objects.get(pk=int(param))
+        context = {'session': gimme_session(request, s)}
+        template_str = "scheduler/session_delete_dialog.html"
     elif slug == "about":
         template_str = "scheduler/about.html"
     elif slug == "followers":
         context["set_followers"] = gimme_set_followers(request.user.profile.id)
         template_str = "scheduler/set_followers.html"
+    elif slug == "confirm":
+        from scheduler.models.session import Session
+        s = Session.objects.get(pk=int(param))
+        s.delete()
+
     return context, template_str
 
 
+
+
 # @login_required
-def display_overlay(request, slug, param=None):
+def display_overlay(request, slug, param=None, option=None):
     html = ''
     callback = ''
-    context, target_template = prepare_overlay(request, slug, param)
+    context, target_template = prepare_overlay(request, slug, param, option)
+    if is_ajax(request):
+        print('Ajax Request')
     if target_template:
         template = get_template(target_template)
         html = template.render(context, request)
@@ -230,3 +273,11 @@ def simple_toggle(request, action, param):
         html, target = toggle_subscribe(request, action, param)
     response = {'data': html, 'target': target}
     return JsonResponse(response)
+
+
+def show_done(request, pk=None):
+    return render(request, 'scheduler/done.html')
+
+
+def delete_session(request):
+    pass

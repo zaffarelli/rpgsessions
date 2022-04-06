@@ -290,7 +290,7 @@ def toggle_subscribe(request, action, param):
             n.pending = True
             n.save()
     context = prepare_session(request, int(param))
-    template = get_template("scheduler/session_details.html")
+    template = get_template("scheduler/session_detail_old.html")
     html = template.render(context, request)
     target = '.day_details'
     return html, target

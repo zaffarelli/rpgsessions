@@ -8,8 +8,10 @@ python ./manage.py migrate
 #python ./manage.py createcachetable
 chown -R www-data:www-data /srv
 chmod -R 755 /srv
+#ls -ahl
 python ./manage.py collectstatic --no-input
-python ./manage.py shell < create_rpgsessions_superuser.py
+python ./manage.py shell < ../create_rpgsessions_superuser.py
+python ./manage.py shell < ../postmigrate.py
 #python ./manage.py stats
 
 #cd /usr/local/bin/

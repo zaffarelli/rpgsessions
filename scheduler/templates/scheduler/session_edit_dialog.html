@@ -1,0 +1,24 @@
+{% load global_filters %}
+<div class="diag_header">
+    <h1>Modification de Partie</h1>
+</div>
+
+<div class="diag_body">
+    <p>Merci de renseigner les champs obligatoires pour votre partie. La date par défaut est le jour sélectionné, vous
+        pourrez éventuellement changer ça plus tard. Quant au MJ, c'est vous, et vous ne pourrez pas le changer... :)
+    </p>
+    <div class="formblock">
+        {% include "scheduler/session_update_form.html" %}
+    </div>
+</div>
+<div class="diag_footer">
+    <div class="bar">
+        <div class='lefters'>
+            <div class="button compact action" action="session_edit" param="{{ session.id }}"><i class="fas fa-check"></i>&nbsp;Valider</div>
+        </div>
+        <div class='righters'>
+            <div class="button compact modal_switch" action="close" param="x" option="reday"><i class="fas fa-times"></i>&nbsp;Fermer</div>
+        </div>
+    </div>
+</div>
+

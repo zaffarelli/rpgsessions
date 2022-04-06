@@ -102,15 +102,16 @@ class Scheduler {
             $.ajax({
                 url: url,
                 success: function (answer) {
-                    if (action == 'close') {
+                    if (action == 'close' || action == 'confirm') {
                         $('#overlay').addClass('hidden');
                         $('#dialog').html("Nope");
-                    } else {
+                        if (option != undefined) {
+                            $("#" + option).click();
 
-                        console.log(answer.data)
+                        }
+                    } else {
                         $('#dialog').html(answer.data);
                         $('#overlay').removeClass('hidden');
-                        // $('#callback').html(answer.callback);
                     }
                     me.rebootLinks();
                 },
@@ -165,18 +166,18 @@ class Scheduler {
             event.stopPropagation();
             let action = $(this).attr('action');
             let param = $(this).attr('param');
-            let option = $(this).attr('option');
+            let form = $('#session_form');
+            let formdata = form.serialize();
+
             let url = 'ajax/action/' + action + '/';
+            if (param != undefined) {
+                url += param + '/';
+            }
 
-            // if (action == 'submit') {
-            //     document.forms[param].submit();
-            // }
-
-            let formdata = $(param).serialize();
-            let tgt = $('.character_form').attr('form-target');
+            console.log(formdata)
 
             $.ajax({
-                url: 'ajax/action/new_session/' + id + '/',
+                url: url,
                 type: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -185,42 +186,20 @@ class Scheduler {
                 data: formdata,
                 dataType: 'json',
                 success: function (answer) {
-                    $('#tile_back_' + id).click();
+                    // console.log(answer.responseText)
+                    console.log("Success")
+                    $('.formblock').html(answer)
+
                     me.rebootLinks();
                 },
                 error: function (answer) {
-                    console.log(answer.responseText);
+                    // console.error(answer);
+                    $('.formblock').html(answer.responseText)
                 },
             });
-
-
-            // if (param != undefined) {
-            //     let p = param.replaceAll('-', '_');
-            //     if (option) {
-            //         url = 'ajax/toggle/' + action + '/' + p + '/' + option + '/';
-            //     } else {
-            //         url = 'ajax/toggle/' + action + '/' + p + '/';
-            //     }
-            // }
-            // $.ajax({
-            //     url: url,
-            //     success: function (answer) {
-            //         if (action == 'submit') {
-            //             $('#'+param).submit();
-            //             $('#dialog').html(answer.data);
-            //         } else {
-            //             $(answer.target).html(answer.data);
-            //         }
-            //         me.rebootLinks();
-            //     },
-            //     error: function (answer) {
-            //         console.error(answer);
-            //         me.rebootLinks();
-            //     }
-            // });
-
         });
     }
+
 
     registerPseudoLinks() {
         $('.pseudolink').off().on('click', function (event) {

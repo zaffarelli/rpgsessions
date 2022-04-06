@@ -8,3 +8,4 @@ class SchedulerConfig(AppConfig):
     def ready(self):
         import scheduler.signals.user
         import scheduler.signals.profile
+        import scheduler.signals.session
