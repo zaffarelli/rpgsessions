@@ -6,8 +6,8 @@ from django.utils.translation import gettext_lazy as _
 class SessionForm(forms.ModelForm):
     class Meta:
         model = Session
-        fields = ['title', 'description', 'game', 'mj', 'realm','campaign', 'optional_spots', 'date_start', 'time_start', 'duration', 'place',
-                  'one_shot_adventure', 'newbies_allowed', 'alpha', 'beta', 'gamma']
+        fields = "__all__" #"['title', 'description', 'game', 'mj', 'realm','campaign', 'optional_spots', 'date_start', 'time_start', 'duration', 'place',
+                 # 'one_shot_adventure', 'newbies_allowed', 'alpha', 'beta', 'gamma']
         labels = {
             'title': _('Titre'),
             'game': _('Jeu'),

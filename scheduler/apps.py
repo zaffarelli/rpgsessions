@@ -9,3 +9,4 @@ class SchedulerConfig(AppConfig):
         import scheduler.signals.user
         import scheduler.signals.profile
         import scheduler.signals.session
+        import scheduler.signals.realm

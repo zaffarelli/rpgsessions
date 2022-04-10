@@ -1,0 +1,15 @@
+{% load static %}
+{% load global_filters %}
+
+<div class="campaigns_list">
+    <table>
+        <tr>
+            <th>Campagne</th>
+            <th>Jeu</th>
+            <th>Lieu</th>
+        </tr>
+        {% for x in campaigns %}
+            {% include "scheduler/campaign_row.html" with c=x %}
+        {% endfor %}
+    </table>
+</div>

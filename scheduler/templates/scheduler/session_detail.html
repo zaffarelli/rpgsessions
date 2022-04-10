@@ -16,30 +16,31 @@
 <table>
     <tr>
         <th>Meneur de jeu</th>
-        <td>{% include "scheduler/player_shortcut.html" with u=mj %}&nbsp;{{ mj.nickname }}&nbsp;{% include "scheduler/session_shortcut.html" with u=mj g=g s=s %}</td>
+        <td>{{ mj.nickname }}</td>
     </tr>
     <tr>
         <th>Jeu</th>
-        <td>{% include "scheduler/game_shortcut.html" with g=game %} {{ game.name }} ({{ game.version }})</td>
+        <td>{{ game.name }} ({{ game.version }})</td>
     </tr>
     <tr>
         <th>Démarrage</th>
         <td>{{ session.date_start|as_date }} <i class="fa fa-arrow-circle-right"></i>
             {{ session.time_start|as_time }}</td>
     </tr>
+    {% if session.episode_tag %}
+        <tr>
+            <th>Episode</th>
+            <td>{{ session.episode_tag }}</td>
+        </tr>
+    {% endif %}
     <tr>
-        <th>Episode</th>
-        <td>{{ session.episode_tag }}</td>
+        <th>Lieu</th>
+        <td>{{ session.place|safe }}</td>
     </tr>
     <tr>
         <th>Partie unique</th>
         <td>{{ session.one_shot_adventure|as_bool|safe }}</td>
     </tr>
-    <tr>
-        <th>Lieu</th>
-        <td>{{ session.place|safe }}</td>
-    </tr>
-
     <tr>
         <th>Partie d'initiation</th>
         <td>{{ session.newbies_allowed|as_bool|safe }}</td>
@@ -71,16 +72,15 @@
     <tr>
         <th>Inscrits (max: {{ session.max_players }})</th>
         <td style="background:#ffcc44;">
-
             {% for w in inscriptions %}
                 &nbsp;{% include "scheduler/player_shortcut.html" with u=w %}
             {% endfor %}
         </td>
     </tr>
-    {% if session.campaign %}
+    {% if campaign %}
         <tr>
             <th>Campagne</th>
-            <td class="text">{{ session.campaign.description|safe }}
+            <td class="text">{{ campaign.description|safe }}
             </td>
         </tr>
     {% endif %}

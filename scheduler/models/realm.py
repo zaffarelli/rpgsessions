@@ -8,6 +8,7 @@ class Realm(models.Model):
     key = models.CharField(max_length=256, default='JdR$31', unique=True)
     description = models.TextField(max_length=2048, default='', blank=True)
     is_default = models.BooleanField(default=True, blank=True)
+    full_link = models.CharField(max_length=256, default='', blank=True)
 
     def __str__(self):
         return self.name
@@ -22,11 +23,11 @@ class Realm(models.Model):
     def invite_link(self):
         from hashlib import blake2s
         h = blake2s()
-        h.update(bytes(f'{self.key}','UTF-8'))
+        h.update(bytes(f'{self.key}', 'UTF-8'))
         res = h.hexdigest()
         return res
 
 
 class RealmAdmin(admin.ModelAdmin):
     ordering = ['name']
-    list_display = ['name', 'description', 'invite_link']
+    list_display = ['name', 'description', 'invite_link', 'full_link']

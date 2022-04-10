@@ -1,64 +1,105 @@
 {% load static %}
 {% load global_filters %}
 <div class="user_details">
-    <table style="width: 600px;">
-        <tr>
-            <th>
-                Surnom
-            </th>
-            <td>
-                {{profile.nickname|safe}}
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Symbole MJ
-            </th>
-            <td>
-                {% include "scheduler/session_shortcut.html" with u=profile %}
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Symbole Joueur
-            </th>
-            <td>
-                {% include "scheduler/player_shortcut.html" with u=profile %}
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Notes
-            </th>
-            <td class="text">
-                {{profile.presentation | safe}}
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Sexe
-            </th>
-            <td>
-                {{profile.is_girl|as_gender|safe}}
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Sans véhicle
-            </th>
-            <td>
-                {{profile.need_drop|as_bool|safe}}
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Peut véhiculer
-            </th>
-            <td>
-                {{profile.can_drop|as_bool|safe}}
-            </td>
-        </tr>
-
-    </table>
-
+    <div class="profile">
+        <table>
+            <tr>
+                <th>
+                    Surnom
+                </th>
+                <td>
+                    {{ profile.nickname|safe }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Symbole MJ
+                </th>
+                <td>
+                    {% include "scheduler/session_shortcut.html" with u=profile %}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Symbole Joueur
+                </th>
+                <td>
+                    {% include "scheduler/player_shortcut.html" with u=profile %}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Présentation
+                </th>
+                <td class="text">
+                    {{ profile.presentation | safe }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Favoris
+                </th>
+                <td class="text">
+                    {{ profile.favorites | safe }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Sexe
+                </th>
+                <td>
+                    {{ profile.is_girl|as_gender|safe }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Sans véhicle
+                </th>
+                <td>
+                    {{ profile.need_drop|as_bool|safe }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Peut véhiculer
+                </th>
+                <td>
+                    {{ profile.can_drop|as_bool|safe }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Style de Bouclier
+                </th>
+                <td>
+                    {{ profile.shieldstyle_display|safe }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Style d'Icone
+                </th>
+                <td>
+                    {{ profile.iconstyle_display }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Semaines supplémentaires
+                </th>
+                <td>
+                    {{ profile.weeks }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Lien d'invitation
+                </th>
+                <td>
+                    {{ realm.full_link|safe }}
+                </td>
+            </tr>
+        </table>
+    </div>
+    {% include "scheduler/campaign_list.html" with campaigns=campaigns %}
 </div>

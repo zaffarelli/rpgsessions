@@ -19,7 +19,10 @@ def gimme_day(request, d):
     is_current_day = (d.strftime(FMT_DATE) == datetime.today().strftime(FMT_DATE))
     day_body = {}
     day_body['sessions'] = gimme_sessions_of_the_day(request, d)
-    context = {'day_info': f'{DOWS[d.weekday()]}<BR/><small>{d.strftime(FMT_DATE_PRETTY)}</small>',
+    #f'{DOWS[d.weekday()]}<BR/><small>{d.strftime(FMT_DATE_PRETTY)}</small>'
+    day_info = f"<div class='dia'>{DOWS[d.weekday()][:3]}</div><div class='dib'> </div><div class='dic'>{d.strftime('%d')}</div>"
+
+    context = {'day_info': day_info,
                'day_off': d.weekday() > 4,
                'current_day': is_current_day,
                'day': d.strftime(FMT_DATE),
@@ -100,6 +103,7 @@ def gimme_all_availabilities(request, d, id):
 
 def gimme_profile(x):
     from scheduler.models.profile import Profile
+
     elem = Profile.objects.get(pk=x)
     context = {'Status': f'The parameter {x} is not a user profile'}
     # print(elem)
@@ -108,14 +112,30 @@ def gimme_profile(x):
         context['status'] = "ok"
         context['silhouette_symbol'] = elem.silhouette_symbol
         context['shield_symbol'] = elem.shield_symbol
+        context['shieldstyle_display'] = elem.get_shieldstyle_display()
+        context['iconstyle_display'] = elem.get_iconstyle_display()
         context['artefact'] = elem.build_svg_artefact()
     return context
+
+
+def gimme_profile_campaigns(x):
+    from scheduler.models.campaign import Campaign
+    from scheduler.models.profile import Profile
+    p = Profile.objects.get(pk=x)
+    campaigns = Campaign.objects.filter(mj=p)
+    camps = []
+    for x in campaigns:
+        ctx = x.to_json
+        ctx['game_object'] = x.game.to_json
+        camps.append(ctx)
+    print(camps)
+    return camps
 
 
 # Root functions called from views
 def build_month(request, date_str):
     d = date.fromisoformat(date_str)
-    num_week = 5
+    num_week =  3 + request.user.profile.weeks
     current_month = d.month
     monthback = d - timedelta(days=28)
     weekback = d - timedelta(days=7)
@@ -290,7 +310,7 @@ def toggle_subscribe(request, action, param):
             n.pending = True
             n.save()
     context = prepare_session(request, int(param))
-    template = get_template("scheduler/session_detail_old.html")
+    template = get_template("scheduler/session_detail.html")
     html = template.render(context, request)
     target = '.day_details'
     return html, target

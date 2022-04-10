@@ -35,7 +35,12 @@ class Session(models.Model):
     is_ready = models.BooleanField(default=False, verbose_name='ok', blank=True)
 
     def __str__(self):
-        return f"{self.title} ({self.episode_tag})"
+        str = f"{self.title}"
+        if self.campaign:
+            str += f" ({self.campaign.title})"
+        if self.episode_tag:
+            str += f" {self.episode_tag}"
+        return str
 
     @property
     def date_end(self):
@@ -88,7 +93,9 @@ class Session(models.Model):
                 n = n + 1
                 if e == self:
                     i = n
-        return f'- {i}/{t} -'
+        if t == 0:
+            return ''
+        return f'{i}/{t}'
 
 
 class SessionAdmin(admin.ModelAdmin):

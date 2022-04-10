@@ -4,10 +4,13 @@ $body_background: #808080;
 // Main colors
 $theme1: #1d1f1f;
 $theme2: #94550a;
-$theme3: #e18c0c;
+$theme3: deeppink; //#e18c0c;
 $session_board: #89807B;
 
 $body_background: grayscale(darken($theme3,10%));
+
+
+
 $panel_background: $theme1;
 $button_background: saturate($theme2,75%);
 $highlight_background: saturate($theme3,75%);
@@ -84,9 +87,13 @@ $plate_color: lighten($panel_color,10%);
 @mixin body_background {
   //background: transparent url('../colorful-grunge-texture-10.jpg') fixed; // 100% 100% no-repeat fixed;
   //background: $body_background;
-  background-image: linear-gradient(to bottom right, grayscale($theme3), $theme3);
+  //background-image: linear-gradient(to bottom right, grayscale($theme3), $theme3);
   background: grayscale($theme3);
+  //background: repeating-linear-gradient(#e66465, #e66465 20px, #9198e5 20px, #9198e5 25px);
   color: $body_color;
+
+
+
 }
 
 .hidden {

@@ -174,6 +174,12 @@ class Scheduler {
                 url += param + '/';
             }
 
+            if (action=='register_submit'){
+                url = '/register_submit/';
+                form = $('#register_form');
+                formdata = form.serialize();
+            }
+
             console.log(formdata)
 
             $.ajax({

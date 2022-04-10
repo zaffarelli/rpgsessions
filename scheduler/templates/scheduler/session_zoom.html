@@ -1,5 +1,5 @@
 <div class="session_column">
-    <div class="session_shortcut" title="{{ c.u.nickname }} mène une partie de {{ c.g.name }} ({{ c.s.title }})">
+    <div class="session_shortcut" title='"{{ c.s.title }}" par {{ c.u.nickname }} &#13;&#10;Une partie de {{ c.g.name }}'>
         <div class="timefill pre" style="height: {{ c.timescale.pre_size }}px"></div>
         <div class="session display" action="session_details" param="{{ c.s.id }}"
              style="height: calc({{ c.timescale.size }}px - 5px ); ">
@@ -9,7 +9,7 @@
             Sollicités:
             <br/>
                 {% for w in c.s.user_wanted %}
-                    {% include "scheduler/player_shortcut.html" with u=w %}
+                    {% include "scheduler/player_shortcut.html" with u=w small=1 %}
                 {% endfor %}
             {% endif %}
             <br/>
@@ -20,7 +20,7 @@
             Inscrits:
             <br/>
             {% for x in c.inscriptions %}
-                {% include "scheduler/player_shortcut.html" with u=x %}
+                {% include "scheduler/player_shortcut.html" with u=x small=1 %}
             {% endfor %}
             <br/>
 

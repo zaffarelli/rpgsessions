@@ -1,6 +1,6 @@
 from django.urls import path, re_path
 from scheduler.views.base import index, display_day, display_month, display_session, display_user, handle_invitation, \
-    display_overlay, toggle_follower, simple_toggle, show_done, delete_session
+    display_overlay, toggle_follower, simple_toggle, show_done, delete_session, register_submit
 from scheduler.views.session import  SessionUpdateView #, SessionCreateView,SessionDeleteView
 from django.contrib.auth.views import LogoutView
 
@@ -23,4 +23,5 @@ urlpatterns = [
     re_path(r'^ajax/action/session_delete/(?P<pk>\d+)/$', delete_session, name='delete_session'),
     # re_path(r'^ajax/action/session_delete/(?P<pk>\d+)/$', SessionDeleteView.as_view(), name='delete_session'),
     # re_path(r'^ajax/action/session_update/(?P<pk>\d+)/$', update, name="show_done"),
+    re_path(r'^register_submit/$', register_submit, name="register_submit"),
 ]

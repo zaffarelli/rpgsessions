@@ -14,7 +14,7 @@ class Inscription(models.Model):
     pending = models.BooleanField(default=True)
 
     def __str__(self):
-        return f'{self.profile.nickname} -> {self.session.title} ({self.session.episode})'
+        return f'{self.profile.nickname} -> "{self.session}"'
 
     @property
     def this(self):

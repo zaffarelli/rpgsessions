@@ -46,6 +46,7 @@ body {
 
 @media all and (min-width: 1150px) {
   body {
+
     & .world {
       margin-top: 5px;
       z-index: 5;
@@ -79,7 +80,7 @@ body {
 
       & .corpus {
         //box-shadow: 15px 10px 20px black;
-        width: 1150px;
+        width: auto;
         flex-shrink: 1;
         order: 2;
         margin: 0;
@@ -104,8 +105,7 @@ body {
           order: 2;
           padding: 5px;
           display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
+          flex-row: row wrap;
           justify-content: flex-start;
           align-content: flex-start;
           align-items: stretch;
@@ -116,14 +116,14 @@ body {
         & .adminzone {
           height: auto;
           background: transparent;
-          width: 100%;
+          max-width: 600px;
           order: 0;
           padding: 5px;
           margin-top: 100px;
           display: flex;
           flex-flow: row wrap;
           justify-content: space-between;
-          align-content: center;
+          align-content: stretch;
           align-items: stretch;
           gap: 1px 1px;
 
@@ -144,7 +144,7 @@ body {
             background: $panel_background;
             border-color: $panel_border;
             color: $panel_color;
-            width: auto;
+            width: 100%;
 
             & a {
               color: #FFCC44;
@@ -207,12 +207,42 @@ body {
         & .wrapper {
           order: 3;
           width: 100%;
-          min-height: 700px;
+          //min-height: 700px;
           heigth: auto;
           padding: 5px;
 
           & .user_details {
+            display: flex;
+            flex-flow: row wrap;
+            gap: 5px;
+            justify-content: stretch;
+            align-items: flex-start;
+            align-content: flex-start;
 
+            & .profile {
+              order: 1;
+              background: lightgrey;
+              color:black;
+              flex-grow:1;
+              flex-shrink:1;
+              min-width:450px;
+            }
+
+            & .realm {
+              order: 3;
+              background: lightsteelblue;
+            }
+
+            & .campaigns_list {
+              order:2;
+              background:lightgrey;
+              & table{
+                color:black;
+              }
+              flex-grow:1;
+              flex-shrink:1;
+
+            }
           }
 
         }
@@ -381,12 +411,44 @@ body {
                   background: $panel_day_background;
                   color: $env_text;
                   cursor: pointer;
+
+                  display: flex;
+                  flex-flow: row wrap;
+
+                  justify-content: stretch;
+                  align-items: stretch;
+                  align-content: flex-end;
+                  gap: 0 2px;
+
+                  & .dia, & .dib, & .dic {
+                    order: 1;
+                    flex-grow: 1;
+                    font-size: 1em;
+                    background: lighten($panel_day_background, 10%);
+                    border-radius: 3px;
+                    padding: 3px;
+                    border: 1px solid $panel3_border;
+                  }
+
+                  & .dib {
+                    order: 2;
+                    flex-grow: 5;
+                    font-size: 1em;
+                  }
+
+                  & .dic {
+                    order: 3;
+                    font-size: 1.5em;
+                    flex-grow: 1;
+                    color: #1a1a1a;
+                  }
+
                 }
 
                 & .day_bottom {
                   order: 3;
                   height: 20px;
-                  background: $panel2_background;;
+                  background: $panel_day_background;
                   color: $env_text;
                   border: 1px solid transparent;
                 }
@@ -399,7 +461,7 @@ body {
                   align-items: stretch;
                   gap: 0 3px;
                   order: 2;
-                  min-height: 50px;
+                  min-height: 100px;
                   background: $panel_day_background;
                   color: $env_text;
                   border: 1px solid transparent;
@@ -446,7 +508,7 @@ body {
                       border-right: 1px dotted black;
                       font-size: 8pt;
                       height: 100%;
-                      width: 90px;
+                      width: 80px;
                       gap: 0;
                       text-align: center;
                       padding: 0;
@@ -566,51 +628,26 @@ body {
     background: transparent;
   }
 
-  & .button {
-    font-family: Roboto;
-    font-size: 10pt;
-    width: 16ex;
-    height: 1.5em;
-    padding: 3px 5px;
-    background: $button_background;
-    color: $button_color;
-    border: 1px solid $button_border;
-    border-radius: 10px;
-    text-align: center;
-    vertical-align: middle;
-    height: auto;
 
-
-    &:hover {
-      background: $highlight_background;
-      color: $highlight_color;
-      border-color: $highlight_border;
-    }
-
-    cursor: pointer;
-
-    &.compact {
-      width: auto;
-    }
-  }
 }
 
 
-.player_shortcut {
-  //border:1px solid black;
-  //background:#505050;
+.logo, .player_shortcut, .session_shortcut, .game_shortcut {
+
   display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 
 
 table {
-  border-left: 1px dashed black;
-  border-right: 1px dashed black;
-  width: 100%;
+  //border-left: 1px dashed black;
+  //border-right: 1px dashed black;
+
 
   & tr {
     & td {
-      width: auto;
+
       padding: 2px;
       text-align: center;
 
@@ -707,7 +744,7 @@ table {
       width: auto;
       margin: 0;
       height: auto;
-      max-height:7000px;
+      max-height: 7000px;
       padding: 5px;
       border-radius: 5px;
       flex-grow: 15;
@@ -764,8 +801,8 @@ table {
 
 .session_of_the_day {
   border: 3px solid transparent;
-  border-radius: 10px;
-  padding: 3px;
+  border-radius: 5px;
+  padding: 0px;
   background: transparent;
 
   &.wanted_session {
@@ -863,5 +900,35 @@ table {
     }
 
 
+  }
+}
+
+
+.button {
+  font-family: Roboto;
+  font-size: 10pt;
+  width: 16ex;
+  height: 1.5em;
+  padding: 3px 5px;
+  background: $button_background;
+  color: $button_color;
+  border: 1px solid $button_border;
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+  height: auto;
+  display: inline-block;
+
+
+  &:hover {
+    background: $highlight_background;
+    color: $highlight_color;
+    border-color: $highlight_border;
+  }
+
+  cursor: pointer;
+
+  &.compact {
+    width: auto;
   }
 }

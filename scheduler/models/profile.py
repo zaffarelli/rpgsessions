@@ -16,6 +16,7 @@ ICON_STYLES = (
     ('cross', 'Croix'),
     ('claws', 'Griffure'),
     ('diamond', 'Losange'),
+    ('crystal', 'Cristal'),
 )
 
 
@@ -26,16 +27,18 @@ class Profile(models.Model):
     favorites = models.TextField(max_length=1024, default='', blank=True)
     need_drop = models.BooleanField(default=False)
     can_drop = models.BooleanField(default=False)
-    realm = models.ForeignKey(Realm, on_delete=models.SET_NULL, null=True)
+    realm = models.ForeignKey(Realm, on_delete=models.SET_NULL, null=True, blank=True)
     is_girl = models.BooleanField(default=False)
     shield = models.CharField(max_length=256, default='shield_base')
     silhouette = models.CharField(max_length=256, default='player')
-    shield_style = models.CharField(max_length=256, default='mid', choices=SHIELD_STYLES)
-    icon_style = models.CharField(max_length=256, default='disk', choices=ICON_STYLES)
+    shieldstyle = models.CharField(max_length=256, default='mid', choices=SHIELD_STYLES)
+    iconstyle = models.CharField(max_length=256, default='disk', choices=ICON_STYLES)
     svg_artefact = models.CharField(max_length=256, default='{}')
+    weeks = models.PositiveIntegerField(default=0, blank=True, null=True)
     alpha = ColorField(default='#666666')
     beta = ColorField(default='#666666')
     gamma = ColorField(default='#666666')
+    hair = ColorField(default='#C0A0B0')
 
     def __str__(self):
         return f'{self.nickname}*'
@@ -80,7 +83,7 @@ class Profile(models.Model):
     def silhouette_symbol(self):
         girl = ''
         if self.is_girl:
-            girl = '_girl'
+            girl = ''
         return f"scheduler/svg/{self.silhouette}{girl}.svg"
 
     @property
@@ -111,10 +114,11 @@ class Profile(models.Model):
                 'cross': 0.0,
                 'claws': 0.0,
                 'diamond': 0.0,
+                'crystal': 0.0,
             }
         }
-        artefact['shield_back'][self.shield_style] = 1.0
-        artefact['icon'][self.icon_style] = 1.0
+        artefact['shield_back'][self.shieldstyle] = 1.0
+        artefact['icon'][self.iconstyle] = 1.0
         return artefact
 
 

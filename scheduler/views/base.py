@@ -4,7 +4,7 @@ from django.http import HttpResponse, Http404, JsonResponse, HttpResponseRedirec
 from django.template.loader import get_template
 from scheduler.utils.mechanics import FONTSET, FMT_TIME, FMT_DATE, FMT_DATETIME, DOWS, FMT_DATE_PRETTY
 from scheduler.utils.organizer import build_month, build_zoomed_day, gimme_profile, system_flush, gimme_set_followers, \
-    toggle_available, toggle_subscribe, gimme_session
+    toggle_available, toggle_subscribe, gimme_session, gimme_profile_campaigns
 from datetime import datetime, date
 from scheduler.utils.tools import is_ajax
 
@@ -105,7 +105,7 @@ def display_session(request, id=None):
     if context['status'] == 'OK':
         template = get_template('scheduler/menu_session.html')
         menu_html = template.render(context, request)
-        template = get_template('scheduler/session_detail_old.html')
+        template = get_template('scheduler/session_detail.html')
         html = template.render(context, request)
     response = {'data': html, 'menu': menu_html}
     return JsonResponse(response)
@@ -138,6 +138,8 @@ def display_user(request, id=None):
     if not request.user.is_authenticated:
         return render(request, 'scheduler/registration/login_error.html')
     context = prepare_user(request, id)
+    context['campaigns'] = gimme_profile_campaigns(id)
+    context['realm'] = request.user.profile.realm.to_json
     html = 'WTF?'
     menu_html = 'WTF?'
     if context['status'] == 'OK':
@@ -149,18 +151,23 @@ def display_user(request, id=None):
     return JsonResponse(response)
 
 
-def new_user(request, slug):
-    return {}
+def prepare_new_user(request, slug):
+    from scheduler.models.realm import Realm
+    context = {}
+    realms = Realm.objects.all()
+    realm = None
+    for r in realms:
+        if slug == r.invite_link:
+            realm = r
+    context['realm'] = realm.to_json
+    return context
 
 
 def handle_invitation(request, slug=None):
     if request.user.is_authenticated:
         return HttpResponseRedirect('/')
-    context = prepare_new(request, slug)
-    template = get_template('registration/invite.html')
-    html = template.render(context, request)
-    response = {'data': html}
-    return JsonResponse(response)
+    context = prepare_new_user(request, slug)
+    return render(request, 'registration/invite.html', context)
 
 
 def gimme_new_session(request, param):
@@ -226,8 +233,6 @@ def prepare_overlay(request, slug, param=None, option=None):
     return context, template_str
 
 
-
-
 # @login_required
 def display_overlay(request, slug, param=None, option=None):
     html = ''
@@ -281,3 +286,64 @@ def show_done(request, pk=None):
 
 def delete_session(request):
     pass
+
+
+def register_submit(request):
+    from django.contrib.auth.models import User
+    from scheduler.models.profile import Profile
+    from django.core.mail import send_mail
+    valid = True
+    errors = []
+    if request.POST:
+        print("Good, it's a post !!!", request.POST)
+        username = request.POST['username'].replace(' ', '_').lower()
+        email = request.POST['email']
+        password = request.POST['password']
+        confirm = request.POST['confirm']
+        nickname = request.POST['nickname']
+        is_girl = request.POST['gender'] == 'on'
+
+        # Not an existing user
+        if len(username) < 6:
+            valid = False
+            errors.append("Name too short")
+        if len(nickname) < 6:
+            valid = False
+            errors.append("Nickname too short")
+        all_users = User.objects.filter(username=username)
+        if len(all_users):
+            valid = False
+            errors.append("User exists")
+        if len(password) < 8:
+            valid = False
+            errors.append("Password too short")
+        if password != confirm:
+            valid = False
+            errors.append("Password and confirm not equals")
+        all_profiles = Profile.objects.filter(nickname=nickname)
+        if len(all_profiles):
+            valid = False
+            errors.append("Profile already exists")
+        if valid:
+            user = User()
+            user.username = username
+            user.email = email
+            user.set_password(password)
+            user.save()
+            user.profile.nickname = nickname
+            user.profile.is_girl = is_girl
+            user.profile.save()
+            send_mail('[eXtraventures] Enregistrement validé!',
+                      f"Salut {nickname}...\nSi vous recevez cet email, c'est que votre enregistrement s'est bien passé.\n\n"
+                      f"Votre login ................ {username}\n"
+                      f"Votre mot de passe ......... {password}\n"
+                      f"Le lien à eXtraventures .... \n"
+                      f"\n\nVotre serviteur, Fernando Casabuentes",
+                      f'fernando.casabuentes@gmail.com', [f'fernando.casabuentes@gmail.com', f'{email}'],
+                      fail_silently=False)
+        else:
+            send_mail("[eXtraventures] Erreur d'enregistrement!",
+                      f'Mmm.. here is a failed attemps to register a new user...<br/><tt>{request.POST}</tt><br/>{errors}',
+                      f'fernando.casabuentes@gmail.com', [f'zaffarelli@gmail.com'], fail_silently=False)
+    response = {}
+    return JsonResponse(response)

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.2"
+        baseProfile="tiny"
+        width="2cm"
+        height="1.0cm"
+        viewBox="-8 -9 32 16"
+        preserveAspectRatio="none">
+
+    <g transform="scale(1)">
+
+        <rect
+                x="-8"
+                y="-4"
+                width="32"
+                height="7"
+                style="fill:#cc9966;stroke:#000000;stroke-width:0.025mm"
+        />
+
+        <rect
+                x="1"
+                y="-3.5"
+                width="3"
+                height="2"
+                style="fill:{{g.alpha}};stroke:#none;"
+        />
+
+        <rect
+                x="1"
+                y="-1.5"
+                width="3"
+                height="2"
+                style="fill:{{g.beta}};stroke:#none;"
+        />
+
+        <rect
+                x="1"
+                y="0.5"
+                width="3"
+                height="2"
+                style="fill:{{g.gamma}};stroke:#none;"
+        />
+
+        <g class="book">
+            <path
+                  d="M -6,-4 l 2,-2 l 4,0 l -4,2 -2,0 z"
+                  style="fill:#A09070;stroke:#000000;stroke-width:0.1mm;"/>
+            <path
+                  d="M -6,-4 l 0,8 l 2,0 l 0,-8 Z"
+                  style="fill:#604050;stroke:#000000;stroke-width:0.1mm;"/>
+            <path
+                  d="M -4,-4 l 4,-2 l 0,8 l -4,2 l 0,-8 Z"
+                  style="fill:#604050;stroke:#000000;stroke-width:0.1mm;"/>
+
+        </g>
+
+        <text class='words' x="14" y="1" font-size="4" font-family="Roboto" text-anchor="middle">
+            {{g.acronym}}
+        </text>
+    </g>
+</svg>

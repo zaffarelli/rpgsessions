@@ -70,7 +70,19 @@ def as_date(value):
 def as_level(value):
     from scheduler.utils.mechanics import ADV_LEVEL
     res = '?'
-    if isinstance(value, int):
+    if str(value)!='':
         res = ADV_LEVEL[int(value)][1]
     return res
 
+
+@register.filter(name='as_icon_style')
+def as_icon_style(value):
+
+    return res
+
+@register.filter(name='boolean')
+def boolean(value):
+    if str(value).lower() in ["true", "1", "yes" ]:
+        return True
+    else:
+        return False

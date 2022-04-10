@@ -1,55 +1,71 @@
 {% extends "base.html" %}
 
 {% block adminzone %}
-<div class="adminzone">
-    <div class="user_spare1"></div>
-    <div class="user_panel">
-        {% if form.errors %}
-        <p>Your username and password didn't match. Please try again.</p>
-        {% endif %}
+    <div class="adminzone">
+        <div class="user_spare1"></div>
+        <div class="user_panel">
+            <center><div class="logo">{% include 'scheduler/svg/logo.svg' %}</div></center>
+            <center><h1>Enregistrement sur {{ realm.name }}</h1></center>
+            <p>Ce formulaire va vous permettre de vous enreigtrer sur eXtraventures, dans la communauté {{ realm.name }}.
+                Vous recevrez un message pour valider votre inscription sur l'adresse électronique renseignée.</p>
+            <form method="POST" id="register_form" name="register_form">
+                {% csrf_token %}
+                <table class="invite">
+                    <tr>
+                        <th><label for="email">Adresse électronique</label></th>
+                        <td><input type="text" name="email" placeholder="prenom.nom@fournisseur.fr"
+                                   style="width:50ex;"/></td>
+                        <td style="width:15px;"><i class="fa fa-star" style="color:deeppink;"></i></td>
+                    </tr>
+                    <tr>
+                        <th><label for="username">Identifiant de connexion</label></th>
+                        <td><input type="text" name="username" placeholder="Sans espace, lettres minuscules et _ uniquement." style="width:50ex;"/></td>
+                        <td style="width:15px;"><i class="fa fa-star" style="color:deeppink;"></i></td>
+                    </tr>
+                    <tr>
+                        <th><label for="password">Mot de passe</label></th>
+                        <td><input type="password" name="password" style="width:50ex;" value=""/></td>
+                        <td style="width:15px;"><i class="fa fa-star" style="color:deeppink;"></i></td>
+                    </tr>
+                    <tr>
+                        <th><label for="confirm">Confirmation</label></th>
+                        <td><input type="password" name="confirm" style="width:50ex;"  value=""/></td>
+                        <td style="width:15px;"><i class="fa fa-star" style="color:deeppink;"></i></td>
+                    </tr>
+                    <tr>
+                        <th><label for="nickname">Surnom</label>
+                        </th>
+                        <td><input type="text" name="nickname" placeholder="Votre nom affiché dans l'appli" style="width:50ex;"/></td>
+                        <td style="width:15px;"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="gender">Madame/Mademoiselle?</label></th>
+                        <td><input type="checkbox" name="gender" style="width:50ex;"/></td>
+                        <td style="width:15px;"></td>
+                    </tr>
 
-        {% if next %}
-        {% if user.is_authenticated %}
-        <p>Your account doesn't have access to this page. To proceed,
-            please login with an account that has access.</p>
-        {% else %}
-        <p><strong>RPG</strong>Sessions</p>
-        {% endif %}
-        {% endif %}
-
-        <form method="post" action="{% url 'login' %}">
-            {% csrf_token %}
-            <table>
-                <tr>
-                    <td>{{ form.username.label_tag }}</td>
-                    <td>{{ form.username }}</td>
-                </tr>
-                <tr>
-                    <td>{{ form.password.label_tag }}</td>
-                    <td>{{ form.password }}</td>
-                </tr>
-            </table>
-            <center>
-                <input type="submit" value="connexion"/>
-            <input type="hidden" name="next" value="{{ next }}"/>
-            </center>
-        </form>
-        <center>
-        {# Assumes you setup the password_reset view in your URLconf #}
-        <p><a href="{% url 'password_reset' %}">Mot de passe perdu?</a></p>
-            </center>
+                    <tr>
+                        <td colspan="3" title="Pourquoi une étoile rose ? Je n'ai pas trouvé de licorne.">(<i class="fa fa-star" style="color:deeppink;"></i>): Champs obligatoires</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div class="button action" action="register_submit"><i class="fas fa-circle-arrow-right"></i>&nbsp;Envoi</div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="user_spare2"></div>
     </div>
-    <div class="user_spare2"></div>
-</div>
 {% endblock adminzone %}
 
 {% block custom_js %}
-<script>
-    _.defer(function () {
-        let co = new Scheduler()
-        co.perform();
-        co.revealLog();
+    <script>
+        _.defer(function () {
+            let co = new Scheduler()
+            co.perform();
+            co.revealLog();
 
-    });
-</script>
+        });
+    </script>
 {% endblock custom_js %}

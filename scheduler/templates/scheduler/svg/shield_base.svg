@@ -3,9 +3,9 @@
         xmlns="http://www.w3.org/2000/svg"
         version="1.2"
         baseProfile="tiny"
-        width="0.8cm"
-        height="0.8cm"
-        viewBox="-8 -8 16 16"
+        width="1.0cm"
+        height="1.0cm"
+        viewBox="-8 -9 16 16"
         preserveAspectRatio="none">
 
     <g transform="scale(1)">
@@ -34,7 +34,7 @@
                       style="fill:{{u.alpha}};stroke:none;"/>
             </g>
 
-            <g class="half"  opacity="{{u.artefact.shield_back.half}}">
+            <g class="half" opacity="{{u.artefact.shield_back.half}}">
                 <path id="quad_north"
                       d="M 0,-7 l -5,0 l 0,6 l 10,0 l 0,-6 z"
                       style="fill:{{u.alpha}};stroke:none;"/>
@@ -46,8 +46,8 @@
 
         </g>
 
-        <g class="icon"  opacity="1.0">
-            <g class="disk"  opacity="{{u.artefact.icon.disk}}">
+        <g class="icon" opacity="1.0">
+            <g class="disk" opacity="{{u.artefact.icon.disk}}">
                 <circle id="disk"
                         cx="0" cy="-2" r="3"
                         style="fill:{{u.gamma}};stroke:none;stroke-width:0.1mm" opacity="1.0"/>
@@ -71,30 +71,83 @@
                       style="fill:{{u.gamma}};stroke:none;"/>
             </g>
 
+            <g class="diamond" opacity="{{u.artefact.icon.diamond}}">
+                <path id="diamond"
+                      d="M 0,-6 l 4,4 l -4,4 l -4,-4 Z"
+                      style="fill:{{u.gamma}};stroke:none;"/>
+            </g>
+
             <g class="claws" opacity="{{u.artefact.icon.claws}}">
                 <path id="claw1"
-                      d="M 1.25,-5 l 2,-0.5 l 1,0 l-3,1.5 l-4,1.5 l 2,-1 l 3,-1.5  Z"
+                      d="M -4.5,-3 l 10,-3 l -5,2  Z"
                       style="fill:{{u.gamma}};stroke:none;"/>
                 <path id="claw2"
-                      d="M 0,-4 l 2,-0.5 l 1,0 l-3,1.5 l-4,1.5 l 2,-1 l 3,-1.5  Z"
+                      d="M -4.5,-2 l 10,-3 l -5,2  Z"
                       style="fill:{{u.gamma}};stroke:none;"/>
                 <path id="claw2"
-                      d="M 0,-3 l 2,-0.5 l 1,0 l-3,1.5 l-4,1.5 l 2,-1 l 3,-1.5  Z"
+                      d="M -4.5,-1 l 10,-3 l -5,2  Z"
                       style="fill:{{u.gamma}};stroke:none;"/>
                 <path id="claw4"
-                      d="M 1.25,-2 l 2,-0.5 l 1,0 l-3,1.5 l-4,1.5 l 2,-1 l 3,-1.5  Z"
+                      d="M -4,0 l 9,-3 l -5,2  Z"
                       style="fill:{{u.gamma}};stroke:none;"/>
             </g>
 
-            <g class="diamond" opacity="{{u.artefact.icon.diamond}}">
-                <path id="cross"
-                      d="M 0,-6 l 4,4 l -4,4 l -4,-4 Z"
-                      style="fill:#ffff00;stroke:none;"/>
+            <g class="crystal" opacity="{{u.artefact.icon.crystal}}">
+                <path id="smalldia1"
+                      d="M 0,-6 l 2,2 l -2,2 l -2,-2 Z"
+                      style="fill:{{u.gamma}};stroke:none;"/>
+                <path id="smalldia2"
+                      d="M -2.5,-3.5 l 2,2 l -2,2 l -2,-2 Z"
+                      style="fill:{{u.gamma}};stroke:none;"/>
+                <path id="smalldia3"
+                      d="M 2.5,-3.5 l 2,2 l -2,2 l -2,-2 Z"
+                      style="fill:{{u.gamma}};stroke:none;"/>
+                <path id="smalldia4"
+                      d="M 0,-1 l 2,2 l -2,2 l -2,-2 Z"
+                      style="fill:{{u.gamma}};stroke:none;"/>
             </g>
-
 
 
         </g>
+
+        {% if g %}
+        <g class="game" opacity="0.0">
+            <path id="game_alpha"
+              d="M -7.5,1.5 l 2,0 l 0,2 l -2,0 l 0,-2  Z"
+              style="fill:{{g.alpha}};stroke:#000000;stroke-width:0.025mm"/>
+            <path id="game_beta"
+              d="M -7.5,3.5 l 3,0 l 0,3 l -3,0 l 0,-3  Z"
+              style="fill:{{g.beta}};stroke:#000000;stroke-width:0.025mm"/>
+            <path id="game_gamma"
+              d="M -4.5,4.5 l 2,0 l 0,2 l -2,0 l 0,-2  Z"
+              style="fill:{{g.gamma}};stroke:#000000;stroke-width:0.025mm"/>
+        </g>
+
+        <rect
+                x="-9"
+                y="-3"
+                width="3"
+                height="1"
+                style="fill:{{g.alpha}};stroke:#none;"
+        />
+
+        <rect
+                x="-9"
+                y="-1"
+                width="3"
+                height="1"
+                style="fill:{{g.beta}};stroke:#none;"
+        />
+
+        <rect
+                x="-9"
+                y="1"
+                width="4"
+                height="1"
+                style="fill:{{g.gamma}};stroke:#none;"
+        />
+
+        {% endif %}
 
 
         <path id="shield_contour" class="neutral"
@@ -102,7 +155,7 @@
               style="fill:none;stroke:#000000;stroke-width:0.1mm"/>
 
         <text class='words' x="0" y="7.5" font-size="3" font-family="Sans Serif" text-anchor="middle">
-            {{u.nickname}}
+
         </text>
     </g>
 </svg>
