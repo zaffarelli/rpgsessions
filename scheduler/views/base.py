@@ -294,20 +294,22 @@ def register_submit(request):
     from django.core.mail import send_mail
     valid = True
     errors = []
+    is_girl = False
+    html = ''
     if request.POST:
-        print("Good, it's a post !!!", request.POST)
         username = request.POST['username'].replace(' ', '_').lower()
         email = request.POST['email']
         password = request.POST['password']
         confirm = request.POST['confirm']
         nickname = request.POST['nickname']
-        is_girl = request.POST['gender'] == 'on'
+        if 'gender' in request.POST:
+            is_girl = request.POST['gender'][0] == 'on'
 
         # Not an existing user
         if len(username) < 6:
             valid = False
             errors.append("Name too short")
-        if len(nickname) < 6:
+        if len(nickname) < 3:
             valid = False
             errors.append("Nickname too short")
         all_users = User.objects.filter(username=username)
@@ -333,17 +335,26 @@ def register_submit(request):
             user.profile.nickname = nickname
             user.profile.is_girl = is_girl
             user.profile.save()
+            host = request.get_host()
             send_mail('[eXtraventures] Enregistrement validé!',
                       f"Salut {nickname}...\nSi vous recevez cet email, c'est que votre enregistrement s'est bien passé.\n\n"
                       f"Votre login ................ {username}\n"
                       f"Votre mot de passe ......... {password}\n"
-                      f"Le lien à eXtraventures .... \n"
+                      f"Le lien à eXtraventures .... http://{host}/\n"
                       f"\n\nVotre serviteur, Fernando Casabuentes",
-                      f'fernando.casabuentes@gmail.com', [f'fernando.casabuentes@gmail.com', f'{email}'],
+                      f'fernando.casabuentes@gmail.com', [f'{email}'],
                       fail_silently=False)
+            send_mail(f'[eXtraventures] {nickname} Enregistrement validé!',
+                      f"Salut {nickname}...\nSi vous recevez cet email, c'est que votre enregistrement s'est bien passé.\n\n"
+                      f"Votre login ................ {username}\n"
+                      f"Le lien à eXtraventures .... http://{host}/\n"
+                      f"\n\nPour eXtraventures,\nVotre serviteur Fernando Casabuentes",
+                      f'fernando.casabuentes@gmail.com', [f'fernando.casabuentes@gmail.com'],
+                      fail_silently=False)
+            return HttpResponseRedirect('/')
         else:
             send_mail("[eXtraventures] Erreur d'enregistrement!",
-                      f'Mmm.. here is a failed attemps to register a new user...<br/><tt>{request.POST}</tt><br/>{errors}',
+                      f'Failed attempt..\n\n{request.POST}\n\n{errors}',
                       f'fernando.casabuentes@gmail.com', [f'zaffarelli@gmail.com'], fail_silently=False)
-    response = {}
+    response = {'data': html}
     return JsonResponse(response)
