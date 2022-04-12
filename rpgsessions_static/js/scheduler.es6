@@ -180,7 +180,7 @@ class Scheduler {
                 formdata = form.serialize();
             }
 
-            console.log(formdata)
+            // console.log(formdata)
 
             $.ajax({
                 url: url,
@@ -193,7 +193,7 @@ class Scheduler {
                 dataType: 'json',
                 success: function (answer) {
                     // console.log(answer.responseText)
-                    console.log("Success")
+                    // console.log("Success")
                     $('.formblock').html(answer)
 
                     me.rebootLinks();
@@ -228,7 +228,7 @@ class Scheduler {
 
                 },
                 error: function (answer) {
-                    console.log(answer.responseText);
+                    console.error(answer);
                 },
             });
         });

@@ -1,17 +1,17 @@
 from django.db import models
 from django.contrib import admin
 from django.utils import timezone
-from datetime import datetime
+from datetime import datetime, date, time
 from scheduler.models.profile import Profile
-from scheduler.models.session import Session
 import json
 
 
 class Availability(models.Model):
     class Meta:
         verbose_name_plural = 'availabilities'
+
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    when = models.DateField(default=datetime.today())
+    when = models.DateField(default=date.today)
     date_pub = models.DateTimeField(auto_now=timezone.now())
     absent_mode = models.BooleanField(default=False)
 
