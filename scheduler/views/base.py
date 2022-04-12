@@ -187,12 +187,12 @@ def gimme_edit_session(request, session):
     context = {}
     form = SessionForm(request.POST or None, instance=session)
     if is_ajax(request):
-        print('is ajax in gimme_edit_session')
+        # print('is ajax in gimme_edit_session')
         if form.is_valid():
-            print("The form is valid")
+            # print("The form is valid")
             form.save()
         else:
-            print("The form is NOT valid")
+            # print("The form is NOT valid")
             context['form'] = form
             context['session'] = gimme_session(request, session)
     # context['date'] = form.fields['date_start'].value #strftime(FMT_DATE)
@@ -238,8 +238,8 @@ def display_overlay(request, slug, param=None, option=None):
     html = ''
     callback = ''
     context, target_template = prepare_overlay(request, slug, param, option)
-    if is_ajax(request):
-        print('Ajax Request')
+    # if is_ajax(request):
+    #     print('Ajax Request')
     if target_template:
         template = get_template(target_template)
         html = template.render(context, request)

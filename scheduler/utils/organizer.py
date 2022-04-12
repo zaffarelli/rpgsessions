@@ -128,7 +128,7 @@ def gimme_profile_campaigns(x):
         ctx = x.to_json
         ctx['game_object'] = x.game.to_json
         camps.append(ctx)
-    print(camps)
+    # print(camps)
     return camps
 
 
@@ -299,11 +299,11 @@ def toggle_subscribe(request, action, param):
     if len(sessions) == 1:
         inscriptions = Inscription.objects.filter(profile=profile, session=sessions.first())
         if len(inscriptions) == 1:
-            print("Unsubscribing")
+            # print("Unsubscribing")
             f = inscriptions.first()
             f.delete()
         else:
-            print("Subscribing")
+            # print("Subscribing")
             n = Inscription()
             n.profile = profile
             n.session = sessions.first()
