@@ -14,7 +14,7 @@ def json_default(value):
         return value.__dict__
 
 
-FONTSET = ['Quicksand', 'Fredoka', 'Syne+Mono', 'Abel', 'Satisfy', 'Acme', 'Roboto', 'Hubballi','Gruppo']
+FONTSET = ['Quicksand', 'Fredoka', 'Syne+Mono', 'Abel', 'Satisfy', 'Acme', 'Roboto', 'Hubballi', 'Gruppo']
 
 MONTHS = ['JANVIER', 'FEVRIER', 'MARS', 'AVRIL', 'MAI', 'JUIN', 'JUILLET', 'AOUT', 'SEPTEMBRE', 'OCTOBRE', 'NOVEMBRE',
           'DECEMBRE']
@@ -33,7 +33,8 @@ MONTHS_COLORS = ["#bc2b95",
                  "#ec3323"
                  ]
 
-MONTHS_COLORS_TEXT = ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#000000","#000000","#000000","#000000","#FFFFFF","#FFFFFF"]
+MONTHS_COLORS_TEXT = ["#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#000000", "#000000", "#000000",
+                      "#000000", "#FFFFFF", "#FFFFFF"]
 
 DOWS = ['LUNDI', 'MARDI', 'MERCREDI', 'JEUDI', 'VENDREDI', 'SAMEDI', 'DIMANCHE']
 
@@ -51,3 +52,27 @@ ADV_LEVEL = (
     ('3', 'Difficile'),
     ('4', 'Chevronnés'),
 )
+
+
+def oudin(d):
+    from datetime import date
+    y = int(d.strftime("%Y")) #+ 1900
+    g = y % 19
+    c = int(y / 100)
+    c4 = int(c / 4)
+    e = int((8 * c + 13) / 25)
+    h = (19 * g + c - c4 - e + 15) % 30
+    k = int(h / 28)
+    p = 29 / (h + 1)
+    q = int((21 - g) / 11)
+    i = (k * p * q - 1) * k + h
+    b = int(y / 4) + y
+    j1 = b + i + 2 + c4 - c
+    j2 = j1 % 7
+    r = int(28 + i - j2)
+    if r < 32:
+        res = date(day=r, month=3, year=y)
+    else:
+        r = r - 31;
+        res = date(day=r, month=4, year=y)
+    return res

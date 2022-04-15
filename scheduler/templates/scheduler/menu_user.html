@@ -9,9 +9,8 @@
     </div>
     <div class='righters'>
         {% csrf_token %}
+        <div class="button compact modal_switch" action="edit_profile" param="{{ c.id }}"><i class="fa fa-user"></i>&nbsp;Modifier</div>
         <div class="button compact modal_switch" action="followers"><i class="fa fa-compass"></i>&nbsp;Traqués</div>
-        <div class="button compact"><i class="fa fa-map"></i>&nbsp;Campagnes</div>
-        <div class="button compact"><i class="fa fa-list" title="Vos parties en cours de rédaction"></i>&nbsp;Propositions</div>
         <div class="button compact pseudolink" action="logout"><i class="fa fa-sign-out-alt"></i>&nbsp;Déconnexion</div>
         {#        <div class="button compact"><i class="fa fa-chart-pie"></i>&nbsp;Statistiques</div>#}
 

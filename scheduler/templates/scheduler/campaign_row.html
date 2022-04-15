@@ -1,9 +1,19 @@
 {%  load static %}
 {%  load global_filters %}
 
-<tr>
+
     <td>{{ c.title }}</td>
-    <td>{{ c.game_object.name }}</td>
-    <td>{{ c.place }}</td>
-</tr>
+    <td>{%  include "scheduler/game_shortcut.html" with g=c.game_object %}</td>
+    <td>{{ c.acronym }}</td>
+    <td></td>
+    <td></td>
+    <td>
+
+    </td>
+    <td></td>
+    <td>
+        <div class="button compact modal_switch" action="edit_campaign" param="{{ c.id }}"><i class="fas fa-dice-d20"></i>&nbsp;Modifier</div>
+        <div class="button compact modal_switch" action="delete_campaign" param="{{ c.id }}"><i class="fas fa-circle-minus"></i>&nbsp;Supprimer</div>
+    </td>
+
 

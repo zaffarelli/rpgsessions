@@ -1,0 +1,14 @@
+{%  load static %}
+{%  load global_filters %}
+
+
+    <td>{{ c.title }}</td>
+    <td>{%  include "scheduler/game_shortcut.html" with g=c.game_object %}</td>
+    <td class="txt">{{ c.description | safe }}</td>
+    <td>{{ c.optional_spots }}</td>
+    <td>
+        <div class="button compact modal_switch" action="edit_session" param="{{c.id}}"><i class="fas fa-dice"></i>&nbsp;Modifier</div>
+        <div class="button compact modal_switch" action="delete_session" param="{{c.id}}"><i class="fas fa-minus-circle"></i>&nbsp;Supprimer</div>
+    </td>
+
+

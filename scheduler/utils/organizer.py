@@ -2,7 +2,7 @@ from datetime import datetime, timedelta, time, date
 from django.template.loader import get_template
 from scheduler.utils.mechanics import MONTHS, MONTHS_COLORS, MONTHS_COLORS_TEXT, DOWS, HOUR_PIXELS, FONTSET, FMT_TIME, \
     FMT_DATE, \
-    FMT_DATETIME, FMT_DATE_PRETTY
+    FMT_DATETIME, FMT_DATE_PRETTY, oudin
 
 
 def gimme_session(request, s):
@@ -20,10 +20,41 @@ def gimme_day(request, d):
     day_body = {}
     day_body['sessions'] = gimme_sessions_of_the_day(request, d)
     #f'{DOWS[d.weekday()]}<BR/><small>{d.strftime(FMT_DATE_PRETTY)}</small>'
-    day_info = f"<div class='dia'>{DOWS[d.weekday()][:3]}</div><div class='dib'> </div><div class='dic'>{d.strftime('%d')}</div>"
+
+
+    day_off = False
+    off_message = ''
+    if d.weekday() > 4: # Weekend
+        day_off = True
+    if (oudin(d) + timedelta(days=1)).strftime(FMT_DATE) == d.strftime(FMT_DATE):     # Lundi de Pâques
+        day_off = True
+        off_message = 'Pâques'
+    if (oudin(d) + timedelta(days=50)).strftime(FMT_DATE) == d.strftime(FMT_DATE):    # Pentecôte
+        day_off = True
+        off_message = 'Pentecôte'
+    if (oudin(d) + timedelta(days=39)).strftime(FMT_DATE) == d.strftime(FMT_DATE):    # Ascension
+        day_off = True
+        off_message = 'Ascension'
+    if d.strftime("%d/%m") == '15/08':                                                # Assomption
+        day_off = True
+        off_message = 'Assomption'
+    if d.strftime("%d/%m") == '01/11':                                                # Toussaint
+        day_off = True
+        off_message = 'Toussaint'
+    if d.strftime("%d/%m") == '14/07':                                                # Bastille
+        day_off = True
+        off_message = 'Bastille'
+    if d.strftime("%d/%m") == '25/12':                                                # Noël
+        day_off = True
+        off_message = 'Noël'
+    if d.strftime("%d/%m") == '01/01':                                                # Premier de l'an
+        day_off = True
+        off_message = "Jour de l'an"
+    day_info = f"<div class='dia'>{DOWS[d.weekday()][:3]}</div><div class='dib'>{off_message}</div><div class='dic'>{d.strftime('%d')}</div>"
 
     context = {'day_info': day_info,
-               'day_off': d.weekday() > 4,
+               'day_off': day_off,
+               'off_message': off_message,
                'current_day': is_current_day,
                'day': d.strftime(FMT_DATE),
                'day_body': day_body,
@@ -115,6 +146,9 @@ def gimme_profile(x):
         context['shieldstyle_display'] = elem.get_shieldstyle_display()
         context['iconstyle_display'] = elem.get_iconstyle_display()
         context['artefact'] = elem.build_svg_artefact()
+        context['face_artefact'] = elem.build_face_artefact()
+        context['games_run'] = elem.games_run
+        context['games_played'] = elem.games_played
     return context
 
 
@@ -128,8 +162,20 @@ def gimme_profile_campaigns(x):
         ctx = x.to_json
         ctx['game_object'] = x.game.to_json
         camps.append(ctx)
-    # print(camps)
     return camps
+
+
+def gimme_profile_propositions(x):
+    from scheduler.models.session import Session
+    from scheduler.models.profile import Profile
+    p = Profile.objects.get(pk=x)
+    sessions = Session.objects.filter(mj=p, date_start=None)
+    props = []
+    for s in sessions:
+        pro = s.to_json
+        pro['game_object'] = s.game.to_json
+        props.append(pro)
+    return props
 
 
 # Root functions called from views

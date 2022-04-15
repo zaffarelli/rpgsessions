@@ -19,6 +19,23 @@ ICON_STYLES = (
     ('crystal', 'Cristal'),
 )
 
+FACE_STYLES = (
+    ('thin', 'Mince'),
+    ('standard', 'Moyen'),
+    ('bold', 'Large')
+)
+
+HAIR_STYLES = (
+    ('standard', 'Sans'),
+    ('type1', 'Cheveux 1'),
+    ('type2', 'Cheveux 2')
+)
+
+MOUTH_STYLES = (
+    ('standard', 'Sans'),
+    ('type1', 'Type 1'),
+    ('type2', 'Type 2')
+)
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
@@ -30,15 +47,21 @@ class Profile(models.Model):
     realm = models.ForeignKey(Realm, on_delete=models.SET_NULL, null=True, blank=True)
     is_girl = models.BooleanField(default=False)
     shield = models.CharField(max_length=256, default='shield_base')
-    silhouette = models.CharField(max_length=256, default='player')
+    silhouette = models.CharField(max_length=256, default='player_base')
     shieldstyle = models.CharField(max_length=256, default='mid', choices=SHIELD_STYLES)
     iconstyle = models.CharField(max_length=256, default='disk', choices=ICON_STYLES)
+    face_style = models.CharField(max_length=256, default='standard', choices=FACE_STYLES)
+    hair_style = models.CharField(max_length=256, default='standard', choices=HAIR_STYLES)
+    mouth_style = models.CharField(max_length=256, default='standard', choices=MOUTH_STYLES)
     svg_artefact = models.CharField(max_length=256, default='{}')
     weeks = models.PositiveIntegerField(default=0, blank=True, null=True)
     alpha = ColorField(default='#666666')
     beta = ColorField(default='#666666')
     gamma = ColorField(default='#666666')
-    hair = ColorField(default='#C0A0B0')
+    hair = ColorField(default='#666666')
+    eyes = ColorField(default='#666666')
+    mail_wednesday = models.BooleanField(default=False)
+    mail_sunday = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.nickname}*'
@@ -77,6 +100,12 @@ class Profile(models.Model):
     def games_run(self):
         from scheduler.models.session import Session
         all = Session.objects.filter(mj=self)
+        return len(all)
+
+    @property
+    def games_played(self):
+        from scheduler.models.inscription import Inscription
+        all = Inscription.objects.filter(profile=self)
         return len(all)
 
     @property
@@ -119,6 +148,29 @@ class Profile(models.Model):
         }
         artefact['shield_back'][self.shieldstyle] = 1.0
         artefact['icon'][self.iconstyle] = 1.0
+        return artefact
+
+    def build_face_artefact(self):
+        artefact = {
+            'face_style': {
+                'thin': 0.0,
+                'standard': 0.0,
+                'bold': 0.0
+            },
+            'hair_style': {
+                'standard': 0.0,
+                'type1': 0.0,
+                'type2': 0.0,
+            },
+            'mouth_style': {
+                'standard': 0.0,
+                'type1': 0.0,
+                'type2': 0.0,
+            }
+        }
+        artefact['face_style'][self.face_style] = 1.0
+        artefact['hair_style'][self.hair_style] = 1.0
+        artefact['mouth_style'][self.mouth_style] = 1.0
         return artefact
 
 

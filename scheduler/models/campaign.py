@@ -14,8 +14,7 @@ class Campaign(models.Model):
     description = models.TextField(max_length=2048, default='', blank=True)
     wanted = models.CharField(max_length=64, default='', blank=True)
     alpha = ColorField(default='#666666')
-    beta = ColorField(default='#666666')
-    gamma = ColorField(default='#666666')
+
 
     def __str__(self):
         return f'{self.title} ({self.mj})'

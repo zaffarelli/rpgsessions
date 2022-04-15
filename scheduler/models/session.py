@@ -19,7 +19,7 @@ class Session(models.Model):
     campaign = models.ForeignKey(Campaign, on_delete=models.SET_NULL, null=True, blank=True)
     game = models.ForeignKey(Game, on_delete=models.SET_NULL, null=True)
     description = models.TextField(max_length=2048, default='', blank=True)
-    date_start = models.DateField(default=datetime.now, blank=True)
+    date_start = models.DateField(default=None, blank=True, null=True)
     time_start = models.TimeField(default=time(hour=18, minute=00, second=00), blank=True)
     duration = models.PositiveIntegerField(default=6, blank=True)
     realm = models.ForeignKey(Realm, on_delete=models.CASCADE, null=True)
@@ -29,8 +29,6 @@ class Session(models.Model):
     one_shot_adventure = models.BooleanField(default=True, verbose_name='oneshot', blank=True)
     level = models.CharField(max_length=16, default='0', choices=ADV_LEVEL, blank=True)
     alpha = ColorField(default='#666666', blank=True)
-    beta = ColorField(default='#666666', blank=True)
-    gamma = ColorField(default='#666666', blank=True)
     wanted = models.CharField(max_length=64, default='', blank=True)
     is_ready = models.BooleanField(default=False, verbose_name='ok', blank=True)
 
@@ -44,8 +42,11 @@ class Session(models.Model):
 
     @property
     def date_end(self):
-        res = datetime.combine(self.date_start, self.time_start)
-        res = res + timedelta(hours=self.duration)
+        if self.date_start:
+            res = datetime.combine(self.date_start, self.time_start)
+            res = res + timedelta(hours=self.duration)
+        else:
+            res = None
         return res
 
     @property

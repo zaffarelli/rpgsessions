@@ -1,0 +1,20 @@
+{% load static %}
+{% load global_filters %}
+
+<div class="propositions_list">
+    <table>
+        <tr>
+            <th>Proposition</th>
+            <th>Jeu</th>
+            <th>Description</th>
+            <th>Places libres</th>
+            <th>Actions</th>
+        </tr>
+        {% for x in propositions %}
+            <tr class="{% cycle "odd" "even"  %}">
+            {% include "scheduler/proposition_row.html" with c=x %}
+            </tr>
+        {% endfor %}
+        <tr><td colspan="5">Comment rajouter une proposition ? Rajoutez une partie sur une journée et enlevez  sa date. Elle apparaîtra ici.</td></tr>
+    </table>
+</div>

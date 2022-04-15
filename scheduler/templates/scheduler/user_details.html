@@ -10,6 +10,10 @@
                 <td>
                     {{ profile.nickname|safe }}
                 </td>
+                <th>
+                    Parties menées:
+                </th>
+                <td>{{ profile.games_run }}</td>
             </tr>
             <tr>
                 <th>
@@ -18,6 +22,10 @@
                 <td>
                     {% include "scheduler/session_shortcut.html" with u=profile %}
                 </td>
+                <th>
+                    Parties jouées:
+                </th>
+                <td>{{ profile.games_played }}</td>
             </tr>
             <tr>
                 <th>
@@ -25,23 +33,29 @@
                 </th>
                 <td>
                     {% include "scheduler/player_shortcut.html" with u=profile %}
+                    {% include "scheduler/player_shortcut.html" with u=profile small=1 %}
                 </td>
+                <th>Détails portrait</th>
+                <td>{% include "scheduler/player_shortcut.html" with u=profile large=1 %}</td>
             </tr>
             <tr>
                 <th>
                     Présentation
                 </th>
-                <td class="text">
-                    {{ profile.presentation | safe }}
+                <td class="txt">{{ profile.presentation | safe }}
+
                 </td>
+                <th></th>
+                <td></td>
             </tr>
             <tr>
                 <th>
                     Favoris
                 </th>
-                <td class="text">
-                    {{ profile.favorites | safe }}
+                <td class="txt">{{ profile.favorites | safe }}
                 </td>
+                <th></th>
+                <td></td>
             </tr>
             <tr>
                 <th>
@@ -50,6 +64,8 @@
                 <td>
                     {{ profile.is_girl|as_gender|safe }}
                 </td>
+                <th>Couleur des yeux</th>
+                <td><div style="background: {{ profile.eyes }}; width:15px; height:15px; border:1px solid black;"></div></td>
             </tr>
             <tr>
                 <th>
@@ -58,6 +74,8 @@
                 <td>
                     {{ profile.need_drop|as_bool|safe }}
                 </td>
+                <th>Couleur des cheveux</th>
+                <td><div style="background: {{ profile.hair }}; width:15px; height:15px; border:1px solid black;"></div></td>
             </tr>
             <tr>
                 <th>
@@ -66,6 +84,8 @@
                 <td>
                     {{ profile.can_drop|as_bool|safe }}
                 </td>
+                <th>Visage</th>
+                <td>{{ profile.face_style }}</td>
             </tr>
             <tr>
                 <th>
@@ -74,6 +94,8 @@
                 <td>
                     {{ profile.shieldstyle_display|safe }}
                 </td>
+                <th>Message du Mercredi</th>
+                <td>{{ profile.mail_wednesday|as_bool|safe }}</td>
             </tr>
             <tr>
                 <th>
@@ -82,24 +104,29 @@
                 <td>
                     {{ profile.iconstyle_display }}
                 </td>
+                <th>Message du Dimanche</th>
+                <td>{{ profile.mail_sunday|as_bool|safe }}</td>
             </tr>
             <tr>
-                <th>
+                <th title="Valeur positive uniquement. Correspond aux nombre de semaines supplémentaires affichées (3 par défaut). Ralenti l'affichage, mais une meilleur vision d'ensemble.">
                     Semaines supplémentaires
                 </th>
                 <td>
                     {{ profile.weeks }}
                 </td>
+                <th></th>
+                <td></td>
             </tr>
             <tr>
                 <th>
                     Lien d'invitation
                 </th>
-                <td>
-                    {{ realm.full_link|safe }}
+                <td colspan="3">
+                    {{ host }}{{ realm.full_link|safe }}
                 </td>
             </tr>
         </table>
     </div>
     {% include "scheduler/campaign_list.html" with campaigns=campaigns %}
+    {% include "scheduler/proposition_list.html" with sessions=propositions %}
 </div>

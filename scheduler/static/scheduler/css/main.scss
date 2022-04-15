@@ -122,7 +122,7 @@ body {
           margin-top: 100px;
           display: flex;
           flex-flow: row wrap;
-          justify-content: space-between;
+          justify-content: flex-start;
           align-content: stretch;
           align-items: stretch;
           gap: 1px 1px;
@@ -144,7 +144,7 @@ body {
             background: $panel_background;
             border-color: $panel_border;
             color: $panel_color;
-            width: 100%;
+            width: auto;
 
             & a {
               color: #FFCC44;
@@ -213,36 +213,64 @@ body {
 
           & .user_details {
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: column wrap;
             gap: 5px;
-            justify-content: stretch;
-            align-items: flex-start;
-            align-content: flex-start;
+            justify-content: flex-start;
+            align-items: stretch;
+            align-content: center;
 
             & .profile {
               order: 1;
               background: lightgrey;
-              color:black;
-              flex-grow:1;
-              flex-shrink:1;
-              min-width:450px;
+              color: black;
+              flex-grow: 1;
+              flex-shrink: 1;
+              //min-width:450px;
+              border-radius: 5px;
+              width: 100%;
+
+
             }
 
             & .realm {
-              order: 3;
+              order: 4;
               background: lightsteelblue;
             }
 
             & .campaigns_list {
-              order:2;
-              background:lightgrey;
-              & table{
-                color:black;
+              order: 3;
+              background: lightgrey;
+
+              & table {
+                color: black;
+                width: 100%;
+
               }
-              flex-grow:1;
-              flex-shrink:1;
+
+              flex-grow: 1;
+              flex-shrink: 1;
+              border-radius: 5px;
 
             }
+
+            & .propositions_list {
+              order: 2;
+              background: lightgrey;
+
+              & table {
+                color: black;
+
+                width: 100%;
+
+
+              }
+
+              flex-grow: 1;
+              flex-shrink: 1;
+              border-radius: 5px;
+
+            }
+
           }
 
         }
@@ -646,6 +674,13 @@ table {
 
 
   & tr {
+    width: auto;
+    &.even{
+        background:lighten($paper_background,10%);
+    }
+    &.odd{
+        background:lightendarken($paper_background,20%);
+    }
     & td {
 
       padding: 2px;
@@ -653,7 +688,7 @@ table {
 
       &.text {
         text-align: left;
-        white-space: pre-wrap;
+        white-space: pre-line;
         padding: 5px;
         margin: 0;
 
@@ -667,10 +702,25 @@ table {
           line-height: 0.93em;
         }
       }
+
+
+      &.txt {
+        max-width:300px;
+        padding: 3px;
+        text-align: justify;
+        white-space: pre-line;
+        text-indent: 0;
+        background: transparent;
+        margin: 0;
+        font-family: roboto;
+        border-radius:5px;
+
+      }
+
     }
 
     & th {
-      width: 180px;
+      //width: 180px;
       background: $paper_border;
       color: $paper_color;
       padding: 2px;

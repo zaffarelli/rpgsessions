@@ -6,10 +6,20 @@
         <tr>
             <th>Campagne</th>
             <th>Jeu</th>
-            <th>Lieu</th>
+            <th>Acronyme</th>
+            <th>Première séance</th>
+            <th>Séances jouées</th>
+            <th>Séances restantes</th>
+            <th>Noyau dur</th>
+            <th>Action</th>
         </tr>
         {% for x in campaigns %}
+            <tr class="{% cycle "odd" "even"  %}">
             {% include "scheduler/campaign_row.html" with c=x %}
+            </tr>
         {% endfor %}
+        <td colspan="8">
+            <div class="button compact action"><i class="fas fa-circle-plus"></i>&nbsp;Nouvelle campagne</div>
+        </td>
     </table>
 </div>

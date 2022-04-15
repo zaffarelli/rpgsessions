@@ -4,7 +4,7 @@ from django.http import HttpResponse, Http404, JsonResponse, HttpResponseRedirec
 from django.template.loader import get_template
 from scheduler.utils.mechanics import FONTSET, FMT_TIME, FMT_DATE, FMT_DATETIME, DOWS, FMT_DATE_PRETTY
 from scheduler.utils.organizer import build_month, build_zoomed_day, gimme_profile, system_flush, gimme_set_followers, \
-    toggle_available, toggle_subscribe, gimme_session, gimme_profile_campaigns
+    toggle_available, toggle_subscribe, gimme_session, gimme_profile_campaigns, gimme_profile_propositions
 from datetime import datetime, date
 from scheduler.utils.tools import is_ajax
 
@@ -139,6 +139,7 @@ def display_user(request, id=None):
         return render(request, 'scheduler/registration/login_error.html')
     context = prepare_user(request, id)
     context['campaigns'] = gimme_profile_campaigns(id)
+    context['propositions'] = gimme_profile_propositions(id)
     context['realm'] = request.user.profile.realm.to_json
     html = 'WTF?'
     menu_html = 'WTF?'

@@ -1,4 +1,4 @@
 {% load static %}
 <div class="player_shortcut" title="{{ u.nickname }} [{{ u.id }}]">
-    {% include u.silhouette_symbol with u=u scale=scale %}
+    {% include "scheduler/svg/player_base.svg" with u=u scale=scale %}
 </div>

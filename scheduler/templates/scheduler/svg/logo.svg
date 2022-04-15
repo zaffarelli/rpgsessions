@@ -8,24 +8,24 @@
         viewBox="-10 -10 20 20">
     <g id="logo">
 
-        <circle r="6" style="fill:#9e5600;stroke:#C0C0C0;stroke-width:0.1mm;"/>
+        <circle r="6" style="fill:#102030;stroke:#808080;stroke-width:0.1mm;"/>
 
 
-        <path style="fill:#d17200;stroke:#C0C0C0;stroke-width:0.1mm;"
+        <path style="fill:#102030;stroke:#A0A0A0;stroke-width:0.1mm;"
             d = "M -2,0 l -5,-5 l 2,-2 l 5,5 l 5,-5 l 2,2 l -5,5 l 5,5 l-2,2 l -5,-5 l -5,5 l -2,-2 Z">
+            <animate attributeName="fill" values="#102030;#d17200;#102030" dur="15s" repeatCount="indefinite"/>
         </path>
-        <path style="fill:#47FFaa;stroke:#808080;stroke-width:0.1mm;"
-            d = "M -2,2 l -4,-4 l 2,-2 l 4,4 l 5,-5 l 2,2 l -7,7 Z">
+        <path style="fill:#70FF44;stroke:#C0C0C0;stroke-width:0.1mm;"
+            d = "M -2,3 l -4,-4 l 2,-2 l 4,4 l 5,-5 l 2,2 l -7,7 Z">
+            <animate attributeName="fill" values="#102030;#70FF44" dur="15s" repeatCount="1"/>
         </path>
-<!--        <circle cx="0" cy="0" r="2" style="fill:#503020;stroke:#c0c0c0;stroke-width:0.1mm;"/>-->
-<!--        <circle cx="0" cy="-7" r="3" style="fill:#503010;stroke:#c0c0c0;stroke-width:0.1mm;"/>-->
         <text
                x="0"
-               dy="8"
+               dy="10"
                y="0"
-                style="font-size:10px;font-family:Roboto;text-anchor:middle;fill:#E0E0E0;stroke:#202020;stroke-width:0.1mm;"
+                style="font-size:2pt;font-family:Roboto;text-anchor:middle;fill:#E0E0E0;stroke:none;stroke-width:0.1mm;"
 >
-<!--            eXtraventures-->
+eXtraventures
         </text>
     </g>
 </svg>
