@@ -25,6 +25,7 @@ rjsmin==1.2.0
 six==1.16.0
 split-settings==1.0.0
 sqlparse==0.4.2
+supervisor==4.2.4
 svglib==1.2.1
 tinycss2==1.1.1
 tqdm==4.63.0
