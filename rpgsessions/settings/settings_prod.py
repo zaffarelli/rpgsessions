@@ -20,6 +20,7 @@ DATABASES = {
 STATIC_ROOT = '/srv/rpgsessions_static/'
 MEDIA_ROOT = '/srv/rpgsessions_media/'
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 LOGPATH = os.path.join(BASE_DIR, 'logs/')
 
