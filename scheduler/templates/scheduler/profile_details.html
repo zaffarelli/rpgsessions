@@ -127,7 +127,7 @@
                 Lien d'invitation
             </th>
             <td colspan="3">
-                {{ host }}{{ realm.full_link|safe }}
+                {{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ realm.full_link|safe }}
             </td>
         </tr>
     </table>

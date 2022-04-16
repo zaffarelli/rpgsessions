@@ -1,9 +1,7 @@
 {% load static %}
 {% load global_filters %}
 <div class="user_details">
-
-        {% include "scheduler/profile_details.html" with profile=profile %}
-
+    {% include "scheduler/profile_details.html" with profile=profile %}
     {% include "scheduler/campaign_list.html" with campaigns=campaigns %}
     {% include "scheduler/proposition_list.html" with sessions=propositions %}
 </div>
