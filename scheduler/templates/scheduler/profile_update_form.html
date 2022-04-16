@@ -1,0 +1,129 @@
+<form method="POST" id='model_form' name='model_form'>
+    {% csrf_token %}
+    <table class='update'>
+        {{ form.non_field_errors }}
+        {{ form.management_form }}
+        <input name='user' type='hidden' value='{{ form.user.value }}'>
+        <tr>
+            {{ form.nickname.errors }}
+            <th><label for="nickname">Surnom</label></th>
+            <td>{{ form.nickname }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.presentation.errors }}
+            <th><label for="presentation">Présentation</label></th>
+            <td>{{ form.presentation }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.favorites.errors }}
+            <th><label for="favorites">Favoris</label></th>
+            <td>{{ form.favorites }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.is_girl.errors }}
+            <th><label for="is_girl">Genre</label></th>
+            <td>{{ form.is_girl }}</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            {{ form.shieldstyle.errors }}
+            <th><label for="shieldstyle">Armes</label></th>
+            <td>{{ form.shieldstyle }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.iconstyle.errors }}
+            <th><label for="iconstyle">Style d'icone</label></th>
+            <td>{{ form.iconstyle }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.face_style.errors }}
+            <th><label for="face_style">Silhouette</label></th>
+            <td>{{ form.face_style }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.hair_style.errors }}
+            <th><label for="hair_style">Coiffure</label></th>
+            <td>{{ form.hair_style }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.mouth_style.errors }}
+            <th><label for="mouth_style">Bouche/Barbe</label></th>
+            <td>{{ form.mouth_style }}</td>
+            <td></td>
+        </tr>
+
+
+        <tr>
+            {{ form.weeks.errors }}
+            <th><label for="weeks">Semaines supplémentaires<br/>de l'accueil</label></th>
+            <td>{{ form.weeks }}</td>
+            <td></td>
+        </tr>
+
+
+        <tr>
+            {{ form.alpha.errors }}
+            <th><label for="alpha">Couleur Alpha</label></th>
+            <td><input type="color" name="alpha" value="{{ form.alpha.value }}"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.beta.errors }}
+            <th><label for="beta">Couleur Beta</label></th>
+            <td><input type="color" name="beta" value="{{ form.beta.value }}"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.gamma.errors }}
+            <th><label for="gamma">Couleur Gamma</label></th>
+            <td><input type="color" name="gamma" value="{{ form.gamma.value }}"/></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            {{ form.hair.errors }}
+            <th><label for="hair">Couleur Cheveux</label></th>
+            <td><input type="color" name="hair" value="{{ form.hair.value }}"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.eyes.errors }}
+            <th><label for="eyes">Couleur des Yeux</label></th>
+            <td><input type="color" name="eyes" value="{{ form.eyes.value }}"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.need_drop.errors }}
+            <th><label for="need_drop">Sans Véhicule</label></th>
+            <td>{{ form.need_drop }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.can_drop.errors }}
+            <th><label for="can_drop">Peut Véhiculer</label></th>
+            <td>{{ form.can_drop }}</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            {{ form.mail_wednesday.errors }}
+            <th><label for="mail_wednesday">Message du Mercredi</label></th>
+            <td>{{ form.mail_wednesday }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.mail_sunday.errors }}
+            <th><label for="mail_sunday">Message du Dimanche</label></th>
+            <td>{{ form.mail_sunday }}</td>
+            <td></td>
+        </tr>
+    </table>
+</form>

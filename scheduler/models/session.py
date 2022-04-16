@@ -30,7 +30,7 @@ class Session(models.Model):
     level = models.CharField(max_length=16, default='0', choices=ADV_LEVEL, blank=True)
     alpha = ColorField(default='#666666', blank=True)
     wanted = models.CharField(max_length=64, default='', blank=True)
-    is_ready = models.BooleanField(default=False, verbose_name='ok', blank=True)
+    # is_ready = models.BooleanField(default=False, verbose_name='ok', blank=True)
 
     def __str__(self):
         str = f"{self.title}"
@@ -101,7 +101,7 @@ class Session(models.Model):
 
 class SessionAdmin(admin.ModelAdmin):
     ordering = ['date_start', 'time_start']
-    list_display = ['title', 'campaign', 'date_start', 'time_start', 'max_players', 'is_ready', 'duration', 'date_end',
+    list_display = ['title', 'campaign', 'date_start', 'time_start', 'max_players', 'duration', 'date_end',
                     'mj', 'newbies_allowed', 'one_shot_adventure', 'episode_tag']
     search_fields = ['title', 'description', 'campaign']
     list_filter = ['level', 'game', 'campaign']

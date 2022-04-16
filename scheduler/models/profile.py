@@ -46,14 +46,14 @@ class Profile(models.Model):
     can_drop = models.BooleanField(default=False)
     realm = models.ForeignKey(Realm, on_delete=models.SET_NULL, null=True, blank=True)
     is_girl = models.BooleanField(default=False)
-    shield = models.CharField(max_length=256, default='shield_base')
-    silhouette = models.CharField(max_length=256, default='player_base')
+    # shield = models.CharField(max_length=256, default='shield_base')
+    # silhouette = models.CharField(max_length=256, default='player_base')
     shieldstyle = models.CharField(max_length=256, default='mid', choices=SHIELD_STYLES)
     iconstyle = models.CharField(max_length=256, default='disk', choices=ICON_STYLES)
     face_style = models.CharField(max_length=256, default='standard', choices=FACE_STYLES)
     hair_style = models.CharField(max_length=256, default='standard', choices=HAIR_STYLES)
     mouth_style = models.CharField(max_length=256, default='standard', choices=MOUTH_STYLES)
-    svg_artefact = models.CharField(max_length=256, default='{}')
+    # svg_artefact = models.CharField(max_length=256, default='{}')
     weeks = models.PositiveIntegerField(default=0, blank=True, null=True)
     alpha = ColorField(default='#666666')
     beta = ColorField(default='#666666')
@@ -108,16 +108,16 @@ class Profile(models.Model):
         all = Inscription.objects.filter(profile=self)
         return len(all)
 
-    @property
-    def silhouette_symbol(self):
-        girl = ''
-        if self.is_girl:
-            girl = ''
-        return f"scheduler/svg/{self.silhouette}{girl}.svg"
-
-    @property
-    def shield_symbol(self):
-        return f"scheduler/svg/{self.shield}.svg"
+    # @property
+    # def silhouette_symbol(self):
+    #     girl = ''
+    #     if self.is_girl:
+    #         girl = ''
+    #     return f"scheduler/svg/{self.silhouette}{girl}.svg"
+    #
+    # @property
+    # def shield_symbol(self):
+    #     return f"scheduler/svg/{self.shield}.svg"
 
     def send_pwd_reset_mail(self):
         from django.core.mail import send_mail
@@ -166,6 +166,7 @@ class Profile(models.Model):
                 'standard': 0.0,
                 'type1': 0.0,
                 'type2': 0.0,
+                'type3': 0.0,
             }
         }
         artefact['face_style'][self.face_style] = 1.0
@@ -176,4 +177,4 @@ class Profile(models.Model):
 
 class ProfileAdmin(admin.ModelAdmin):
     ordering = ['nickname']
-    list_display = ['u_u', 'nickname', 'realm', 'games_run', 'shield', 'silhouette', 'presentation', 'favorites']
+    list_display = ['u_u', 'nickname', 'realm', 'games_run', 'presentation', 'favorites']

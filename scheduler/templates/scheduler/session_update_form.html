@@ -1,6 +1,95 @@
-<form method="POST" id='session_form' name='session_form'>
+<form method="POST" id='model_form' name='model_form'>
     {% csrf_token %}
     <table class='update'>
-        {{ form.as_table }}
+        {{ form.non_field_errors }}
+        {{ form.management_form }}
+        <input name='mj' type='hidden' value='{{ form.mj.value }}'>
+        <input name='realm' type='hidden' value='{{ current_realm_id }}'>
+        <tr>
+            {{ form.title.errors }}
+            <th><label for="title">Titre</label></th>
+            <td>{{ form.title }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.campaign.errors }}
+            <th><label for="campaign">Campagne</label></th>
+            <td>{{ form.campaign }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.game.errors }}
+            <th><label for="game">Jeu de Rôles</label></th>
+            <td>{{ form.game }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.description.errors }}
+            <th><label for="description">Description</label></th>
+            <td>{{ form.description }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.date_start.errors }}
+            <th><label for="date_start">Date</label></th>
+            <td>{{ form.date_start }}</td>
+            <td><i class="fa fa-arrow-alt-circle-left" style="color:lemonchiffon;" title="Gardez ce champ vide si c'est une proposition.&0x10;&0x13;(Sinon le format c'est YYYY-MM-DD)"></i></td>
+        </tr>
+        <tr>
+            {{ form.time_start.errors }}
+            <th><label for="time_start">Heure</label></th>
+            <td>{{ form.time_start }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.duration.errors }}
+            <th><label for="duration">Durée</label></th>
+            <td>{{ form.duration }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.place.errors }}
+            <th><label for="place">Lieu</label></th>
+            <td>{{ form.place }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.newbies_allowed.errors }}
+            <th><label for="newbies_allowed">Partie d'Initiation</label></th>
+            <td>{{ form.newbies_allowed }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.one_shot_adventure.errors }}
+            <th><label for="one_shot_adventure">Aventure One Shot</label></th>
+            <td>{{ form.one_shot_adventure }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.level.errors }}
+            <th><label for="level">Difficulté</label></th>
+            <td>{{ form.level }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.alpha.errors }}
+            <th><label for="alpha">Couleur</label></th>
+            <td><input type="color" name="alpha" value="{{ form.alpha.value }}"/></td>
+            <td></td>
+
+
+        </tr>
+        <tr>
+            {{ form.wanted.errors }}
+            <th><label for="wanted">Sollicités</label></th>
+            <td>{{ form.wanted }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.optional_spots.errors }}
+            <th><label for="optional_spots">Place Vacantes</label></th>
+            <td>{{ form.optional_spots }}</td>
+            <td><i class="fa fa-arrow-alt-circle-left" style="color:lemonchiffon;" title="Le nombre de places disponibles en sus des personnes sollicitées..."></i></td>
+        </tr>
     </table>
 </form>

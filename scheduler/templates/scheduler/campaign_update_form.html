@@ -1,0 +1,6 @@
+<form method="POST" id='model_form' name='model_form'>
+    {% csrf_token %}
+    <table class='update'>
+        {{ form.as_table }}
+    </table>
+</form>

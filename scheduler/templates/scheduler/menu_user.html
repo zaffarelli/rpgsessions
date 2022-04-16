@@ -1,7 +1,6 @@
 {% load static %}
 <div class="bar">
     <div class='lefters'>
-{#        <div class="button compact"><i class="fas fa-question"></i>&nbsp;Aide</div>#}
         <div class="button compact display" action="month" param="{{day.day}}"><i class="fas fa-undo"></i>&nbsp;Retour</div>
         {% if user.is_staff %}
         <div class="button compact pseudolink" action="admin" param="direct"><i class="fa fa-user-cog"></i>&nbsp;Admin</div>
@@ -9,11 +8,8 @@
     </div>
     <div class='righters'>
         {% csrf_token %}
-        <div class="button compact modal_switch" action="edit_profile" param="{{ c.id }}"><i class="fa fa-user"></i>&nbsp;Modifier</div>
+        <div class="button compact modal_switch" action="edit_profile" param="{{ profile.id }}"><i class="fa fa-user"></i>&nbsp;Modifier</div>
         <div class="button compact modal_switch" action="followers"><i class="fa fa-compass"></i>&nbsp;Traqués</div>
         <div class="button compact pseudolink" action="logout"><i class="fa fa-sign-out-alt"></i>&nbsp;Déconnexion</div>
-        {#        <div class="button compact"><i class="fa fa-chart-pie"></i>&nbsp;Statistiques</div>#}
-
-
     </div>
 </div>

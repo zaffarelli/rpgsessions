@@ -217,19 +217,18 @@ body {
             gap: 5px;
             justify-content: flex-start;
             align-items: stretch;
-            align-content: center;
+            align-content: stretch;
 
             & .profile {
               order: 1;
-              background: lightgrey;
+
+              background: $paper_background;
               color: black;
               flex-grow: 1;
               flex-shrink: 1;
               //min-width:450px;
               border-radius: 5px;
-              width: 100%;
-
-
+              //width: 100%;
             }
 
             & .realm {
@@ -299,14 +298,14 @@ body {
 
           & .ablock {
             order: 1;
-            width: 240px;
+            width: 300px;
             text-align: center;
             border-radius: 5px 0 0 5px;
           }
 
           & .eblock {
             order: 5;
-            width: 120px;
+            min-width: 60px;
             text-align: center;
           }
 
@@ -669,18 +668,21 @@ body {
 
 
 table {
-  //border-left: 1px dashed black;
-  //border-right: 1px dashed black;
 
+  width: 100%;
 
   & tr {
     width: auto;
-    &.even{
-        background:lighten($paper_background,10%);
+
+    &.even {
+      background: lighten($paper_background, 10%);
     }
-    &.odd{
-        background:lightendarken($paper_background,20%);
+
+    &.odd {
+      background: lighten($paper_background, 20%);
     }
+
+    //background:$paper_background;
     & td {
 
       padding: 2px;
@@ -705,7 +707,7 @@ table {
 
 
       &.txt {
-        max-width:300px;
+        max-width: 300px;
         padding: 3px;
         text-align: justify;
         white-space: pre-line;
@@ -713,7 +715,7 @@ table {
         background: transparent;
         margin: 0;
         font-family: roboto;
-        border-radius:5px;
+        border-radius: 5px;
 
       }
 
@@ -863,6 +865,7 @@ table {
 
 }
 
+
 .shadow {
   background: $highlight_border;
 }
@@ -876,13 +879,14 @@ table {
   flex-flow: column wrap;
   gap: 3px 3px;
 
-  & table.update {
+  & table {
 
     & tr {
       & th {
+
         & label {
+          width: 300px;
           order: 1;
-          width: 200px;
           padding: 2px;
 
 
@@ -896,6 +900,7 @@ table {
       }
 
       & td {
+        width: auto;
         text-align: left;
 
         & span.helptext {
@@ -981,4 +986,11 @@ table {
   &.compact {
     width: auto;
   }
+}
+
+
+em.big {
+  font-family: Anybody;
+  font-size:24pt;
+  font-style: normal;
 }

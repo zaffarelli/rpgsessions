@@ -107,8 +107,8 @@ class Scheduler {
                         $('#dialog').html("Nope");
                         if (option != undefined) {
                             $("#" + option).click();
-
                         }
+                        $('.shuntable').removeClass('hidden')
                     } else {
                         $('#dialog').html(answer.data);
                         $('#overlay').removeClass('hidden');
@@ -166,12 +166,16 @@ class Scheduler {
             event.stopPropagation();
             let action = $(this).attr('action');
             let param = $(this).attr('param');
-            let form = $('#session_form');
+            let option = $(this).attr('option');
+            let form = $('#model_form');
             let formdata = form.serialize();
 
             let url = 'ajax/action/' + action + '/';
             if (param != undefined) {
                 url += param + '/';
+                if (option != undefined) {
+                    url += option + '/';
+                }
             }
 
             if (action=='register_submit'){
@@ -194,9 +198,20 @@ class Scheduler {
                 success: function (answer) {
                     // console.log(answer.responseText)
                     // console.log("Success")
+                    $('.shuntable').toggleClass('hidden')
                     $('.formblock').html(answer)
+                    $.ajax({
+                        url:"ajax/display/user/"+param+"/",
+                        headers: {
+                            'Cache-Control': 'no-cache, no-store, must-revalidate',
+                            'Pragma': 'no-cache',
+                            'Expires': '0'
+                        },
+                        success:function(answer){
+                            me.rebootLinks();
+                        }
+                    });
 
-                    me.rebootLinks();
                 },
                 error: function (answer) {
                     // console.error(answer);
