@@ -3,7 +3,7 @@ import os
 
 SECRET_KEY = '^ghph5x=x*u+x6(^2y7p-is6zv)lkia0(+@74x076p0ot4ic+z'
 DEBUG = False
-ALLOWED_HOSTS = ['senestre.eu']
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': {

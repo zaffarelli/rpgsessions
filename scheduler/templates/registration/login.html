@@ -13,14 +13,39 @@
                     <p>Your account doesn't have access to this page. To proceed,
                         please login with an account that has access.</p>
                 {% else %}
-                    <center><div class="logo">{% include 'scheduler/svg/logo.svg' %}</div></center>
+                    <center>
+                        <div class="logo">{% include 'scheduler/svg/logo.svg' %}</div>
+                    </center>
                 {% endif %}
             {% endif %}
 
             <form method="post" action="{% url 'login' %}">
                 {% csrf_token %}
                 <table>
-                    {{ form.as_table }}
+                    {#   form.as_table #}
+                    <tr>
+                        <th><label for="id_username">Utilisateur</label></th>
+                        <td>
+
+                            <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username"
+                                   maxlength="150" required id="id_username">
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th><label for="id_password">Mot de passe</label></th>
+                        <td>
+
+                            <input type="password" name="password" autocomplete="current-password" required
+                                   id="id_password">
+
+
+                        </td>
+                    </tr>
+
+
                 </table>
                 <center>
                     <input class='button' type="submit" value="Connexion"/>
@@ -29,7 +54,7 @@
             </form>
             <center>
                 {# Assumes you setup the password_reset view in your URLconf #}
-                <p><a href="{% url 'password_reset' %}">Mot de passe perdu?</a></p>
+
             </center>
         </div>
         <div class="user_spare2"></div>
