@@ -201,17 +201,20 @@ class Scheduler {
                     // console.log("Success")
                     $('.shuntable').toggleClass('hidden')
                     $('.formblock').html(answer)
-                    $.ajax({
-                        url:"ajax/display/user/"+param+"/",
-                        headers: {
-                            'Cache-Control': 'no-cache, no-store, must-revalidate',
-                            'Pragma': 'no-cache',
-                            'Expires': '0'
-                        },
-                        success:function(answer){
-                            me.rebootLinks();
-                        }
-                    });
+                    $(".invite_block").html(answer.data);
+                    me.rebootLinks();
+                    // $.ajax({
+                    //     url:"ajax/display/user/"+param+"/",
+                    //     headers: {
+                    //         'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    //         'Pragma': 'no-cache',
+                    //         'Expires': '0'
+                    //     },
+                    //     success:function(answer){
+                    //         $(".invite_block").html(answer.data);
+                    //         me.rebootLinks();
+                    //     }
+                    // });
 
                 },
                 error: function (answer) {

@@ -337,7 +337,7 @@ def register_submit(request):
     from scheduler.models.profile import Profile
     from django.core.mail import send_mail
     valid = True
-    errors = []
+    errors = ['']
     is_girl = False
     html = ''
     if request.POST:
@@ -395,11 +395,13 @@ def register_submit(request):
                       f"\n\nPour eXtraventures,\nVotre serviteur Fernando Casabuentes",
                       f'fernando.casabuentes@gmail.com', [f'fernando.casabuentes@gmail.com'],
                       fail_silently=False)
-            return HttpResponseRedirect('/')
+            html = "<center>Ok!! Surveillez vos messages,<BR/>vous recevrez la suite par email.</center>"
         else:
             send_mail("[eXtraventures] Erreur d'enregistrement!",
                       f'Failed attempt..\n\n{request.POST}\n\n{errors}',
                       f'fernando.casabuentes@gmail.com', [f'zaffarelli@gmail.com'], fail_silently=False)
+
+            html = f"<center>Oups!! Il y a eu quelques problèmes.. {'<BR/>- '.join(errors)}<br><br>Merci de réessayer.</center>"
     response = {'data': html}
     return JsonResponse(response)
 

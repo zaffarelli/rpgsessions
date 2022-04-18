@@ -6,6 +6,7 @@
         <div class="user_panel">
             <center><div class="logo">{% include 'scheduler/svg/logo.svg' %}</div></center>
             <center><h1>Enregistrement sur {{ realm.name }}</h1></center>
+            <div class="invite_block">
             <p>Ce formulaire va vous permettre de vous enreigtrer sur eXtraventures, dans la communauté {{ realm.name }}.
                 Vous recevrez un message pour valider votre inscription sur l'adresse électronique renseignée.</p>
             <form method="POST" id="register_form" name="register_form">
@@ -13,29 +14,39 @@
                 <table class="invite">
                     <tr>
                         <th><label for="email">Adresse électronique</label></th>
-                        <td><input type="text" name="email" placeholder="augustus.pepermint@gmail.com"
+                        <td><input type="text" name="email" placeholder="nom.prenom@example.fr"
                                    style="width:50ex;"/></td>
-                        <td style="width:15px;"><i class="fa fa-star" style="color:deeppink;"></i></td>
+                        <td style="width:15px;"><i class="fa fa-star" style="color:deeppink;"></i>
+
+                        </td>
                     </tr>
                     <tr>
                         <th><label for="username">Identifiant de connexion</label></th>
-                        <td><input type="text" name="username" placeholder="augustus" style="width:50ex;"/></td>
-                        <td style="width:15px;"><i class="fa fa-star" style="color:deeppink;"></i></td>
+                        <td><input type="text" name="username" placeholder="jean_claude14" style="width:50ex;"/></td>
+                        <td style="width:15px;"><i class="fa fa-star" style="color:deeppink;"></i>
+                            <i class="fa fa-exclamation-triangle" style="color:orange;" title="6 caractères mini (lettres, chiffres et _)"></i>
+                        </td>
                     </tr>
                     <tr>
                         <th><label for="password">Mot de passe</label></th>
                         <td><input type="password" name="password" style="width:50ex;" value=""/></td>
-                        <td style="width:15px;"><i class="fa fa-star" style="color:deeppink;"></i></td>
+                        <td style="width:15px;"><i class="fa fa-star" style="color:deeppink;"></i>
+                            <i class="fa fa-exclamation-triangle" style="color:orange;" title="8 caractères minimum"></i>
+                        </td>
+
                     </tr>
                     <tr>
                         <th><label for="confirm">Confirmation</label></th>
                         <td><input type="password" name="confirm" style="width:50ex;"  value=""/></td>
-                        <td style="width:15px;"><i class="fa fa-star" style="color:deeppink;"></i></td>
+                        <td style="width:40px;">
+                            <i class="fa fa-star" style="color:deeppink;"></i>
+                            <i class="fa fa-exclamation-triangle" style="color:orange;" title="le même qu'au dessus... :)"></i>
+                        </td>
                     </tr>
                     <tr>
                         <th><label for="nickname">Surnom</label>
                         </th>
-                        <td><input type="text" name="nickname" placeholder="Gus" style="width:50ex;"/></td>
+                        <td><input type="text" name="nickname" placeholder="JohnC" style="width:50ex;"/></td>
                         <td style="width:15px;"></td>
                     </tr>
                     <tr>
@@ -54,6 +65,7 @@
                     </tr>
                 </table>
             </form>
+            </div>
         </div>
         <div class="user_spare2"></div>
     </div>
