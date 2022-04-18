@@ -15,6 +15,10 @@ def gimme_session(request, s):
         context['campaign'] = s.campaign.to_json
     if s.game:
         context['game'] = s.game.to_json
+    context['owner'] = (s.mj == request.user.profile)
+    context['inscriptions'] = gimme_inscriptions(s)
+    context['user_requested']= str(request.user.profile.id) in s.wanted.split(';')
+    context['user_subscribed'] = False
     return context
 
 
@@ -71,14 +75,7 @@ def gimme_sessions_of_the_day(request, d):
     all = Session.objects.filter(date_start=d).order_by('time_start')
     sessions = []
     for s in all:
-        user_wanted = s.wanted.split(';')
-        sess = {
-            'session': s.to_json,
-            'user_wanted': str(request.user.profile.id) in user_wanted,
-            'mj': gimme_profile(s.mj.id),
-            'game': s.game.to_json
-        }
-        sessions.append(sess)
+        sessions.append(gimme_session(request, s))
     return sessions
 
 
@@ -204,6 +201,8 @@ def gimme_all_propositions(x):
         pro = s.to_json
         pro['game'] = s.game.to_json
         pro['mj'] = gimme_profile(s.mj.id)
+        pro['owner'] = (s.mj == p)
+        pro['inscriptions'] = gimme_inscriptions(s)
 
         props.append(pro)
     return props
@@ -269,6 +268,11 @@ def build_week(request, d):
 #     print(context)
 #     return context
 
+def gimme_inscriptions(s):
+    inscriptions = []
+    for i in s.inscription_set.all().order_by('profile__user_id'):
+        inscriptions.append(gimme_profile(i.profile.id))
+    return inscriptions
 
 def build_zoomed_day(request, d):
     from scheduler.models.session import Session
@@ -283,12 +287,12 @@ def build_zoomed_day(request, d):
         size = s.duration * HOUR_PIXELS
         post_size = 14 * HOUR_PIXELS - pre_size - size
         # print(pre_size/HOUR_PIXELS, size/HOUR_PIXELS, post_size/HOUR_PIXELS)
-        inscriptions = []
-        for i in s.inscription_set.all().order_by('profile__user_id'):
-            inscriptions.append(gimme_profile(i.profile.id))
+        # inscriptions = []
+        # for i in s.inscription_set.all().order_by('profile__user_id'):
+        #     inscriptions.append(gimme_profile(i.profile.id))
         sess = {'s': gimme_session(request, s),
                 'u': gimme_profile(s.mj.id),
-                'inscriptions': inscriptions,
+                'inscriptions': gimme_inscriptions(s),
                 'g': s.game.to_json,
                 'timescale': {
                     'pre_size': pre_size,

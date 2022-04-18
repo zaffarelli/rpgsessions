@@ -24,7 +24,7 @@ class Session(models.Model):
     duration = models.PositiveIntegerField(default=6, blank=True)
     realm = models.ForeignKey(Realm, on_delete=models.CASCADE, null=True)
     place = models.CharField(max_length=128, default='', blank=True)
-    optional_spots = models.PositiveIntegerField(default=0, blank=True)
+    optional_spots = models.PositiveIntegerField(default=4, blank=True)
     newbies_allowed = models.BooleanField(default=True, verbose_name='noobs', blank=True)
     one_shot_adventure = models.BooleanField(default=True, verbose_name='oneshot', blank=True)
     level = models.CharField(max_length=16, default='0', choices=ADV_LEVEL, blank=True)

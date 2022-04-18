@@ -3,7 +3,11 @@
 <div class="all_propositions">
 {% for p in propositions %}
     <div class="proposition_block">
-    {% include "scheduler/session_detail.html" with session=p %}
+        {% include "scheduler/session_detail.html" with session=p %}
+        {% if p.owner %}
+        {% else %}
+        <div class="button compact toggle" action="session_subscribe" param="{{ p.id }}"><i class="fa fa-circle-plus"></i>&nbsp;S'inscrire</div>
+        {% endif %}
     </div>
 {% endfor %}
 </div>

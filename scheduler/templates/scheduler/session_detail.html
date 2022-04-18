@@ -71,11 +71,11 @@
         </tr>
     {% endif %}
 
-    {% if inscriptions %}
+    {% if session.inscriptions %}
     <tr>
         <th>Inscrits (max: {{ session.max_players }})</th>
         <td style="background:#ffcc44;">
-            {% for w in inscriptions %}
+            {% for w in session.inscriptions %}
                 &nbsp;{% include "scheduler/player_shortcut.html" with u=w %}
             {% endfor %}
         </td>
