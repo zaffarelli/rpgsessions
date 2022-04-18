@@ -4,7 +4,8 @@ from django.http import HttpResponse, Http404, JsonResponse, HttpResponseRedirec
 from django.template.loader import get_template
 from scheduler.utils.mechanics import FONTSET, FMT_TIME, FMT_DATE, FMT_DATETIME, DOWS, FMT_DATE_PRETTY
 from scheduler.utils.organizer import build_month, build_zoomed_day, gimme_profile, system_flush, gimme_set_followers, \
-    toggle_available, toggle_subscribe, gimme_session, gimme_profile_campaigns, gimme_profile_propositions, gimme_campaign
+    toggle_available, toggle_subscribe, gimme_session, gimme_profile_campaigns, gimme_profile_propositions, \
+    gimme_campaign, gimme_all_propositions
 from datetime import datetime, date
 from scheduler.utils.tools import is_ajax
 
@@ -251,16 +252,24 @@ def prepare_overlay(request, slug, param=None, option=None):
         s = Session.objects.get(pk=int(param))
         context = {'session': gimme_session(request, s)}
         template_str = "scheduler/session_delete_dialog.html"
+    elif slug == "delete_campaign":
+        from scheduler.models.campaign import Campaign
+        c = Campaign.objects.get(pk=int(param))
+        context = {'campaign': gimme_campaign(c.id)}
+        template_str = "scheduler/campaign_delete_dialog.html"
     elif slug == "about":
         template_str = "scheduler/about.html"
     elif slug == "followers":
         context["set_followers"] = gimme_set_followers(request.user.profile.id)
         template_str = "scheduler/set_followers.html"
-    elif slug == "confirm":
+    elif slug == "confirm_session":
         from scheduler.models.session import Session
         s = Session.objects.get(pk=int(param))
         s.delete()
-
+    elif slug == "confirm_campaign":
+        from scheduler.models.campaign import Campaign
+        c = Campaign.objects.get(pk=int(param))
+        c.delete()
     return context, template_str
 
 
@@ -316,6 +325,10 @@ def show_done(request, pk=None):
 
 
 def delete_session(request):
+    pass
+
+
+def delete_campaign(request):
     pass
 
 
@@ -388,4 +401,19 @@ def register_submit(request):
                       f'Failed attempt..\n\n{request.POST}\n\n{errors}',
                       f'fernando.casabuentes@gmail.com', [f'zaffarelli@gmail.com'], fail_silently=False)
     response = {'data': html}
+    return JsonResponse(response)
+
+
+@login_required
+def propositions(request):
+    if not request.user.is_authenticated:
+        return render(request, 'scheduler/registration/login_error.html')
+    context = {}
+    context['today'] = datetime.now().strftime(FMT_DATE)
+    context['propositions'] = gimme_all_propositions(request.user.profile.id)
+    template = get_template('scheduler/menu_propositions.html')
+    menu_html = template.render(context, request)
+    template = get_template('scheduler/all_propositions.html')
+    html = template.render(context, request)
+    response = {'data': html, 'menu': menu_html}
     return JsonResponse(response)

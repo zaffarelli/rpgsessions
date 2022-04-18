@@ -432,6 +432,8 @@ body {
 
 
                 & .day_info {
+
+
                   order: 1;
                   height: 3em;
                   border: 1px solid transparent;
@@ -469,6 +471,7 @@ body {
                     flex-grow: 1;
                     color: #1a1a1a;
                   }
+
 
                 }
 
@@ -576,26 +579,6 @@ body {
 
                 }
 
-                &.day_off {
-                  & .day_info {
-                    background: $panel_day_off_background;
-                  }
-
-                  & .day_body {
-                    background: $panel_day_off_background;
-                  }
-                }
-
-                &.current_day {
-                  & .day_info {
-                    background: $panel_day_current_background;
-                  }
-
-                  & .day_body {
-                    background: $panel_day_current_background;
-                  }
-
-                }
 
                 &.large {
                   width: 600px;
@@ -613,6 +596,25 @@ body {
 
                   }
                 }
+                  &.day_off {
+                    & .day_bottom, & .day_info {
+                      background: $panel_day_off_background;
+                    }
+
+
+                  }
+
+                  &.current_day {
+                    & .day_bottom, & .day_info {
+                      background: $panel_day_current_background;
+                    }
+
+
+
+
+
+                  }
+
               }
             }
           }
@@ -766,7 +768,7 @@ table {
     display: flex;
     flex-flow: column wrap;
     justify-content: stretch;
-    align-content: space-evenly;
+    align-content: stretch;
     align-items: stretch;
     gap: 3px 0;
 
@@ -986,11 +988,39 @@ table {
   &.compact {
     width: auto;
   }
+
+  &.blank{
+      background: $button_background2;
+      color: $button_color2;
+      border: 1px solid $button_border2;
+  }
+
 }
 
 
 em.big {
   font-family: Anybody;
-  font-size:24pt;
+  font-size: 24pt;
   font-style: normal;
+}
+
+.all_propositions {
+  max-width:1200px;
+  display: flex;
+  flex-flow: row wrap;
+
+  justify-content: space-around;
+  align-items:flex-start;
+  align-content: stretch;
+  gap: 5px 5px;
+
+  & .proposition_block {
+    color: $paper_color;
+    background:$paper_background;
+    border: 2px solid $paper_border;
+    border-radius: 5px;
+    padding:5px;
+    min-width:350px;
+    max-width:450px;
+  }
 }

@@ -13,6 +13,7 @@ $body_background: grayscale(darken($theme3,10%));
 
 $panel_background: $theme1;
 $button_background: saturate($theme2,75%);
+$button_background2: darken($theme2,15%);
 $highlight_background: saturate($theme3,75%);
 
 $panel_complement: complement($theme2);
@@ -47,14 +48,16 @@ $highlight_border: lighten($highlight_background,10%);
 // Buttons
 $button_color: lighten($button_background,75%);
 $button_border: lighten($button_background,10%);
+$button_color2: lighten($button_background2,75%);
+$button_border2: lighten($button_background2,10%);
 
 $color_current: violet;
 $color_current_hover: mediumorchid;
 $color_frame: lightgrey;
 $color_frame_hover: cyan;
 $panel_day_background: #c4c4b6;
-$panel_day_off_background: lighten($panel_day_background, 10%);
-$panel_day_current_background: saturate(complement($panel_day_background),50%);
+$panel_day_off_background: saturate(complement($panel_day_background),50%);
+$panel_day_current_background: lightcoral;
 $color_off_hover: yellow;
 
 $hour_pixel: 42;

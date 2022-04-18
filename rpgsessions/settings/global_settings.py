@@ -1,12 +1,12 @@
 from pathlib import Path
 import os
 
-VERSION = "0.8.6"
+VERSION = "0.8.8"
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = '^ghph5x=x*u+x6(^2y7p-is6zv)lkia0(+@74x076p0ot4ic*-'
 DEBUG = False
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'scheduler.apps.SchedulerConfig',

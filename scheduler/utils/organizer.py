@@ -10,8 +10,11 @@ def gimme_session(request, s):
     context['episode_tag'] = s.episode_tag
     context['user_wanted'] = s.wanted_list
     context['max_players'] = s.max_players
+    context['mj'] = gimme_profile(s.mj.id)
     if s.campaign:
         context['campaign'] = s.campaign.to_json
+    if s.game:
+        context['game'] = s.game.to_json
     return context
 
 
@@ -19,35 +22,34 @@ def gimme_day(request, d):
     is_current_day = (d.strftime(FMT_DATE) == datetime.today().strftime(FMT_DATE))
     day_body = {}
     day_body['sessions'] = gimme_sessions_of_the_day(request, d)
-    #f'{DOWS[d.weekday()]}<BR/><small>{d.strftime(FMT_DATE_PRETTY)}</small>'
-
+    # f'{DOWS[d.weekday()]}<BR/><small>{d.strftime(FMT_DATE_PRETTY)}</small>'
 
     day_off = False
     off_message = ''
-    if d.weekday() > 4: # Weekend
+    if d.weekday() > 4:  # Weekend
         day_off = True
-    if (oudin(d) + timedelta(days=1)).strftime(FMT_DATE) == d.strftime(FMT_DATE):     # Lundi de Pâques
+    if (oudin(d) + timedelta(days=1)).strftime(FMT_DATE) == d.strftime(FMT_DATE):  # Lundi de Pâques
         day_off = True
         off_message = 'Pâques'
-    if (oudin(d) + timedelta(days=50)).strftime(FMT_DATE) == d.strftime(FMT_DATE):    # Pentecôte
+    if (oudin(d) + timedelta(days=50)).strftime(FMT_DATE) == d.strftime(FMT_DATE):  # Pentecôte
         day_off = True
         off_message = 'Pentecôte'
-    if (oudin(d) + timedelta(days=39)).strftime(FMT_DATE) == d.strftime(FMT_DATE):    # Ascension
+    if (oudin(d) + timedelta(days=39)).strftime(FMT_DATE) == d.strftime(FMT_DATE):  # Ascension
         day_off = True
         off_message = 'Ascension'
-    if d.strftime("%d/%m") == '15/08':                                                # Assomption
+    if d.strftime("%d/%m") == '15/08':  # Assomption
         day_off = True
         off_message = 'Assomption'
-    if d.strftime("%d/%m") == '01/11':                                                # Toussaint
+    if d.strftime("%d/%m") == '01/11':  # Toussaint
         day_off = True
         off_message = 'Toussaint'
-    if d.strftime("%d/%m") == '14/07':                                                # Bastille
+    if d.strftime("%d/%m") == '14/07':  # Bastille
         day_off = True
         off_message = 'Bastille'
-    if d.strftime("%d/%m") == '25/12':                                                # Noël
+    if d.strftime("%d/%m") == '25/12':  # Noël
         day_off = True
         off_message = 'Noël'
-    if d.strftime("%d/%m") == '01/01':                                                # Premier de l'an
+    if d.strftime("%d/%m") == '01/01':  # Premier de l'an
         day_off = True
         off_message = "Jour de l'an"
     day_info = f"<div class='dia'>{DOWS[d.weekday()][:3]}</div><div class='dib'>{off_message}</div><div class='dic'>{d.strftime('%d')}</div>"
@@ -71,10 +73,10 @@ def gimme_sessions_of_the_day(request, d):
     for s in all:
         user_wanted = s.wanted.split(';')
         sess = {
-            's': s.to_json,
+            'session': s.to_json,
             'user_wanted': str(request.user.profile.id) in user_wanted,
-            'u': gimme_profile(s.mj.id),
-            'g': s.game.to_json
+            'mj': gimme_profile(s.mj.id),
+            'game': s.game.to_json
         }
         sessions.append(sess)
     return sessions
@@ -172,7 +174,8 @@ def gimme_profile_campaigns(x):
     camps = []
     for x in campaigns:
         ctx = x.to_json
-        ctx['game_object'] = x.game.to_json
+        ctx['game'] = x.game.to_json
+        ctx['mj'] = gimme_profile(x.mj.id)
         camps.append(ctx)
     return camps
 
@@ -185,7 +188,23 @@ def gimme_profile_propositions(x):
     props = []
     for s in sessions:
         pro = s.to_json
-        pro['game_object'] = s.game.to_json
+        pro['game'] = s.game.to_json
+        pro['mj'] = gimme_profile(s.mj.id)
+        props.append(pro)
+    return props
+
+
+def gimme_all_propositions(x):
+    from scheduler.models.session import Session
+    from scheduler.models.profile import Profile
+    p = Profile.objects.get(pk=x)
+    sessions = Session.objects.filter(date_start=None)
+    props = []
+    for s in sessions:
+        pro = s.to_json
+        pro['game'] = s.game.to_json
+        pro['mj'] = gimme_profile(s.mj.id)
+
         props.append(pro)
     return props
 
@@ -193,7 +212,7 @@ def gimme_profile_propositions(x):
 # Root functions called from views
 def build_month(request, date_str):
     d = date.fromisoformat(date_str)
-    num_week =  3 + request.user.profile.weeks
+    num_week = 3 + request.user.profile.weeks
     current_month = d.month
     monthback = d - timedelta(days=28)
     weekback = d - timedelta(days=7)
@@ -355,18 +374,22 @@ def toggle_subscribe(request, action, param):
     profile = request.user.profile
     sessions = Session.objects.filter(id=int(param))
     if len(sessions) == 1:
-        inscriptions = Inscription.objects.filter(profile=profile, session=sessions.first())
-        if len(inscriptions) == 1:
-            # print("Unsubscribing")
-            f = inscriptions.first()
-            f.delete()
+        s = sessions.first()
+        inscriptions = Inscription.objects.filter(session=sessions.first())
+        my_inscription = Inscription.objects.filter(profile=profile, session=sessions.first())
+        max_players = s.optional_spots + len(s.wanted_list)
+        if len(inscriptions) < max_players:
+            if len(my_inscription) == 1:
+                f = inscriptions.first()
+                f.delete()
+            else:
+                n = Inscription()
+                n.profile = profile
+                n.session = sessions.first()
+                n.pending = True
+                n.save()
         else:
-            # print("Subscribing")
-            n = Inscription()
-            n.profile = profile
-            n.session = sessions.first()
-            n.pending = True
-            n.save()
+            print("No more room for inscriptions..")
     context = prepare_session(request, int(param))
     template = get_template("scheduler/session_detail.html")
     html = template.render(context, request)

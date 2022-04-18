@@ -17,12 +17,14 @@
                 Places Libres: {{ c.s.optional_spots }}
                 <br/>
             {% endif %}
+            {% if inscriptions %}
             Inscrits:
             <br/>
             {% for x in c.inscriptions %}
                 {% include "scheduler/player_shortcut.html" with u=x small=1 %}
             {% endfor %}
             <br/>
+            {% endif %}
 
 
         </div>

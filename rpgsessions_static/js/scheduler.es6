@@ -1,6 +1,5 @@
 class Scheduler {
     constructor() {
-        // this.d3 = undefined;
         this.init();
     }
 
@@ -63,6 +62,7 @@ class Scheduler {
                     url = 'ajax/display/' + action + '/' + p + '/';
                 }
             }
+            console.log(url);
             $.ajax({
                 url: url,
                 success: function (answer) {
@@ -102,7 +102,8 @@ class Scheduler {
             $.ajax({
                 url: url,
                 success: function (answer) {
-                    if (action == 'close' || action == 'confirm') {
+                    let action_words = action.split("_")
+                    if (action == 'close' || action[0] == 'confirm') {
                         $('#overlay').addClass('hidden');
                         $('#dialog').html("Nope");
                         if (option != undefined) {

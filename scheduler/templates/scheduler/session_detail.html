@@ -1,6 +1,6 @@
 {% load static %}
 {% load global_filters %}
-<H1>{{ session.title|safe }}</h1>
+<center><H1>{{ session.title|safe }}</h1></center>
 {% if session.campaign %}
     <center>
         Un épisode de la campagne<br/><strong style="font-size:1.5em;">{{ session.campaign.title|safe }}</strong>
@@ -15,12 +15,18 @@
 {% endif %}
 <table>
     <tr>
+        <td colspan="2" class="text">{{ session.description|safe }}
+        </td>
+    </tr>
+    <tr>
         <th>Meneur de jeu</th>
-        <td>{{ mj.nickname }}</td>
+        <td>{% include "scheduler/session_shortcut.html" with s=session u=session.mj g=session.game %}</td>
     </tr>
     <tr>
         <th>Jeu</th>
-        <td>{{ game.name }} ({{ game.version }})</td>
+        <td>
+            {% include "scheduler/game_shortcut.html" with g=session.game large=1 %}<br/>
+            {{ session.game.name }} ({{ session.game.version }})</td>
     </tr>
     <tr>
         <th>Démarrage</th>
@@ -33,10 +39,6 @@
             <td>{{ session.episode_tag }}</td>
         </tr>
     {% endif %}
-    <tr>
-        <th>Lieu</th>
-        <td>{{ session.place|safe }}</td>
-    </tr>
     <tr>
         <th>Partie unique</th>
         <td>{{ session.one_shot_adventure|as_bool|safe }}</td>
@@ -69,6 +71,7 @@
         </tr>
     {% endif %}
 
+    {% if inscriptions %}
     <tr>
         <th>Inscrits (max: {{ session.max_players }})</th>
         <td style="background:#ffcc44;">
@@ -77,6 +80,7 @@
             {% endfor %}
         </td>
     </tr>
+    {% endif %}
     {% if campaign %}
         <tr>
             <th>Campagne</th>
@@ -84,12 +88,13 @@
             </td>
         </tr>
     {% endif %}
+    {% if session.place %}
+        <tr>
+            <th>Lieu</th>
+            <td>{{ session.place|safe }}</td>
+        </tr>
+    {% endif %}
 
-    <tr>
-        <th>Présentation</th>
-        <td class="text">{{ session.description|safe }}
-        </td>
-    </tr>
 </table>
 
 <hr/>

@@ -3,60 +3,58 @@
         xmlns="http://www.w3.org/2000/svg"
         version="1.2"
         baseProfile="tiny"
+        {% if large %}
+        width="4cm"
+        height="2.0cm"
+        {% else %}
         width="2cm"
         height="1.0cm"
-        viewBox="-8 -9 32 16"
-        preserveAspectRatio="none">
+        {% endif %}
+        viewBox="-20 -10 40 20"
+        preserveAspectRatio="none"
+>
+    <g>
+        <g opacity="1">
+            <rect x="-15" y="1" width="15" height="3" style="fill:{{g.alpha}};stroke:#none;"/>
 
-    <g transform="scale(1)">
-
-        <rect
-                x="-8"
-                y="-4"
-                width="32"
-                height="7"
-                style="fill:#cc9966;stroke:#000000;stroke-width:0.025mm"
-        />
-
-        <rect
-                x="1"
-                y="-3.5"
-                width="3"
-                height="2"
-                style="fill:{{g.alpha}};stroke:#none;"
-        />
-
-        <rect
-                x="1"
-                y="-1.5"
-                width="3"
-                height="2"
-                style="fill:{{g.beta}};stroke:#none;"
-        />
-
-        <rect
-                x="1"
-                y="0.5"
-                width="3"
-                height="2"
-                style="fill:{{g.gamma}};stroke:#none;"
-        />
-
-        <g class="book">
-            <path
-                  d="M -6,-4 l 2,-2 l 4,0 l -4,2 -2,0 z"
-                  style="fill:#A09070;stroke:#000000;stroke-width:0.1mm;"/>
-            <path
-                  d="M -6,-4 l 0,8 l 2,0 l 0,-8 Z"
-                  style="fill:#604050;stroke:#000000;stroke-width:0.1mm;"/>
-            <path
-                  d="M -4,-4 l 4,-2 l 0,8 l -4,2 l 0,-8 Z"
-                  style="fill:#604050;stroke:#000000;stroke-width:0.1mm;"/>
-
+            <rect x="0" y="1" width="15" height="3" style="fill:{{g.gamma}};stroke:#none;"/>
+            <circle cx="0" cy="0" r="7" style="fill:{{g.beta}};stroke:#000000;stroke-width:0.05mm;"/>
+        </g>
+        <g opacity="1">
+            <path style="fill:#aa7744;stroke:#000000;stroke-width:0.05mm"
+                  d="M 19 -5 l 0 5 -1 -1 0 -5 1 1"/>
+            <path style="fill:#aa7744;stroke:#000000;stroke-width:0.05mm"
+                  d="M -19 -5 l 0 5 1 -1 0 -5 -1 1"/>
+            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+                  d="M -17 0 l 0 -5 2 1 0 5 -2 -1"/>
+            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+                  d="M -17 0 l 0 -5 -1 1 0 5 1 -1"/>
+            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+                  d="M -19 0 l 0 -5 1 1 0 5 -1 -1"/>
+            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+                  d="M -15 1 l 0 -5 30 0 0 5 -30 0"/>
+            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+                  d="M 15 1 l 0 -5 2 -1 0 5 -2 1"/>
+            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+                  d="M 17 0 l 0 -5 1 1 0 5 -1 -1"/>
+            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+                  d="M 18 1 l 0 -5 1 -1 0 5 -1 1"/>
         </g>
 
-        <text class='words' x="14" y="1" font-size="4" font-family="Roboto" text-anchor="middle">
-            {{g.acronym}}
-        </text>
+        <g class="book" opacity="0">
+            <path style="fill:#A09070;stroke:#000000;stroke-width:0.1mm;"
+                  d="M -6,-4 l 2,-2 l 4,0 l -4,2 -2,0 z"
+            />
+            <path style="fill:#604050;stroke:#000000;stroke-width:0.1mm;"
+                  d="M -6,-4 l 0,8 l 2,0 l 0,-8 Z"
+            />
+            <path style="fill:#604050;stroke:#000000;stroke-width:0.1mm;"
+                  d="M -4,-4 l 4,-2 l 0,8 l -4,2 l 0,-8"
+            />
+        </g>
+
+
+
+        <text class='words' x="0" y="0" font-size="4" font-family="Roboto" text-anchor="middle">{{g.acronym}}</text>
     </g>
 </svg>

@@ -16,7 +16,7 @@
                 <div class="item_block {% if x.is_follower %}on{% else %}off{% endif %} toggle" action="toggle_follower"
                      param="{{ x.profile.id }}">
                     {% include "scheduler/player_shortcut.html" with u=x.profile %}
-                    <br/>{{ x.profile.nickname }} ({{ x.profile.id }})
+
                 </div>
             {% endfor %}
         </div>

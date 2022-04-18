@@ -1,0 +1,9 @@
+{% load static %}
+{% load global_filters %}
+<div class="all_propositions">
+{% for p in propositions %}
+    <div class="proposition_block">
+    {% include "scheduler/session_detail.html" with session=p %}
+    </div>
+{% endfor %}
+</div>
