@@ -9,7 +9,7 @@
     <div class="day_body">
         {% for x in c.day_body.sessions %}
             <div class="session_of_the_day{% if x.user_wanted %} wanted_session{% endif %}" title='¤ {{ x.s.title }} ¤  &#13;&#10;Une partie de {{ x.g.name }} &#13;&#10;par {{ x.u.nickname }}{% if x.user_wanted %} &#13;&#10;Vous êtes sollicités sur cette séance...{% endif %}'>
-                {% include "scheduler/session_shortcut.html" with s=x.s u=x.mj g=x.g %}
+                {% include "scheduler/session_shortcut.html" with s=x.s u=x.mj g=x.game %}
             </div>
         {% endfor %}
 

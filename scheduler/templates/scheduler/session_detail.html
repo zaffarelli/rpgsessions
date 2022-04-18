@@ -81,10 +81,10 @@
         </td>
     </tr>
     {% endif %}
-    {% if campaign %}
+    {% if session.campaign %}
         <tr>
             <th>Campagne</th>
-            <td class="text">{{ campaign.description|safe }}
+            <td class="text">{{ session.campaign.description|safe }}
             </td>
         </tr>
     {% endif %}
