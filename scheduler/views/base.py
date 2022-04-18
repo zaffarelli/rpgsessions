@@ -144,7 +144,7 @@ def display_user(request, id=None):
         return render(request, 'scheduler/registration/login_error.html')
     context = prepare_user(request, id)
     context['campaigns'] = gimme_profile_campaigns(id)
-    context['propositions'] = gimme_profile_propositions(id)
+    context['propositions'] = gimme_profile_propositions(request,id)
     context['realm'] = request.user.profile.realm.to_json
     html = 'WTF?'
     menu_html = 'WTF?'
@@ -412,7 +412,7 @@ def propositions(request):
         return render(request, 'scheduler/registration/login_error.html')
     context = {}
     context['today'] = datetime.now().strftime(FMT_DATE)
-    context['propositions'] = gimme_all_propositions(request.user.profile.id)
+    context['propositions'] = gimme_all_propositions(request,request.user.profile.id)
     template = get_template('scheduler/menu_propositions.html')
     menu_html = template.render(context, request)
     template = get_template('scheduler/all_propositions.html')

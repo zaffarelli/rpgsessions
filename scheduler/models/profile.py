@@ -28,13 +28,21 @@ FACE_STYLES = (
 HAIR_STYLES = (
     ('standard', 'Sans'),
     ('type1', 'Cheveux 1'),
-    ('type2', 'Cheveux 2')
+    ('type2', 'Cheveux 2'),
+    ('type3', 'Cheveux 3'),
+    ('type4', 'Cheveux 4'),
+    ('type5', 'Cheveux 5'),
+    ('type6', 'Cheveux 6')
 )
 
 MOUTH_STYLES = (
     ('standard', 'Sans'),
     ('type1', 'Type 1'),
-    ('type2', 'Type 2')
+    ('type2', 'Type 2'),
+    ('type3', 'Type 3'),
+    ('type4', 'Type 4'),
+    ('type5', 'Type 5'),
+    ('type6', 'Type 6')
 )
 
 
@@ -163,12 +171,20 @@ class Profile(models.Model):
                 'standard': 0.0,
                 'type1': 0.0,
                 'type2': 0.0,
+                'type3': 0.0,
+                'type4': 0.0,
+                'type5': 0.0,
+                'type6': 0.0
+
             },
             'mouth_style': {
                 'standard': 0.0,
                 'type1': 0.0,
                 'type2': 0.0,
                 'type3': 0.0,
+                'type4': 0.0,
+                'type5': 0.0,
+                'type6': 0.0
             }
         }
         artefact['face_style'][self.face_style] = 1.0

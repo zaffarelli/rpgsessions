@@ -177,34 +177,25 @@ def gimme_profile_campaigns(x):
     return camps
 
 
-def gimme_profile_propositions(x):
+def gimme_profile_propositions(request,x):
     from scheduler.models.session import Session
     from scheduler.models.profile import Profile
     p = Profile.objects.get(pk=x)
     sessions = Session.objects.filter(mj=p, date_start=None)
     props = []
     for s in sessions:
-        pro = s.to_json
-        pro['game'] = s.game.to_json
-        pro['mj'] = gimme_profile(s.mj.id)
-        props.append(pro)
+        props.append(gimme_session(request,s))
     return props
 
 
-def gimme_all_propositions(x):
+def gimme_all_propositions(request,x):
     from scheduler.models.session import Session
     from scheduler.models.profile import Profile
     p = Profile.objects.get(pk=x)
     sessions = Session.objects.filter(date_start=None)
     props = []
     for s in sessions:
-        pro = s.to_json
-        pro['game'] = s.game.to_json
-        pro['mj'] = gimme_profile(s.mj.id)
-        pro['owner'] = (s.mj == p)
-        pro['inscriptions'] = gimme_inscriptions(s)
-
-        props.append(pro)
+        props.append(gimme_session(s))
     return props
 
 

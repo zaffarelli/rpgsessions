@@ -6,6 +6,14 @@
     <td>{%  include "scheduler/game_shortcut.html" with g=c.game large=1 %}</td>
     <td class="txt">{{ c.description | safe }}</td>
     <td>{{ c.optional_spots }}</td>
+    <td>{% for x in c.user_wanted %}
+        {%  include "scheduler/player_shortcut.html" with u=x small=1 %}
+        {% endfor %}
+    </td>
+    <td>{% for x in c.inscriptions %}
+        {%  include "scheduler/player_shortcut.html" with u=x small=1 %}
+        {% endfor %}
+    </td>
     <td>
         <div class="button compact modal_switch" action="edit_session" param="{{c.id}}"><i class="fas fa-dice"></i>&nbsp;Modifier</div>
         <div class="button compact modal_switch" action="delete_session" param="{{c.id}}"><i class="fas fa-minus-circle"></i>&nbsp;Supprimer</div>
