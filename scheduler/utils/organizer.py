@@ -56,6 +56,12 @@ def gimme_day(request, d):
     if d.strftime("%d/%m") == '01/01':  # Premier de l'an
         day_off = True
         off_message = "Jour de l'an"
+    if d.strftime("%d/%m") == '11/11':  # Armistice
+        day_off = True
+        off_message = "Arm. 1918"
+    if d.strftime("%d/%m") == '08/05':  # Armistice
+        day_off = True
+        off_message = "Arm. 1945"
     day_info = f"<div class='dia'>{DOWS[d.weekday()][:3]}</div><div class='dib'>{off_message}</div><div class='dic'>{d.strftime('%d')}</div>"
 
     context = {'day_info': day_info,
@@ -177,6 +183,20 @@ def gimme_profile_campaigns(x):
     return camps
 
 
+def gimme_profile_games(x):
+    from scheduler.models.game import Game
+    from scheduler.models.profile import Profile
+    p = Profile.objects.get(pk=x)
+    games = Game.objects.filter(mj=p).order_by('name')
+    gs = []
+    for g in games:
+        gd = g.to_json
+        gd['mj'] = gimme_profile(g.mj.id)
+        gs.append(gd)
+    return gs
+
+
+
 def gimme_profile_propositions(request,x):
     from scheduler.models.session import Session
     from scheduler.models.profile import Profile
@@ -195,7 +215,7 @@ def gimme_all_propositions(request,x):
     sessions = Session.objects.filter(date_start=None)
     props = []
     for s in sessions:
-        props.append(gimme_session(s))
+        props.append(gimme_session(request,s))
     return props
 
 

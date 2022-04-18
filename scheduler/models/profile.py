@@ -109,7 +109,8 @@ class Profile(models.Model):
     @property
     def games_run(self):
         from scheduler.models.session import Session
-        all = Session.objects.filter(mj=self)
+        from datetime import date
+        all = Session.objects.filter(mj=self, date_start__lt=date.today())
         return len(all)
 
     @property

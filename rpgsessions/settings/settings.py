@@ -73,3 +73,4 @@ LOGGING = {
 }
 
 
+VERSION = "(DEV)"+VERSION

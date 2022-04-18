@@ -252,6 +252,23 @@ body {
 
             }
 
+            & .games_list {
+              order: 4;
+              background: lightgrey;
+
+              & table {
+                color: black;
+                width: 100%;
+
+              }
+
+              flex-grow: 1;
+              flex-shrink: 1;
+              border-radius: 5px;
+
+            }
+
+
             & .propositions_list {
               order: 2;
               background: lightgrey;

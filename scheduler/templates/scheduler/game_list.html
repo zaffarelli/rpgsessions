@@ -1,0 +1,20 @@
+{% load static %}
+{% load global_filters %}
+
+<div class="games_list">
+    <table>
+        <tr>
+            <th>Jeu</th>
+            <th>Titre</th>
+            <th>Description</th>
+
+
+            <th>Actions</th>
+        </tr>
+        {% for x in games %}
+            <tr class="{% cycle "odd" "even"  %}">
+            {% include "scheduler/game_row.html" with c=x %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>

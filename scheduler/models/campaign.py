@@ -14,6 +14,8 @@ class Campaign(models.Model):
     description = models.TextField(max_length=2048, default='', blank=True)
     wanted = models.CharField(max_length=64, default='', blank=True)
     alpha = ColorField(default='#666666')
+    toc = models.TextField(max_length=2048, default='', blank=True)
+    full_run_duration = models.PositiveIntegerField(default=0, blank=True)
 
 
     def __str__(self):
