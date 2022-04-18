@@ -37,6 +37,7 @@ MOUTH_STYLES = (
     ('type2', 'Type 2')
 )
 
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
     nickname = models.CharField(max_length=256)
@@ -62,6 +63,7 @@ class Profile(models.Model):
     eyes = ColorField(default='#666666')
     mail_wednesday = models.BooleanField(default=False)
     mail_sunday = models.BooleanField(default=False)
+    processed = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.nickname}*'
@@ -173,6 +175,18 @@ class Profile(models.Model):
         artefact['hair_style'][self.hair_style] = 1.0
         artefact['mouth_style'][self.mouth_style] = 1.0
         return artefact
+
+    def fetch_week_sessions(self):
+        from datetime import date, timedelta
+        from scheduler.models.session import Session
+        list = []
+        period_beginning = date.today()
+        period_ending = date.today() + timedelta(days=7)
+        sessions = Session.objects.filter(date_start__gte=period_beginning, date_start__lt=period_ending).order_by(
+            'date_start')
+        for s in sessions:
+            list.append(f"{s.date_start} - '{s.title}' par {s.mj}")
+        return list
 
 
 class ProfileAdmin(admin.ModelAdmin):
