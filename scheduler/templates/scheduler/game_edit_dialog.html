@@ -1,0 +1,23 @@
+{% load global_filters %}
+<div class="diag_header">
+    <h1>Modification de Jeu</h1>
+</div>
+
+<div class="diag_body">
+    <p>Note: Si vous modifiez le responsable, vous ne pourrez plus éditer ce jeu...
+    </p>
+    <div class="formblock">
+        {% include "scheduler/game_update_form.html" %}
+    </div>
+</div>
+<div class="diag_footer">
+    <div class="bar">
+        <div class='lefters'>
+            <div class="button compact action shuntable" action="model_edit" param="game" option="{{ game.id }}"><i class="fas fa-check"></i>&nbsp;Valider</div>
+        </div>
+        <div class='righters'>
+            <div class="button compact modal_switch" action="close" param="x" option="reday"><i class="fas fa-times"></i>&nbsp;Fermer</div>
+        </div>
+    </div>
+</div>
+

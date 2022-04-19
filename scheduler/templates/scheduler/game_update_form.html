@@ -1,0 +1,65 @@
+<form method="POST" id='model_form' name='model_form'>
+    {% csrf_token %}
+    <table class='update'>
+        {{ form.non_field_errors }}
+        {{ form.management_form }}
+        <tr>
+            {{ form.name.errors }}
+            <th><label for="name">Name</label></th>
+            <td>{{ form.name }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.version.errors }}
+            <th><label for="version">Version</label></th>
+            <td>{{ form.version }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.acronym.errors }}
+            <th><label for="acronym">Acronyme</label></th>
+            <td>{{ form.acronym }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.system.errors }}
+            <th><label for="system">Système</label></th>
+            <td>{{ form.system }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.description.errors }}
+            <th><label for="description">Description</label></th>
+            <td>{{ form.description }}</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            {{ form.mj.errors }}
+            <th><label for="mj">Responsable</label></th>
+            <td>{{ form.mj }}</td>
+            <td></td>
+
+
+        </tr>
+        <tr>
+            {{ form.alpha.errors }}
+            <th><label for="alpha">Alpha</label></th>
+            <td><input type="color" name="alpha" value="{{ form.alpha.value }}"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.beta.errors }}
+            <th><label for="beta">Beta</label></th>
+            <td><input type="color" name="beta" value="{{ form.beta.value }}"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.gamma.errors }}
+            <th><label for="gamma">Gamma</label></th>
+            <td><input type="color" name="gamma" value="{{ form.gamma.value }}"/></td>
+            <td></td>
+        </tr>
+
+    </table>
+</form>

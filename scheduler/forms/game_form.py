@@ -1,8 +1,9 @@
 from django import forms
-from scheduler.models.campaign import Campaign
+from scheduler.models.game import Game
 from colorfield.fields import ColorField
 
-class CampaignForm(forms.ModelForm):
+
+class GameForm(forms.ModelForm):
     class Meta:
-        model = Campaign
+        model = Game
         fields = "__all__"

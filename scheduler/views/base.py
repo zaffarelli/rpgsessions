@@ -4,8 +4,7 @@ from django.http import HttpResponse, Http404, JsonResponse, HttpResponseRedirec
 from django.template.loader import get_template
 from scheduler.utils.mechanics import FONTSET, FMT_TIME, FMT_DATE, FMT_DATETIME, DOWS, FMT_DATE_PRETTY
 from scheduler.utils.organizer import build_month, build_zoomed_day, gimme_profile, system_flush, gimme_set_followers, \
-    toggle_available, toggle_subscribe, gimme_session, gimme_profile_campaigns, gimme_profile_propositions, \
-    gimme_campaign, gimme_all_propositions, gimme_profile_games
+    toggle_available, toggle_subscribe, gimme_session, gimme_profile_campaigns, gimme_profile_propositions, gimme_campaign, gimme_all_propositions, gimme_profile_games, gimme_game
 from datetime import datetime, date
 from scheduler.utils.tools import is_ajax
 
@@ -115,6 +114,8 @@ def display_session(request, id=None):
 def display_campaign(request, id=None):
     return JsonResponse({})
 
+def display_game(request, id=None):
+    return JsonResponse({})
 
 def prepare_user(request, id=None):
     from scheduler.models.profile import Profile
@@ -186,6 +187,7 @@ def gimme_new_campaign(request, param):
     context = {'session': s}
     return context
 
+
 def gimme_new_session(request, param):
     from scheduler.models.session import Session
     s = Session()
@@ -207,6 +209,19 @@ def gimme_edit_session(request, session):
         else:
             context['form'] = form
             context['session'] = gimme_session(request, session)
+    return context
+
+
+def gimme_edit_game(request, game):
+    from scheduler.forms.game_form import GameForm
+    context = {}
+    form = GameForm(request.POST or None, instance=game)
+    if is_ajax(request):
+        if form.is_valid():
+            form.save()
+        else:
+            context['form'] = form
+            context['game'] = gimme_game(game)
     return context
 
 
@@ -260,6 +275,11 @@ def prepare_overlay(request, slug, param=None, option=None):
         c = Campaign.objects.get(pk=int(param))
         context = gimme_edit_campaign(request, c)
         template_str = "scheduler/campaign_edit_dialog.html"
+    elif slug == "edit_game":
+        from scheduler.models.game import Game
+        g = Game.objects.get(pk=int(param))
+        context = gimme_edit_game(request, g)
+        template_str = "scheduler/game_edit_dialog.html"
     elif slug == "delete_session":
         from scheduler.models.session import Session
         s = Session.objects.get(pk=int(param))
