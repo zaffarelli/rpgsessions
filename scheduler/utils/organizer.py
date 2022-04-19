@@ -14,11 +14,18 @@ def gimme_session(request, s):
     if s.campaign:
         context['campaign'] = s.campaign.to_json
     if s.game:
-        context['game'] = s.game.to_json
+        context['game'] = gimme_game(s.game)
     context['owner'] = (s.mj == request.user.profile)
     context['inscriptions'] = gimme_inscriptions(s)
     context['user_requested']= str(request.user.profile.id) in s.wanted.split(';')
     context['user_subscribed'] = False
+    return context
+
+
+def gimme_game(g):
+    context = g.to_json
+    context['artefact'] = g.svg_artefact
+    context['mj'] = gimme_profile(g.mj.id)
     return context
 
 
@@ -177,7 +184,7 @@ def gimme_profile_campaigns(x):
     camps = []
     for x in campaigns:
         ctx = x.to_json
-        ctx['game'] = x.game.to_json
+        ctx['game'] = gimme_game(x.game)
         ctx['mj'] = gimme_profile(x.mj.id)
         camps.append(ctx)
     return camps
@@ -190,8 +197,7 @@ def gimme_profile_games(x):
     games = Game.objects.filter(mj=p).order_by('name')
     gs = []
     for g in games:
-        gd = g.to_json
-        gd['mj'] = gimme_profile(g.mj.id)
+        gd = gimme_game(g)
         gs.append(gd)
     return gs
 
@@ -304,7 +310,7 @@ def build_zoomed_day(request, d):
         sess = {'s': gimme_session(request, s),
                 'u': gimme_profile(s.mj.id),
                 'inscriptions': gimme_inscriptions(s),
-                'g': s.game.to_json,
+                'g': gimme_game(s.game),
                 'timescale': {
                     'pre_size': pre_size,
                     'size': size,

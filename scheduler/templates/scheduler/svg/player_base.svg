@@ -157,7 +157,6 @@
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
 
-
     <ellipse cx="-2.75" cy="-14.05" rx="1.80" ry="1.5" style="fill:#9C8267;stroke:#none;"/>
     <ellipse cx="2.75" cy="-14.05" rx="1.80" ry="1.5" style="fill:#9C8267;stroke:#none;"/>
     <ellipse cx="-2.5" cy="-14" rx="1" ry="0.5" style="fill:#202020;stroke:#none;"/>
@@ -281,30 +280,11 @@
           style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="head" opacity="{{u.face_artefact.face_style.standard}}"
-          d="
-                  M 1  -8
-                  l -2  0  q -2  0 -4 -6
-                  l  0 -2  q  0 -4  4 -6
-                  l  2  0  q  4  2  4  6
-                  l  0  2  q  -2 6 -4  6"
+          d="M 1 -8 l -2  0  q -2  0 -4 -6 l  0 -2  q  0 -4  4 -6 l  2  0  q  4  2  4  6 l  0  2  q  -2 6 -4 6"
           style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="hair1" opacity="{{u.face_artefact.hair_style.type1}}"
-          d="M 0 -22
-                    l -2 -1
-                    l -3 5
-                    l -1 2
-                    l  5 -6
-                    l 3 2
-                    l 1 4
-                    l 0 -3
-                    l -1 -3
-                    l 3 4
-                    l -1 -3
-                    l -2 -1
-                    l -2 0
-
-              "
+          d="M 0 -22 l -2 -1 -3 5 -1 2 5 -6 3 2 1 4 0 -3 -1 -3 3 4 -1 -3 -2 -1 -2 0"
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="hair2" opacity="{{u.face_artefact.hair_style.type2}}"
@@ -313,24 +293,18 @@
 
     <path id="hair3" opacity="{{u.face_artefact.hair_style.type3}}"
           d="M 0 -20 l -1 0 -1 -1 -1 1 -1 2 -1 3 -1 -5 0 -1 5 -1 1 0
-          1 0 5 1 0 1 -1 5 -1 -3 -1 -2 -1 -1 -1 1 -1 0
-            "
+          1 0 5 1 0 1 -1 5 -1 -3 -1 -2 -1 -1 -1 1 -1 0"
+          style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+
+    <path id="hair3" opacity="{{u.face_artefact.hair_style.type4}}"
+          d="M -2 -21 l -3 3 q 0 -4 3 -3 l 7 3 1 0 q -5 -8 -8.5 -3"
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="goatie1" opacity="{{u.face_artefact.mouth_style.type1}}"
-          d="M 0 -11
-                    l 2 0
-                    l 0.5 2
-                    l -0.5 -1
-                    l -4 0
-                    l -0.5 1
-                    l 0.5 -2
-                    l 2 0
-              "
+          d="M 0 -11 l 2 0 l 0.5 2 l -0.5 -1 l -4 0 l -0.5 1 l 0.5 -2 l 2 0 "
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
     <path id="goatie2" opacity="{{u.face_artefact.mouth_style.type1}}"
-          d="M 0 -9.35
-                     l 1 0
+          d="M 0 -9.35 l 1 0
                      l 0 0.5
                      l 1 0
                      l 0 2
@@ -399,16 +373,15 @@
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="fav_left" opacity="{{u.face_artefact.mouth_style.type4}}"
-          d="M -4 -13 l 0 2 l -1 1 l -1 -2 l 1 -1.5 l 1 0.5"
+          d="M -4 -13 l 0 2 l -1 1 l -1 -2 l 1 -2 l 1 1"
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="fav_right" opacity="{{u.face_artefact.mouth_style.type4}}"
-          d="M 4 -13 l 0 2 l 1 1 l 1 -2 l -1 -1.5 l -1 0.5"
+          d="M 4 -13 l 0 2 l 1 1 l 1 -2 l -1 -2 l -1 1"
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
-    <path id="fav_lips" opacity="{{u.face_artefact.mouth_style.type4}}"  d="M 0 -10.35 l -1.5 0 3 0"
+    <path id="fav_lips" opacity="{{u.face_artefact.mouth_style.type4}}" d="M 0 -10.35 l -1.5 0 3 0"
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
-
 
 
     <g id="facial_features">
@@ -431,9 +404,9 @@
         {% endif %}
 <circle cx="5" cy="-0.75" r="0.9" style="fill:{{u.beta}};stroke:#none;"/>
 <circle cx="7" cy="-0.75" r="0.9" style="fill:{{u.gamma}};stroke:#none;"/>
-    {% if g %}
-    <path id="gm_screen" opacity="1.0"
-          d="M 0 -1
+        {% if g %}
+<path id="gm_screen" opacity="1.0"
+      d="M 0 -1
            l -6 1
            l 0 5
            m 0 -5
@@ -456,8 +429,8 @@
             l 6 1
             l 5 -1
               "
-          style="fill:#996655;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
-    {%endif%}
+      style="fill:#996655;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+        {%endif%}
 
 <text class='words' x="0" y="-24" font-size="3" font-family="Roboto" text-anchor="middle">
 

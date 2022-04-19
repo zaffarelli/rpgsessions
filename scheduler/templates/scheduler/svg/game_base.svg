@@ -12,49 +12,117 @@
         {% endif %}
         viewBox="-20 -10 40 20"
         preserveAspectRatio="none"
->
-    <g>
-        <g opacity="1">
-            <rect x="-15" y="1" width="15" height="3" style="fill:{{g.alpha}};stroke:#none;"/>
-
-            <rect x="0" y="1" width="15" height="3" style="fill:{{g.gamma}};stroke:#none;"/>
-            <circle cx="0" cy="0" r="7" style="fill:{{g.beta}};stroke:#000000;stroke-width:0.05mm;"/>
-        </g>
-        <g opacity="1">
-            <path style="fill:#aa7744;stroke:#000000;stroke-width:0.05mm"
-                  d="M 19 -5 l 0 5 -1 -1 0 -5 1 1"/>
-            <path style="fill:#aa7744;stroke:#000000;stroke-width:0.05mm"
-                  d="M -19 -5 l 0 5 1 -1 0 -5 -1 1"/>
-            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
-                  d="M -17 0 l 0 -5 2 1 0 5 -2 -1"/>
-            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
-                  d="M -17 0 l 0 -5 -1 1 0 5 1 -1"/>
-            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
-                  d="M -19 0 l 0 -5 1 1 0 5 -1 -1"/>
-            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
-                  d="M -15 1 l 0 -5 30 0 0 5 -30 0"/>
-            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
-                  d="M 15 1 l 0 -5 2 -1 0 5 -2 1"/>
-            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
-                  d="M 17 0 l 0 -5 1 1 0 5 -1 -1"/>
-            <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
-                  d="M 18 1 l 0 -5 1 -1 0 5 -1 1"/>
-        </g>
-
-        <g class="book" opacity="0">
-            <path style="fill:#A09070;stroke:#000000;stroke-width:0.1mm;"
-                  d="M -6,-4 l 2,-2 l 4,0 l -4,2 -2,0 z"
-            />
-            <path style="fill:#604050;stroke:#000000;stroke-width:0.1mm;"
-                  d="M -6,-4 l 0,8 l 2,0 l 0,-8 Z"
-            />
-            <path style="fill:#604050;stroke:#000000;stroke-width:0.1mm;"
-                  d="M -4,-4 l 4,-2 l 0,8 l -4,2 l 0,-8"
-            />
-        </g>
-
-
-
-        <text class='words' x="0" y="0" font-size="4" font-family="Roboto" text-anchor="middle">{{g.acronym}}</text>
+        >
+<g id="base">
+<g opacity="1" transform="translate(0,-8)">
+    <g transform="rotate(180)">
+        <path style="fill:#aa7744;stroke:#000000;stroke-width:0.05mm"
+              d="M 19 -5 l 0 5 -1 -1 0 -5 1 1"/>
+        <path style="fill:#aa7744;stroke:#000000;stroke-width:0.05mm"
+              d="M -19 -5 l 0 5 1 -1 0 -5 -1 1"/>
+        <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+              d="M -17 0 l 0 -5 2 1 0 5 -2 -1"/>
+        <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+              d="M -17 0 l 0 -5 -1 1 0 5 1 -1"/>
+        <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+              d="M -19 0 l 0 -5 1 1 0 5 -1 -1"/>
+        <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+              d="M -15 1 l 0 -5 30 0 0 5 -30 0"/>
+        <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+              d="M 15 1 l 0 -5 2 -1 0 5 -2 1"/>
+        <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+              d="M 17 0 l 0 -5 1 1 0 5 -1 -1"/>
+        <path style="fill:#cc9966;stroke:#000000;stroke-width:0.05mm"
+              d="M 18 1 l 0 -5 1 -1 0 5 -1 1"/>
     </g>
-</svg>
+</g>
+
+
+<g opacity="1">
+    <circle r="1" cx="-13" cy="-6.5" style="fill:{{g.beta}}; stroke:none;"></circle>
+    <circle r="1" cx="13" cy="-6.5" style="fill:{{g.beta}}; stroke:none;"></circle>
+</g>
+<!--<text class='words' x="1.1" y="-4.8" font-size="4" fill='#ffffff' font-family="Roboto" text-anchor="middle">{{g.acronym}}</text>-->
+<text class='words' x="1" y="-5" font-size="4" font-family="Roboto" text-anchor="middle">{{g.acronym}}</text>
+</g>
+
+        {%if large %}
+<g opacity="{{g.artefact.type1}}">
+<g class="d100" transform="translate(-4,8)">
+    <g transform="rotate(-30)">
+        <path style="fill:{{g.alpha}};stroke:#000000;stroke-width:0.1mm;"
+              d="M 0 0 l -5 -3 0 -3.5 5 -3.5 5 3.5 0 3.5 -5 3"/>
+        <path style="fill:none;stroke:#000000;stroke-width:0.05mm;"
+              d="M -5 -3.5 l 1 0 4 2 0 1.5 M 5 -3.5 l -1 0 -4 2 0 1.5 M 0 -10 l -4 6.5 M 0 -10 l 4 6.5"/>
+        <text x="0" dy="-3" y="0" style="fill:#f0f0f0;stroke:#101010;stroke-width:0.025mm;" font-size="3.5"
+              font-family="Roboto" text-anchor="middle">00
+        </text>
+    </g>
+</g>
+
+<g class="d10" transform="translate(4,8)">
+    <g transform="rotate(30)">
+        <path style="fill:{{g.gamma}};stroke:#000000;stroke-width:0.1mm;"
+              d="M 0 0 l -5 -3 0 -3.5 5 -3.5 5 3.5 0 3.5 -5 3"/>
+        <path style="fill:none;stroke:#000000;stroke-width:0.05mm;"
+              d="M -5 -3.5 l 1 0 4 2 0 1.5 M 5 -3.5 l -1 0 -4 2 0 1.5 M 0 -10 l -4 6.5 M 0 -10 l 4 6.5"/>
+        <text x="0" dy="-3" y="0" style="fill:#f0f0f0;stroke:#101010;stroke-width:0.025mm;" font-size="3.5"
+              font-family="Roboto" text-anchor="middle">1
+        </text>
+    </g>
+</g>
+</g>
+
+<g opacity="{{g.artefact.type3}}">
+<g class="da" transform="translate(-6,10)">
+    <g transform="rotate(-30)">
+        <path style="fill:{{g.alpha}};stroke:#000000;stroke-width:0.1mm;"
+              d="M 0 0 l -5 -3 0 -3.5 5 -3.5 5 3.5 0 3.5 -5 3"/>
+        <path style="fill:none;stroke:#000000;stroke-width:0.05mm;"
+              d="M -5 -3.5 l 1 0 4 2 0 1.5 M 5 -3.5 l -1 0 -4 2 0 1.5 M 0 -10 l -4 6.5 M 0 -10 l 4 6.5"/>
+        <text x="0" dy="-3" y="0" style="fill:#f0f0f0;stroke:#101010;stroke-width:0.025mm;" font-size="3.5"
+              font-family="Roboto" text-anchor="middle">0
+        </text>
+    </g>
+</g>
+
+<g class="db" transform="rotate(35)">
+    <g transform="translate(-13,12)">
+        <path style="fill:{{g.alpha}};stroke:#000000;stroke-width:0.1mm;"
+              d="M 0 0 l -5 -3 0 -3.5 5 -3.5 5 3.5 0 3.5 -5 3"/>
+        <path style="fill:none;stroke:#000000;stroke-width:0.05mm;"
+              d="M -5 -3.5 l 1 0 4 2 0 1.5 M 5 -3.5 l -1 0 -4 2 0 1.5 M 0 -10 l -4 6.5 M 0 -10 l 4 6.5"/>
+        <text x="0" dy="-3" y="0" style="fill:#f0f0f0;stroke:#101010;stroke-width:0.025mm;" font-size="3.5"
+              font-family="Roboto" text-anchor="middle">6.
+        </text>
+    </g>
+</g>
+
+<g class="dc" transform="rotate(-30)">
+    <g transform="translate(0,8)">
+        <path style="fill:{{g.alpha}};stroke:#000000;stroke-width:0.1mm;"
+              d="M 0 0 l -5 -3 0 -3.5 5 -3.5 5 3.5 0 3.5 -5 3"/>
+        <path style="fill:none;stroke:#000000;stroke-width:0.05mm;"
+              d="M -5 -3.5 l 1 0 4 2 0 1.5 M 5 -3.5 l -1 0 -4 2 0 1.5 M 0 -10 l -4 6.5 M 0 -10 l 4 6.5"/>
+        <text x="0" dy="-3" y="0" style="fill:#f0f0f0;stroke:#101010;stroke-width:0.025mm;" font-size="3.5"
+              font-family="Roboto" text-anchor="middle">9.
+        </text>
+    </g>
+</g>
+<g class="dd" transform="rotate(45)">
+    <g transform="translate(11,-2)">
+        <path style="fill:{{g.alpha}};stroke:#000000;stroke-width:0.1mm;"
+              d="M 0 0 l -5 -3 0 -3.5 5 -3.5 5 3.5 0 3.5 -5 3"/>
+        <path style="fill:none;stroke:#000000;stroke-width:0.05mm;"
+              d="M -5 -3.5 l 1 0 4 2 0 1.5 M 5 -3.5 l -1 0 -4 2 0 1.5 M 0 -10 l -4 6.5 M 0 -10 l 4 6.5"/>
+        <text x="0" dy="-3" y="0" style="fill:#f0f0f0;stroke:#101010;stroke-width:0.025mm;" font-size="3.5"
+              font-family="Roboto" text-anchor="middle">8
+        </text>
+    </g>
+</g>
+</g>
+
+
+        {%endif%}
+
+        </svg>
