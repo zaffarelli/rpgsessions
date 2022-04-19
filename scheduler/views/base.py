@@ -177,10 +177,19 @@ def handle_invitation(request, slug=None):
     return render(request, 'registration/invite.html', context)
 
 
+def gimme_new_campaign(request, param):
+    from scheduler.models.campaign import Campaign
+    s = Campaign()
+    s.title = f'Nouvelle campagne'
+    s.mj = request.user.profile
+    s.save()
+    context = {'session': s}
+    return context
+
 def gimme_new_session(request, param):
     from scheduler.models.session import Session
     s = Session()
-    s.title = f'Partie créée le {datetime.now()} par {request.user.profile.nickname}'
+    s.title = f'Nouvelle Partie'
     s.mj = request.user.profile
     s.date_start = date.fromisoformat(param.replace('_', '-'))
     s.save()
@@ -233,6 +242,9 @@ def prepare_overlay(request, slug, param=None, option=None):
     if slug == "new_session":
         context = gimme_new_session(request, param)
         template_str = "scheduler/session_create_dialog.html"
+    elif slug == "new_campaign":
+        context = gimme_new_campaign(request, param)
+        template_str = "scheduler/campaign_create_dialog.html"
     elif slug == "edit_session":
         from scheduler.models.session import Session
         s = Session.objects.get(pk=int(param))

@@ -8,7 +8,7 @@ import json
 
 class Campaign(models.Model):
     title = models.CharField(max_length=256)
-    game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    game = models.ForeignKey(Game, on_delete=models.SET_NULL, null=True)
     mj = models.ForeignKey(Profile, on_delete=models.CASCADE)
     acronym = models.CharField(max_length=6, default='')
     description = models.TextField(max_length=2048, default='', blank=True)

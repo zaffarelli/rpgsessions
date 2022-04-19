@@ -331,6 +331,8 @@ def system_flush():
     data_from_the_past = Availability.objects.filter(when__lt=datetime.today())
     for i in data_from_the_past:
         i.delete()
+    # from scheduler.models.inscription import Inscription
+
 
 
 def gimme_set_followers(id):
