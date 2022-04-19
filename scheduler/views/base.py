@@ -385,17 +385,17 @@ def register_submit(request):
                       f"Salut {nickname}...\nSi vous recevez cet email, c'est que votre enregistrement s'est bien passé.\n\n"
                       f"Votre login ................ {username}\n"
                       f"Votre mot de passe ......... {password}\n"
-                      f"Le lien à eXtraventures .... http://{host}/\n"
+                      f"Le lien à eXtraventures .... https://{host}/\n"
                       f"\n\nVotre serviteur, Fernando Casabuentes",
                       f'fernando.casabuentes@gmail.com', [f'{email}'],
                       fail_silently=False)
-            send_mail(f'[eXtraventures] {nickname} Enregistrement validé!',
-                      f"Salut {nickname}...\nSi vous recevez cet email, c'est que votre enregistrement s'est bien passé.\n\n"
-                      f"Votre login ................ {username}\n"
-                      f"Le lien à eXtraventures .... http://{host}/\n"
-                      f"\n\nPour eXtraventures,\nVotre serviteur Fernando Casabuentes",
-                      f'fernando.casabuentes@gmail.com', [f'fernando.casabuentes@gmail.com'],
-                      fail_silently=False)
+            # send_mail(f'[eXtraventures] {nickname} Enregistrement validé!',
+            #           f"Salut {nickname}...\nSi vous recevez cet email, c'est que votre enregistrement s'est bien passé.\n\n"
+            #           f"Votre login ................ {username}\n"
+            #           f"Le lien à eXtraventures .... https://{host}/\n"
+            #           f"\n\nPour eXtraventures,\nVotre serviteur Fernando Casabuentes",
+            #           f'fernando.casabuentes@gmail.com', [f'fernando.casabuentes@gmail.com'],
+            #           fail_silently=False)
             html = "<center>Ok!! Surveillez vos messages,<BR/>vous recevrez la suite par email.</center>"
         else:
             send_mail("[eXtraventures] Erreur d'enregistrement!",

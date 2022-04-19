@@ -103,7 +103,7 @@ class Scheduler {
                 url: url,
                 success: function (answer) {
                     let action_words = action.split("_")
-                    if (action == 'close' || action[0] == 'confirm') {
+                    if (action == 'close' || action_words[0] == 'confirm') {
                         $('#overlay').addClass('hidden');
                         $('#dialog').html("Nope");
                         if (option != undefined) {
