@@ -20,6 +20,8 @@ INSTALLED_APPS = [
     'fixture_magic',
     'colorfield',
     'fontawesomefree',
+    # 'django_cron',
+
 ]
 
 MIDDLEWARE = [
@@ -133,3 +135,7 @@ LOGGING = {
         },
     }
 }
+
+CRON_CLASSES = [
+    'scheduler.wednesday_cron_job'
+]

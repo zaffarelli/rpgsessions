@@ -22,6 +22,11 @@
 
         {% load global_filters %}
 
+{% if s %}
+    <ellipse cx"0" cy="0" rx="12" ry="12" style="stroke:#000; stroke-width:0.1mm;fill:{{s.alpha}};"/>
+{% endif %}
+
+
         {% if u.is_girl|boolean %}
 <g transform="translate(0,-1)" opacity="1">
 <path id="girl_long_hair2" opacity="{{u.face_artefact.hair_style.type2}}"
