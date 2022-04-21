@@ -31,6 +31,7 @@ class Session(models.Model):
     alpha = ColorField(default='#666666', blank=True)
     wanted = models.CharField(max_length=64, default='', blank=True)
     # is_ready = models.BooleanField(default=False, verbose_name='ok', blank=True)
+    is_visible = models.BooleanField(default=False, blank=True)
 
     def __str__(self):
         str = f"{self.title}"

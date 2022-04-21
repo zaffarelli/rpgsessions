@@ -168,6 +168,17 @@ class Scheduler {
             let action = $(this).attr('action');
             let param = $(this).attr('param');
             let option = $(this).attr('option');
+            let respawn_id = '';
+            // console.log(action + " " + param);
+            if (action == 'model_edit') {
+                if (param == 'game') {
+                    respawn_id = 'ugr_' + option;
+                } else if (param == 'proposition') {
+                    respawn_id = 'upr_' + option;
+                } else if (param == 'campaign') {
+                    respawn_id = 'ucr_' + option;
+                }
+            }
             let form = $('#model_form');
             let formdata = form.serialize();
 
@@ -179,7 +190,7 @@ class Scheduler {
                 }
             }
 
-            if (action=='register_submit'){
+            if (action == 'register_submit') {
                 url = '/register_submit/';
                 form = $('#register_form');
                 formdata = form.serialize();
@@ -197,29 +208,22 @@ class Scheduler {
                 data: formdata,
                 dataType: 'json',
                 success: function (answer) {
-                    // console.log(answer.responseText)
-                    // console.log("Success")
                     $('.shuntable').toggleClass('hidden')
-                    $('.formblock').html(answer)
-                    $(".invite_block").html(answer.data);
-                    me.rebootLinks();
-                    // $.ajax({
-                    //     url:"ajax/display/user/"+param+"/",
-                    //     headers: {
-                    //         'Cache-Control': 'no-cache, no-store, must-revalidate',
-                    //         'Pragma': 'no-cache',
-                    //         'Expires': '0'
-                    //     },
-                    //     success:function(answer){
-                    //         $(".invite_block").html(answer.data);
-                    //         me.rebootLinks();
-                    //     }
-                    // });
+                    $('.formblock').html(answer.form)
+                    if (respawn_id) {
+                        console.log(respawn_id)
 
+                        $("#" + respawn_id).html(answer.callback);
+                    }
+
+                    if (action == 'register_submit') {
+                        $(".invite_block").html(answer.data);
+                    }
+                    me.rebootLinks();
                 },
                 error: function (answer) {
-                    // console.error(answer);
-                    $('.formblock').html(answer.responseText)
+                    console.error(answer);
+                    $('.formblock').html(answer)
                 },
             });
         });

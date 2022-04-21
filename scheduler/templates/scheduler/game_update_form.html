@@ -3,6 +3,7 @@
     <table class='update'>
         {{ form.non_field_errors }}
         {{ form.management_form }}
+        <input type="hidden" name="id" value="{{ game_id }}"/>
         <tr>
             {{ form.name.errors }}
             <th><label for="name">Name</label></th>

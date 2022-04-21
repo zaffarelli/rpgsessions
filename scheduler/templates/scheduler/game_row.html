@@ -1,7 +1,8 @@
 {% load static %}
 {% load global_filters %}
+<td><strong>{{ c.name }}</strong></td>
 <td>{% include "scheduler/game_shortcut.html" with g=c large=1 %}</td>
-<td>{{ c.name }}</td>
+<td>{{ c.sessions_count }}</td>
 <td class="txt">{{ c.description | safe }}</td>
 <td>
     <div class="button compact modal_switch" action="edit_game" param="{{ c.id }}"><i class="fas fa-dice"></i>&nbsp;Modifier</div>

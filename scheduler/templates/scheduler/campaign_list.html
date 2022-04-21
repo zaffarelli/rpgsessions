@@ -7,14 +7,11 @@
             <th>Campagne</th>
             <th>Jeu</th>
             <th>Acronyme</th>
-            <th>Première séance</th>
-            <th>Séances jouées</th>
-            <th>Séances restantes</th>
             <th>Noyau dur</th>
             <th>Action</th>
         </tr>
         {% for x in campaigns %}
-            <tr class="{% cycle "odd" "even"  %}">
+            <tr class="{% cycle "odd" "even"  %} respawn" id="ucr_{{ x.id }}">
             {% include "scheduler/campaign_row.html" with c=x %}
             </tr>
         {% endfor %}

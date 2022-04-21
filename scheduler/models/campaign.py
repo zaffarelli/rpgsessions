@@ -27,6 +27,20 @@ class Campaign(models.Model):
         jstr = json.loads(json.dumps(self, default=json_default, sort_keys=True, indent=4))
         return jstr
 
+    @property
+    def wanted_list(self):
+        from scheduler.utils.organizer import gimme_profile
+        wanted = self.wanted
+        list = []
+        if len(wanted) > 0:
+            wanted_players = wanted.split(';')
+            for wp in wanted_players:
+                _set = Profile.objects.filter(pk=int(wp))
+                if len(_set) == 1:
+                    this = _set.first()
+                    list.append(gimme_profile(this.id))
+        return list
+
 
 class CampaignAdmin(admin.ModelAdmin):
-    list_display = ['title', 'game', 'mj']
+    list_display = ['title', 'game', 'mj', 'wanted']

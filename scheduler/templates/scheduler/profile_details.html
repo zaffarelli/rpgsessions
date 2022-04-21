@@ -9,48 +9,47 @@
             <td>
                 <em class="big">{{ profile.nickname|title|safe }}</em>
             </td>
-            <th>Communauté</th>
-            <td>{% include "scheduler/svg/JDR31.svg" %}</td>
+            <th></th>
+            <td>
+                {% include "scheduler/player_shortcut.html" with u=profile large=1 %}
+
+            </td>
+
         </tr>
         <tr>
             <th>
-                Symbole MJ
+                Communauté
+            </th>
+            <td>{% include "scheduler/svg/JDR31.svg" %}</td>
+            <th>
+                Symboles
             </th>
             <td>
                 {% include "scheduler/session_shortcut.html" with u=profile g=1 %}
-            </td>
-            <th>
-                Symbole Joueur
-            </th>
-            <td>
-                {% include "scheduler/player_shortcut.html" with u=profile %}
                 {% include "scheduler/player_shortcut.html" with u=profile small=1 %}
             </td>
 
         </tr>
         <tr>
+            <th>Présentation</th>
+            <td class="txt">{{ profile.presentation | safe }}</td>
+
             <th>
-                Parties jouées
+
             </th>
-            <td>{{ profile.games_played }}</td>
-            <th>
-                Parties menées
-            </th>
-            <td>{{ profile.games_run }}</td>
+            <td></td>
 
         </tr>
         <tr>
-            <th>
-                Présentation
-            </th>
-            <td class="txt">{{ profile.presentation | safe }}
-
-            </td>
             <th>
                 Favoris
             </th>
             <td class="txt">{{ profile.favorites | safe }}
             </td>
+            <th>Parties menées / jouées </th>
+            <td>{{ profile.games_run }} / {{ profile.games_played }}</td>
+
+
         </tr>
         <tr>
             <th>
@@ -61,7 +60,9 @@
             </td>
             <th>Couleur des yeux</th>
             <td>
-                <center><div style="background: {{ profile.eyes }}; width:15px; height:15px; border:1px solid black;"></div></center>
+                <center>
+                    <div style="background: {{ profile.eyes }}; width:15px; height:15px; border:1px solid black;"></div>
+                </center>
             </td>
         </tr>
         <tr>
@@ -73,7 +74,9 @@
             </td>
             <th>Couleur des cheveux</th>
             <td>
-                <center><div style="background: {{ profile.hair }}; width:15px; height:15px; border:1px solid black;"></div></center>
+                <center>
+                    <div style="background: {{ profile.hair }}; width:15px; height:15px; border:1px solid black;"></div>
+                </center>
             </td>
         </tr>
         <tr>
@@ -87,24 +90,25 @@
             <td>{{ profile.face_style }}</td>
         </tr>
         <tr>
-            <th>
-                Style de Bouclier
-            </th>
-            <td>
-                {{ profile.shieldstyle_display|safe }}
-            </td>
             <th>Message du Mercredi</th>
             <td>{{ profile.mail_wednesday|as_bool|safe }}</td>
-        </tr>
-        <tr>
             <th>
-                Style d'Icone
+                {#                Style de Bouclier#}
             </th>
             <td>
-                {{ profile.iconstyle_display }}
+                {#                {{ profile.shieldstyle_display|safe }}#}
             </td>
+        </tr>
+        <tr>
             <th>Message du Dimanche</th>
             <td>{{ profile.mail_sunday|as_bool|safe }}</td>
+            <th>
+                {#                Style d'Icone#}
+            </th>
+            <td>
+                {#                {{ profile.iconstyle_display }}#}
+            </td>
+
         </tr>
         <tr>
             <th title="Valeur positive uniquement. Correspond aux nombre de semaines supplémentaires affichées (3 par défaut). Ralenti l'affichage, mais une meilleur vision d'ensemble.">
@@ -113,12 +117,13 @@
             <td>
                 {{ profile.weeks }}
             </td>
-            <th></th>
-            <td></td>
-        </tr>
-        <tr>
             <th>Bouche/Barbe</th>
             <td>{{ profile.mouth_style }}</td>
+
+        </tr>
+        <tr>
+            <th></th>
+            <td></td>
             <th>Coiffure</th>
             <td>{{ profile.hair_style }}</td>
         </tr>

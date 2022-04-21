@@ -8,8 +8,8 @@
         height="0.6cm"
         {% else %}
         {% if large %}
-        width="12cm"
-        height="12cm"
+        width="3cm"
+        height="3cm"
         {% else %}
         width="1.2cm"
         height="1.2cm"

@@ -4,7 +4,8 @@ from django.http import HttpResponse, Http404, JsonResponse, HttpResponseRedirec
 from django.template.loader import get_template
 from scheduler.utils.mechanics import FONTSET, FMT_TIME, FMT_DATE, FMT_DATETIME, DOWS, FMT_DATE_PRETTY
 from scheduler.utils.organizer import build_month, build_zoomed_day, gimme_profile, system_flush, gimme_set_followers, \
-    toggle_available, toggle_subscribe, gimme_session, gimme_profile_campaigns, gimme_profile_propositions, gimme_campaign, gimme_all_propositions, gimme_profile_games, gimme_game
+    toggle_available, toggle_subscribe, gimme_session, gimme_profile_campaigns, gimme_profile_propositions, \
+    gimme_campaign, gimme_all_propositions, gimme_profile_games, gimme_game
 from datetime import datetime, date
 from scheduler.utils.tools import is_ajax
 
@@ -114,8 +115,10 @@ def display_session(request, id=None):
 def display_campaign(request, id=None):
     return JsonResponse({})
 
+
 def display_game(request, id=None):
     return JsonResponse({})
+
 
 def prepare_user(request, id=None):
     from scheduler.models.profile import Profile
@@ -145,7 +148,7 @@ def display_user(request, id=None):
         return render(request, 'scheduler/registration/login_error.html')
     context = prepare_user(request, id)
     context['campaigns'] = gimme_profile_campaigns(id)
-    context['propositions'] = gimme_profile_propositions(request,id)
+    context['propositions'] = gimme_profile_propositions(request, id)
     context['games'] = gimme_profile_games(id)
     context['realm'] = request.user.profile.realm.to_json
     html = 'WTF?'
@@ -199,32 +202,6 @@ def gimme_new_session(request, param):
     return context
 
 
-def gimme_edit_session(request, session):
-    from scheduler.forms.session_form import SessionForm
-    context = {}
-    form = SessionForm(request.POST or None, instance=session)
-    if is_ajax(request):
-        if form.is_valid():
-            form.save()
-        else:
-            context['form'] = form
-            context['session'] = gimme_session(request, session)
-    return context
-
-
-def gimme_edit_game(request, game):
-    from scheduler.forms.game_form import GameForm
-    context = {}
-    form = GameForm(request.POST or None, instance=game)
-    if is_ajax(request):
-        if form.is_valid():
-            form.save()
-        else:
-            context['form'] = form
-            context['game'] = gimme_game(game)
-    return context
-
-
 def gimme_edit_profile(request, profile):
     from scheduler.forms.profile_form import ProfileForm
     context = {}
@@ -236,88 +213,6 @@ def gimme_edit_profile(request, profile):
             context['form'] = form
             context['profile'] = gimme_profile(profile.id)
     return context
-
-
-def gimme_edit_campaign(request, campaign):
-    from scheduler.forms.campaign_form import CampaignForm
-    context = {}
-    form = CampaignForm(request.POST or None, instance=campaign)
-    if is_ajax(request):
-        if form.is_valid():
-            form.save()
-        else:
-            context['form'] = form
-            context['campaign'] = gimme_campaign(campaign.id)
-    return context
-
-
-def prepare_overlay(request, slug, param=None, option=None):
-    context = {}
-    template_str = ""
-    if slug == "new_session":
-        context = gimme_new_session(request, param)
-        template_str = "scheduler/session_create_dialog.html"
-    elif slug == "new_campaign":
-        context = gimme_new_campaign(request, param)
-        template_str = "scheduler/campaign_create_dialog.html"
-    elif slug == "edit_session":
-        from scheduler.models.session import Session
-        s = Session.objects.get(pk=int(param))
-        context = gimme_edit_session(request, s)
-        template_str = "scheduler/session_edit_dialog.html"
-    elif slug == "edit_profile":
-        from scheduler.models.profile import Profile
-        p = Profile.objects.get(pk=int(param))
-        context = gimme_edit_profile(request, p)
-        template_str = "scheduler/profile_edit_dialog.html"
-    elif slug == "edit_campaign":
-        from scheduler.models.campaign import Campaign
-        c = Campaign.objects.get(pk=int(param))
-        context = gimme_edit_campaign(request, c)
-        template_str = "scheduler/campaign_edit_dialog.html"
-    elif slug == "edit_game":
-        from scheduler.models.game import Game
-        g = Game.objects.get(pk=int(param))
-        context = gimme_edit_game(request, g)
-        template_str = "scheduler/game_edit_dialog.html"
-    elif slug == "delete_session":
-        from scheduler.models.session import Session
-        s = Session.objects.get(pk=int(param))
-        context = {'session': gimme_session(request, s)}
-        template_str = "scheduler/session_delete_dialog.html"
-    elif slug == "delete_campaign":
-        from scheduler.models.campaign import Campaign
-        c = Campaign.objects.get(pk=int(param))
-        context = {'campaign': gimme_campaign(c.id)}
-        template_str = "scheduler/campaign_delete_dialog.html"
-    elif slug == "about":
-        template_str = "scheduler/about.html"
-    elif slug == "followers":
-        context["set_followers"] = gimme_set_followers(request.user.profile.id)
-        template_str = "scheduler/set_followers.html"
-    elif slug == "confirm_session":
-        from scheduler.models.session import Session
-        s = Session.objects.get(pk=int(param))
-        s.delete()
-    elif slug == "confirm_campaign":
-        from scheduler.models.campaign import Campaign
-        c = Campaign.objects.get(pk=int(param))
-        c.delete()
-    return context, template_str
-
-
-# @login_required
-def display_overlay(request, slug, param=None, option=None):
-    html = ''
-    callback = ''
-    context, target_template = prepare_overlay(request, slug, param, option)
-    # if is_ajax(request):
-    #     print('Ajax Request')
-    if target_template:
-        template = get_template(target_template)
-        html = template.render(context, request)
-    response = {'data': html, 'callback': callback}
-    return JsonResponse(response)
 
 
 @login_required
@@ -445,10 +340,155 @@ def propositions(request):
         return render(request, 'scheduler/registration/login_error.html')
     context = {}
     context['today'] = datetime.now().strftime(FMT_DATE)
-    context['propositions'] = gimme_all_propositions(request,request.user.profile.id)
+    context['propositions'] = gimme_all_propositions(request, request.user.profile.id)
     template = get_template('scheduler/menu_propositions.html')
     menu_html = template.render(context, request)
     template = get_template('scheduler/all_propositions.html')
     html = template.render(context, request)
     response = {'data': html, 'menu': menu_html}
+    return JsonResponse(response)
+
+
+def validate_game(request, pk=None):
+    from scheduler.forms.game_form import GameForm
+    from scheduler.models.game import Game
+    response = {'form': '', 'data': '', 'callback': '', 'game_id': pk}
+    g = Game.objects.get(pk=int(pk))
+    form = GameForm(request.POST or None, instance=g)
+    if form.is_valid():
+        form.save()
+        g = Game.objects.get(pk=int(pk))
+        ctx = {'c': gimme_game(g)}
+        template = get_template("scheduler/game_row.html")
+        response['callback'] = template.render(ctx, request)
+        response['form'] = "Okidoki!"
+    else:
+        response['form'] = form
+    return JsonResponse(response)
+
+
+def validate_session(request, pk=None):
+    from scheduler.forms.session_form import SessionForm
+    from scheduler.models.session import Session
+    response = {'form': '', 'data': '', 'callback': '', 'session_id': pk}
+    s = Session.objects.get(pk=int(pk))
+    form = SessionForm(request.POST or None, instance=s)
+    if form.is_valid():
+        form.save()
+        s = Session.objects.get(pk=int(pk))
+        ctx = {'c': gimme_session(request,s)}
+        template = get_template("scheduler/proposition_row.html")
+        response['callback'] = template.render(ctx, request)
+        response['form'] = "Okidoki!"
+    else:
+        response['form'] = form
+    return JsonResponse(response)
+
+
+def validate_campaign(request, pk=None):
+    from scheduler.forms.campaign_form import CampaignForm
+    from scheduler.models.campaign import Campaign
+    response = {'form': '', 'data': '', 'callback': '', 'campaign_id': pk}
+    c = Campaign.objects.get(pk=int(pk))
+    form = CampaignForm(request.POST or None, instance=c)
+    if form.is_valid():
+        form.save()
+        c = Campaign.objects.get(pk=int(pk))
+        ctx = {'c': gimme_campaign(c.id)}
+        template = get_template("scheduler/campaign_row.html")
+        response['callback'] = template.render(ctx, request)
+        response['form'] = "Okidoki!"
+    else:
+        response['form'] = form
+    return JsonResponse(response)
+
+
+def gimme_edit_campaign(campaign):
+    from scheduler.forms.campaign_form import CampaignForm
+    response = {'form': '', 'data': '', 'callback': '', 'campaign_id': campaign.id}
+    form = CampaignForm(instance=campaign)
+    response['form'] = form
+    return response
+
+
+def gimme_edit_session(session):
+    from scheduler.forms.session_form import SessionForm
+    response = {'form': '', 'data': '', 'callback': '', 'session_id': session.id}
+    form = SessionForm(instance=session)
+    response['form'] = form
+    return response
+
+
+def gimme_edit_game(game):
+    from scheduler.forms.game_form import GameForm
+    response = {'form': '', 'data': '', 'callback': '', 'game_id': game.id}
+    form = GameForm(instance=game)
+    response['form'] = form
+    return response
+
+
+def prepare_overlay(request, slug, param=None, option=None):
+    context = {}
+    more = {}
+    template_str = ""
+    if slug == "new_session":
+        context = gimme_new_session(request, param)
+        template_str = "scheduler/session_create_dialog.html"
+    elif slug == "new_campaign":
+        context = gimme_new_campaign(request, param)
+        template_str = "scheduler/campaign_create_dialog.html"
+    elif slug == "edit_session":
+        from scheduler.models.session import Session
+        s = Session.objects.get(pk=int(param))
+        context = gimme_edit_session(s)
+        template_str = "scheduler/session_edit_dialog.html"
+    elif slug == "edit_profile":
+        from scheduler.models.profile import Profile
+        p = Profile.objects.get(pk=int(param))
+        context = gimme_edit_profile(request, p)
+        template_str = "scheduler/profile_edit_dialog.html"
+    elif slug == "edit_campaign":
+        from scheduler.models.campaign import Campaign
+        c = Campaign.objects.get(pk=int(param))
+        context = gimme_edit_campaign(c)
+        template_str = "scheduler/campaign_edit_dialog.html"
+    elif slug == "edit_game":
+        from scheduler.models.game import Game
+        g = Game.objects.get(pk=int(param))
+        context = gimme_edit_game(g)
+        template_str = "scheduler/game_edit_dialog.html"
+    elif slug == "delete_session":
+        from scheduler.models.session import Session
+        s = Session.objects.get(pk=int(param))
+        context = {'session': gimme_session(request, s)}
+        template_str = "scheduler/session_delete_dialog.html"
+    elif slug == "delete_campaign":
+        from scheduler.models.campaign import Campaign
+        c = Campaign.objects.get(pk=int(param))
+        context = {'campaign': gimme_campaign(c.id)}
+        template_str = "scheduler/campaign_delete_dialog.html"
+    elif slug == "about":
+        template_str = "scheduler/about.html"
+    elif slug == "followers":
+        context["set_followers"] = gimme_set_followers(request.user.profile.id)
+        template_str = "scheduler/set_followers.html"
+    elif slug == "confirm_session":
+        from scheduler.models.session import Session
+        s = Session.objects.get(pk=int(param))
+        s.delete()
+    elif slug == "confirm_campaign":
+        from scheduler.models.campaign import Campaign
+        c = Campaign.objects.get(pk=int(param))
+        c.delete()
+    return context, template_str, more
+
+
+# @login_required
+def display_overlay(request, slug, param=None, option=None):
+    html = ''
+    context, target_template, callback = prepare_overlay(request, slug, param, option)
+    if target_template:
+        template = get_template(target_template)
+        html = template.render(context, request)
+    response = {'data': html, 'callback': callback}
     return JsonResponse(response)

@@ -13,7 +13,7 @@
             <th>Actions</th>
         </tr>
         {% for x in propositions %}
-            <tr class="{% cycle "odd" "even"  %}">
+            <tr class="{% cycle "odd" "even"  %} respawn" id="upr_{{ x.id }}">
             {% include "scheduler/proposition_row.html" with c=x %}
             </tr>
         {% endfor %}

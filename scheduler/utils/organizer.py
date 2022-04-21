@@ -166,13 +166,11 @@ def gimme_profile(x):
 
 def gimme_campaign(x):
     from scheduler.models.campaign import Campaign
-
-    elem = Campaign.objects.get(pk=x)
-    context = {'Status': f'The parameter {x} is not a user profile'}
-    # print(elem)
-    if isinstance(elem, Campaign):
-        context = elem.to_json
-        context['status'] = "ok"
+    c = Campaign.objects.get(pk=x)
+    context = c.to_json
+    context['game'] = gimme_game(c.game)
+    context['wanted_list'] = c.wanted_list
+    context['mj'] = gimme_profile(c.mj.id)
     return context
 
 
@@ -183,10 +181,7 @@ def gimme_profile_campaigns(x):
     campaigns = Campaign.objects.filter(mj=p)
     camps = []
     for x in campaigns:
-        ctx = x.to_json
-        ctx['game'] = gimme_game(x.game)
-        ctx['mj'] = gimme_profile(x.mj.id)
-        camps.append(ctx)
+        camps.append(gimme_campaign(x.id))
     return camps
 
 
@@ -197,8 +192,7 @@ def gimme_profile_games(x):
     games = Game.objects.filter(mj=p).order_by('name')
     gs = []
     for g in games:
-        gd = gimme_game(g)
-        gs.append(gd)
+        gs.append(gimme_game(g))
     return gs
 
 

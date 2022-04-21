@@ -73,4 +73,4 @@ LOGGING = {
 }
 
 
-VERSION = "(DEV)"+VERSION
+VERSION = VERSION+"dev"

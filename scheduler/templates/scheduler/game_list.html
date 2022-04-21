@@ -5,14 +5,12 @@
     <table>
         <tr>
             <th>Jeu</th>
-            <th>Titre</th>
+            <th>Logo</th>
             <th>Description</th>
-
-
             <th>Actions</th>
         </tr>
         {% for x in games %}
-            <tr class="{% cycle "odd" "even"  %}">
+            <tr class="{% cycle "odd" "even"  %} respawn" id="ugr_{{ x.id }}" >
             {% include "scheduler/game_row.html" with c=x %}
             </tr>
         {% endfor %}

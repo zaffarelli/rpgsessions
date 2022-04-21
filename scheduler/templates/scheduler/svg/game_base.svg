@@ -74,7 +74,7 @@
 </g>
 
 <g opacity="{{g.artefact.type3}}">
-<g class="da" transform="translate(-6,10)">
+<g class="da" transform="translate(-3,9)">
     <g transform="rotate(-30)">
         <path style="fill:{{g.alpha}};stroke:#000000;stroke-width:0.1mm;"
               d="M 0 0 l -5 -3 0 -3.5 5 -3.5 5 3.5 0 3.5 -5 3"/>
@@ -87,7 +87,7 @@
 </g>
 
 <g class="db" transform="rotate(35)">
-    <g transform="translate(-13,12)">
+    <g transform="translate(-12,13)">
         <path style="fill:{{g.alpha}};stroke:#000000;stroke-width:0.1mm;"
               d="M 0 0 l -5 -3 0 -3.5 5 -3.5 5 3.5 0 3.5 -5 3"/>
         <path style="fill:none;stroke:#000000;stroke-width:0.05mm;"
@@ -99,7 +99,7 @@
 </g>
 
 <g class="dc" transform="rotate(-30)">
-    <g transform="translate(0,8)">
+    <g transform="translate(2,11)">
         <path style="fill:{{g.alpha}};stroke:#000000;stroke-width:0.1mm;"
               d="M 0 0 l -5 -3 0 -3.5 5 -3.5 5 3.5 0 3.5 -5 3"/>
         <path style="fill:none;stroke:#000000;stroke-width:0.05mm;"
@@ -110,7 +110,7 @@
     </g>
 </g>
 <g class="dd" transform="rotate(45)">
-    <g transform="translate(11,-2)">
+    <g transform="translate(12,-4)">
         <path style="fill:{{g.gamma}};stroke:#000000;stroke-width:0.1mm;"
               d="M 0 0 l -5 -3 0 -3.5 5 -3.5 5 3.5 0 3.5 -5 3"/>
         <path style="fill:none;stroke:#000000;stroke-width:0.05mm;"

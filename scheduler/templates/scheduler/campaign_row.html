@@ -2,15 +2,15 @@
 {%  load global_filters %}
 
 
-    <td>{{ c.title }}</td>
+    <td><strong>{{ c.title }}</strong></td>
     <td>{%  include "scheduler/game_shortcut.html" with g=c.game large=1 %}</td>
     <td>{{ c.acronym }}</td>
-    <td></td>
-    <td></td>
     <td>
+        {% for x in c.wanted_list %}
+            {% include "scheduler/player_shortcut.html" with u=x %}
+        {% endfor %}
 
     </td>
-    <td></td>
     <td>
         <div class="button compact modal_switch" action="edit_campaign" param="{{ c.id }}"><i class="fas fa-dice-d20"></i>&nbsp;Modifier</div>
         <div class="button compact modal_switch" action="delete_campaign" param="{{ c.id }}"><i class="fas fa-circle-minus"></i>&nbsp;Supprimer</div>
