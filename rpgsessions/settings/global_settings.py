@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'fixture_magic',
     'colorfield',
     'fontawesomefree',
-    'django_cron',
+    'django_cron'
 ]
 
 MIDDLEWARE = [
@@ -137,5 +137,7 @@ LOGGING = {
 }
 
 CRON_CLASSES = [
-    'scheduler.wednesday_cron_job'
+    'wednesday_cron_job'
 ]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
