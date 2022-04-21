@@ -91,5 +91,11 @@
             <td>{{ form.optional_spots }}</td>
             <td><i class="fa fa-arrow-alt-circle-left" style="color:lemonchiffon;" title="Le nombre de places disponibles en sus des personnes sollicitées..."></i></td>
         </tr>
+        <tr>
+            {{ form.is_visible.errors }}
+            <th><label for="is_visible">Visible (si proposition)</label></th>
+            <td>{{ form.is_visible }}</td>
+            <td></td>
+        </tr>
     </table>
 </form>

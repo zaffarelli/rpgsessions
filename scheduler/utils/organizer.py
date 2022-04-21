@@ -212,7 +212,7 @@ def gimme_all_propositions(request,x):
     from scheduler.models.session import Session
     from scheduler.models.profile import Profile
     p = Profile.objects.get(pk=x)
-    sessions = Session.objects.filter(date_start=None)
+    sessions = Session.objects.filter(date_start=None, is_visible=True)
     props = []
     for s in sessions:
         props.append(gimme_session(request,s))
