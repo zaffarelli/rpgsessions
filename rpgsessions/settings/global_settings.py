@@ -137,7 +137,7 @@ LOGGING = {
 }
 
 CRON_CLASSES = [
-    'wednesday_cron_job'
+    'scheduler.utils.crontasks.wednesday_cron_job'
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
