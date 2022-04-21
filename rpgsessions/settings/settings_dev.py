@@ -1,3 +1,6 @@
+# This file is an example to create settings.py
+
+
 SECRET_KEY = '^ghph5x=x*u+x6(^2y7p-is6zv)lkia0(+@74x076p0ot4ic*-'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
@@ -13,7 +16,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_PORT = 587
-
+# EMAIL_HOST_USER = "mail@gmail.com"
+# EMAIL_HOST_PASSWORD = "password"
 
 
 LOGPATH = os.path.join(BASE_DIR, 'logs/')
