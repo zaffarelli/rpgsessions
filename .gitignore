@@ -6,3 +6,4 @@ docker/
 logs/
 rpgsessions/settings/settings.py
 docker/
+__pycache__/
