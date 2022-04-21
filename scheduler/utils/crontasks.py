@@ -6,11 +6,11 @@ from django.core.mail import send_mail
 '''
 
 
-class WednesdayCronJob(CronJobBase):
+class Wednesday(CronJobBase):
     RUN_EVERY_MINS = 10
 
     schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
-    code = 'scheduler.utils.crontasks.wednesday_cron_job'  # a unique code
+    code = 'scheduler.utils.crontasks.wednesday'  # a unique code
 
     def do(self):
         subject = "[eXtraventures] La lettre du Mercredi"
