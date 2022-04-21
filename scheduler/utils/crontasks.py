@@ -1,6 +1,10 @@
 from django_cron import CronJobBase, Schedule
 from django.core.mail import send_mail
 
+'''
+*/5 * * * * source /home/ubuntu/.bashrc && source /home/ubuntu/venv/bin/activate && python /home/ubuntu/rpgsessions/src/manage.py runcrons > /home/ubuntu/rpgsessions/logs/cronjob.log
+'''
+
 
 class WednesdayCronJob(CronJobBase):
     RUN_EVERY_MINS = 10

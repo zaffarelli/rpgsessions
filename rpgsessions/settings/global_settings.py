@@ -20,8 +20,7 @@ INSTALLED_APPS = [
     'fixture_magic',
     'colorfield',
     'fontawesomefree',
-    # 'django_cron',
-
+    'django_cron',
 ]
 
 MIDDLEWARE = [
@@ -32,6 +31,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 COMPRESS_PRECOMPILERS = (
