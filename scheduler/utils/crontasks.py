@@ -10,7 +10,7 @@ class Wednesday(CronJobBase):
     RUN_EVERY_MINS = 10
 
     schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
-    code = 'scheduler.utils.crontasks.wednesday'  # a unique code
+    code = 'scheduler.utils.crontasks.Wednesday'  # a unique code
 
     def do(self):
         subject = "[eXtraventures] La lettre du Mercredi"
