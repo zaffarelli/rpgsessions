@@ -1,5 +1,3 @@
-
-
 .idea/
 rpgsessions_static/
 rpgsessions_media/
@@ -7,3 +5,4 @@ oldies/
 docker/
 logs/
 rpgsessions/settings/settings.py
+docker/

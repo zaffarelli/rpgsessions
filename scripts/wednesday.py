@@ -1,3 +1,6 @@
+# Work in progress
+
+
 class WednesdayMessenger(object):
     def get_suitable_profiles(self):
         from scheduler.models.profile import Profile
