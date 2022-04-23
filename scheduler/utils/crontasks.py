@@ -59,10 +59,12 @@ class Hermes(CronJobBase):
     code = 'scheduler.utils.crontasks.Hermes'  # a unique code
 
     def do(self):
-        subject = "[eXtraventures] La lettre d'Hermes'"
-        body_list = ["Salutations du soir !"]
+        subject = "[eXtraventures] La lettre d'Hermes"
+        body_list = ["Salutations du soir !","",""]
         a, b = self.week_bounds()
         body_list.append(f"(1) Informations sur la semaine à venir, du {a} au {b}:")
+        body_list.append(f"    (a) Parties jouées:")
+        body_list.append(f"    (b) Parties menées:")
 
         body_list.append(f"::mouhahahahahahaha::\n\nVotre dévoué serviteur eXtraordinaire,\nFernando Casabuentes.")
         body = "\n".join(body_list)

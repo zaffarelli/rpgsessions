@@ -240,6 +240,9 @@
 
 </g>
 
+<rect x="-8" y="-0.65" width="16" height="1.5" style="fill:{{u.beta}};stroke:#none;"/>
+<rect x="5" y="-1.5" width="2.5" height="2.5" style="fill:{{u.gamma}};stroke:#none;"/>
+
         {% else %}
 <g transform="translate(0,-1)" opacity="1">
 <ellipse cx="5.25" cy="-12.25" rx="0.80" ry="1.5"
@@ -406,9 +409,11 @@
 
 </g>
 </g>
+<rect x="-8" y="-1.75" width="16" height="2.5" style="fill:{{u.beta}};stroke:#none;"/>
+<rect x="5" y="-1.75" width="2.5" height="2.5" style="fill:{{u.gamma}};stroke:#none;"/>
         {% endif %}
-<circle cx="5" cy="-0.75" r="0.9" style="fill:{{u.beta}};stroke:#none;"/>
-<circle cx="7" cy="-0.75" r="0.9" style="fill:{{u.gamma}};stroke:#none;"/>
+
+
         {% if g %}
 <path id="gm_screen" opacity="1.0"
       d="M 0 -1
