@@ -4,13 +4,13 @@ from datetime import date, timedelta
 
 class EmailBody(object):
     def __init__(self):
-        stack = []
+        pile = []
 
     def stack(self, txt):
-        self.stack.append(txt)
+        self.pile.append(txt)
 
     def deliver(self):
-        return "\n".join(self.stack)
+        return "\n".join(self.pile)
 
 
 def week_bounds():
