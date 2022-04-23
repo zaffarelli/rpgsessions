@@ -30,12 +30,12 @@ def mercure():
         subject = f"[eXtraventures] La lettre de Mercure"
         body = EmailBody()
         body.stack(f"Salutations {p.nickname}!")
-        body.stack("Tu reçois ce message car le flag 'Message du Mercredi' est activé sur ton compte eXtraventures.")
+        body.stack("")
+        body.stack("Vous recevez ce message car le flag 'Message du Mercredi' est activé sur votre compte eXtraventures.")
         body.stack("¤ ¤ ¤")
-
         body.stack(f"(1) Informations sur la semaine à venir, du {a} au {b}:")
+        body.stack("")
         body.stack(f"    (a) Parties jouées:")
-
         inscriptions = Inscription.objects.filter(profile=p)
         inscription_set = []
         for i in inscriptions:
@@ -44,11 +44,15 @@ def mercure():
         sessions = Session.objects.filter(date_start__gte=_da, date_start__lte=_db)
         for s in sessions:
             if s.id in inscription_set:
-                body.stack(f"    - {s.title} par {s.mj.nickname}, le f{s.date_start.strftime(FMT_DATE_PRETTY)} à {s.place} (inscription ok)")
+                body.stack(f"    - {s.title} par {s.mj.nickname}, jeu=[{s.game.name}] , le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (inscription ok)")
+        body.stack("")
+        body.stack("")
         body.stack(f"    (b) Parties menées:")
         sessions_mj = Session.objects.filter(date_start__gte=_da, date_start__lte=_db, mj=p)
         for s in sessions_mj:
-            body.stack(f"    - {s.title} par {s.mj.nickname}, le f{s.date_start.strftime(FMT_DATE_PRETTY)} à {s.place} (c'est toi le MJ!)")
+            body.stack(f"    - [{s.title}] par {s.mj.nickname}, le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (c'est toi le MJ!)")
+        body.stack("")
+        body.stack("¤ ¤ ¤")
         body.stack(f"::mouhahahahahahaha::\n\nVotre dévoué serviteur eXtraordinaire,\nFernando Casabuentes.")
         sender = f'fernando.casabuentes@gmail.com'
         targets = [f'zaffarelli@gmail.com']
