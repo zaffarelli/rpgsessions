@@ -41,7 +41,7 @@ def mercure():
         for i in inscriptions:
             if _da <= i.session.date_start <= _db:
                 inscription_set.append(i.session.id)
-        sessions = Session.objects.filter(date_start_gte=_da, date_start_lte=_db)
+        sessions = Session.objects.filter(date_start__gte=_da, date_start__lte=_db)
         for s in sessions:
             if s.id in inscription_set:
                 body.stack(f"    - {s.title} par {s.mj.nickname}, le f{s.date_start.strftime(FMT_DATE_PRETTY)} à {s.place} (inscription ok)")
