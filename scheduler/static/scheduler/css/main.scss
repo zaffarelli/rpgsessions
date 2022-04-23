@@ -48,27 +48,29 @@ body {
   body {
 
     & .world {
-      margin-top: 5px;
+      margin-top: 0;
       z-index: 5;
       position: absolute;
       color: $body_color;
       font-family: Acme;
-      //background: red;
+      //background: green;
       width: 100%;
       height: auto;
+      top:0;
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
       align-content: flex-start;
-      align-items: stretch;
+      align-items: flex-start;
       row-gap: 1px;
       column-gap: 1px;
-      border-radius: 10px;
+      border-radius: 0px;
+      padding:0;
 
       & .spare_left {
         order: 1;
         flex-shrink: 2;
-        //background: red;
+        //background: orange;
       }
 
       & .spare_right {
@@ -80,18 +82,20 @@ body {
 
       & .corpus {
         //box-shadow: 15px 10px 20px black;
+        //background: red;
         width: auto;
         flex-shrink: 1;
         order: 2;
-        margin: 0;
+        //margin: -100px;
         padding: 0;
         display: flex;
         flex-flow: column wrap;
         justify-content: flex-start;
-        align-content: flex-start;
+        align-content: center;
         align-items: flex-start;
         gap: 0 0;
-        border-radius: 10px;
+        border-radius: 0px;
+        margin-bottom:20px;
 
         & .menuzone, & .eventzone, & .userzone, & .wrapper {
           border: 1px solid $panel_border;
@@ -110,6 +114,7 @@ body {
           align-content: flex-start;
           align-items: stretch;
           gap: 1px 1px;
+
         }
 
 
@@ -161,8 +166,10 @@ body {
 
 
         & .userzone {
+          top:0;
+          margin-top:0;
           padding: 5px;
-          min-height: 10px;
+          height: 80px;
           width: 100%;
           order: 1;
           text-align: right;

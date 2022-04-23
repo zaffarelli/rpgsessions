@@ -115,6 +115,7 @@ class Scheduler {
                         $('#overlay').removeClass('hidden');
                     }
                     me.rebootLinks();
+
                 },
                 error: function (answer) {
                     console.error(answer);
@@ -177,6 +178,8 @@ class Scheduler {
                     respawn_id = 'upr_' + option;
                 } else if (param == 'campaign') {
                     respawn_id = 'ucr_' + option;
+                } else if (param == 'profile') {
+                    respawn_id = 'uur_' + option;
                 }
             }
             let form = $('#model_form');
@@ -215,7 +218,9 @@ class Scheduler {
 
                         $("#" + respawn_id).html(answer.callback);
                     }
-
+                    if (answer.form == "Okidoki!") {
+                        $('#overlay').addClass('hidden');
+                    }
                     if (action == 'register_submit') {
                         $(".invite_block").html(answer.data);
                     }

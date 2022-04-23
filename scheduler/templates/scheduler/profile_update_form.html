@@ -3,11 +3,18 @@
     <table class='update'>
         {{ form.non_field_errors }}
         {{ form.management_form }}
-        <input name='user' type='hidden' value='{{ form.user.value }}'>
+        <input type="hidden" name="id" value="{{ profile_id }}"/>
+        <input type="hidden" name="user" value="{{ form.user.value }}"/>
         <tr>
             {{ form.nickname.errors }}
             <th><label for="nickname">Surnom</label></th>
             <td>{{ form.nickname }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.club.errors }}
+            <th><label for="club">Club/Association</label></th>
+            <td>{{ form.club }}</td>
             <td></td>
         </tr>
         <tr>

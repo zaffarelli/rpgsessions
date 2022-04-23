@@ -30,7 +30,7 @@ class Campaign(models.Model):
 
     @property
     def wanted_list(self):
-        from scheduler.utils.organizer import gimme_profile
+        from scheduler.views.organizer import gimme_profile
         wanted = self.wanted
         list = []
         if len(wanted) > 0:

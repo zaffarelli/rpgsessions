@@ -101,6 +101,10 @@ $plate_color: lighten($panel_color,10%);
 
 .hidden {
   display: none !important;
+  //width:0 !important;
+  //height:0 !important;
+  //top:-500px !important;
+  //left:-500px !important;
 }
 
 

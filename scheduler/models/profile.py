@@ -51,6 +51,7 @@ class Profile(models.Model):
     nickname = models.CharField(max_length=256)
     presentation = models.TextField(max_length=2048, default='', blank=True)
     favorites = models.TextField(max_length=1024, default='', blank=True)
+    club = models.CharField(max_length=256, default='', blank=True)
     need_drop = models.BooleanField(default=False)
     can_drop = models.BooleanField(default=False)
     realm = models.ForeignKey(Realm, on_delete=models.SET_NULL, null=True, blank=True)
@@ -89,7 +90,7 @@ class Profile(models.Model):
     @property
     def following(self):
         from scheduler.models.follower import Follower
-        from scheduler.utils.organizer import gimme_profile
+        from scheduler.views.organizer import gimme_profile
         list = []
         all = Follower.objects.filter(profile=self).order_by('target__nickname')
         for x in all:
@@ -99,7 +100,7 @@ class Profile(models.Model):
     @property
     def groupies(self):
         from scheduler.models.follower import Follower
-        from scheduler.utils.organizer import gimme_profile
+        from scheduler.views.organizer import gimme_profile
         list = []
         all = Follower.objects.filter(target=self).order_by('profile__nickname')
         for x in all:

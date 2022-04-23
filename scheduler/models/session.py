@@ -4,7 +4,6 @@ from datetime import datetime, timedelta, time
 from scheduler.models.realm import Realm
 from scheduler.models.game import Game
 from scheduler.models.profile import Profile
-from django.contrib.auth.models import User
 from colorfield.fields import ColorField
 import json
 from scheduler.utils.mechanics import ADV_LEVEL
@@ -58,7 +57,7 @@ class Session(models.Model):
 
     @property
     def wanted_list(self):
-        from scheduler.utils.organizer import gimme_profile
+        from scheduler.views.organizer import gimme_profile
 
         if self.campaign:
             wanted = self.campaign.wanted
