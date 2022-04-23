@@ -520,7 +520,7 @@ def campaigns(request):
     context = {}
     context['campaigns'] = []
     context['today'] = datetime.now().strftime(FMT_DATE)
-    campaigns = Campaign.objects.order_by('title')
+    campaigns = Campaign.objects.filter(is_visible=True).order_by('title')
     for c in campaigns:
         context['campaigns'].append(gimme_campaign(c.id))
     template = get_template('scheduler/menu_propositions.html')

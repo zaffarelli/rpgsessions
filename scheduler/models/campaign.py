@@ -16,6 +16,7 @@ class Campaign(models.Model):
     alpha = ColorField(default='#666666')
     toc = models.TextField(max_length=2048, default='', blank=True)
     full_run_duration = models.PositiveIntegerField(default=0, blank=True)
+    is_visible = models.BooleanField(default=False, blank=True)
 
 
     def __str__(self):
