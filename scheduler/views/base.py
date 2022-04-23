@@ -492,3 +492,21 @@ def display_overlay(request, slug, param=None, option=None):
         html = template.render(context, request)
     response = {'data': html, 'callback': callback}
     return JsonResponse(response)
+
+
+@login_required
+def members(request):
+    if not request.user.is_authenticated:
+        return render(request, 'scheduler/registration/login_error.html')
+    from scheduler.models.profile import Profile
+    context = {}
+    context['members'] = []
+    members = Profile.objects.order_by('nickname')
+    for m in members:
+        context['members'].append(gimme_profile(m.id))
+    template = get_template('scheduler/menu_propositions.html')
+    menu_html = template.render(context, request)
+    template = get_template('scheduler/all_members.html')
+    html = template.render(context, request)
+    response = {'data': html, 'menu': menu_html}
+    return JsonResponse(response)

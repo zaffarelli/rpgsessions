@@ -1,139 +1,203 @@
 {% load static %}
 {% load global_filters %}
-<div class="profile">
-    <table>
-        <tr>
-            <th>
-                Surnom
-            </th>
-            <td>
-                <em class="big">{{ profile.nickname|title|safe }}</em>
-            </td>
-            <th></th>
-            <td>
-                {% include "scheduler/player_shortcut.html" with u=profile large=1 %}
 
-            </td>
+{% if compact %}
+    <div class="profile">
+        <table>
+            <tr>
+                <th></th>
+                <td>
+                    {% include "scheduler/player_shortcut.html" with u=profile large=1 %}
 
-        </tr>
-        <tr>
-            <th>
-                Communauté
-            </th>
-            <td>{% include "scheduler/svg/JDR31.svg" %}</td>
-            <th>
-                Symboles
-            </th>
-            <td>
-                {% include "scheduler/session_shortcut.html" with u=profile g=1 %}
-                {% include "scheduler/player_shortcut.html" with u=profile small=1 %}
-            </td>
-
-        </tr>
-        <tr>
-            <th>Présentation</th>
-            <td class="txt">{{ profile.presentation | safe }}</td>
-
-            <th>
-
-            </th>
-            <td></td>
-
-        </tr>
-        <tr>
-            <th>
-                Favoris
-            </th>
-            <td class="txt">{{ profile.favorites | safe }}
-            </td>
-            <th>Parties menées / jouées </th>
-            <td>{{ profile.games_run }} / {{ profile.games_played }}</td>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Surnom
+                </th>
+                <td>
+                    <em class="big">{{ profile.nickname|title|safe }}</em>
+                </td>
+            </tr>
+            <tr>
+                <th>Présentation</th>
+                <td class="txt">{{ profile.presentation | safe }}</td>
+            </tr>
+            <tr>
+                <th>Favoris</th>
+                <td class="txt">{{ profile.favorites | safe }}
+                </td>
+            </tr>
+            <tr>
+                <th>Parties menées / jouées</th>
+                <td>{{ profile.games_run }} / {{ profile.games_played }}</td>
 
 
-        </tr>
-        <tr>
-            <th>
-                Sexe
-            </th>
-            <td>
-                {{ profile.is_girl|as_gender|safe }}
-            </td>
-            <th>Couleur des yeux</th>
-            <td>
-                <center>
-                    <div style="background: {{ profile.eyes }}; width:15px; height:15px; border:1px solid black;"></div>
-                </center>
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Sans véhicle
-            </th>
-            <td>
-                {{ profile.need_drop|as_bool|safe }}
-            </td>
-            <th>Couleur des cheveux</th>
-            <td>
-                <center>
-                    <div style="background: {{ profile.hair }}; width:15px; height:15px; border:1px solid black;"></div>
-                </center>
-            </td>
-        </tr>
-        <tr>
-            <th>
-                Peut véhiculer
-            </th>
-            <td>
-                {{ profile.can_drop|as_bool|safe }}
-            </td>
-            <th>Visage</th>
-            <td>{{ profile.face_style }}</td>
-        </tr>
-        <tr>
-            <th>Message du Mercredi</th>
-            <td>{{ profile.mail_wednesday|as_bool|safe }}</td>
-            <th>
-                {#                Style de Bouclier#}
-            </th>
-            <td>
-                {#                {{ profile.shieldstyle_display|safe }}#}
-            </td>
-        </tr>
-        <tr>
-            <th>Message du Dimanche</th>
-            <td>{{ profile.mail_sunday|as_bool|safe }}</td>
-            <th>
-                {#                Style d'Icone#}
-            </th>
-            <td>
-                {#                {{ profile.iconstyle_display }}#}
-            </td>
+            </tr>
 
-        </tr>
-        <tr>
-            <th title="Valeur positive uniquement. Correspond aux nombre de semaines supplémentaires affichées (3 par défaut). Ralenti l'affichage, mais une meilleur vision d'ensemble.">
-                Semaines supplémentaires
-            </th>
-            <td>
-                {{ profile.weeks }}
-            </td>
-            <th>Bouche/Barbe</th>
-            <td>{{ profile.mouth_style }}</td>
+            <tr>
+                <th>
+                    Sans véhicle
+                </th>
+                <td>
+                    {{ profile.need_drop|as_bool|safe }}
+                </td>
 
-        </tr>
-        <tr>
-            <th></th>
-            <td></td>
-            <th>Coiffure</th>
-            <td>{{ profile.hair_style }}</td>
-        </tr>
-        <tr>
-            <th>
-                Lien d'invitation
-            </th>
-            <td colspan="3">
-                {{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ realm.full_link|safe }}
-            </td>
-        </tr>
-    </table>
-</div>
+            </tr>
+            <tr>
+                <th>
+                    Peut véhiculer
+                </th>
+                <td>
+                    {{ profile.can_drop|as_bool|safe }}
+                </td>
+
+            </tr>
+
+
+        </table>
+    </div>
+
+
+{% else %}
+    <div class="profile">
+        <table>
+            <tr>
+                <th>
+                    Surnom
+                </th>
+                <td>
+                    <em class="big">{{ profile.nickname|title|safe }}</em>
+                </td>
+                <th></th>
+                <td>
+                    {% include "scheduler/player_shortcut.html" with u=profile large=1 %}
+
+                </td>
+
+            </tr>
+            <tr>
+                <th>
+                    Communauté
+                </th>
+                <td>{% include "scheduler/svg/JDR31.svg" %}</td>
+                <th>
+                    Symboles
+                </th>
+                <td>
+                    {% include "scheduler/session_shortcut.html" with u=profile g=1 %}
+                    {% include "scheduler/player_shortcut.html" with u=profile small=1 %}
+                </td>
+
+            </tr>
+            <tr>
+                <th>Présentation</th>
+                <td class="txt">{{ profile.presentation | safe }}</td>
+
+                <th>
+
+                </th>
+                <td></td>
+
+            </tr>
+            <tr>
+                <th>
+                    Favoris
+                </th>
+                <td class="txt">{{ profile.favorites | safe }}
+                </td>
+                <th>Parties menées / jouées</th>
+                <td>{{ profile.games_run }} / {{ profile.games_played }}</td>
+
+
+            </tr>
+            <tr>
+                <th>
+                    Sexe
+                </th>
+                <td>
+                    {{ profile.is_girl|as_gender|safe }}
+                </td>
+                <th>Couleur des yeux</th>
+                <td>
+                    <center>
+                        <div style="background: {{ profile.eyes }}; width:15px; height:15px; border:1px solid black;"></div>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Sans véhicle
+                </th>
+                <td>
+                    {{ profile.need_drop|as_bool|safe }}
+                </td>
+                <th>Couleur des cheveux</th>
+                <td>
+                    <center>
+                        <div style="background: {{ profile.hair }}; width:15px; height:15px; border:1px solid black;"></div>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Peut véhiculer
+                </th>
+                <td>
+                    {{ profile.can_drop|as_bool|safe }}
+                </td>
+                <th>Visage</th>
+                <td>{{ profile.face_style }}</td>
+            </tr>
+            <tr>
+                <th>Message du Mercredi</th>
+                <td>{{ profile.mail_wednesday|as_bool|safe }}</td>
+                <th>
+                    {#                Style de Bouclier#}
+                </th>
+                <td>
+                    {#                {{ profile.shieldstyle_display|safe }}#}
+                </td>
+            </tr>
+            <tr>
+                <th>Message du Dimanche</th>
+                <td>{{ profile.mail_sunday|as_bool|safe }}</td>
+                <th>
+                    {#                Style d'Icone#}
+                </th>
+                <td>
+                    {#                {{ profile.iconstyle_display }}#}
+                </td>
+
+            </tr>
+            <tr>
+                <th title="Valeur positive uniquement. Correspond aux nombre de semaines supplémentaires affichées (3 par défaut). Ralenti l'affichage, mais une meilleur vision d'ensemble.">
+                    Semaines supplémentaires
+                </th>
+                <td>
+                    {{ profile.weeks }}
+                </td>
+                <th>Bouche/Barbe</th>
+                <td>{{ profile.mouth_style }}</td>
+
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <th>Coiffure</th>
+                <td>{{ profile.hair_style }}</td>
+            </tr>
+            <tr>
+                <th>
+                    Lien d'invitation
+                </th>
+                <td colspan="3">
+                    {{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ realm.full_link|safe }}
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+{% endif %}

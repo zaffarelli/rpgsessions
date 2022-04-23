@@ -1,0 +1,9 @@
+{% load static %}
+{% load global_filters %}
+<div class="all_propositions">
+{% for p in members %}
+    <div class="proposition_block">
+        {% include "scheduler/profile_details.html" with profile=p compact=1%}
+    </div>
+{% endfor %}
+</div>
