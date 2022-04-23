@@ -46,7 +46,7 @@ def mercure():
             if s.id in inscription_set:
                 body.stack(f"    - {s.title} par {s.mj.nickname}, le f{s.date_start.strftime(FMT_DATE_PRETTY)} à {s.place} (inscription ok)")
         body.stack(f"    (b) Parties menées:")
-        sessions_mj = Session.objects.filter(date_start_gte=_da, date_start_lte=_db, mj=p)
+        sessions_mj = Session.objects.filter(date_start__gte=_da, date_start__lte=_db, mj=p)
         for s in sessions_mj:
             body.stack(f"    - {s.title} par {s.mj.nickname}, le f{s.date_start.strftime(FMT_DATE_PRETTY)} à {s.place} (c'est toi le MJ!)")
         body.stack(f"::mouhahahahahahaha::\n\nVotre dévoué serviteur eXtraordinaire,\nFernando Casabuentes.")
