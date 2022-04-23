@@ -1,7 +1,7 @@
 from django.urls import path, re_path
 from scheduler.views.base import index, display_day, display_month, display_session, display_user, handle_invitation, \
     display_overlay, toggle_follower, simple_toggle, show_done, delete_session, register_submit, display_campaign, \
-    delete_campaign, propositions, display_game, validate_game, validate_session, validate_campaign, members
+    delete_campaign, propositions, display_game, validate_game, validate_session, validate_campaign, members,campaigns
 from scheduler.views.misc import who
 # from scheduler.views.game import GameUpdateView
 # from scheduler.views.session import SessionUpdateView
@@ -18,6 +18,7 @@ urlpatterns = [
     re_path(r'^ajax/display/game/(?P<id>\d+)/$', display_game, name='display_game'),
     re_path(r'^ajax/display/propositions/$', propositions, name='propositions'),
     re_path(r'^ajax/display/members/$', members, name='members'),
+    re_path(r'^ajax/display/campaigns/$', campaigns, name='campaigns'),
     re_path(r'^ajax/display/campaign/(?P<id>\d+)/$', display_campaign, name='display_campaign'),
     re_path(r'^invite/(?P<slug>\w+)/$', handle_invitation, name='handle_invitation'),
     re_path(r'^ajax/overlay/(?P<slug>\w+)/$', display_overlay, name='display_overlay'),

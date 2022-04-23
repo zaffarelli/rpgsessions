@@ -1,0 +1,29 @@
+{% load static %}
+{% load global_filters %}
+
+
+<table>
+
+    <tr><td>{% include "scheduler/game_shortcut.html" with g=c.game large=1 %}</td>
+        {% include "scheduler/player_shortcut.html" with u=c.mj%}
+    </tr>
+    <tr><td><strong>{{ c.title }}</strong></td>
+
+    <tr><td class="txt">{{ c.description }}</td>
+    <tr><td class="txt">{{ c.toc }}</td>
+    </tr>
+    <tr><td>Avec</td>
+
+        </tr>
+    <tr>
+        <td>
+            {% for x in c.wanted_list %}
+                {% include "scheduler/player_shortcut.html" with u=x %}
+            {% endfor %}
+
+        </td>
+    </tr>
+</table>
+
+
+

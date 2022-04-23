@@ -501,12 +501,31 @@ def members(request):
     from scheduler.models.profile import Profile
     context = {}
     context['members'] = []
+    context['today'] = datetime.now().strftime(FMT_DATE)
     members = Profile.objects.order_by('nickname')
     for m in members:
         context['members'].append(gimme_profile(m.id))
     template = get_template('scheduler/menu_propositions.html')
     menu_html = template.render(context, request)
     template = get_template('scheduler/all_members.html')
+    html = template.render(context, request)
+    response = {'data': html, 'menu': menu_html}
+    return JsonResponse(response)
+
+@login_required
+def campaigns(request):
+    if not request.user.is_authenticated:
+        return render(request, 'scheduler/registration/login_error.html')
+    from scheduler.models.campaign import Campaign
+    context = {}
+    context['campaigns'] = []
+    context['today'] = datetime.now().strftime(FMT_DATE)
+    campaigns = Campaign.objects.order_by('title')
+    for c in campaigns:
+        context['campaigns'].append(gimme_campaign(c.id))
+    template = get_template('scheduler/menu_propositions.html')
+    menu_html = template.render(context, request)
+    template = get_template('scheduler/all_campaigns.html')
     html = template.render(context, request)
     response = {'data': html, 'menu': menu_html}
     return JsonResponse(response)
