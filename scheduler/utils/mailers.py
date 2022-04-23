@@ -4,7 +4,7 @@ from datetime import date, timedelta
 
 class EmailBody(object):
     def __init__(self):
-        pile = []
+        self.pile = []
 
     def stack(self, txt):
         self.pile.append(txt)
