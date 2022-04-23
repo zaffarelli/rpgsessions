@@ -53,7 +53,7 @@ class Sunday(CronJobBase):
 
 
 class Hermes(CronJobBase):
-    RUN_EVERY_MINS = 10
+    RUN_EVERY_MINS = 3
 
     schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
     code = 'scheduler.utils.crontasks.Hermes'  # a unique code
