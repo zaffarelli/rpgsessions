@@ -49,7 +49,7 @@ def mercure():
         sessions_mj = Session.objects.filter(date_start_gte=_da, date_start_lte=_db, mj=profile)
         for s in sessions_mj:
             body.stack(f"    - {s.title} par {s.mj.nickname}, le f{s.date_start.strftime(FMT_DATE_PRETTY)} à {s.place} (c'est toi le MJ!)")
-        body.stack.(f"::mouhahahahahahaha::\n\nVotre dévoué serviteur eXtraordinaire,\nFernando Casabuentes.")
+        body.stack(f"::mouhahahahahahaha::\n\nVotre dévoué serviteur eXtraordinaire,\nFernando Casabuentes.")
         sender = f'fernando.casabuentes@gmail.com'
         targets = [f'zaffarelli@gmail.com']
         send_mail(subject, body.deliver(), sender, targets, fail_silently=False)
