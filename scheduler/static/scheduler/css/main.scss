@@ -1073,3 +1073,18 @@ em.big {
 .flash{
   border:10px solid lime !important;
 }
+
+.gallery{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 3px 3px;
+  width:700px;
+  height:auto;
+  & .figure{
+    width:auto;
+
+  }
+}

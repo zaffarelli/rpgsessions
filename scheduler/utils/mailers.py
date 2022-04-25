@@ -1,6 +1,8 @@
 from django.core.mail import send_mail
 from scheduler.utils.mechanics import FMT_DATE_PRETTY
 from datetime import date, timedelta
+from django.core.mail import EmailMultiAlternatives
+
 
 class EmailBody(object):
     def __init__(self):

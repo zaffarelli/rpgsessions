@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block userzone %}
+    <div class="bar">
+        <div class='lefters'>
+            <div class="title">
+                <div class="logo">{% include 'scheduler/svg/logo.svg' %}</div>
+                <div class="logo">{% include 'scheduler/svg/JDR31.svg' %}</div>
+            </div>
+
+        </div>
+        <div class='righters'>
+        </div>
+    </div>
+{% endblock userzone %}
+
+
+{% block menuzone %}
+
+{% endblock menuzone %}
+
+{% block eventzone %}
+
+{% endblock eventzone %}
+
+{% block wrapper %}
+
+<div class="gallery">
+        {% for x in figures.face %}
+                <div class='figure' title="{{ x.is_girl }}/ f:{{ x.face_style }} / m:{{ x.mouth_style }} / h:{{ x.hair_style }}">
+                    {% include "scheduler/player_shortcut.html" with u=x large=1 %}
+                </div>
+        {% endfor %}
+</div>
+
+
+<div class="gallery">
+        {% for x in figures.hair %}
+                <div class='figure' title="{{ x.is_girl }} / f:{{ x.face_style }} / m:{{ x.mouth_style }} / h:{{ x.hair_style }}">
+                    {% include "scheduler/player_shortcut.html" with u=x large=1 %}
+                </div>
+        {% endfor %}
+</div>
+
+<div class="gallery">
+        {% for x in figures.mouth %}
+                <div class='figure' title="{{ x.is_girl }} / f:{{ x.face_style }} / m:{{ x.mouth_style }} / h:{{ x.hair_style }}">
+                    {% include "scheduler/player_shortcut.html" with u=x large=1 %}
+                </div>
+        {% endfor %}
+</div>
+
+
+{% endblock wrapper %}
+
+
+
+{% block custom_js %}
+    <script>
+        _.defer(function () {
+            let co = new Scheduler()
+            co.perform();
+            co.revealUI();
+        });
+    </script>
+{% endblock custom_js %}

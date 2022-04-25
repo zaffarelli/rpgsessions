@@ -42,19 +42,38 @@ def gimme_profile(x):
     from scheduler.models.profile import Profile
 
     elem = Profile.objects.get(pk=x)
-    context = {'Status': f'The parameter {x} is not a user profile'}
+    context = {'Status': f'The parameter {x} is not a user profile id'}
     # print(elem)
     if isinstance(elem, Profile):
         context = elem.to_json
         context['status'] = "ok"
         # context['silhouette_symbol'] = elem.silhouette_symbol
         # context['shield_symbol'] = elem.shield_symbol
-        context['shieldstyle_display'] = elem.get_shieldstyle_display()
-        context['iconstyle_display'] = elem.get_iconstyle_display()
+        # context['shieldstyle_display'] = elem.get_shieldstyle_display()
+        # context['iconstyle_display'] = elem.get_iconstyle_display()
         context['artefact'] = elem.build_svg_artefact()
         context['face_artefact'] = elem.build_face_artefact()
         context['games_run'] = elem.games_run
         context['games_played'] = elem.games_played
+    return context
+
+
+def gimme_profile_sober(elem):
+    from scheduler.models.profile import Profile
+
+    context = {'Status': f'The parameter {elem} is not a user profile'}
+    # print(elem)
+    if isinstance(elem, Profile):
+        context = elem.to_json
+        context['status'] = "ok"
+        # context['silhouette_symbol'] = elem.silhouette_symbol
+        # context['shield_symbol'] = elem.shield_symbol
+        # context['shieldstyle_display'] = elem.get_shieldstyle_display()
+        # context['iconstyle_display'] = elem.get_iconstyle_display()
+        context['artefact'] = elem.build_svg_artefact()
+        context['face_artefact'] = elem.build_face_artefact()
+        # context['games_run'] = elem.games_run
+        # context['games_played'] = elem.games_played
     return context
 
 

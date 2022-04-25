@@ -32,67 +32,32 @@
 <path id="girl_long_hair2" opacity="{{u.face_artefact.hair_style.type2}}"
       d="M 0 -8 l -4 0 l 0 8 l 8 0 l 0 -8"
       style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+<path id="girl_hair6b" opacity="{{u.face_artefact.hair_style.type6}}"
+      d="M 0 -8 l -4 0 l 0 8 l 8 0 l 0 -8"
+      style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 <g id="girl_ears">
     <ellipse cx="5.25" cy="-11.25" rx="0.80" ry="1.5"
              style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
     <ellipse cx="-5.25" cy="-11.25" rx="0.80" ry="1.5"
              style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 </g>
-<path id="girl_body"
-      d="
-              M 0 2 l -10 0
-              q 0 -4 4 -4
-              q 4 0 4 -2
-              l 0 -2
-              l 4 0
-              l 0 2
-              q 0 2 4 2
-              q 4 0 4 4
-              l -10 0
-              "
+<path id="girl_body" d="M 0 2 l -10 0 q 0 -4 4 -4 q 4 0 4 -2 l 0 -2 l 4 0 l 0 2 q 0 2 4 2 q 4 0 4 4 l -10 0"
       style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
-<path id="girl_shirt"
-      d="
-              M 0 2 l -10 0
-              q 0 -4 4 -4
-              q 6 4 12 0
-
-
-              q 4 0 4 4
-              l -10 0
-              "
+<path id="girl_shirt" d="M 0 2 l -10 0 q 0 -4 4 -4 q 6 4 12 0 q 4 0 4 4 l -10 0"
       style="fill:{{u.alpha}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
 
 <g transform="translate(0,3)">
     <path id="head_girl_thin" opacity="{{u.face_artefact.face_style.thin}}"
-          d="
-              M 0  -7
-              l 0  0  q -2 0 -5 -6
-              l  0 -2 q 1 -6   4 -6
-              l  2  0 q 3 0   4  6
-              l  0  2 q -3 6  -5  6"
+          d="M 0 -7 l 0  0  q -2 0 -5 -6 l  0 -2 q 1 -6 4 -6 l  2  0 q 3 0 4  6 l  0  2 q -3 6  -5  6"
           style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
-
     <path id="head_girl_standard" opacity="{{u.face_artefact.face_style.standard}}"
-          d="
-              M 0  -7
-              l 0  0  q -3 0 -5 -6
-              l  0 -2 q 1 -6   4 -6
-              l  2  0 q 3 0   4  6
-              l  0  2 q -2 6  -5  6"
+          d="M 0  -7 l 0  0  q -3 0 -5 -6 l  0 -2 q 1 -6   4 -6 l  2  0 q 3 0   4  6 l  0  2 q -2 6  -5  6"
           style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
-
     <path id="head_girl_large" opacity="{{u.face_artefact.face_style.bold}}"
-          d="
-              M 0  -7
-              l 0  0  q -4 0 -5 -6
-              l  0 -2 q 1 -6   4 -6
-              l  2  0 q 3 0   4  6
-              l  0  2 q -1 6  -5  6"
+          d="M 0  -7 l 0  0  q -4 0 -5 -6 l  0 -2 q 1 -6   4 -6 l  2  0 q 3 0   4  6 l  0  2 q -1 6  -5  6"
           style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
-
 
     <path id="girl_hair1" opacity="{{u.face_artefact.hair_style.type1}}"
           d="M 0 -20
@@ -135,37 +100,44 @@
 
     <path id="girl_hair3" opacity="{{u.face_artefact.hair_style.type3}}"
           d="M 0 -21
-          m -1 0
-          l 0 1 -2 3 -2 2 -1 3 -1 -1
-          q 0 -8 6 -8
-          q 7 -3 9 11
-          l -1 1
-
-          q 1 -4 -8 -11
-
-
-            "
+          m -1 1
+          l -2 3
+          q -4 5 -3 7
+          q -2 -9 5 -11
+          l 0 1
+          l 4 3
+          q 4 3 4 12
+          q 4 -18 -8 -16
+          "
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="girl_hair4" opacity="{{u.face_artefact.hair_style.type4}}"
+          d="M 0 -21 m 0 1 l -2 1 l -3 4 l 1 -3 l 1 -2 q -4 -4 3 -4 q 7 0 3 4 l 1 2 l 1 3 l -3 -4 l -2 -1"
+          style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+
+    <path id="girl_hair5" opacity="{{u.face_artefact.hair_style.type5}}"
+          d="M 0 -21 m 0 1 l -2 1 l -3 4 l 1 -3 l 1 -2
+          q -6 -4 3 -2
+          q 9 -2 3 2
+          l 1 2 l 1 3 l -3 -4 l -2 -1"
+          style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+
+    <path id="girl_hair6a" opacity="{{u.face_artefact.hair_style.type6}}"
           d="M 0 -21
-          m -1 0
-          l 0 1 -2 3 -2 2 -1 3 -1 -1
-          q 0 -8 6 -8
-          q 7 -3 9 11
-          l -1 1
+          m -1 1
+          l -2 3
+          l -2 0
+          q 0 -4 5 -4
+          q 6 0 5 4
+          l -5 0
+          l -1 -3
 
-          q 1 -4 -8 -11
-
-
-            "
+          "
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
 
     <ellipse cx="-2.75" cy="-14.05" rx="1.80" ry="1.5" style="fill:#9C8267;stroke:#none;"/>
     <ellipse cx="2.75" cy="-14.05" rx="1.80" ry="1.5" style="fill:#9C8267;stroke:#none;"/>
-    <ellipse cx="-2.5" cy="-14" rx="1" ry="0.5" style="fill:#202020;stroke:#none;"/>
-    <ellipse cx="2.5" cy="-14" rx="1" ry="0.5" style="fill:#202020;stroke:#none;"/>
 
     <g id="eyes" opacity="1">
         <!--                <animate attributeName="opacity" values="1" begin="5s" dur="0.5s" eventValue="onmouseover" repeatCount="indefinite"/>-->
@@ -174,13 +146,16 @@
 
         <ellipse cx="-2.5" cy="-14" rx="0.5" ry="0.5" style="fill:{{u.eyes}};stroke:#none;"/>
         <ellipse cx="2.5" cy="-14" rx="0.5" ry="0.5" style="fill:{{u.eyes}};stroke:#none;"/>
+    <ellipse cx="-2.5" cy="-14" rx="0.25" ry="0.25" style="fill:#202020;stroke:#none;"/>
+    <ellipse cx="2.5" cy="-14" rx="0.25" ry="0.25" style="fill:#202020;stroke:#none;"/>
+
     </g>
 
 
     <ellipse cx="0" cy="-11" rx="1.1" ry="0.35" style="fill:#917D67;stroke:#none;"/>
 
 
-    <path id="mouth2" opacity="{{u.face_artefact.mouth_style.type1}}"
+    <path id="girl_mouth1" opacity="{{u.face_artefact.mouth_style.type1}}"
           d="M 0 -9.5
                     l -0.25 -0.25
                     l -1.25 0.5
@@ -194,7 +169,7 @@
           style="fill:#917D67;stroke:none;stroke-width:0.1mm; stroke-cap:round;"/>
 
 
-    <path id="mouth2" opacity="{{u.face_artefact.mouth_style.type2}}"
+    <path id="girl_mouth2" opacity="{{u.face_artefact.mouth_style.type2}}"
           d="M 0 -9.5
                     l -0.25 -0.25
                     l -1.25 0.5
@@ -206,6 +181,47 @@
 
               "
           style="fill:#a02020;stroke:#a05050;stroke-width:0.1mm; stroke-cap:round;"/>
+
+    <path id="girl_mouth3" opacity="{{u.face_artefact.mouth_style.type3}}"
+          d="M 0 -9.5
+                    l -0.35 -0.25
+                    l -1.35 0.5
+                    l 1.7 0.5
+                    l 1.7 -0.5
+                    l -1.35 -0.5
+                    l -0.35 0.25
+
+
+              "
+          style="fill:#917D67;stroke:#a05050;stroke-width:0.1mm; stroke-cap:round;"/>
+
+    <path id="girl_mouth4" opacity="{{u.face_artefact.mouth_style.type4}}"
+          d="M 0 -9.5
+                    l -0.35 -0.25
+                    l -1.35 0.5
+                    l 1.7 0.5
+                    l 1.7 -0.5
+                    l -1.35 -0.5
+                    l -0.35 0.25
+
+
+              "
+          style="fill:#ffffff;stroke:#917D67;stroke-width:0.1mm; stroke-cap:round;"/>
+
+    <path id="girl_mouth5" opacity="{{u.face_artefact.mouth_style.type5}}"
+          d="M 0 -9.5
+                    l -0.6 0
+                    l -1.35 -0.25
+
+                    l 1 1.25
+                    l 2 0
+                    l 1 -1.25
+
+                    l -1.35 0.25
+                    l -0.6 0
+              "
+          style="fill:#ffffff;stroke:#917D67;stroke-width:0.1mm; stroke-cap:round;"/>
+
 
 </g>
 
@@ -304,8 +320,38 @@
           1 0 5 1 0 1 -1 5 -1 -3 -1 -2 -1 -1 -1 1 -1 0"
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
-    <path id="hair3" opacity="{{u.face_artefact.hair_style.type4}}"
+    <path id="hair4" opacity="{{u.face_artefact.hair_style.type4}}"
           d="M -2 -21 l -3 3 q 0 -4 3 -3 l 7 3 1 0 q -5 -8 -8.5 -3"
+          style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+
+    <path id="hair5" opacity="{{u.face_artefact.hair_style.type5}}"
+          d="M 0 -21.5
+            l -2 0
+            -2 3
+             -0.5 0
+             -0.5 3
+             -1 0
+             0 -3
+             1 -2
+             2 -2.5
+            3 0
+            3 0
+            2 2.5
+            1 2
+            0 3
+            -1 0
+            -0.5 -3
+            -0.5 0
+            -2 -3
+            -2 0
+
+
+
+
+
+
+
+            "
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="goatie1" opacity="{{u.face_artefact.mouth_style.type1}}"
@@ -380,6 +426,16 @@
               "
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
+    <path id="vandike_m" opacity="{{u.face_artefact.mouth_style.type6}}"
+          d="M 0 -10.35
+                     l -3 0.5 -1 0.5 1 -2 2 0 1 0.5
+                     1 -0.5 2 0 1 2 -1 -0.5 -3 -0.5
+
+
+
+              "
+          style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+
     <path id="fav_left" opacity="{{u.face_artefact.mouth_style.type4}}"
           d="M -4 -13 l 0 2 l -1 1 l -1 -2 l 1 -2 l 1 1"
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
@@ -390,6 +446,20 @@
 
     <path id="fav_lips" opacity="{{u.face_artefact.mouth_style.type4}}" d="M 0 -10.35 l -1.5 0 3 0"
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+
+    <path id="man_mouth5" opacity="{{u.face_artefact.mouth_style.type5}}"
+          d="M 0 -10
+                    l -0.6 0
+                    l -1.35 -0.25
+
+                    l 1 1.25
+                    l 2 0
+                    l 1 -1.25
+
+                    l -1.35 0.25
+                    l -0.6 0
+              "
+          style="fill:#ffffff;stroke:#917D67;stroke-width:0.1mm; stroke-cap:round;"/>
 
 
     <g id="facial_features">

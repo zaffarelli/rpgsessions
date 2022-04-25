@@ -29,6 +29,7 @@ def system_flush():
         i.delete()
     # from scheduler.models.inscription import Inscription
 
+
 def register_submit(request):
     from django.contrib.auth.models import User
     from scheduler.models.profile import Profile
@@ -120,3 +121,56 @@ def handle_invitation(request, slug=None):
         return HttpResponseRedirect('/')
     context = prepare_new_user(request, slug)
     return render(request, 'registration/invite.html', context)
+
+
+def prepare_design(request):
+    from scheduler.models.profile import Profile
+    from scheduler.models.profile import HAIR_STYLES, MOUTH_STYLES, FACE_STYLES
+    from scheduler.views.gimme import gimme_profile_sober
+
+    p = Profile()
+    p.alpha = "#ff0000"
+    p.beta = "#00ff00"
+    p.gamma = "#0000ff"
+    p.face_style = "standard"
+    p.hair_style = "standard"
+    p.mouth_style = "standard"
+    p.is_girl = False
+    p.hair = "#ffff00"
+    p.eyes = "#00ffff"
+
+
+    hair = []
+    mouth = []
+    face = []
+
+    for i in HAIR_STYLES:
+        p.is_girl = False
+        p.hair_style = i[0]
+        hair.append(gimme_profile_sober(p))
+        p.is_girl = True
+        hair.append(gimme_profile_sober(p))
+    p.hair_style = "standard"
+    for i in MOUTH_STYLES:
+        p.is_girl = False
+        p.mouth_style = i[0]
+        mouth.append(gimme_profile_sober(p))
+        p.is_girl = True
+        mouth.append(gimme_profile_sober(p))
+    p.mouth_style = "standard"
+    for i in FACE_STYLES:
+        p.is_girl = False
+        p.face_style = i[0]
+        face.append(gimme_profile_sober(p))
+        p.is_girl = True
+        face.append(gimme_profile_sober(p))
+    context = {'figures': {'hair': hair, 'mouth': mouth, 'face': face}}
+    return context
+
+
+@login_required
+def design(request):
+    if not request.user.is_authenticated:
+        return render(request, 'scheduler/registration/login_error.html')
+    context = prepare_design(request)
+    return render(request, 'scheduler/design.html', context=context)
