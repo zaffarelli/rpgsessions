@@ -1,4 +1,4 @@
 {% load static %}
-<div class="player_shortcut" title="{{ u.nickname }} [{{ u.id }}]">
+<div class="player_shortcut" {% if notitle %}{% else %}title="{{ u.nickname }} [{{ u.id }}]"{% endif %}>
     {% include "scheduler/svg/player_base.svg" with u=u scale=scale %}
 </div>

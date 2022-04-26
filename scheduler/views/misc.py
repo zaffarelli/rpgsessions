@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from scheduler.utils.mechanics import FONTSET
+from django.http import JsonResponse
 
 from datetime import datetime
 
@@ -50,24 +51,29 @@ def register_submit(request):
         # Not an existing user
         if len(username) < 6:
             valid = False
-            errors.append("Name too short")
+            errors.append("Nom top court (6 cracatères mini)")
+        purged = username.replace(" ","").replace("<","").replace("-","").replace("&","").replace("!","").replace("?","").replace("/","")
+        if purged != username:
+            valid = False
+            errors.append("Caractères invalides dans l'identifiant...")
+
         if len(nickname) < 3:
             valid = False
-            errors.append("Nickname too short")
+            errors.append("Surnom trop court")
         all_users = User.objects.filter(username=username)
         if len(all_users):
             valid = False
-            errors.append("User exists")
+            errors.append("Cet utilisateur existe déjà...")
         if len(password) < 8:
             valid = False
-            errors.append("Password too short")
+            errors.append("Mot de passe trop court")
         if password != confirm:
             valid = False
-            errors.append("Password and confirm not equals")
+            errors.append("Le mot de passe et la confirmation ne correspondent pas...")
         all_profiles = Profile.objects.filter(nickname=nickname)
         if len(all_profiles):
             valid = False
-            errors.append("Profile already exists")
+            errors.append("Ce profil existe déjà...")
         if valid:
             user = User()
             user.username = username

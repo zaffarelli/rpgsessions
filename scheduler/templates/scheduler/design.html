@@ -29,8 +29,8 @@
 
 <div class="gallery">
         {% for x in figures.face %}
-                <div class='figure' title="{{ x.is_girl }}/ f:{{ x.face_style }} / m:{{ x.mouth_style }} / h:{{ x.hair_style }}">
-                    {% include "scheduler/player_shortcut.html" with u=x large=1 %}
+                <div class='figure' title="Girl:{{ x.is_girl }}&#13;&#10;Face:{{ x.face_style }}&#13;&#10;Mouth/Beard:{{ x.mouth_style }}&#13;&#10;Hair:{{ x.hair_style }}">
+                    {% include "scheduler/player_shortcut.html" with u=x large=1 notitle=1%}
                 </div>
         {% endfor %}
 </div>
@@ -38,16 +38,16 @@
 
 <div class="gallery">
         {% for x in figures.hair %}
-                <div class='figure' title="{{ x.is_girl }} / f:{{ x.face_style }} / m:{{ x.mouth_style }} / h:{{ x.hair_style }}">
-                    {% include "scheduler/player_shortcut.html" with u=x large=1 %}
+                <div class='figure' title="Girl:{{ x.is_girl }}&#13;&#10;Face:{{ x.face_style }}&#13;&#10;Mouth/Beard:{{ x.mouth_style }}&#13;&#10;Hair:{{ x.hair_style }}">
+                    {% include "scheduler/player_shortcut.html" with u=x large=1  notitle=1%}
                 </div>
         {% endfor %}
 </div>
 
 <div class="gallery">
         {% for x in figures.mouth %}
-                <div class='figure' title="{{ x.is_girl }} / f:{{ x.face_style }} / m:{{ x.mouth_style }} / h:{{ x.hair_style }}">
-                    {% include "scheduler/player_shortcut.html" with u=x large=1 %}
+                <div class='figure' title="Girl:{{ x.is_girl }}&#13;&#10;Face:{{ x.face_style }}&#13;&#10;Mouth/Beard:{{ x.mouth_style }}&#13;&#10;Hair:{{ x.hair_style }}">
+                    {% include "scheduler/player_shortcut.html" with u=x large=1  notitle=1%}
                 </div>
         {% endfor %}
 </div>
