@@ -30,8 +30,8 @@ def mercure():
     d = date.today()
 
     for p in profiles:
-        played_data, has_played = p.played_the(d)
-        masterized_data, has_masterized = p.masterized_the(d)
+        has_played, played_data = p.played_the(d)
+        has_masterized, masterized_data = p.masterized_the(d)
         if has_played or has_masterized:
             subject = f"[eXtraventures] Cyber PostIt !"
             body = EmailBody()
