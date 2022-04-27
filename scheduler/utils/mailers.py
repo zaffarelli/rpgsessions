@@ -46,6 +46,7 @@ def mercure():
                 body.stack(f"    (a) Parties jouées:")
                 for s in played_data:
                     body.stack(f"    - {s.title} par {s.mj.nickname}, jeu=[{s.game.name}] , le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (inscription ok)")
+                    body.stack(f"     Description:  {s.description} ")
             if has_masterized:
                 body.stack(f"    (b) Parties menées:")
                 for s in masterized_data:
