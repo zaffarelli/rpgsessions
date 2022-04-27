@@ -72,6 +72,7 @@ class Profile(models.Model):
     eyes = ColorField(default='#666666')
     mail_wednesday = models.BooleanField(default=False)
     mail_sunday = models.BooleanField(default=False)
+    mail_daily = models.BooleanField(default=False)
     processed = models.BooleanField(default=False)
 
     def __str__(self):
@@ -206,7 +207,33 @@ class Profile(models.Model):
             list.append(f"{s.date_start} - '{s.title}' par {s.mj}")
         return list
 
+    def played_the(self, d):
+        from scheduler.models.session import Session
+        from scheduler.models.inscription import Inscription
+        inscriptions = Inscription.objects.filter(profile=self)
+        inscription_set = []
+        for i in inscriptions:
+            if i.session.date_start == d:
+                inscription_set.append(i.session.id)
+        sessions = Session.objects.filter(date_start=d)
+        data = []
+        something_to_say = len(sessions) > 0
+        for s in sessions:
+            required = self.id in s.wanted.split(';')
+            if s.id in inscription_set:
+                data.append((s, required))
+        return something_to_say, data
+
+    def masterized_the(self, d):
+        from scheduler.models.session import Session
+        sessions_mj = Session.objects.filter(date_start=d, mj=self)
+        something_to_say = len(sessions_mj) > 0
+        data = []
+        for s in sessions_mj:
+            data.append(s)
+        return something_to_say, data
+
 
 class ProfileAdmin(admin.ModelAdmin):
     ordering = ['nickname']
-    list_display = ['u_u', 'nickname', 'realm', 'games_run', 'presentation', 'favorites']
+    list_display = ['nickname','user', 'realm', 'games_run', 'presentation', 'favorites', 'mail_daily', 'mail_wednesday', 'mail_sunday']
