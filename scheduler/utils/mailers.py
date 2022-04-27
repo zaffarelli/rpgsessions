@@ -41,7 +41,7 @@ def mercure():
             body.stack(
                 "Vous ne recevrez ce message que si vous participez à des parties aujourd'hui. Si ce n'est pas le cas, pas de message!")
             body.stack("¤ ¤ ¤")
-            body.stack("Alors, pusisque nous en somme là, c'est qu'il y a quelque chose à dire...")
+            body.stack("    Alors, puisque nous en somme là, c'est qu'il y a quelque chose à dire...")
             if has_played:
                 body.stack(f"    (a) Parties jouées:")
                 for s in played_data:

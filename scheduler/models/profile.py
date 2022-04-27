@@ -217,10 +217,11 @@ class Profile(models.Model):
                 inscription_set.append(i.session.id)
         sessions = Session.objects.filter(date_start=d)
         data = []
-        something_to_say = len(sessions) > 0
+        something_to_say = False
         for s in sessions:
             # required = self.id in s.wanted.split(';')
             if s.id in inscription_set:
+                something_to_say = True
                 data.append(s)
         return something_to_say, data
 
