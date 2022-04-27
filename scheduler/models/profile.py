@@ -221,7 +221,7 @@ class Profile(models.Model):
         for s in sessions:
             required = self.id in s.wanted.split(';')
             if s.id in inscription_set:
-                data.append((s, required))
+                data.append(s)
         return something_to_say, data
 
     def masterized_the(self, d):

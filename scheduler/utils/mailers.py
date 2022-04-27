@@ -44,7 +44,7 @@ def mercure():
             body.stack("Alors, pusisque nous en somme là, c'est qu'il y a quelque chose à dire...")
             if has_played:
                 body.stack(f"    (a) Parties jouées:")
-                for s, r in played_data:
+                for s in played_data:
                     body.stack(f"    - {s.title} par {s.mj.nickname}, jeu=[{s.game.name}] , le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (inscription ok)")
             if has_masterized:
                 body.stack(f"    (b) Parties menées:")
