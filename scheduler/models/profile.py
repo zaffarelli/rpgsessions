@@ -219,7 +219,7 @@ class Profile(models.Model):
         data = []
         something_to_say = len(sessions) > 0
         for s in sessions:
-            required = self.id in s.wanted.split(';')
+            # required = self.id in s.wanted.split(';')
             if s.id in inscription_set:
                 data.append(s)
         return something_to_say, data
