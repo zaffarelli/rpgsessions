@@ -26,7 +26,7 @@ def mercure():
     from scheduler.models.profile import Profile
     from scheduler.models.inscription import Inscription
 
-    profiles = Profile.objects.filter(mail_wednesday=True)
+    profiles = Profile.objects.filter(mail_daily=True)
     d = date.today()
 
     for p in profiles:
