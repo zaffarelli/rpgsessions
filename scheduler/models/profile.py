@@ -207,15 +207,16 @@ class Profile(models.Model):
             list.append(f"{s.date_start} - '{s.title}' par {s.mj}")
         return list
 
-    def played_the(self, d):
+    def played_the(self, d, de):
+        """ Check if the profile has inscriptions on sessions between d and de included """
         from scheduler.models.session import Session
         from scheduler.models.inscription import Inscription
         inscriptions = Inscription.objects.filter(profile=self)
         inscription_set = []
         for i in inscriptions:
-            if i.session.date_start == d:
+            if d <= i.session.date_start <= de:
                 inscription_set.append(i.session.id)
-        sessions = Session.objects.filter(date_start=d)
+        sessions = Session.objects.filter(date_start__gte=d, date_start__lte=de)
         data = []
         something_to_say = False
         for s in sessions:
@@ -225,9 +226,10 @@ class Profile(models.Model):
                 data.append(s)
         return something_to_say, data
 
-    def masterized_the(self, d):
+    def masterized_the(self, d, de):
+        """ Check if the profile is mj on sessions between d and de included """
         from scheduler.models.session import Session
-        sessions_mj = Session.objects.filter(date_start=d, mj=self)
+        sessions_mj = Session.objects.filter(date_start__gte=d, date_start__lte=de, mj=self)
         something_to_say = len(sessions_mj) > 0
         data = []
         for s in sessions_mj:
@@ -237,4 +239,5 @@ class Profile(models.Model):
 
 class ProfileAdmin(admin.ModelAdmin):
     ordering = ['nickname']
-    list_display = ['nickname','user', 'realm', 'games_run', 'presentation', 'favorites', 'mail_daily', 'mail_wednesday', 'mail_sunday']
+    list_display = ['nickname', 'user', 'realm', 'games_run', 'presentation', 'favorites', 'mail_daily',
+                    'mail_wednesday', 'mail_sunday']

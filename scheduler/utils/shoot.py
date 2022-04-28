@@ -1,3 +1,3 @@
-from scheduler.utils.mailers import mercure
+from scheduler.utils.mailers import cyberpostit
 
-mercure()
+cyberpostit()
