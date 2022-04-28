@@ -62,3 +62,11 @@ def cyberpostit():
             sender = f'fernando.casabuentes@gmail.com'
             targets = [p.user.email]
             send_mail(subject, body.deliver(), sender, targets, fail_silently=False)
+
+def wednesday()
+    """ Wednesday recap of everything coming in the week """
+    pass
+
+def sunday()
+    """ Sunday recap of actions to be done """
+    pass
