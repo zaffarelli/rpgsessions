@@ -26,10 +26,10 @@ def cyberpostit():
     from scheduler.models.profile import Profile
     profiles = Profile.objects.filter(mail_cyber_postit=True)
     d1 = date.today()
-    d2 = date.today() + timedelta(days=0)
+    d2 = date.today()
     for p in profiles:
-        has_played, played_data = p.played_the(d1,d2)
-        has_masterized, masterized_data = p.masterized_the(d1,d2)
+        has_played, played_data = p.played_the(d1, d2)
+        has_masterized, masterized_data = p.masterized_the(d1, d2)
         if has_played or has_masterized:
             subject = f"[eXtraventures] Cyber PostIt !"
             body = EmailBody()
@@ -45,7 +45,8 @@ def cyberpostit():
                 body.stack(f"    (a) Parties jouées:")
                 for s in played_data:
                     body.stack("")
-                    body.stack(f"    - {s.title} par {s.mj.nickname}, jeu=[{s.game.name}], le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (inscription ok)")
+                    body.stack(
+                        f"    - {s.title} par {s.mj.nickname}, jeu=[{s.game.name}], le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (inscription ok)")
                     body.stack(f"     Description:  {s.description} ")
                     body.stack("")
             if has_masterized:
