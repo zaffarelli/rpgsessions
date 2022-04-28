@@ -72,7 +72,7 @@ class Profile(models.Model):
     eyes = ColorField(default='#666666')
     mail_wednesday = models.BooleanField(default=False)
     mail_sunday = models.BooleanField(default=False)
-    mail_daily = models.BooleanField(default=False)
+    mail_cyber_postit = models.BooleanField(default=False)
     processed = models.BooleanField(default=False)
 
     def __str__(self):
@@ -239,5 +239,5 @@ class Profile(models.Model):
 
 class ProfileAdmin(admin.ModelAdmin):
     ordering = ['nickname']
-    list_display = ['nickname', 'user', 'realm', 'games_run', 'presentation', 'favorites', 'mail_daily',
+    list_display = ['nickname', 'user', 'realm', 'games_run', 'presentation', 'favorites', 'mail_cyber_postit',
                     'mail_wednesday', 'mail_sunday']

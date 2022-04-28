@@ -17,7 +17,7 @@
                             </div>
                             <div class="sessions">
                                 {% for x in data.sessions %}
-                                    {% include "scheduler/session_zoom.html" with c=x %}
+                                    {% include "scheduler/session_zoom.html" with c=x g=x.game %}
                                 {% endfor %}
                             </div>
                         </div>

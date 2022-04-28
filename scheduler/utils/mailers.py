@@ -24,7 +24,7 @@ def week_bounds():
 def cyberpostit():
     """ Activity for the current day (if any) """
     from scheduler.models.profile import Profile
-    profiles = Profile.objects.filter(mail_daily=True)
+    profiles = Profile.objects.filter(mail_cyber_postit=True)
     d1 = date.today()
     d2 = date.today() + timedelta(days=0)
     for p in profiles:

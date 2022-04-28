@@ -62,7 +62,7 @@ class Scheduler {
                     url = 'ajax/display/' + action + '/' + p + '/';
                 }
             }
-            console.log(url);
+            // console.log(url);
             $.ajax({
                 url: url,
                 success: function (answer) {
@@ -108,6 +108,8 @@ class Scheduler {
                         $('#dialog').html("Nope");
                         if (option != undefined) {
                             $("#" + option).click();
+
+
                         }
                         $('.shuntable').removeClass('hidden')
                     } else {
@@ -214,9 +216,9 @@ class Scheduler {
                     $('.shuntable').toggleClass('hidden')
                     $('.formblock').html(answer.form)
                     if (respawn_id) {
-                        console.log(respawn_id)
-
+                        // console.log(respawn_id)
                         $("#" + respawn_id).html(answer.callback);
+
                     }
                     if (answer.form == "Okidoki!") {
                         $('#overlay').addClass('hidden');
@@ -224,6 +226,11 @@ class Scheduler {
                     if (action == 'register_submit') {
                         $(".invite_block").html(answer.data);
                     }
+                            $('#reday').click();
+                            $('#reday').css('border-color',"red");
+                            // console.log("reday");
+
+
                     me.rebootLinks();
                 },
                 error: function (answer) {

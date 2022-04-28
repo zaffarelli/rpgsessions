@@ -1,0 +1,18 @@
+
+
+Salutations, {{ c.profile.nickname }}!
+
+{% if c.has_played %}
+    <h2>Parties jouées...</h2>
+    {% for s in c.played_sessions %}
+        {% include "scheduler/email/email_session.html" with s=s %}
+    {% endfor %}
+{% endif %}
+
+{% if c.has_masterized %}
+    <h2>Parties menées...</h2>
+    {% for s in c.masterized_sessions %}
+        {% include "scheduler/email/email_session.html" with s=s %}
+    {% endfor %}
+{% endif %}
+<hr/>
