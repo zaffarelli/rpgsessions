@@ -214,7 +214,8 @@ class Profile(models.Model):
         inscriptions = Inscription.objects.filter(profile=self)
         inscription_set = []
         for i in inscriptions:
-            if d <= i.session.date_start <= de:
+            print(i.session,i.session.date_start)
+            if d <= i.session.date_start and i.session.date_start <= de:
                 inscription_set.append(i.session.id)
         sessions = Session.objects.filter(date_start__gte=d, date_start__lte=de)
         data = []

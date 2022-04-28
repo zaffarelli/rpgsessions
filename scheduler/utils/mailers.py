@@ -26,7 +26,7 @@ def cyberpostit():
     from scheduler.models.profile import Profile
     profiles = Profile.objects.filter(mail_cyber_postit=True)
     d1 = date.today()
-    d2 = date.today()
+    d2 = date.today() + timedelta(days=0)
     for p in profiles:
         has_played, played_data = p.played_the(d1, d2)
         has_masterized, masterized_data = p.masterized_the(d1, d2)
