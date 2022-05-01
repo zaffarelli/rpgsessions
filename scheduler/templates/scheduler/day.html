@@ -18,12 +18,12 @@
     <div class="day_bottom">
         {% if c.availabilities.availables %}
             <div style="display:block;float:right;width:15px;">
-                <i class="fa fa-circle" title="{{ c.availabilities.availables_title }}" style="color:darkcyan;"></i>
+                {{ availables_count }}<i class="fa fa-circle" title="{{ c.availabilities.availables_title }}" style="color:darkcyan;"></i>
             </div>
         {% endif %}
         {% if c.availabilities.absents %}
             <div style="display:block;float:left;width:15px;">
-            <i class="fa fa-circle" title="{{ c.availabilities.absents_title }}" style="color:brown;"></i>
+            <i class="fa fa-circle" title="{{ c.availabilities.absents_title }}" style="color:brown;"></i>{{ absents_count }}
             </div>
         {% endif %}
     </div>

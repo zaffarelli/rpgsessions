@@ -225,10 +225,14 @@ def gimme_all_availabilities(request, d, id):
         my_followers.append(f.target.id)
     here_entries = Availability.objects.filter(when=d, absent_mode=False)
 
+    availables_count = 0
+    absents_count = 0
+
     for here in here_entries:
         if here.profile.id in my_followers:
             availables.append(gimme_profile(here.profile.id))
             availables_title.append(gimme_profile(here.profile.id)['nickname'])
+            availables_count += 1
     off_entries = Availability.objects.filter(when=d, absent_mode=True)
     # if len(off_entries) > 0:
     #     print(all_followers, my_followers, off_entries)
@@ -236,9 +240,12 @@ def gimme_all_availabilities(request, d, id):
         if off.profile.id in my_followers:
             absents.append(gimme_profile(off.profile.id))
             absents_title.append(gimme_profile(off.profile.id)['nickname'])
+            absents_count += 1
 
     context['availables'] = availables
+    context['availables_count'] = availables_count
     context['absents'] = absents
+    context['absents_count'] = absents_count
     if len(absents_title) > 0:
         context['absents_title'] = "Absent(es): " + ', '.join(absents_title)
     else:
