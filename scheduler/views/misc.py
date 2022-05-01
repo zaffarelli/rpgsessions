@@ -23,14 +23,6 @@ def who(request, pk=None):
     return render(request, 'scheduler/who.html', context=context)
 
 
-def system_flush():
-    from scheduler.models.availability import Availability
-    data_from_the_past = Availability.objects.filter(when__lt=datetime.today())
-    for i in data_from_the_past:
-        i.delete()
-    # from scheduler.models.inscription import Inscription
-
-
 def register_submit(request):
     from django.contrib.auth.models import User
     from scheduler.models.profile import Profile
@@ -180,3 +172,12 @@ def design(request):
         return render(request, 'scheduler/registration/login_error.html')
     context = prepare_design(request)
     return render(request, 'scheduler/design.html', context=context)
+
+
+def system_flush():
+    from scheduler.models.availability import Availability
+    # Suppression des disponibilités antérieures à la date du jour
+    data_from_the_past = Availability.objects.filter(when__lt=datetime.today())
+    for i in data_from_the_past:
+        i.delete()
+    # from scheduler.models.inscription import Inscription

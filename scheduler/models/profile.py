@@ -237,6 +237,27 @@ class Profile(models.Model):
             data.append(s)
         return something_to_say, data
 
+    def wanted_the(self, d, de):
+        """ Check if the profile has inscriptions on sessions between d and de included """
+        from scheduler.models.session import Session
+        from scheduler.models.inscription import Inscription
+        inscriptions = Inscription.objects.filter(profile=self)
+        inscription_set = []
+        for i in inscriptions:
+            if i.session.date_start:
+                if d <= i.session.date_start and i.session.date_start <= de:
+                    inscription_set.append(i.session.id)
+        sessions = Session.objects.filter(date_start__gte=d, date_start__lte=de)
+        data = []
+        something_to_say = False
+        for s in sessions:
+            required = self.id in s.wanted.split(';')
+            if required:
+                if s.id not in inscription_set:
+                    something_to_say = True
+                    data.append(s)
+        return something_to_say, data
+
 
 class ProfileAdmin(admin.ModelAdmin):
     ordering = ['nickname']
