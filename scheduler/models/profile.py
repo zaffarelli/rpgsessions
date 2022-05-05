@@ -58,8 +58,8 @@ class Profile(models.Model):
     is_girl = models.BooleanField(default=False)
     # shield = models.CharField(max_length=256, default='shield_base')
     # silhouette = models.CharField(max_length=256, default='player_base')
-    shieldstyle = models.CharField(max_length=256, default='mid', choices=SHIELD_STYLES)
-    iconstyle = models.CharField(max_length=256, default='disk', choices=ICON_STYLES)
+    # shieldstyle = models.CharField(max_length=256, default='mid', choices=SHIELD_STYLES)
+    # iconstyle = models.CharField(max_length=256, default='disk', choices=ICON_STYLES)
     face_style = models.CharField(max_length=256, default='standard', choices=FACE_STYLES)
     hair_style = models.CharField(max_length=256, default='standard', choices=HAIR_STYLES)
     mouth_style = models.CharField(max_length=256, default='standard', choices=MOUTH_STYLES)
@@ -143,25 +143,25 @@ class Profile(models.Model):
         )
         return
 
-    def build_svg_artefact(self):
-        artefact = {
-            'shield_back': {
-                'mid': 0.0,
-                'half': 0.0,
-                'quad': 0.0
-            },
-            'icon': {
-                'disk': 0.0,
-                'coins': 0.0,
-                'cross': 0.0,
-                'claws': 0.0,
-                'diamond': 0.0,
-                'crystal': 0.0,
-            }
-        }
-        artefact['shield_back'][self.shieldstyle] = 1.0
-        artefact['icon'][self.iconstyle] = 1.0
-        return artefact
+    # def build_svg_artefact(self):
+    #     artefact = {
+    #         'shield_back': {
+    #             'mid': 0.0,
+    #             'half': 0.0,
+    #             'quad': 0.0
+    #         },
+    #         'icon': {
+    #             'disk': 0.0,
+    #             'coins': 0.0,
+    #             'cross': 0.0,
+    #             'claws': 0.0,
+    #             'diamond': 0.0,
+    #             'crystal': 0.0,
+    #         }
+    #     }
+    #     artefact['shield_back'][self.shieldstyle] = 1.0
+    #     artefact['icon'][self.iconstyle] = 1.0
+    #     return artefact
 
     def build_face_artefact(self):
         artefact = {

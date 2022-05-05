@@ -898,8 +898,9 @@ table {
 
   &.wanted_session {
     border-color: $highlight_border;
-    background: $highlight_background;
+    //background: $highlight_background;
     color: $highlight_color;
+    padding:2px;
   }
 
 }

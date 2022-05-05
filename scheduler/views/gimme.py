@@ -51,7 +51,7 @@ def gimme_profile(x):
         # context['shield_symbol'] = elem.shield_symbol
         # context['shieldstyle_display'] = elem.get_shieldstyle_display()
         # context['iconstyle_display'] = elem.get_iconstyle_display()
-        context['artefact'] = elem.build_svg_artefact()
+        # context['artefact'] = elem.build_svg_artefact()
         context['face_artefact'] = elem.build_face_artefact()
         context['games_run'] = elem.games_run
         context['games_played'] = elem.games_played
@@ -188,7 +188,7 @@ def gimme_day(request, d):
     if d.strftime("%d/%m") == '08/05':  # Armistice
         day_off = True
         off_message = "Arm. 1945"
-    day_info = f"<div class='dia'>{DOWS[d.weekday()][:3]}</div><div class='dib'>{off_message}</div><div class='dic'>{d.strftime('%d')}</div>"
+    day_info = f"<div class='dia'>{DOWS[d.weekday()][:3]}</div><div class='dib'><i class='fas fa-eye'></i><br/>{off_message}</div><div class='dic'>{d.strftime('%d')}</div>"
 
     context = {'day_info': day_info,
                'day_off': day_off,
