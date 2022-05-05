@@ -104,4 +104,4 @@ class SessionAdmin(admin.ModelAdmin):
     list_display = ['title', 'game','campaign', 'date_start', 'time_start', 'max_players', 'duration', 'date_end',
                     'mj', 'newbies_allowed', 'one_shot_adventure', 'episode_tag']
     search_fields = ['title', 'description', 'campaign']
-    list_filter = ['level', 'game', 'campaign']
+    list_filter = ['game', 'mj', 'campaign', 'level']

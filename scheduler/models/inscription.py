@@ -29,3 +29,4 @@ class Inscription(models.Model):
 
 class InscriptionAdmin(admin.ModelAdmin):
     list_display = ['this', 'date_pub', 'session', 'profile']
+    list_filter = ['profile', 'session']

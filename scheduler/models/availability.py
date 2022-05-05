@@ -31,3 +31,4 @@ class Availability(models.Model):
 
 class AvailabilityAdmin(admin.ModelAdmin):
     list_display = ['this', 'when', 'date_pub', 'profile', 'absent_mode']
+    list_filter = ['absent_mode', 'when',  'profile']

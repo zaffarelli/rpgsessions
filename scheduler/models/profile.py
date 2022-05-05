@@ -263,3 +263,4 @@ class ProfileAdmin(admin.ModelAdmin):
     ordering = ['nickname']
     list_display = ['nickname', 'user', 'realm', 'games_run', 'presentation', 'favorites', 'mail_cyber_postit',
                     'mail_wednesday', 'mail_sunday']
+    list_filter = ['club']

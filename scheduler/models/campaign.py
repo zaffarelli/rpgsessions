@@ -45,3 +45,4 @@ class Campaign(models.Model):
 
 class CampaignAdmin(admin.ModelAdmin):
     list_display = ['title', 'game', 'mj', 'wanted']
+    list_filter = ['game', 'mj']

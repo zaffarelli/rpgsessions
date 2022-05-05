@@ -27,3 +27,4 @@ class Follower(models.Model):
 
 class FollowerAdmin(admin.ModelAdmin):
     list_display = ['this', 'profile', 'date_pub', 'target']
+    list_filter = ['profile', 'target']
