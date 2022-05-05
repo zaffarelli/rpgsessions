@@ -238,7 +238,7 @@
 <!--    <rect x="+3" y="-4" width="4" height="3" style="fill:{{u.beta}};stroke:#none;"/>-->
 
 
-<g opacity="1">
+<g opacity="0">
     <circle cx="0" cy="-7" r="0.125" style="stroke:none;fill:red;"></circle>
     <circle cx="0" cy="-8" r="0.125" style="stroke:none;fill:blue;"></circle>
     <circle cx="0" cy="-9" r="0.125" style="stroke:none;fill:blue;"></circle>
