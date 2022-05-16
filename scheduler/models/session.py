@@ -31,6 +31,7 @@ class Session(models.Model):
     wanted = models.CharField(max_length=64, default='', blank=True)
     # is_ready = models.BooleanField(default=False, verbose_name='ok', blank=True)
     is_visible = models.BooleanField(default=False, blank=True)
+    error_status = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         str = f"{self.title}"
@@ -98,10 +99,59 @@ class Session(models.Model):
             return ''
         return f'{i}/{t}'
 
+    def fix_wanted(self):
+        print("Fix Wanted")
+        from scheduler.models.profile import Profile
+        wanted = self.wanted.split(";")
+        for w in wanted:
+            print("wanted",w, wanted)
+            if not w.isdigit():
+                wanted.remove(w)
+            else:
+                profiles = Profile.objects.filter(id=int(w))
+                if len(profiles) == 0:
+                    wanted.remove(w)
+                else:
+                    print(f"Session {self.id} wanted list: user found {profiles.first().nickname}")
+        wanted_str = ";".join(wanted)
+        if wanted_str != self.wanted:
+            self.wanted = wanted_str
+            self.save()
+        return self.wanted
+
+    def gimme_odds(self, d):
+        from scheduler.models.inscription import Inscription
+        from scheduler.models.availability import Availability
+        details = []
+        odds = 0.0
+        odds_count = 0
+        inscriptions = Inscription.objects.filter(session=self)
+        realins = inscriptions.values_list('id', flat=True)
+        ons = Availability.objects.filter(when=d, absent_mode=False)
+        realons = ons.values_list('profile.id', flat=True)
+        offs = Availability.objects.filter(when=d, absent_mode=True)
+        realoffs = offs.values_list('profile.id', flat=True)
+
+        if self.wanted is None:
+            details += ["unknown no wanted"]
+        else:
+            print(realins)
+            print(realons)
+            print(realoffs)
+            # Dans le cas d'une proposition:
+            if self.date_start is None:
+                wlist = self.wanted.split(";")
+                odds_count = 1 + len(wlist);
+                for w in wlist:
+                    if w in realins:
+                        odds += 1
+
+        return odds, details
+
 
 class SessionAdmin(admin.ModelAdmin):
     ordering = ['date_start', 'time_start']
-    list_display = ['title', 'game','campaign', 'date_start', 'time_start', 'max_players', 'duration', 'date_end',
+    list_display = ['title', 'game', 'campaign', 'date_start', 'time_start', 'max_players', 'duration', 'date_end',
                     'mj', 'newbies_allowed', 'one_shot_adventure', 'episode_tag']
     search_fields = ['title', 'description', 'campaign']
     list_filter = ['game', 'mj', 'campaign', 'level']

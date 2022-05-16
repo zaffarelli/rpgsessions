@@ -4,6 +4,7 @@
         {{ form.non_field_errors }}
         {{ form.management_form }}
         <input name='mj' type='hidden' value='{{ form.mj.value }}'>
+        <input name='error_status' type='hidden' value='{{ form.error_status.value }}'>
         <input name='realm' type='hidden' value='{{ current_realm_id }}'>
         <tr>
             {{ form.title.errors }}
@@ -83,7 +84,7 @@
             {{ form.wanted.errors }}
             <th><label for="wanted">Sollicités</label></th>
             <td>{{ form.wanted }}</td>
-            <td></td>
+            <td><i class="fa fa-arrow-alt-circle-left" style="color:lemonchiffon;" title="Pour remplir ce champ, utilisez les id des profils des utilisateurs séparés par des points-virgules (sans espaces).&#10&#13En passant sur leur avatar avec la souris dans la page membres par exemple cette information apparaît.&#10&#13Vous pourrez éditer plus tard ce champ dans le doute.&#13&#10Un exemple ? 1;2 pour solliciter Zaffarelli et Zaharielle."></i></td>
         </tr>
         <tr>
             {{ form.optional_spots.errors }}

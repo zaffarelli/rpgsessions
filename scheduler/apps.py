@@ -11,3 +11,4 @@ class SchedulerConfig(AppConfig):
         import scheduler.signals.session
         import scheduler.signals.realm
         import scheduler.signals.campaign
+        import scheduler.signals.inscription

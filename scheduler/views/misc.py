@@ -181,3 +181,4 @@ def system_flush():
     for i in data_from_the_past:
         i.delete()
     # from scheduler.models.inscription import Inscription
+

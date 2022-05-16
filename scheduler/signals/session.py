@@ -14,4 +14,15 @@ def prepare_session(sender, instance, **kwargs):
         from scheduler.models.game import Game
         g = Game.objects.get(name='Autre')
         instance.game = g
-    print("Saving session", instance.title)
+    # Test de cohérence des wanted
+    instance.fix_wanted()
+    # Supprimer les inscriptions d'une session déplacée dans le temps
+    sessions = Session.objects.filter(id=instance.id)
+    if len(sessions) == 1:
+        previous_date = sessions.first().date_start
+        if previous_date != instance.date_start:
+            if instance.date_start is not None:
+                from scheduler.models.inscription import Inscription
+                inscriptions = Inscription.objects.filter(session=instance)
+                for x in inscriptions:
+                    x.delete()

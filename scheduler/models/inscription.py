@@ -20,6 +20,13 @@ class Inscription(models.Model):
     def this(self):
         return self.__str__
 
+    def propagate(self):
+        if self.session.date_start is not None:
+            from scheduler.models.availability import Availability
+            ons = Availability.objects.filter(when=self.session.date_start, profile=self.profile)
+            for x in ons:
+                x.delete()
+
     @property
     def to_json(self):
         from scheduler.utils.mechanics import json_default
