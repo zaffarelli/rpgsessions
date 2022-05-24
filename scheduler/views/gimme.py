@@ -70,7 +70,7 @@ def gimme_profile_sober(elem):
         # context['shield_symbol'] = elem.shield_symbol
         # context['shieldstyle_display'] = elem.get_shieldstyle_display()
         # context['iconstyle_display'] = elem.get_iconstyle_display()
-        context['artefact'] = elem.build_svg_artefact()
+        # context['artefact'] = elem.build_svg_artefact()
         context['face_artefact'] = elem.build_face_artefact()
         # context['games_run'] = elem.games_run
         # context['games_played'] = elem.games_played

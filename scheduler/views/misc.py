@@ -27,6 +27,7 @@ def register_submit(request):
     from django.contrib.auth.models import User
     from scheduler.models.profile import Profile
     from django.core.mail import send_mail
+    from scheduler.models.follower import Follower
     valid = True
     errors = ['']
     is_girl = False
@@ -39,12 +40,12 @@ def register_submit(request):
         nickname = request.POST['nickname']
         if 'gender' in request.POST:
             is_girl = request.POST['gender'][0] == 'on'
-
         # Not an existing user
         if len(username) < 6:
             valid = False
             errors.append("Nom top court (6 cracatères mini)")
-        purged = username.replace(" ","").replace("<","").replace("-","").replace("&","").replace("!","").replace("?","").replace("/","")
+        purged = username.replace(" ", "").replace("<", "").replace("-", "").replace("&", "").replace("!", "").replace(
+            "?", "").replace("/", "")
         if purged != username:
             valid = False
             errors.append("Caractères invalides dans l'identifiant...")
@@ -75,6 +76,11 @@ def register_submit(request):
             user.profile.nickname = nickname
             user.profile.is_girl = is_girl
             user.profile.save()
+            # Auto follow self at first
+            f = Follower()
+            f.profile = user.profile
+            f.target = user.profile
+            f.save()
             host = request.get_host()
             send_mail('[eXtraventures] Enregistrement validé!',
                       f"Salut {nickname}...\nSi vous recevez cet email, c'est que votre enregistrement s'est bien passé.\n\n"
@@ -84,13 +90,6 @@ def register_submit(request):
                       f"\n\nVotre serviteur, Fernando Casabuentes",
                       f'fernando.casabuentes@gmail.com', [f'{email}'],
                       fail_silently=False)
-            # send_mail(f'[eXtraventures] {nickname} Enregistrement validé!',
-            #           f"Salut {nickname}...\nSi vous recevez cet email, c'est que votre enregistrement s'est bien passé.\n\n"
-            #           f"Votre login ................ {username}\n"
-            #           f"Le lien à eXtraventures .... https://{host}/\n"
-            #           f"\n\nPour eXtraventures,\nVotre serviteur Fernando Casabuentes",
-            #           f'fernando.casabuentes@gmail.com', [f'fernando.casabuentes@gmail.com'],
-            #           fail_silently=False)
             html = "<center>Ok!! Surveillez vos messages,<BR/>vous recevrez la suite par email.</center>"
         else:
             send_mail("[eXtraventures] Erreur d'enregistrement!",
@@ -137,7 +136,6 @@ def prepare_design(request):
     p.hair = "#ffff00"
     p.eyes = "#00ffff"
 
-
     hair = []
     mouth = []
     face = []
@@ -181,4 +179,3 @@ def system_flush():
     for i in data_from_the_past:
         i.delete()
     # from scheduler.models.inscription import Inscription
-

@@ -4,20 +4,20 @@ from django.contrib.auth.models import User
 from scheduler.models.realm import Realm
 from colorfield.fields import ColorField
 
-SHIELD_STYLES = (
-    ('mid', 'Gauche et droite'),
-    ('quad', 'Quadrants NO, NE, SE, SW en damier'),
-    ('half', 'Haut et bas séparés'),
-)
-
-ICON_STYLES = (
-    ('disk', 'Disque'),
-    ('coins', 'Trois deniers'),
-    ('cross', 'Croix'),
-    ('claws', 'Griffure'),
-    ('diamond', 'Losange'),
-    ('crystal', 'Cristal'),
-)
+# SHIELD_STYLES = (
+#     ('mid', 'Gauche et droite'),
+#     ('quad', 'Quadrants NO, NE, SE, SW en damier'),
+#     ('half', 'Haut et bas séparés'),
+# )
+#
+# ICON_STYLES = (
+#     ('disk', 'Disque'),
+#     ('coins', 'Trois deniers'),
+#     ('cross', 'Croix'),
+#     ('claws', 'Griffure'),
+#     ('diamond', 'Losange'),
+#     ('crystal', 'Cristal'),
+# )
 
 FACE_STYLES = (
     ('thin', 'Mince'),

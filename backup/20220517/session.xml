@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object model="scheduler.session" pk="257">
+    <field name="title" type="CharField">Taomdiri</field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">451</field>
+    <field name="campaign" rel="ManyToOneRel" to="scheduler.campaign"><None></None></field>
+    <field name="game" rel="ManyToOneRel" to="scheduler.game">41</field>
+    <field name="description" type="TextField"></field>
+    <field name="date_start" type="DateField">2022-05-26</field>
+    <field name="time_start" type="TimeField">18:00:00</field>
+    <field name="duration" type="PositiveIntegerField">6</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="place" type="CharField">chez Jody</field>
+    <field name="optional_spots" type="PositiveIntegerField">4</field>
+    <field name="newbies_allowed" type="BooleanField">True</field>
+    <field name="one_shot_adventure" type="BooleanField">True</field>
+    <field name="level" type="CharField">0</field>
+    <field name="alpha" type="CharField">#032928</field>
+    <field name="wanted" type="CharField">452;455;458;463;464;465</field>
+    <field name="is_visible" type="BooleanField">True</field>
+    <field name="error_status" type="PositiveIntegerField">0</field>
+  </object>
+  <object model="scheduler.session" pk="258">
+    <field name="title" type="CharField">Rotarici</field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">453</field>
+    <field name="campaign" rel="ManyToOneRel" to="scheduler.campaign"><None></None></field>
+    <field name="game" rel="ManyToOneRel" to="scheduler.game">63</field>
+    <field name="description" type="TextField"></field>
+    <field name="date_start" type="DateField">2022-06-01</field>
+    <field name="time_start" type="TimeField">18:00:00</field>
+    <field name="duration" type="PositiveIntegerField">6</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="place" type="CharField">chez Billie</field>
+    <field name="optional_spots" type="PositiveIntegerField">4</field>
+    <field name="newbies_allowed" type="BooleanField">True</field>
+    <field name="one_shot_adventure" type="BooleanField">True</field>
+    <field name="level" type="CharField">0</field>
+    <field name="alpha" type="CharField">#66183B</field>
+    <field name="wanted" type="CharField">451;455</field>
+    <field name="is_visible" type="BooleanField">True</field>
+    <field name="error_status" type="PositiveIntegerField">0</field>
+  </object>
+  <object model="scheduler.session" pk="259">
+    <field name="title" type="CharField">Datacaom</field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">465</field>
+    <field name="campaign" rel="ManyToOneRel" to="scheduler.campaign"><None></None></field>
+    <field name="game" rel="ManyToOneRel" to="scheduler.game">62</field>
+    <field name="description" type="TextField"></field>
+    <field name="date_start" type="DateField">2022-06-03</field>
+    <field name="time_start" type="TimeField">18:00:00</field>
+    <field name="duration" type="PositiveIntegerField">6</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="place" type="CharField">chez Ryan</field>
+    <field name="optional_spots" type="PositiveIntegerField">4</field>
+    <field name="newbies_allowed" type="BooleanField">True</field>
+    <field name="one_shot_adventure" type="BooleanField">True</field>
+    <field name="level" type="CharField">0</field>
+    <field name="alpha" type="CharField">#613583</field>
+    <field name="wanted" type="CharField">1;453;463</field>
+    <field name="is_visible" type="BooleanField">True</field>
+    <field name="error_status" type="PositiveIntegerField">0</field>
+  </object>
+  <object model="scheduler.session" pk="260">
+    <field name="title" type="CharField">Ricirizu</field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">461</field>
+    <field name="campaign" rel="ManyToOneRel" to="scheduler.campaign"><None></None></field>
+    <field name="game" rel="ManyToOneRel" to="scheduler.game">49</field>
+    <field name="description" type="TextField"></field>
+    <field name="date_start" type="DateField"><None></None></field>
+    <field name="time_start" type="TimeField">18:00:00</field>
+    <field name="duration" type="PositiveIntegerField">6</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="place" type="CharField">chez Karl</field>
+    <field name="optional_spots" type="PositiveIntegerField">4</field>
+    <field name="newbies_allowed" type="BooleanField">True</field>
+    <field name="one_shot_adventure" type="BooleanField">True</field>
+    <field name="level" type="CharField">0</field>
+    <field name="alpha" type="CharField">#99c1f1</field>
+    <field name="wanted" type="CharField">450;453;455;456;464</field>
+    <field name="is_visible" type="BooleanField">True</field>
+    <field name="error_status" type="PositiveIntegerField">0</field>
+  </object>
+  <object model="scheduler.session" pk="261">
+    <field name="title" type="CharField">Ditaomci</field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">455</field>
+    <field name="campaign" rel="ManyToOneRel" to="scheduler.campaign"><None></None></field>
+    <field name="game" rel="ManyToOneRel" to="scheduler.game">62</field>
+    <field name="description" type="TextField"></field>
+    <field name="date_start" type="DateField">2022-05-24</field>
+    <field name="time_start" type="TimeField">18:00:00</field>
+    <field name="duration" type="PositiveIntegerField">6</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="place" type="CharField">chez Lou</field>
+    <field name="optional_spots" type="PositiveIntegerField">4</field>
+    <field name="newbies_allowed" type="BooleanField">True</field>
+    <field name="one_shot_adventure" type="BooleanField">True</field>
+    <field name="level" type="CharField">0</field>
+    <field name="alpha" type="CharField">#613583</field>
+    <field name="wanted" type="CharField">1;453;456;457;459;461</field>
+    <field name="is_visible" type="BooleanField">True</field>
+    <field name="error_status" type="PositiveIntegerField">0</field>
+  </object>
+  <object model="scheduler.session" pk="262">
+    <field name="title" type="CharField">Lodiocro</field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">462</field>
+    <field name="campaign" rel="ManyToOneRel" to="scheduler.campaign"><None></None></field>
+    <field name="game" rel="ManyToOneRel" to="scheduler.game">63</field>
+    <field name="description" type="TextField"></field>
+    <field name="date_start" type="DateField">2022-05-27</field>
+    <field name="time_start" type="TimeField">18:00:00</field>
+    <field name="duration" type="PositiveIntegerField">6</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="place" type="CharField">chez Sondra</field>
+    <field name="optional_spots" type="PositiveIntegerField">4</field>
+    <field name="newbies_allowed" type="BooleanField">True</field>
+    <field name="one_shot_adventure" type="BooleanField">True</field>
+    <field name="level" type="CharField">0</field>
+    <field name="alpha" type="CharField">#66183B</field>
+    <field name="wanted" type="CharField">458;459;460;461</field>
+    <field name="is_visible" type="BooleanField">True</field>
+    <field name="error_status" type="PositiveIntegerField">0</field>
+  </object>
+  <object model="scheduler.session" pk="263">
+    <field name="title" type="CharField">Aloclori</field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">1</field>
+    <field name="campaign" rel="ManyToOneRel" to="scheduler.campaign"><None></None></field>
+    <field name="game" rel="ManyToOneRel" to="scheduler.game">51</field>
+    <field name="description" type="TextField"></field>
+    <field name="date_start" type="DateField">2022-05-18</field>
+    <field name="time_start" type="TimeField">18:00:00</field>
+    <field name="duration" type="PositiveIntegerField">6</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="place" type="CharField">chez zaffarelli</field>
+    <field name="optional_spots" type="PositiveIntegerField">4</field>
+    <field name="newbies_allowed" type="BooleanField">True</field>
+    <field name="one_shot_adventure" type="BooleanField">True</field>
+    <field name="level" type="CharField">0</field>
+    <field name="alpha" type="CharField">#E66100</field>
+    <field name="wanted" type="CharField">454;456;459;460;465</field>
+    <field name="is_visible" type="BooleanField">True</field>
+    <field name="error_status" type="PositiveIntegerField">0</field>
+  </object>
+  <object model="scheduler.session" pk="264">
+    <field name="title" type="CharField">Occaciom</field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">464</field>
+    <field name="campaign" rel="ManyToOneRel" to="scheduler.campaign"><None></None></field>
+    <field name="game" rel="ManyToOneRel" to="scheduler.game">63</field>
+    <field name="description" type="TextField"></field>
+    <field name="date_start" type="DateField">2022-05-18</field>
+    <field name="time_start" type="TimeField">18:00:00</field>
+    <field name="duration" type="PositiveIntegerField">6</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="place" type="CharField">chez Jordan</field>
+    <field name="optional_spots" type="PositiveIntegerField">4</field>
+    <field name="newbies_allowed" type="BooleanField">True</field>
+    <field name="one_shot_adventure" type="BooleanField">True</field>
+    <field name="level" type="CharField">0</field>
+    <field name="alpha" type="CharField">#66183B</field>
+    <field name="wanted" type="CharField">452;453;454;459;461</field>
+    <field name="is_visible" type="BooleanField">True</field>
+    <field name="error_status" type="PositiveIntegerField">0</field>
+  </object>
+  <object model="scheduler.session" pk="265">
+    <field name="title" type="CharField">Cirilolo</field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">460</field>
+    <field name="campaign" rel="ManyToOneRel" to="scheduler.campaign"><None></None></field>
+    <field name="game" rel="ManyToOneRel" to="scheduler.game">49</field>
+    <field name="description" type="TextField"></field>
+    <field name="date_start" type="DateField">2022-05-17</field>
+    <field name="time_start" type="TimeField">18:00:00</field>
+    <field name="duration" type="PositiveIntegerField">6</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="place" type="CharField">chez Vic</field>
+    <field name="optional_spots" type="PositiveIntegerField">4</field>
+    <field name="newbies_allowed" type="BooleanField">True</field>
+    <field name="one_shot_adventure" type="BooleanField">True</field>
+    <field name="level" type="CharField">0</field>
+    <field name="alpha" type="CharField">#99c1f1</field>
+    <field name="wanted" type="CharField">457;451;460</field>
+    <field name="is_visible" type="BooleanField">True</field>
+    <field name="error_status" type="PositiveIntegerField">0</field>
+  </object>
+  <object model="scheduler.session" pk="266">
+    <field name="title" type="CharField">Dalodaci</field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">452</field>
+    <field name="campaign" rel="ManyToOneRel" to="scheduler.campaign"><None></None></field>
+    <field name="game" rel="ManyToOneRel" to="scheduler.game">49</field>
+    <field name="description" type="TextField"></field>
+    <field name="date_start" type="DateField">2022-06-02</field>
+    <field name="time_start" type="TimeField">18:00:00</field>
+    <field name="duration" type="PositiveIntegerField">6</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="place" type="CharField">chez Steven</field>
+    <field name="optional_spots" type="PositiveIntegerField">4</field>
+    <field name="newbies_allowed" type="BooleanField">True</field>
+    <field name="one_shot_adventure" type="BooleanField">True</field>
+    <field name="level" type="CharField">0</field>
+    <field name="alpha" type="CharField">#99c1f1</field>
+    <field name="wanted" type="CharField">1;460;462;463;464</field>
+    <field name="is_visible" type="BooleanField">True</field>
+    <field name="error_status" type="PositiveIntegerField">0</field>
+  </object>
+</django-objects>

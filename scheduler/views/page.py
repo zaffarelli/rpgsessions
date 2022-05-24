@@ -61,3 +61,19 @@ def propositions(request):
     html = template.render(context, request)
     response = {'data': html, 'menu': menu_html}
     return JsonResponse(response)
+
+# List of all campaigns
+@login_required
+def news(request):
+    if not request.user.is_authenticated:
+        return render(request, 'scheduler/registration/login_error.html')
+    from scheduler.models.campaign import Campaign
+    context = {}
+    context['today'] = datetime.now().strftime(FMT_DATE)
+    context['incoming_games'] = request.user.profile.fetch_week_sessions()
+    template = get_template('scheduler/menu_propositions.html')
+    menu_html = template.render(context, request)
+    template = get_template('scheduler/news.html')
+    html = template.render(context, request)
+    response = {'data': html, 'menu': menu_html}
+    return JsonResponse(response)

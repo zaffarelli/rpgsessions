@@ -3,7 +3,7 @@ from scheduler.views.base import index, display_day, display_month, display_sess
     display_overlay, toggle_follower, simple_toggle, delete_session, display_campaign, \
     delete_campaign, display_game, validate_game, validate_session, validate_campaign, validate_profile
 from scheduler.views.misc import who, register_submit, handle_invitation, design
-from scheduler.views.page import propositions, members, campaigns
+from scheduler.views.page import propositions, members, campaigns, news
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
@@ -15,6 +15,7 @@ urlpatterns = [
     re_path(r'^ajax/display/game/(?P<id>\d+)/$', display_game, name='display_game'),
     re_path(r'^ajax/display/propositions/$', propositions, name='propositions'),
     re_path(r'^ajax/display/members/$', members, name='members'),
+    re_path(r'^ajax/display/actu/$', news, name='news'),
     re_path(r'^ajax/display/campaigns/$', campaigns, name='campaigns'),
     re_path(r'^ajax/display/campaign/(?P<id>\d+)/$', display_campaign, name='display_campaign'),
     re_path(r'^invite/(?P<slug>\w+)/$', handle_invitation, name='handle_invitation'),

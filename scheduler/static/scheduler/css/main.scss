@@ -313,7 +313,7 @@ body {
           gap: 0 3px;
           border-radius: 0 0 5px 5px;
 
-          & .ablock, & .eblock, & .zblock {
+          & .ablock, & .eblock, & .zblock, & .bblock{
             border: 1px solid transparent;
             background: $panel1_background;
             color: $panel1_color;
@@ -322,6 +322,13 @@ body {
 
           & .ablock {
             order: 1;
+            width: 300px;
+            text-align: center;
+            border-radius: 5px 0 0 5px;
+          }
+
+          & .bblock {
+            order: 2;
             width: 300px;
             text-align: center;
             border-radius: 5px 0 0 5px;

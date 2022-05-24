@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object model="scheduler.game" pk="36">
+    <field name="name" type="CharField">Autre</field>
+    <field name="version" type="CharField">Inconnu</field>
+    <field name="acronym" type="CharField">???</field>
+    <field name="system" type="CharField">type666</field>
+    <field name="description" type="TextField">Ceci n'est pas un jeu... à sélectionner quand le vôtre n'est pas encore répertorié.</field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">1</field>
+    <field name="alpha" type="CharField">#ff00ff</field>
+    <field name="beta" type="CharField">#ff7800</field>
+    <field name="gamma" type="CharField">#ff0000</field>
+  </object>
+  <object model="scheduler.game" pk="41">
+    <field name="name" type="CharField">Vampire the Masquerade</field>
+    <field name="version" type="CharField">3rd Edition</field>
+    <field name="acronym" type="CharField">VTM</field>
+    <field name="system" type="CharField">type3</field>
+    <field name="description" type="TextField"></field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">1</field>
+    <field name="alpha" type="CharField">#032928</field>
+    <field name="beta" type="CharField">#151416</field>
+    <field name="gamma" type="CharField">#086361</field>
+  </object>
+  <object model="scheduler.game" pk="49">
+    <field name="name" type="CharField">Fading Suns</field>
+    <field name="version" type="CharField">Fuzion Interlock Custom System</field>
+    <field name="acronym" type="CharField">FS</field>
+    <field name="system" type="CharField">type4</field>
+    <field name="description" type="TextField">A l'aube du sixième millénaire, l'Humanité s'est perdue aux confins du cosmos.</field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">1</field>
+    <field name="alpha" type="CharField">#99c1f1</field>
+    <field name="beta" type="CharField">#f8e45c</field>
+    <field name="gamma" type="CharField">#8ff0a4</field>
+  </object>
+  <object model="scheduler.game" pk="51">
+    <field name="name" type="CharField">Werewolf the Apocalypse</field>
+    <field name="version" type="CharField">2nd Edition</field>
+    <field name="acronym" type="CharField">WTA</field>
+    <field name="system" type="CharField">type3</field>
+    <field name="description" type="TextField"></field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">1</field>
+    <field name="alpha" type="CharField">#E66100</field>
+    <field name="beta" type="CharField">#865E3C</field>
+    <field name="gamma" type="CharField">#A51D2D</field>
+  </object>
+  <object model="scheduler.game" pk="62">
+    <field name="name" type="CharField">Call of Cthulhu</field>
+    <field name="version" type="CharField">classic 7E</field>
+    <field name="acronym" type="CharField">CoC</field>
+    <field name="system" type="CharField">type1</field>
+    <field name="description" type="TextField"></field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">1</field>
+    <field name="alpha" type="CharField">#613583</field>
+    <field name="beta" type="CharField">#3d3846</field>
+    <field name="gamma" type="CharField">#f9f06b</field>
+  </object>
+  <object model="scheduler.game" pk="63">
+    <field name="name" type="CharField">D&amp;D</field>
+    <field name="version" type="CharField">5</field>
+    <field name="acronym" type="CharField">DD5</field>
+    <field name="system" type="CharField">type2</field>
+    <field name="description" type="TextField"></field>
+    <field name="mj" rel="ManyToOneRel" to="scheduler.profile">1</field>
+    <field name="alpha" type="CharField">#66183B</field>
+    <field name="beta" type="CharField">#660A39</field>
+    <field name="gamma" type="CharField">#212121</field>
+  </object>
+</django-objects>

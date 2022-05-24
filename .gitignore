@@ -1,6 +1,7 @@
 .idea/
 rpgsessions_static/
 rpgsessions_media/
+backup/
 oldies/
 docker/
 logs/

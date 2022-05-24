@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object model="scheduler.profile" pk="1">
+    <field name="user" rel="OneToOneRel" to="auth.user">1</field>
+    <field name="nickname" type="CharField">zaffarelli</field>
+    <field name="presentation" type="TextField">Age: 48
+Pratique du JdR: depuis 1985
+Fréquence de jeu idéale: 2 fois par mois
+:) :-)</field>
+    <field name="favorites" type="TextField">Jeu en campagne, nains, steampunkfff</field>
+    <field name="club" type="CharField">Extraventures</field>
+    <field name="need_drop" type="BooleanField">False</field>
+    <field name="can_drop" type="BooleanField">True</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">True</field>
+    <field name="face_style" type="CharField">standard</field>
+    <field name="hair_style" type="CharField">type6</field>
+    <field name="mouth_style" type="CharField">type5</field>
+    <field name="weeks" type="PositiveIntegerField">2</field>
+    <field name="alpha" type="CharField">#f6d32d</field>
+    <field name="beta" type="CharField">#b08d2f</field>
+    <field name="gamma" type="CharField">#ffcc44</field>
+    <field name="hair" type="CharField">#3d3846</field>
+    <field name="eyes" type="CharField">#433120</field>
+    <field name="mail_wednesday" type="BooleanField">True</field>
+    <field name="mail_sunday" type="BooleanField">True</field>
+    <field name="mail_cyber_postit" type="BooleanField">True</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="450">
+    <field name="user" rel="OneToOneRel" to="auth.user">451</field>
+    <field name="nickname" type="CharField">John</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField">Extraventures</field>
+    <field name="need_drop" type="BooleanField">False</field>
+    <field name="can_drop" type="BooleanField">False</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">False</field>
+    <field name="face_style" type="CharField">standard</field>
+    <field name="hair_style" type="CharField">type5</field>
+    <field name="mouth_style" type="CharField">type2</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#BC3B3B</field>
+    <field name="beta" type="CharField">#D5AA34</field>
+    <field name="gamma" type="CharField">#25DB3E</field>
+    <field name="hair" type="CharField">#E1B640</field>
+    <field name="eyes" type="CharField">#1D2C38</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="451">
+    <field name="user" rel="OneToOneRel" to="auth.user">452</field>
+    <field name="nickname" type="CharField">Jody</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField">Supelec</field>
+    <field name="need_drop" type="BooleanField">True</field>
+    <field name="can_drop" type="BooleanField">False</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">True</field>
+    <field name="face_style" type="CharField">bold</field>
+    <field name="hair_style" type="CharField">type1</field>
+    <field name="mouth_style" type="CharField">type1</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#6B7DAA</field>
+    <field name="beta" type="CharField">#536B38</field>
+    <field name="gamma" type="CharField">#4464EF</field>
+    <field name="hair" type="CharField">#E5A75B</field>
+    <field name="eyes" type="CharField">#522E12</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="452">
+    <field name="user" rel="OneToOneRel" to="auth.user">453</field>
+    <field name="nickname" type="CharField">Steven</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField"></field>
+    <field name="need_drop" type="BooleanField">True</field>
+    <field name="can_drop" type="BooleanField">True</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">False</field>
+    <field name="face_style" type="CharField">standard</field>
+    <field name="hair_style" type="CharField">standard</field>
+    <field name="mouth_style" type="CharField">type6</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#F5143E</field>
+    <field name="beta" type="CharField">#0A5F14</field>
+    <field name="gamma" type="CharField">#21AE75</field>
+    <field name="hair" type="CharField">#120E02</field>
+    <field name="eyes" type="CharField">#522E12</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="453">
+    <field name="user" rel="OneToOneRel" to="auth.user">454</field>
+    <field name="nickname" type="CharField">Billie</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField"></field>
+    <field name="need_drop" type="BooleanField">False</field>
+    <field name="can_drop" type="BooleanField">True</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">True</field>
+    <field name="face_style" type="CharField">thin</field>
+    <field name="hair_style" type="CharField">type1</field>
+    <field name="mouth_style" type="CharField">standard</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#EB3A2E</field>
+    <field name="beta" type="CharField">#B02724</field>
+    <field name="gamma" type="CharField">#2750EF</field>
+    <field name="hair" type="CharField">#46514F</field>
+    <field name="eyes" type="CharField">#26B4E6</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="454">
+    <field name="user" rel="OneToOneRel" to="auth.user">455</field>
+    <field name="nickname" type="CharField">Zach</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField">Rue d'Ulm</field>
+    <field name="need_drop" type="BooleanField">False</field>
+    <field name="can_drop" type="BooleanField">True</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">False</field>
+    <field name="face_style" type="CharField">standard</field>
+    <field name="hair_style" type="CharField">type2</field>
+    <field name="mouth_style" type="CharField">type2</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#F18C3E</field>
+    <field name="beta" type="CharField">#DCE6D5</field>
+    <field name="gamma" type="CharField">#132CE0</field>
+    <field name="hair" type="CharField">#120E02</field>
+    <field name="eyes" type="CharField">#1D2C38</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="455">
+    <field name="user" rel="OneToOneRel" to="auth.user">456</field>
+    <field name="nickname" type="CharField">Lou</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField"></field>
+    <field name="need_drop" type="BooleanField">False</field>
+    <field name="can_drop" type="BooleanField">True</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">True</field>
+    <field name="face_style" type="CharField">thin</field>
+    <field name="hair_style" type="CharField">standard</field>
+    <field name="mouth_style" type="CharField">standard</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#BAF205</field>
+    <field name="beta" type="CharField">#CB6A81</field>
+    <field name="gamma" type="CharField">#37A0B0</field>
+    <field name="hair" type="CharField">#E5A75B</field>
+    <field name="eyes" type="CharField">#496744</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="456">
+    <field name="user" rel="OneToOneRel" to="auth.user">457</field>
+    <field name="nickname" type="CharField">Rick</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField"></field>
+    <field name="need_drop" type="BooleanField">False</field>
+    <field name="can_drop" type="BooleanField">False</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">False</field>
+    <field name="face_style" type="CharField">standard</field>
+    <field name="hair_style" type="CharField">type1</field>
+    <field name="mouth_style" type="CharField">type5</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#8C097D</field>
+    <field name="beta" type="CharField">#73D90E</field>
+    <field name="gamma" type="CharField">#23327B</field>
+    <field name="hair" type="CharField">#302119</field>
+    <field name="eyes" type="CharField">#26B4E6</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="457">
+    <field name="user" rel="OneToOneRel" to="auth.user">458</field>
+    <field name="nickname" type="CharField">Seb</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField"></field>
+    <field name="need_drop" type="BooleanField">True</field>
+    <field name="can_drop" type="BooleanField">False</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">False</field>
+    <field name="face_style" type="CharField">bold</field>
+    <field name="hair_style" type="CharField">type2</field>
+    <field name="mouth_style" type="CharField">type4</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#5A514F</field>
+    <field name="beta" type="CharField">#CA01A1</field>
+    <field name="gamma" type="CharField">#CD0157</field>
+    <field name="hair" type="CharField">#2C1A04</field>
+    <field name="eyes" type="CharField">#26B4E6</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="458">
+    <field name="user" rel="OneToOneRel" to="auth.user">459</field>
+    <field name="nickname" type="CharField">Thomas</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField">Extraventures</field>
+    <field name="need_drop" type="BooleanField">True</field>
+    <field name="can_drop" type="BooleanField">True</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">False</field>
+    <field name="face_style" type="CharField">bold</field>
+    <field name="hair_style" type="CharField">type5</field>
+    <field name="mouth_style" type="CharField">standard</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#7C2063</field>
+    <field name="beta" type="CharField">#A2A74A</field>
+    <field name="gamma" type="CharField">#449F22</field>
+    <field name="hair" type="CharField">#120E02</field>
+    <field name="eyes" type="CharField">#496744</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="459">
+    <field name="user" rel="OneToOneRel" to="auth.user">460</field>
+    <field name="nickname" type="CharField">Scott</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField">Extraventures</field>
+    <field name="need_drop" type="BooleanField">False</field>
+    <field name="can_drop" type="BooleanField">True</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">False</field>
+    <field name="face_style" type="CharField">standard</field>
+    <field name="hair_style" type="CharField">type5</field>
+    <field name="mouth_style" type="CharField">standard</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#E2CA91</field>
+    <field name="beta" type="CharField">#95CC7A</field>
+    <field name="gamma" type="CharField">#7DD81C</field>
+    <field name="hair" type="CharField">#E5A75B</field>
+    <field name="eyes" type="CharField">#26B4E6</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="460">
+    <field name="user" rel="OneToOneRel" to="auth.user">461</field>
+    <field name="nickname" type="CharField">Vic</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField">Supelec</field>
+    <field name="need_drop" type="BooleanField">False</field>
+    <field name="can_drop" type="BooleanField">False</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">False</field>
+    <field name="face_style" type="CharField">thin</field>
+    <field name="hair_style" type="CharField">type2</field>
+    <field name="mouth_style" type="CharField">type1</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#4A24B2</field>
+    <field name="beta" type="CharField">#230545</field>
+    <field name="gamma" type="CharField">#8A986B</field>
+    <field name="hair" type="CharField">#E1B640</field>
+    <field name="eyes" type="CharField">#26B4E6</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="461">
+    <field name="user" rel="OneToOneRel" to="auth.user">462</field>
+    <field name="nickname" type="CharField">Karl</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField">Voleurs de Bonnefoy</field>
+    <field name="need_drop" type="BooleanField">False</field>
+    <field name="can_drop" type="BooleanField">False</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">False</field>
+    <field name="face_style" type="CharField">thin</field>
+    <field name="hair_style" type="CharField">type5</field>
+    <field name="mouth_style" type="CharField">type4</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#DA50C3</field>
+    <field name="beta" type="CharField">#10A0E1</field>
+    <field name="gamma" type="CharField">#7EFEE2</field>
+    <field name="hair" type="CharField">#302119</field>
+    <field name="eyes" type="CharField">#496744</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="462">
+    <field name="user" rel="OneToOneRel" to="auth.user">463</field>
+    <field name="nickname" type="CharField">Sondra</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField">Supelec</field>
+    <field name="need_drop" type="BooleanField">True</field>
+    <field name="can_drop" type="BooleanField">False</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">True</field>
+    <field name="face_style" type="CharField">standard</field>
+    <field name="hair_style" type="CharField">type6</field>
+    <field name="mouth_style" type="CharField">type3</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#719091</field>
+    <field name="beta" type="CharField">#CF6E18</field>
+    <field name="gamma" type="CharField">#B03B31</field>
+    <field name="hair" type="CharField">#302119</field>
+    <field name="eyes" type="CharField">#496744</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="463">
+    <field name="user" rel="OneToOneRel" to="auth.user">464</field>
+    <field name="nickname" type="CharField">Nico</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField">Voleurs de Bonnefoy</field>
+    <field name="need_drop" type="BooleanField">False</field>
+    <field name="can_drop" type="BooleanField">False</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">False</field>
+    <field name="face_style" type="CharField">standard</field>
+    <field name="hair_style" type="CharField">type4</field>
+    <field name="mouth_style" type="CharField">type5</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#703BC6</field>
+    <field name="beta" type="CharField">#F54CD9</field>
+    <field name="gamma" type="CharField">#2C04D0</field>
+    <field name="hair" type="CharField">#302119</field>
+    <field name="eyes" type="CharField">#26B4E6</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="464">
+    <field name="user" rel="OneToOneRel" to="auth.user">465</field>
+    <field name="nickname" type="CharField">Jordan</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField">Rue d'Ulm</field>
+    <field name="need_drop" type="BooleanField">False</field>
+    <field name="can_drop" type="BooleanField">True</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">False</field>
+    <field name="face_style" type="CharField">thin</field>
+    <field name="hair_style" type="CharField">type3</field>
+    <field name="mouth_style" type="CharField">type4</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#FC635D</field>
+    <field name="beta" type="CharField">#4B99DF</field>
+    <field name="gamma" type="CharField">#E2AEF9</field>
+    <field name="hair" type="CharField">#120E02</field>
+    <field name="eyes" type="CharField">#522E12</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+  <object model="scheduler.profile" pk="465">
+    <field name="user" rel="OneToOneRel" to="auth.user">466</field>
+    <field name="nickname" type="CharField">Ryan</field>
+    <field name="presentation" type="TextField"></field>
+    <field name="favorites" type="TextField"></field>
+    <field name="club" type="CharField">Voleurs de Bonnefoy</field>
+    <field name="need_drop" type="BooleanField">False</field>
+    <field name="can_drop" type="BooleanField">False</field>
+    <field name="realm" rel="ManyToOneRel" to="scheduler.realm">19</field>
+    <field name="is_girl" type="BooleanField">False</field>
+    <field name="face_style" type="CharField">thin</field>
+    <field name="hair_style" type="CharField">type2</field>
+    <field name="mouth_style" type="CharField">type4</field>
+    <field name="weeks" type="PositiveIntegerField">0</field>
+    <field name="alpha" type="CharField">#51867C</field>
+    <field name="beta" type="CharField">#F0CF89</field>
+    <field name="gamma" type="CharField">#F63105</field>
+    <field name="hair" type="CharField">#120E02</field>
+    <field name="eyes" type="CharField">#522E12</field>
+    <field name="mail_wednesday" type="BooleanField">False</field>
+    <field name="mail_sunday" type="BooleanField">False</field>
+    <field name="mail_cyber_postit" type="BooleanField">False</field>
+    <field name="processed" type="BooleanField">False</field>
+  </object>
+</django-objects>

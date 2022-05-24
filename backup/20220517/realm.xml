@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object model="scheduler.realm" pk="19">
+    <field name="name" type="CharField">JDR31</field>
+    <field name="key" type="CharField">%JDR$$31%</field>
+    <field name="description" type="TextField">Ceci est le domaine de la communauté JDR 31.</field>
+    <field name="is_default" type="BooleanField">True</field>
+    <field name="full_link" type="CharField">invite/204e5b895e2d699888f71b7e9cf106ee77aa357288b29b4022c9e8826cf282f8/</field>
+  </object>
+</django-objects>
