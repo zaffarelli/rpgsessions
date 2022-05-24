@@ -149,6 +149,8 @@ class Session(models.Model):
         return odds, details
 
 
+
+
 class SessionAdmin(admin.ModelAdmin):
     ordering = ['date_start', 'time_start']
     list_display = ['title', 'game', 'campaign', 'date_start', 'time_start', 'max_players', 'duration', 'date_end',

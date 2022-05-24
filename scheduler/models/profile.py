@@ -198,14 +198,27 @@ class Profile(models.Model):
     def fetch_week_sessions(self):
         from datetime import date, timedelta
         from scheduler.models.session import Session
-        list = []
+        from scheduler.views.gimme import gimme_session
+        lists = {
+            'sessions_where_mj': [],
+            'sessions_where_wanted': [],
+            'sessions_where_subscribed': [],
+        }
         period_beginning = date.today()
-        period_ending = date.today() + timedelta(days=7)
-        sessions = Session.objects.filter(date_start__gte=period_beginning, date_start__lt=period_ending).order_by(
+        period_ending = date.today() + timedelta(days=28)
+        sessions = Session.objects.filter(date_start__gte=period_beginning, date_start__lte=period_ending).order_by(
             'date_start')
         for s in sessions:
-            list.append(f"{s.date_start} - '{s.title}' par {s.mj}")
-        return list
+            subscribed = self.is_subscribed(s)
+            wanted = self.is_wanted(s)
+            mj = self.is_mj(s)
+            if mj:
+                lists['sessions_where_mj'].append(gimme_session(None,s))
+            if wanted:
+                lists['sessions_where_wanted'].append(gimme_session(None,s))
+            if subscribed:
+                lists['sessions_where_subscribed'].append(gimme_session(None,s))
+        return lists
 
     def played_the(self, d, de):
         """ Check if the profile has inscriptions on sessions between d and de included """
@@ -257,6 +270,31 @@ class Profile(models.Model):
                     something_to_say = True
                     data.append(s)
         return something_to_say, data
+
+    def is_wanted(self, session=None):
+        result = False
+        if session:
+            wanted = session.wanted.split(';')
+            if self.id in wanted:
+                result = True
+        return result
+
+    def is_mj(self, session=None):
+        result = False
+        if session:
+            if session.mj == self:
+                result = True
+        return result
+
+    def is_subscribed(self, session=None):
+        from scheduler.models.inscription import Inscription
+        result = False
+        if session:
+            inscriptions = Inscription.objects.filter(session=session)
+            for x in inscriptions:
+                if self == x.profile:
+                    result = True
+        return result
 
 
 class ProfileAdmin(admin.ModelAdmin):

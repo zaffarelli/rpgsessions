@@ -24,9 +24,10 @@ def gimme_session(request, s):
         context['campaign'] = s.campaign.to_json
     if s.game:
         context['game'] = gimme_game(s.game)
-    context['owner'] = (s.mj == request.user.profile)
     context['inscriptions'] = gimme_inscriptions(s)
-    context['user_requested'] = str(request.user.profile.id) in s.wanted.split(';')
+    if request:
+        context['owner'] = (s.mj == request.user.profile)
+        context['user_requested'] = str(request.user.profile.id) in s.wanted.split(';')
     context['user_subscribed'] = False
     return context
 
