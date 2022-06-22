@@ -61,7 +61,6 @@ class Session(models.Model):
         from scheduler.views.organizer import gimme_profile
 
         if self.campaign:
-            self.alpha = self.campaign.alpha
             if self.wanted == '':
                 wanted = self.campaign.wanted
             else:
@@ -121,6 +120,8 @@ class Session(models.Model):
         if wanted_str != self.wanted:
             self.wanted = wanted_str
             self.save()
+        if self.campaign:
+            self.alpha = self.campaign.alpha
         return self.wanted
 
     def gimme_odds(self, d):
