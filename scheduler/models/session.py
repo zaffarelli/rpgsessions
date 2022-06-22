@@ -61,7 +61,10 @@ class Session(models.Model):
         from scheduler.views.organizer import gimme_profile
 
         if self.campaign:
-            wanted = self.campaign.wanted
+            if self.wanted == '':
+                wanted = self.campaign.wanted
+            else:
+                wanted = self.wanted
         else:
             wanted = self.wanted
         list = []
