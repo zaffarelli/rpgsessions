@@ -94,7 +94,7 @@ def register_submit(request):
         else:
             send_mail("[eXtraventures] Erreur d'enregistrement!",
                       f'Failed attempt..\n\n{request.POST}\n\n{errors}',
-                      f'fernando.casabuentes@gmail.com', [f'zaffarelli@gmail.com'], fail_silently=False)
+                      f'fernando.casabuentes@gmail.com', [f'zaffarelli@gmail.com', email], fail_silently=False)
 
             html = f"<center>Oups!! Il y a eu quelques problèmes.. {'<BR/>- '.join(errors)}<br><br>Merci de réessayer.</center>"
     response = {'data': html}
