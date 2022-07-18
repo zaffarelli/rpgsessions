@@ -44,6 +44,7 @@ def prepare_day(request, slug=None):
     context = {'data': data}
     return context
 
+
 # Root functions called from views
 def build_month(request, date_str):
     d = date.fromisoformat(date_str)
@@ -180,12 +181,12 @@ def toggle_subscribe(request, action, param):
     sessions = Session.objects.filter(id=int(param))
     if len(sessions) == 1:
         s = sessions.first()
-        inscriptions = Inscription.objects.filter(session=sessions.first())
-        my_inscription = Inscription.objects.filter(profile=profile, session=sessions.first())
+        inscriptions = Inscription.objects.filter(session=s)
+        my_inscription = Inscription.objects.filter(profile=profile, session=s)
         max_players = s.optional_spots + len(s.wanted_list)
         if len(inscriptions) < max_players:
             if len(my_inscription) == 1:
-                f = inscriptions.first()
+                f = my_inscription.first()
                 f.delete()
             else:
                 n = Inscription()

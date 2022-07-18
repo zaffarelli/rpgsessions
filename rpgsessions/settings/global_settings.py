@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 
-VERSION = "0.9.14"
+VERSION = "0.9.15"
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = '^ghph5x=x*u+x6(^2y7p-is6zv)lkia0(+@74x076p0ot4ic*-'
