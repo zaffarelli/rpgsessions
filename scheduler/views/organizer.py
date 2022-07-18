@@ -184,14 +184,14 @@ def toggle_subscribe(request, action, param):
         inscriptions = Inscription.objects.filter(session=s)
         my_inscription = Inscription.objects.filter(profile=profile, session=s)
         max_players = s.optional_spots + len(s.wanted_list)
-        if len(inscriptions) < max_players:
-            if len(my_inscription) == 1:
-                f = my_inscription.first()
-                f.delete()
-            else:
+        if len(my_inscription) == 1:
+            f = my_inscription.first()
+            f.delete()
+        else:
+            if len(inscriptions) <= max_players:
                 n = Inscription()
                 n.profile = profile
-                n.session = sessions.first()
+                n.session = s
                 n.pending = True
                 n.save()
         else:
