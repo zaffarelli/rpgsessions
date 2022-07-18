@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from scheduler.utils.mechanics import FONTSET
-from django.http import JsonResponse
-
+from django.http import JsonResponse, HttpResponseRedirect
 from datetime import datetime
 
 
