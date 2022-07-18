@@ -194,8 +194,8 @@ def toggle_subscribe(request, action, param):
                 n.session = s
                 n.pending = True
                 n.save()
-        else:
-            print("No more room for inscriptions..")
+            else:
+                print("No more room for inscriptions..")
     context = prepare_session(request, int(param))
     template = get_template("scheduler/session_detail.html")
     html = template.render(context, request)
