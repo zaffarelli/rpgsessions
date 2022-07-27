@@ -213,11 +213,11 @@ class Profile(models.Model):
             wanted = self.is_wanted(s)
             mj = self.is_mj(s)
             if mj:
-                lists['sessions_where_mj'].append(gimme_session(None,s))
+                lists['sessions_where_mj'].append(gimme_session(None, s))
             if wanted:
-                lists['sessions_where_wanted'].append(gimme_session(None,s))
+                lists['sessions_where_wanted'].append(gimme_session(None, s))
             if subscribed:
-                lists['sessions_where_subscribed'].append(gimme_session(None,s))
+                lists['sessions_where_subscribed'].append(gimme_session(None, s))
         return lists
 
     def played_the(self, d, de):
@@ -266,9 +266,14 @@ class Profile(models.Model):
         for s in sessions:
             required = self.id in s.wanted.split(';')
             if required:
-                if s.id not in inscription_set:
+                print("Required in", s.id)
+                if len(inscription_set) == 0:
                     something_to_say = True
                     data.append(s)
+                else:
+                    if s.id not in inscription_set:
+                        something_to_say = True
+                        data.append(s)
         return something_to_say, data
 
     def is_wanted(self, session=None):

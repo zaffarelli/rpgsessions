@@ -67,7 +67,7 @@ def cyberpostit():
                 for s in wanted_data:
                     body.stack("")
                     body.stack(
-                        f"    - {s.title} par {s.mj.nickname}, jeu=[{s.game.name}], le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (inscription ok)")
+                        f"    - {s.title} par {s.mj.nickname}, jeu=[{s.game.name}], le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}]")
                     body.stack(f"     Description:  {s.description} ")
                     body.stack("")
             body.stack("¤ ¤ ¤")
