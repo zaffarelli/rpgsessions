@@ -1,14 +1,12 @@
+{% load static %}
 
-
-Salutations {c.profile.nickname}!
-
-Vous recevez ce message car le flag Cyber PostIt est activé sur votre compte eXtraventures.
-Vous ne recevrez ce message que si vous participez à des parties aujourd'hui. Si ce n'est pas le cas, pas de message!
+<p>Salutations {{nickname}}!
+<br/>Vous recevez ce message car le flag Cyber PostIt est activé sur votre compte eXtraventures.
+<br/>Vous ne recevrez ce message que si vous participez à des parties aujourd'hui. Si ce n'est pas le cas, pas de message!
+</p>
 <hr/>
-Alors, puisque nous en somme là, c'est qu'il y a quelque chose à dire...
-
-
-Salutations, {{ c.profile.nickname }}!
+<p>Alors, puisque nous en somme là, c'est qu'il y a quelque chose à dire...
+</p>
 
 {% if c.has_played %}
     <h2>Parties jouées...</h2>

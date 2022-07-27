@@ -1,7 +1,9 @@
 from django.core.mail import send_mail
 from scheduler.utils.mechanics import FMT_DATE_PRETTY
 from datetime import date, timedelta
-from django.core.mail import EmailMultiAlternatives
+from django.core import mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 
 
 class EmailBody(object):
@@ -37,6 +39,8 @@ def cyberpostit():
         if has_played or has_masterized or has_wanted:
             subject = f"[eXtraventures] Cyber PostIt !"
             body = EmailBody()
+            email_data = {}
+            email_data['nickname'] = p.nickname
             body.stack(f"Salutations {p.nickname}!")
             body.stack("")
             body.stack("Vous recevez ce message car le flag 'Cyber PostIt' est activé sur votre compte eXtraventures.")
@@ -44,6 +48,9 @@ def cyberpostit():
                 "Vous ne recevrez ce message que si vous participez à des parties aujourd'hui. Si ce n'est pas le cas, pas de message!")
             body.stack("¤ ¤ ¤")
             body.stack("    Alors, puisque nous en somme là, c'est qu'il y a quelque chose à dire...")
+            email_data['has_played'] = []
+            email_data['has_masterized'] = []
+            email_data['has_wanted'] = []
             if has_played:
                 body.stack("")
                 body.stack(f"    (a) Parties jouées:")
@@ -53,6 +60,14 @@ def cyberpostit():
                         f"    - {s.title} par {s.mj.nickname}, jeu=[{s.game.name}], le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (inscription ok)")
                     body.stack(f"     Description:  {s.description} ")
                     body.stack("")
+                    session_data = {}
+                    session_data['title'] = s.title
+                    session_data['mj'] = s.mj.nickname
+                    session_data['game'] = s.game.name
+                    session_data['start'] = s.date_start.strftime(FMT_DATE_PRETTY)
+                    session_data['place'] = s.place
+                    session_data['description'] = s.description
+                    email_data['has_played'].append(session_data)
             if has_masterized:
                 body.stack("")
                 body.stack(f"    (b) Parties menées:")
@@ -63,7 +78,7 @@ def cyberpostit():
                     body.stack("")
             if has_wanted:
                 body.stack("")
-                body.stack(f"    (b) Parties où vous êtes sollicités:")
+                body.stack(f"    (b) Parties où vous êtes sollicités mais pas inscrits:")
                 for s in wanted_data:
                     body.stack("")
                     body.stack(
@@ -75,7 +90,13 @@ def cyberpostit():
             sender = f'fernando.casabuentes@gmail.com'
             targets = [p.user.email]
             send_mail(subject, body.deliver(), sender, targets, fail_silently=False)
-            send_mail(subject, body.deliver(), sender, targets, fail_silently=False)
+
+
+            html_message = render_to_string('scheduler/emails/cyber_postit.html', {'context': email_data})
+            plain_message = strip_tags(html_message)
+            mail.send_mail(subject, plain_message, f"From <{sender}>", targets, html_message=html_message)
+
+
 
 
 def wednesday():
