@@ -93,6 +93,7 @@ def cyberpostit():
 
 
             html_message = render_to_string('scheduler/emails/cyber_postit.html', context=email_data)
+            print(html_message)
             plain_message = strip_tags(html_message)
             mail.send_mail(subject, plain_message, f"From <{sender}>", targets, html_message=html_message)
 
