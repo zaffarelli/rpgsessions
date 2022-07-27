@@ -11,14 +11,14 @@
 {% if has_played %}
     <h2>Parties jouées...</h2>
     {% for s in played_data %}
-        {% include "scheduler/email/email_session.html" with s=s %}
+        {% include "scheduler/emails/email_session.html" with s=s %}
     {% endfor %}
 {% endif %}
 
 {% if has_masterized %}
     <h2>Parties menées...</h2>
     {% for s in masterized_data %}
-        {% include "scheduler/email/email_session.html" with s=s %}
+        {% include "scheduler/emails/email_session.html" with s=s %}
     {% endfor %}
 {% endif %}
 
@@ -26,7 +26,7 @@
 {% if has_wanted %}
     <h2>Parties où vous êtes sollicités mais pas inscrits...</h2>
     {% for s in wanted_data %}
-        {% include "scheduler/email/email_session.html" with s=s %}
+        {% include "scheduler/emails/email_session.html" with s=s %}
     {% endfor %}
 {% endif %}
 
