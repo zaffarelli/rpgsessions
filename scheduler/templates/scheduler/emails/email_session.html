@@ -1,6 +1,12 @@
 {% load static %}
 
-<h3>{{ s.title }}</h3>
-<p>MJ: {{ s.mj }}</p>
+<table>
+    <tr>
+        <th>Titre</th><td>{{ s.title }}</td>
+    </tr>
+    <tr>
+        <th>MJ</th><td> {{ s.mj }}</td>
+    </tr>
 
-<p>{{ s.description|safe }}</p>
+    <tr><td colspan="2">{{ s.description|safe }}</td></tr>
+</table>

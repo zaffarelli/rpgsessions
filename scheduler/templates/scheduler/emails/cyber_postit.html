@@ -6,6 +6,14 @@
             color:white;
             background:black
         }
+        .games{
+            display:flex;
+            width:90%;
+            height:auto;
+        }
+        .session{
+
+        }
     </style>
 </head>
 <body>
@@ -20,9 +28,9 @@
 {% if has_played %}
     <li>
     <b>Parties jouées...</b>
-    <ul>
+    <div class="games">
     {% for s in played_data %}
-        <li>{% include "scheduler/emails/email_session.html" with s=s %}</li>
+        <div class="session">{% include "scheduler/emails/email_session.html" with s=s %}</li>
     {% endfor %}
     </ul>
     </li>
@@ -32,9 +40,9 @@
 {% if has_masterized %}
     <li>
     <b>Parties menées...</b>
-    <ul>
+    <div class="games">
     {% for s in masterized_data %}
-        <li>{% include "scheduler/emails/email_session.html" with s=s %}</li>
+        <div class="session">{% include "scheduler/emails/email_session.html" with s=s %}</li>
     {% endfor %}
     </ul>
     </li>
@@ -49,11 +57,11 @@
         <li>Vous êtes noté absent ce jour là.</li>
         <li>Vous êtes inscrits à une partie concurrente sur la même journée.</li>
     </ol>
-    <ul>
+    <div class="games">
     {% for s in wanted_data %}
-        <li>{% include "scheduler/emails/email_session.html" with s=s %}</li>
+        <div class="session">{% include "scheduler/emails/email_session.html" with s=s %}</div>
     {% endfor %}
-    </ul>
+    </div>
     </li>
 {% endif %}
 </ul>
