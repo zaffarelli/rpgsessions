@@ -9,36 +9,41 @@
 </p>
 
 <ul>
-<li>
+
 {% if has_played %}
+    <li>
     <b>Parties jouées...</b>
     <ul>
     {% for s in played_data %}
         <li>{% include "scheduler/emails/email_session.html" with s=s %}</li>
     {% endfor %}
     </ul>
+    </li>
 {% endif %}
-</li>
-<li>
+
+
 {% if has_masterized %}
+    <li>
     <b>Parties menées...</b>
     <ul>
     {% for s in masterized_data %}
         <li>{% include "scheduler/emails/email_session.html" with s=s %}</li>
     {% endfor %}
     </ul>
+    </li>
 {% endif %}
-</li>
-<li>
+
+
 {% if has_wanted %}
+    <li>
     <b>Parties où vous êtes sollicités mais pas inscrits...</b>
     <ul>
     {% for s in wanted_data %}
         <li>{% include "scheduler/emails/email_session.html" with s=s %}</li>
     {% endfor %}
     </ul>
+    </li>
 {% endif %}
-</li>
 </ul>
 <p>::mouhahahahahahaha::
 <br/>Votre dévoué serviteur eXtraordinaire,
