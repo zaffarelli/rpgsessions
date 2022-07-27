@@ -1,10 +1,17 @@
 {% load static %}
-
-<h1>Salutations <b>{{nickname}}</b>!</h1>
+<html>
+<head>
+    <style>
+        body{
+            color:white;
+            background:black
+        }
+    </style>
+</head>
+<body>
+<p>Salutations <b>{{nickname}}</b>!</p>
 <br/>Vous recevez ce message car le flag Cyber PostIt est activé sur votre compte eXtraventures.
 <br/>Vous ne recevrez ce message que si vous participez à des parties aujourd'hui. Si ce n'est pas le cas, pas de message!
-</h1>
-<hr/>
 <p>Alors, puisque nous en somme là, c'est qu'il y a quelque chose à dire...
 </p>
 
@@ -49,3 +56,5 @@
 <br/>Votre dévoué serviteur eXtraordinaire,
 <br/>Fernando Casabuentes.
 </p>
+</body>
+</html>
