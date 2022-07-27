@@ -265,6 +265,7 @@ class Profile(models.Model):
         something_to_say = False
         for s in sessions:
             required = self.id in s.wanted.split(';')
+            print("Required:", self.id, "in", s.wanted.split(';'), "?")
             if required:
                 print("Required in", s.id)
                 if len(inscription_set) == 0:
