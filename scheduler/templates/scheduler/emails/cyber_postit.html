@@ -11,7 +11,7 @@
 <body>
 <p>Salutations <b>{{nickname}}</b>!</p>
 <br/>Vous recevez ce message car le flag Cyber PostIt est activé sur votre compte eXtraventures.
-<br/>Vous ne recevrez ce message que si vous participez à des parties aujourd'hui. Si ce n'est pas le cas, pas de message!
+<br/>Vous ne recevrez ce message que si vous participez (=inscrits ou sollicités) à des parties aujourd'hui. Si ce n'est pas le cas, pas de message!
 <p>Alors, puisque nous en somme là, c'est qu'il y a quelque chose à dire...
 </p>
 
@@ -44,6 +44,11 @@
 {% if has_wanted %}
     <li>
     <b>Parties où vous êtes sollicités mais pas inscrits...</b>
+    <p>Cette alerte n'apparaîtra pas si:</p>
+    <ol>
+        <li>Vous êtes noté absent ce jour là.</li>
+        <li>Vous êtes inscrits à une partie concurrente sur la même journée.</li>
+    </ol>
     <ul>
     {% for s in wanted_data %}
         <li>{% include "scheduler/emails/email_session.html" with s=s %}</li>
