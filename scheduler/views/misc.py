@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from scheduler.utils.mechanics import FONTSET
+from scheduler.utils.mechanics import FONTSET, random_color
 from django.http import JsonResponse, HttpResponseRedirect
 from datetime import datetime
 
@@ -74,6 +74,10 @@ def register_submit(request):
             user.save()
             user.profile.nickname = nickname
             user.profile.is_girl = is_girl
+            user.profile.mail_cyber_postit = True
+            user.profile.alpha = random_color()
+            user.profile.beta = random_color()
+            user.profile.gamma = random_color()
             user.profile.save()
             # Auto follow self at first
             f = Follower()

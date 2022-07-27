@@ -7,6 +7,7 @@ from django.core.mail import EmailMultiAlternatives
 class EmailBody(object):
     def __init__(self):
         self.pile = []
+        self.json = {}
 
     def stack(self, txt):
         self.pile.append(txt)
@@ -24,13 +25,15 @@ def week_bounds():
 def cyberpostit():
     """ Activity for the current day (if any) """
     from scheduler.models.profile import Profile
-    profiles = Profile.objects.filter(mail_cyber_postit=True)
+    profiles = Profile.objects.filter(mail_cyber_postit=True).filter(nickname="Zaffarelli")
     d1 = date.today()
     d2 = date.today() + timedelta(days=0)
+    d7 = date.today() + timedelta(days=7)
     for p in profiles:
         has_played, played_data = p.played_the(d1, d2)
         has_masterized, masterized_data = p.masterized_the(d1, d2)
-        if has_played or has_masterized:
+        has_wanted, wanted_data = p.wanted_the(d1, d7)
+        if has_played or has_masterized or has_wanted:
             subject = f"[eXtraventures] Cyber PostIt !"
             body = EmailBody()
             body.stack(f"Salutations {p.nickname}!")
@@ -57,10 +60,20 @@ def cyberpostit():
                     body.stack(
                         f"    - [{s.title}] par {s.mj.nickname}, le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (c'est toi le MJ!)")
                     body.stack("")
+            if has_wanted:
+                body.stack("")
+                body.stack(f"    (b) Parties où vous êtes sollicités:")
+                for s in wanted_data:
+                    body.stack("")
+                    body.stack(
+                        f"    - {s.title} par {s.mj.nickname}, jeu=[{s.game.name}], le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (inscription ok)")
+                    body.stack(f"     Description:  {s.description} ")
+                    body.stack("")
             body.stack("¤ ¤ ¤")
             body.stack(f"::mouhahahahahahaha::\n\nVotre dévoué serviteur eXtraordinaire,\nFernando Casabuentes.")
             sender = f'fernando.casabuentes@gmail.com'
             targets = [p.user.email]
+            send_mail(subject, body.deliver(), sender, targets, fail_silently=False)
             send_mail(subject, body.deliver(), sender, targets, fail_silently=False)
 
 

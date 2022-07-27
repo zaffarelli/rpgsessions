@@ -56,7 +56,7 @@ ADV_LEVEL = (
 
 def oudin(d):
     from datetime import date
-    y = int(d.strftime("%Y")) #+ 1900
+    y = int(d.strftime("%Y"))  # + 1900
     g = y % 19
     c = int(y / 100)
     c4 = int(c / 4)
@@ -76,3 +76,12 @@ def oudin(d):
         r = r - 31;
         res = date(day=r, month=4, year=y)
     return res
+
+
+def random_color():
+    import random
+    str = '#'
+    digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+    for x in range(6):
+        str += random.choice(digits)
+    return str
