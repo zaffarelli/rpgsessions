@@ -38,28 +38,16 @@ def cyberpostit():
         has_wanted, wanted_data = p.wanted_the(d1, d7)
         if has_played or has_masterized or has_wanted:
             subject = f"[eXtraventures] Cyber PostIt !"
-            body = EmailBody()
             email_data = {}
             email_data['nickname'] = p.nickname
-            body.stack(f"Salutations {p.nickname}!")
-            body.stack("")
-            body.stack("Vous recevez ce message car le flag 'Cyber PostIt' est activé sur votre compte eXtraventures.")
-            body.stack(
-                "Vous ne recevrez ce message que si vous participez à des parties aujourd'hui. Si ce n'est pas le cas, pas de message!")
-            body.stack("¤ ¤ ¤")
-            body.stack("    Alors, puisque nous en somme là, c'est qu'il y a quelque chose à dire...")
             email_data['has_played'] = []
             email_data['has_masterized'] = []
             email_data['has_wanted'] = []
+            email_data['played_data'] = []
+            email_data['masterized_data'] = []
+            email_data['wanted_data'] = []
             if has_played:
-                body.stack("")
-                body.stack(f"    (a) Parties jouées:")
                 for s in played_data:
-                    body.stack("")
-                    body.stack(
-                        f"    - {s.title} par {s.mj.nickname}, jeu=[{s.game.name}], le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (inscription ok)")
-                    body.stack(f"     Description:  {s.description} ")
-                    body.stack("")
                     session_data = {}
                     session_data['title'] = s.title
                     session_data['mj'] = s.mj.nickname
@@ -67,37 +55,33 @@ def cyberpostit():
                     session_data['start'] = s.date_start.strftime(FMT_DATE_PRETTY)
                     session_data['place'] = s.place
                     session_data['description'] = s.description
-                    email_data['has_played'].append(session_data)
+                    email_data['played_data'].append(session_data)
             if has_masterized:
-                body.stack("")
-                body.stack(f"    (b) Parties menées:")
                 for s in masterized_data:
-                    body.stack("")
-                    body.stack(
-                        f"    - [{s.title}] par {s.mj.nickname}, le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (c'est toi le MJ!)")
-                    body.stack("")
+                    session_data = {}
+                    session_data['title'] = s.title
+                    session_data['mj'] = s.mj.nickname
+                    session_data['game'] = s.game.name
+                    session_data['start'] = s.date_start.strftime(FMT_DATE_PRETTY)
+                    session_data['place'] = s.place
+                    session_data['description'] = s.description
+                    email_data['masterized_data'].append(session_data)
             if has_wanted:
-                body.stack("")
-                body.stack(f"    (b) Parties où vous êtes sollicités mais pas inscrits:")
                 for s in wanted_data:
-                    body.stack("")
-                    body.stack(
-                        f"    - {s.title} par {s.mj.nickname}, jeu=[{s.game.name}], le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}]")
-                    body.stack(f"     Description:  {s.description} ")
-                    body.stack("")
-            body.stack("¤ ¤ ¤")
-            body.stack(f"::mouhahahahahahaha::\n\nVotre dévoué serviteur eXtraordinaire,\nFernando Casabuentes.")
+                    session_data = {}
+                    session_data['title'] = s.title
+                    session_data['mj'] = s.mj.nickname
+                    session_data['game'] = s.game.name
+                    session_data['start'] = s.date_start.strftime(FMT_DATE_PRETTY)
+                    session_data['place'] = s.place
+                    session_data['description'] = s.description
+                    email_data['wanted_data'].append(session_data)
             sender = f'fernando.casabuentes@gmail.com'
             targets = [p.user.email]
-            send_mail(subject, body.deliver(), sender, targets, fail_silently=False)
-
-
             html_message = render_to_string('scheduler/emails/cyber_postit.html', context=email_data)
             print(html_message)
             plain_message = strip_tags(html_message)
             mail.send_mail(subject, plain_message, f"From <{sender}>", targets, html_message=html_message)
-
-
 
 
 def wednesday():
@@ -114,7 +98,8 @@ def wednesday():
             body = EmailBody()
             body.stack(f"Salutations {p.nickname}!")
             body.stack("")
-            body.stack("Vous recevez ce message car le flag 'Message du mercredi' est activé sur votre compte eXtraventures.")
+            body.stack(
+                "Vous recevez ce message car le flag 'Message du mercredi' est activé sur votre compte eXtraventures.")
             body.stack(
                 "Vous ne recevrez ce message que si vous participez à des parties aujourd'hui. Si ce n'est pas le cas, pas de message!")
             body.stack("¤ ¤ ¤")
@@ -156,12 +141,14 @@ def sunday():
             body = EmailBody()
             body.stack(f"Salutations {p.nickname}!")
             body.stack("")
-            body.stack("Vous recevez ce message car le flag 'Message du dimanche' est activé sur votre compte eXtraventures.")
+            body.stack(
+                "Vous recevez ce message car le flag 'Message du dimanche' est activé sur votre compte eXtraventures.")
             body.stack(
                 "Vous ne recevrez ce message que si vous participez à des parties aujourd'hui. Si ce n'est pas le cas, pas de message!")
             body.stack("¤ ¤ ¤")
             # Parties Wanted sans inscription
-            body.stack("  Pour les parties suivantes, vous êtes sollicités, mais n'êtes pas encore inscrits dessus (dans les quatre semaines qui arrivent).")
+            body.stack(
+                "  Pour les parties suivantes, vous êtes sollicités, mais n'êtes pas encore inscrits dessus (dans les quatre semaines qui arrivent).")
             body.stack("  Il y a deux possibilités :")
             body.stack("  1) Vous vous inscrivez, à la partie.")
             body.stack("  2) Vous vous notez absent le jour de la partie.")
@@ -171,7 +158,8 @@ def sunday():
                 body.stack(f"    (a) Parties sollicité sans inscription:")
                 for s in wanted_data:
                     body.stack("")
-                    body.stack(f"    - {s.title} par {s.mj.nickname}, jeu=[{s.game.name}], le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (inscription ok)")
+                    body.stack(
+                        f"    - {s.title} par {s.mj.nickname}, jeu=[{s.game.name}], le {s.date_start.strftime(FMT_DATE_PRETTY)} à [{s.place}] (inscription ok)")
                     body.stack(f"     Description:  {s.description} ")
                     body.stack("")
             body.stack("¤ ¤ ¤")
