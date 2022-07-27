@@ -40,9 +40,9 @@ def cyberpostit():
             subject = f"[eXtraventures] Cyber PostIt !"
             email_data = {}
             email_data['nickname'] = p.nickname
-            email_data['has_played'] = []
-            email_data['has_masterized'] = []
-            email_data['has_wanted'] = []
+            email_data['has_played'] = has_played
+            email_data['has_masterized'] = has_masterized
+            email_data['has_wanted'] = has_wanted
             email_data['played_data'] = []
             email_data['masterized_data'] = []
             email_data['wanted_data'] = []
