@@ -8,29 +8,39 @@
 <p>Alors, puisque nous en somme là, c'est qu'il y a quelque chose à dire...
 </p>
 
+<ul>
+<li>
 {% if has_played %}
-    <h2>Parties jouées...</h2>
+    <b>Parties jouées...</b>
+    <ul>
     {% for s in played_data %}
-        {% include "scheduler/emails/email_session.html" with s=s %}
+        <li>{% include "scheduler/emails/email_session.html" with s=s %}</li>
     {% endfor %}
+    </ul>
 {% endif %}
-
+</li>
+<li>
 {% if has_masterized %}
-    <h2>Parties menées...</h2>
+    <b>Parties menées...</b>
+    <ul>
     {% for s in masterized_data %}
-        {% include "scheduler/emails/email_session.html" with s=s %}
+        <li>{% include "scheduler/emails/email_session.html" with s=s %}</li>
     {% endfor %}
+    </ul>
 {% endif %}
-
-
+</li>
+<li>
 {% if has_wanted %}
-    <h2>Parties où vous êtes sollicités mais pas inscrits...</h2>
+    <b>Parties où vous êtes sollicités mais pas inscrits...</b>
+    <ul>
     {% for s in wanted_data %}
-        {% include "scheduler/emails/email_session.html" with s=s %}
+        <li>{% include "scheduler/emails/email_session.html" with s=s %}</li>
     {% endfor %}
+    </ul>
 {% endif %}
-
+</li>
+</ul>
 <p>::mouhahahahahahaha::
-Votre dévoué serviteur eXtraordinaire,
-Fernando Casabuentes.
+<br/>Votre dévoué serviteur eXtraordinaire,
+<br/>Fernando Casabuentes.
 </p>
