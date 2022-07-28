@@ -7,13 +7,12 @@
     </tr>
     <tr>
         <th>MJ</th>
-        <td> {{ s.mj }}</td>
-        {% include "scheduler/game_shortcut.html" with u=s.mj scale=1 %}</td>
+        <td> {{ s.mj }}
+        {% include "scheduler/player_shortcut.html" with u=s.mj scale=1 %}</td>
     </tr>
     <tr>
         <th>Jeu</th>
-        <td> {{ s.game }}
-        {% include "scheduler/game_shortcut.html" with g=s.game %}</td>
+        <td><b>{{ s.game }}</b></td>
     </tr>
     <tr>
         <th>Date</th>
