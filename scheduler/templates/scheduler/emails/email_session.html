@@ -1,6 +1,6 @@
 {% load static %}
 
-<table class="session_info">
+<table class="session_info {% if s.alert %}alert{% endif %}">
     <tr>
         <th>Titre</th>
         <td>{{ s.title }}</td>

@@ -56,6 +56,7 @@ def cyberpostit():
                     session_data['start'] = s.time_start.strftime(FMT_TIME)
                     session_data['place'] = s.place
                     session_data['description'] = s.description
+                    session_data['alert'] = False
                     email_data['played_data'].append(session_data)
             if has_masterized:
                 for s in masterized_data:
@@ -67,6 +68,7 @@ def cyberpostit():
                     session_data['start'] = s.time_start.strftime(FMT_TIME)
                     session_data['place'] = s.place
                     session_data['description'] = s.description
+                    session_data['alert'] = False
                     email_data['masterized_data'].append(session_data)
             if has_wanted:
                 for s in wanted_data:
@@ -78,6 +80,7 @@ def cyberpostit():
                     session_data['start'] = s.time_start.strftime(FMT_TIME)
                     session_data['place'] = s.place
                     session_data['description'] = s.description
+                    session_data['alert'] = True
                     email_data['wanted_data'].append(session_data)
             sender = f'fernando.casabuentes@gmail.com'
             # targets = [p.user.email]
