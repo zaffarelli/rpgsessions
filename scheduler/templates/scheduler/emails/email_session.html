@@ -2,19 +2,27 @@
 
 <table class="session_info">
     <tr>
-        <th>Titre</th><td>{{ s.title }}</td>
+        <th>Titre</th>
+        <td>{{ s.title }}</td>
     </tr>
     <tr>
-        <th>MJ</th><td> {{ s.mj }}</td>
+        <th>MJ</th>
+        <td> {{ s.mj }}</td>
     </tr>
     <tr>
-        <th>Jeu</th><td> {{ s.game }}</td>
+        <th>Jeu</th>
+        <td> {{ s.game }}</td>
     </tr>
     <tr>
-        <th>Début de partie</th><td> {{ s.start }}</td>
+        <th>Début de partie</th>
+        <td> {{ s.start }}</td>
     </tr>
-    <tr><td colspan="2">{{ s.description|safe }}</td></tr>
     <tr>
-        <th>Lieu</th><td> {{ s.place }}</td>
+        <th>Description</th>
+        <td>{{ s.description|safe }}</td>
+    </tr>
+    <tr>
+        <th>Lieu</th>
+        <td> {{ s.place }}</td>
     </tr>
 </table>
