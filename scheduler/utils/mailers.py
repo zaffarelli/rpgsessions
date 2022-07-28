@@ -32,11 +32,11 @@ def cyberpostit():
     d2 = date.today() + timedelta(days=0)
     d7 = date.today() + timedelta(days=14)
     for p in profiles:
-        # print(f"Handling... {p.nickname}")
         has_played, played_data = p.played_the(d1, d2)
         has_masterized, masterized_data = p.masterized_the(d1, d2)
         has_wanted, wanted_data = p.wanted_the(d1, d7)
         if has_played or has_masterized or has_wanted:
+            print(f"Handling... {p.nickname}")
             subject = f"[eXtraventures] Cyber PostIt !"
             email_data = {}
             email_data['nickname'] = p.nickname
