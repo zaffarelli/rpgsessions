@@ -27,7 +27,7 @@ def week_bounds():
 def cyberpostit():
     """ Activity for the current day (if any) """
     from scheduler.models.profile import Profile
-    profiles = Profile.objects.filter(mail_cyber_postit=True).filter(nickname="Zaffarelli")
+    profiles = Profile.objects.filter(mail_cyber_postit=True)
     d1 = date.today()
     d2 = date.today() + timedelta(days=0)
     d7 = date.today() + timedelta(days=7)
@@ -37,7 +37,7 @@ def cyberpostit():
         has_wanted, wanted_data = p.wanted_the(d1, d7)
         if has_played or has_masterized or has_wanted:
             print(f"Handling... {p.nickname}")
-            subject = f"[eXtraventures] Cyber PostIt !"
+            subject = f"[eXtraventures] Cyber PostIt ! ({p.user.email})"
             email_data = {}
             email_data['nickname'] = p.nickname
             email_data['has_played'] = has_played
@@ -77,7 +77,8 @@ def cyberpostit():
                     session_data['description'] = s.description
                     email_data['wanted_data'].append(session_data)
             sender = f'fernando.casabuentes@gmail.com'
-            targets = [p.user.email]
+            # targets = [p.user.email]
+            targets = ["zaffarelli@gmail.com"]
             html_message = render_to_string('scheduler/emails/cyber_postit.html', context=email_data)
             # print(email_data)
             # print(html_message)
