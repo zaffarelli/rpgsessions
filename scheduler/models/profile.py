@@ -264,25 +264,36 @@ class Profile(models.Model):
         data = []
         something_to_say = False
         for s in sessions:
-            required = str(self.id) in s.wanted.split(';')
-            print("Required:", str(self.id), "in", s.wanted.split(';'), "?")
+            required = self.is_wanted(s)
+            # print("Required:", str(self.id), "in", s.wanted.split(';'), "?")
             if required:
-                print("Required in", s.id)
-                if len(inscription_set) == 0:
-                    something_to_say = True
-                    data.append(s)
-                else:
-                    if s.id not in inscription_set:
+                # print("Required in", s.id)
+                if not self.is_absent(s.date_start):
+
+                    if len(inscription_set) == 0:
                         something_to_say = True
                         data.append(s)
+                    else:
+                        if s.id not in inscription_set:
+                            something_to_say = True
+                            data.append(s)
         return something_to_say, data
+
+    def is_absent(self, d):
+        from scheduler.models.availability import Availability
+        result = False
+        availabilities = Availability.objects.filter(profile=self, absent_mode=True, when=d)
+        if len(availabilities) == 1:
+            result = True
+        return result
 
     def is_wanted(self, session=None):
         result = False
         if session:
             wanted = session.wanted.split(';')
-            if self.id in wanted:
-                result = True
+            if len(wanted):
+                if str(self.id) in wanted:
+                    result = True
         return result
 
     def is_mj(self, session=None):
