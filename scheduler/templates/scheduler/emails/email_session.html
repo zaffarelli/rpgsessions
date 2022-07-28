@@ -11,7 +11,8 @@
     </tr>
     <tr>
         <th>Jeu</th>
-        <td> {{ s.game }}</td>
+        <td> {{ s.game }}
+        {% include "scheduler/game_shortcut.html" with g=s.game %}</td>
     </tr>
     <tr>
         <th>Date</th>
