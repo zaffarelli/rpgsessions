@@ -1,5 +1,5 @@
 from django.core.mail import send_mail
-from scheduler.utils.mechanics import FMT_DATE_PRETTY
+from scheduler.utils.mechanics import FMT_DATE_PRETTY, FMT_TIME
 from datetime import date, timedelta
 from django.core import mail
 from django.template.loader import render_to_string
@@ -52,7 +52,8 @@ def cyberpostit():
                     session_data['title'] = s.title
                     session_data['mj'] = s.mj.nickname
                     session_data['game'] = s.game.name
-                    session_data['start'] = s.date_start.strftime(FMT_DATE_PRETTY)
+                    session_data['date'] = s.date_start.strftime(FMT_DATE_PRETTY)
+                    session_data['start'] = s.time_start.strftime(FMT_TIME)
                     session_data['place'] = s.place
                     session_data['description'] = s.description
                     email_data['played_data'].append(session_data)
@@ -62,7 +63,8 @@ def cyberpostit():
                     session_data['title'] = s.title
                     session_data['mj'] = s.mj.nickname
                     session_data['game'] = s.game.name
-                    session_data['start'] = s.date_start.strftime(FMT_DATE_PRETTY)
+                    session_data['date'] = s.date_start.strftime(FMT_DATE_PRETTY)
+                    session_data['start'] = s.time_start.strftime(FMT_TIME)
                     session_data['place'] = s.place
                     session_data['description'] = s.description
                     email_data['masterized_data'].append(session_data)
@@ -72,7 +74,8 @@ def cyberpostit():
                     session_data['title'] = s.title
                     session_data['mj'] = s.mj.nickname
                     session_data['game'] = s.game.name
-                    session_data['start'] = s.date_start.strftime(FMT_DATE_PRETTY)
+                    session_data['date'] = s.date_start.strftime(FMT_DATE_PRETTY)
+                    session_data['start'] = s.time_start.strftime(FMT_TIME)
                     session_data['place'] = s.place
                     session_data['description'] = s.description
                     email_data['wanted_data'].append(session_data)
