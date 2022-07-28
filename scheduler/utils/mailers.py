@@ -27,6 +27,7 @@ def week_bounds():
 def cyberpostit():
     """ Activity for the current day (if any) """
     from scheduler.models.profile import Profile
+    from scheduler.views.gimme import gimme_profile
     profiles = Profile.objects.filter(mail_cyber_postit=True)
     d1 = date.today()
     d2 = date.today() + timedelta(days=0)
@@ -50,7 +51,7 @@ def cyberpostit():
                 for s in played_data:
                     session_data = {}
                     session_data['title'] = s.title
-                    session_data['mj'] = s.mj.nickname
+                    session_data['mj'] = gimme_profile(s.mj.id)
                     session_data['game'] = s.game.name
                     session_data['date'] = s.date_start.strftime(FMT_DATE_PRETTY)
                     session_data['start'] = s.time_start.strftime(FMT_TIME)
@@ -62,7 +63,7 @@ def cyberpostit():
                 for s in masterized_data:
                     session_data = {}
                     session_data['title'] = s.title
-                    session_data['mj'] = s.mj.nickname
+                    session_data['mj'] = gimme_profile(s.mj.id)
                     session_data['game'] = s.game.name
                     session_data['date'] = s.date_start.strftime(FMT_DATE_PRETTY)
                     session_data['start'] = s.time_start.strftime(FMT_TIME)
@@ -74,7 +75,7 @@ def cyberpostit():
                 for s in wanted_data:
                     session_data = {}
                     session_data['title'] = s.title
-                    session_data['mj'] = s.mj.nickname
+                    session_data['mj'] = gimme_profile(s.mj.id)
                     session_data['game'] = s.game.name
                     session_data['date'] = s.date_start.strftime(FMT_DATE_PRETTY)
                     session_data['start'] = s.time_start.strftime(FMT_TIME)
