@@ -54,7 +54,7 @@
 </head>
 <body>
 <header>
-{% include 'scheduler/svg/logo.svg' %}
+    <a href="https://senestre.eu/">{% include 'scheduler/svg/logo.svg' %}</a>
 </header>
 <p>Salutations <b>{{nickname}}</b>!</p>
 <br/>Vous recevez ce message car le flag Cyber PostIt est activé sur votre compte eXtraventures.
@@ -66,7 +66,7 @@
 
 {% if has_played %}
     <li>
-    <b>Parties jouées...</b>
+    <b>Parties jouées aujourd'hui</b>
     <div class="games">
     {% for s in played_data %}
         <div class="session">{% include "scheduler/emails/email_session.html" with s=s %}</li>
@@ -78,7 +78,7 @@
 
 {% if has_masterized %}
     <li>
-    <b>Parties menées...</b>
+    <b>Parties menées aujourd'hui</b>
     <div class="games">
     {% for s in masterized_data %}
         <div class="session">{% include "scheduler/emails/email_session.html" with s=s %}</li>
@@ -90,7 +90,7 @@
 
 {% if has_wanted %}
     <li>
-    <b>Parties où vous êtes sollicités mais pas inscrits...</b>
+    <b>Parties où vous êtes sollicités mais pas inscrits (dans la semaine à venir)...</b>
     <p>Cette alerte n'apparaîtra pas si:</p>
     <ol>
         <li>Vous êtes noté absent ce jour là.</li>
@@ -107,6 +107,7 @@
 <p>::mouhahahahahahaha::
 <br/>Votre dévoué serviteur eXtraordinaire,
 <br/>Fernando Casabuentes.
+
 </p>
 </body>
 </html>
