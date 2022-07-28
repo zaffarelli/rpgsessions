@@ -84,8 +84,8 @@ def cyberpostit():
                     session_data['alert'] = True
                     email_data['wanted_data'].append(session_data)
             sender = f'fernando.casabuentes@gmail.com'
-            # targets = [p.user.email]
-            targets = ["zaffarelli@gmail.com"]
+            targets = [p.user.email]
+            # targets = ["zaffarelli@gmail.com"]
             html_message = render_to_string('scheduler/emails/cyber_postit.html', context=email_data)
             # print(email_data)
             # print(html_message)
@@ -93,6 +93,7 @@ def cyberpostit():
             mail.send_mail(subject, plain_message, f"From <{sender}>", targets, html_message=html_message)
         else:
             print("Nothing to say !!")
+
 
 def wednesday():
     """ Wednesday recap of everything coming in the week """
