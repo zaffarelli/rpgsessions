@@ -138,6 +138,8 @@ def prepare_design(request):
     p.is_girl = False
     p.hair = "#ffff00"
     p.eyes = "#00ffff"
+    p.skin1 = "#cc00cc"
+    p.skin2 = "#880088"
 
     hair = []
     mouth = []

@@ -32,7 +32,8 @@ HAIR_STYLES = (
     ('type3', 'Cheveux 3'),
     ('type4', 'Cheveux 4'),
     ('type5', 'Cheveux 5'),
-    ('type6', 'Cheveux 6')
+    ('type6', 'Cheveux 6'),
+    ('type7', 'Cheveux 7')
 )
 
 MOUTH_STYLES = (
@@ -70,6 +71,8 @@ class Profile(models.Model):
     gamma = ColorField(default='#666666')
     hair = ColorField(default='#666666')
     eyes = ColorField(default='#666666')
+    skin1 = ColorField(default='#CEB090')
+    skin2 = ColorField(default='#9C8267')
     mail_wednesday = models.BooleanField(default=False)
     mail_sunday = models.BooleanField(default=False)
     mail_cyber_postit = models.BooleanField(default=False)
@@ -177,7 +180,8 @@ class Profile(models.Model):
                 'type3': 0.0,
                 'type4': 0.0,
                 'type5': 0.0,
-                'type6': 0.0
+                'type6': 0.0,
+                'type7': 0.0
 
             },
             'mouth_style': {

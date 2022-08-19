@@ -15,9 +15,7 @@
         height="1.2cm"
         {% endif %}
         {% endif %}
-        viewBox="-12 -22 24 24"
-
-        >
+        viewBox="-12 -22 24 24">
 
 
         {% load global_filters %}
@@ -37,12 +35,12 @@
       style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 <g id="girl_ears">
     <ellipse cx="5.25" cy="-11.25" rx="0.80" ry="1.5"
-             style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+             style="fill:{{u.skin1}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
     <ellipse cx="-5.25" cy="-11.25" rx="0.80" ry="1.5"
-             style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+             style="fill:{{u.skin1}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 </g>
 <path id="girl_body" d="M 0 2 l -10 0 q 0 -4 4 -4 q 4 0 4 -2 l 0 -2 l 4 0 l 0 2 q 0 2 4 2 q 4 0 4 4 l -10 0"
-      style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+      style="fill:{{u.skin1}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
 <path id="girl_shirt" d="M 0 2 l -10 0 q 0 -4 4 -4 q 6 4 12 0 q 4 0 4 4 l -10 0"
       style="fill:{{u.alpha}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
@@ -51,13 +49,13 @@
 <g transform="translate(0,3)">
     <path id="head_girl_thin" opacity="{{u.face_artefact.face_style.thin}}"
           d="M 0 -7 l 0  0  q -2 0 -5 -6 l  0 -2 q 1 -6 4 -6 l  2  0 q 3 0 4  6 l  0  2 q -3 6  -5  6"
-          style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+          style="fill:{{u.skin1}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
     <path id="head_girl_standard" opacity="{{u.face_artefact.face_style.standard}}"
           d="M 0  -7 l 0  0  q -3 0 -5 -6 l  0 -2 q 1 -6   4 -6 l  2  0 q 3 0   4  6 l  0  2 q -2 6  -5  6"
-          style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+          style="fill:{{u.skin1}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
     <path id="head_girl_large" opacity="{{u.face_artefact.face_style.bold}}"
           d="M 0  -7 l 0  0  q -4 0 -5 -6 l  0 -2 q 1 -6   4 -6 l  2  0 q 3 0   4  6 l  0  2 q -1 6  -5  6"
-          style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+          style="fill:{{u.skin1}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="girl_hair1" opacity="{{u.face_artefact.hair_style.type1}}"
           d="M 0 -20
@@ -135,12 +133,30 @@
           "
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
+    <path id="girl_hair7" opacity="{{u.face_artefact.hair_style.type7}}"
+          d="M 0 -21
+          m 0 1
+          l -3 1
+          l -3 4
+          l 1 -3
+          l 1 -2
+          l 2 -2.5
+          l 4 0
+          l 2 2.5
+          l 1 2
+          l 1 3
+          l -3 -4
+          l -3 -1
+          "
+          style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
-    <ellipse cx="-2.75" cy="-14.05" rx="1.80" ry="1.5" style="fill:#9C8267;stroke:#none;"/>
-    <ellipse cx="2.75" cy="-14.05" rx="1.80" ry="1.5" style="fill:#9C8267;stroke:#none;"/>
 
-    <g id="eyes" opacity="1">
-        <!--                <animate attributeName="opacity" values="1" begin="5s" dur="0.5s" eventValue="onmouseover" repeatCount="indefinite"/>-->
+
+    <ellipse cx="-2.75" cy="-14.05" rx="1.80" ry="1.5" style="fill:{{u.skin2}};stroke:#none;"/>
+    <ellipse cx="2.75" cy="-14.05" rx="1.80" ry="1.5" style="fill:{{u.skin2}};stroke:#none;"/>
+
+    <g id="girls_eyes" opacity="0">
+        <animate attributeName="opacity" values="1" begin="3s" dur="0.5s" eventValue="onmouseover" repeatCount="indefinite"/>
         <ellipse cx="-2.5" cy="-14" rx="1" ry="0.5" style="fill:#F0F0F0;stroke:#none;"/>
         <ellipse cx="2.5" cy="-14" rx="1" ry="0.5" style="fill:#F0F0F0;stroke:#none;"/>
 
@@ -152,7 +168,7 @@
     </g>
 
 
-    <ellipse cx="0" cy="-11" rx="1.1" ry="0.35" style="fill:#917D67;stroke:#none;"/>
+    <ellipse id="girl_nose"  cx="0" cy="-11" rx="1.1" ry="0.35" style="fill:{{u.skin2}};stroke:#none;"/>
 
 
     <path id="girl_mouth1" opacity="{{u.face_artefact.mouth_style.type1}}"
@@ -166,7 +182,7 @@
 
 
               "
-          style="fill:#917D67;stroke:none;stroke-width:0.1mm; stroke-cap:round;"/>
+          style="fill:{{u.skin2}};stroke:none;stroke-width:0.1mm; stroke-cap:round;"/>
 
 
     <path id="girl_mouth2" opacity="{{u.face_artefact.mouth_style.type2}}"
@@ -193,7 +209,7 @@
 
 
               "
-          style="fill:#917D67;stroke:#a05050;stroke-width:0.1mm; stroke-cap:round;"/>
+          style="fill:{{u.skin2}};stroke:#a05050;stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="girl_mouth4" opacity="{{u.face_artefact.mouth_style.type4}}"
           d="M 0 -9.5
@@ -206,7 +222,7 @@
 
 
               "
-          style="fill:#ffffff;stroke:#917D67;stroke-width:0.1mm; stroke-cap:round;"/>
+          style="fill:#ffffff;stroke:{{u.skin2}};stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="girl_mouth5" opacity="{{u.face_artefact.mouth_style.type5}}"
           d="M 0 -9.5
@@ -220,7 +236,7 @@
                     l -1.35 0.25
                     l -0.6 0
               "
-          style="fill:#ffffff;stroke:#917D67;stroke-width:0.1mm; stroke-cap:round;"/>
+          style="fill:#ffffff;stroke:{{u.skin2}};stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="girl_mouth6" opacity="{{u.face_artefact.mouth_style.type6}}"
           d="M 0 -9.5
@@ -228,7 +244,7 @@
 
 
               "
-          style="fill:#917D67;stroke:#917D67;stroke-width:0.1mm; stroke-cap:round;"/>
+          style="fill:{{u.skin2}};stroke:{{u.skin2}};stroke-width:0.1mm; stroke-cap:round;"/>
 
 </g>
 
@@ -238,28 +254,6 @@
 <!--    <rect x="+3" y="-4" width="4" height="3" style="fill:{{u.beta}};stroke:#none;"/>-->
 
 
-<g opacity="0">
-    <circle cx="0" cy="-7" r="0.125" style="stroke:none;fill:red;"></circle>
-    <circle cx="0" cy="-8" r="0.125" style="stroke:none;fill:blue;"></circle>
-    <circle cx="0" cy="-9" r="0.125" style="stroke:none;fill:blue;"></circle>
-    <circle cx="0" cy="-10" r="0.125" style="stroke:none;fill:blue;"></circle>
-    <circle cx="0" cy="-11" r="0.125" style="stroke:none;fill:red;"></circle>
-    <circle cx="0" cy="-12" r="0.125" style="stroke:none;fill:blue;"></circle>
-    <circle cx="0" cy="-13" r="0.125" style="stroke:none;fill:blue;"></circle>
-    <circle cx="0" cy="-14" r="0.125" style="stroke:none;fill:red;"></circle>
-    <circle cx="0" cy="-15" r="0.125" style="stroke:none;fill:blue;"></circle>
-    <circle cx="0" cy="-16" r="0.125" style="stroke:none;fill:blue;"></circle>
-    <circle cx="0" cy="-17" r="0.125" style="stroke:none;fill:blue;"></circle>
-    <circle cx="0" cy="-18" r="0.125" style="stroke:none;fill:blue;"></circle>
-    <circle cx="0" cy="-19" r="0.125" style="stroke:none;fill:blue;"></circle>
-    <circle cx="0" cy="-20" r="0.125" style="stroke:none;fill:blue;"></circle>
-    <circle cx="0" cy="-21" r="0.125" style="stroke:none;fill:red;"></circle>
-
-    <circle cx="-5" cy="-7" r="0.125" style="stroke:none;fill:violet;"></circle>
-    <circle cx="5" cy="-7" r="0.125" style="stroke:none;fill:violet;"></circle>
-    <circle cx="-5" cy="-13" r="0.125" style="stroke:none;fill:violet;"></circle>
-    <circle cx="5" cy="-13" r="0.125" style="stroke:none;fill:violet;"></circle>
-</g>
 
 </g>
 
@@ -269,31 +263,31 @@
         {% else %}
 <g transform="translate(0,-1)" opacity="1">
 <ellipse cx="5.25" cy="-12.25" rx="0.80" ry="1.5"
-         style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+         style="fill:{{u.skin1}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 <ellipse cx="-5.25" cy="-12.25" rx="0.80" ry="1.5"
-         style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+         style="fill:{{u.skin1}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 <path id="body"
       d="M 0 2 l -10 0 l 0 -3 q 0 -2 3 -3 l 4 0 l 0 -4 l 6 0 l 0 4 l 4 0 q 3 1 3 3 l 0 3 l -10 0"
       style="fill:{{u.alpha}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 <path id="neck"
       d="M 0 -3 q -2 0 -3 -1 l 0 -4 l 6 0 l 0 4 q -1 1 -3 1"
-      style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+      style="fill:{{u.skin1}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 <g transform="translate(0,2)">
 
     <path id="head" opacity="{{u.face_artefact.face_style.thin}}"
           d="M 1 -8 l -2  0  q -1  0 -4 -6 l  0 -2  q  0 -4  4 -6 l  2  0  q  4  2  4  6 l  0  2  q -3 6 -4  6"
-          style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+          style="fill:{{u.skin1}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
     <path id="head" opacity="{{u.face_artefact.face_style.bold}}"
           d="M 1  -7
                   l -2  0  q -4  0 -4 -7
                   l  0 -2  q  0 -4  4 -6
                   l  2  0  q  4  2  4  7
                   l  0  2  q  0 6 -4  6"
-          style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+          style="fill:{{u.skin1}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="head" opacity="{{u.face_artefact.face_style.standard}}"
           d="M 1 -8 l -2  0  q -2  0 -4 -6 l  0 -2  q  0 -4  4 -6 l  2  0  q  4  2  4  6 l  0  2  q  -2 6 -4 6"
-          style="fill:#CEB090;stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+          style="fill:{{u.skin1}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
 
     <path id="hair1" opacity="{{u.face_artefact.hair_style.type1}}"
           d="M 0 -22 l -2 -1 -3 5 -1 2 5 -6 3 2 1 4 0 -3 -1 -3 3 4 -1 -3 -2 -1 -2 0"
@@ -332,15 +326,32 @@
             -0.5 0
             -2 -3
             -2 0
-
-
-
-
-
-
-
             "
           style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+
+    <path id="hair6" opacity="{{u.face_artefact.hair_style.type6}}"
+          d="M -2 -21
+            l -4 3
+            l 2 -4
+            l 11 4
+            l 1 -4
+            l -1 -1
+            l -9 -1
+            l -1 2
+            "
+          style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+
+    <path id="hair7" opacity="{{u.face_artefact.hair_style.type7}}"
+          d="M 0 -21
+
+            l -6 3
+            l 2 -4
+            l 8 0
+            l 3 5
+            l -8 -5
+            "
+          style="fill:{{u.hair}};stroke:#000000;stroke-width:0.1mm; stroke-cap:round;"/>
+
 
     <path id="goatie1" opacity="{{u.face_artefact.mouth_style.type1}}"
           d="M 0 -11 l 2 0 l 0.5 2 l -0.5 -1 l -4 0 l -0.5 1 l 0.5 -2 l 2 0 "
@@ -447,13 +458,14 @@
                     l -1.35 0.25
                     l -0.6 0
               "
-          style="fill:#ffffff;stroke:#917D67;stroke-width:0.1mm; stroke-cap:round;"/>
+          style="fill:#ffffff;stroke:{{u.skin2}};stroke-width:0.1mm; stroke-cap:round;"/>
 
 
     <g id="facial_features">
-        <ellipse cx="-2.75" cy="-15.05" rx="1.80" ry="1.5" style="fill:#9C8267;stroke:#none;"/>
-        <ellipse cx="2.75" cy="-15.05" rx="1.80" ry="1.5" style="fill:#9C8267;stroke:#none;"/>
-        <g id="eyes" opacity="1">
+        <ellipse cx="-2.75" cy="-15.05" rx="1.80" ry="1.5" style="fill:{{u.skin2}};stroke:#none;"/>
+        <ellipse cx="2.75" cy="-15.05" rx="1.80" ry="1.5" style="fill:{{u.skin2}};stroke:#none;"/>
+        <g id="eyes" opacity="0">
+            <animate attributeName="opacity" values="1" begin="5s" dur="0.5s" eventValue="onmouseover" repeatCount="indefinite"/>
             <ellipse cx="-2.5" cy="-15" rx="1" ry="0.5" style="fill:#F0F0F0;stroke:#none;"/>
             <ellipse cx="2.5" cy="-15" rx="1" ry="0.5" style="fill:#F0F0F0;stroke:#none;"/>
 
@@ -462,7 +474,7 @@
             <ellipse cx="-2.5" cy="-15" rx="0.25" ry="0.25" style="fill:#000000;stroke:#none;"/>
             <ellipse cx="2.5" cy="-15" rx="0.25" ry="0.25" style="fill:#000000;stroke:#none;"/>
         </g>
-        <ellipse cx="0" cy="-12" rx="1.1" ry="0.35" style="fill:#917D67;stroke:#none;"/>
+        <ellipse cx="0" cy="-12" rx="1.1" ry="0.35" style="fill:{{u.skin2}};stroke:#none;"/>
     </g>
 
 </g>
@@ -503,5 +515,29 @@
 <text class='words' x="0" y="-24" font-size="3" font-family="Roboto" text-anchor="middle">
 
 </text>
+
+<g opacity="0">
+    <circle cx="0" cy="-7" r="0.125" style="stroke:none;fill:red;"></circle>
+    <circle cx="0" cy="-8" r="0.125" style="stroke:none;fill:blue;"></circle>
+    <circle cx="0" cy="-9" r="0.125" style="stroke:none;fill:blue;"></circle>
+    <circle cx="0" cy="-10" r="0.125" style="stroke:none;fill:blue;"></circle>
+    <circle cx="0" cy="-11" r="0.125" style="stroke:none;fill:red;"></circle>
+    <circle cx="0" cy="-12" r="0.125" style="stroke:none;fill:blue;"></circle>
+    <circle cx="0" cy="-13" r="0.125" style="stroke:none;fill:blue;"></circle>
+    <circle cx="0" cy="-14" r="0.125" style="stroke:none;fill:red;"></circle>
+    <circle cx="0" cy="-15" r="0.125" style="stroke:none;fill:blue;"></circle>
+    <circle cx="0" cy="-16" r="0.125" style="stroke:none;fill:blue;"></circle>
+    <circle cx="0" cy="-17" r="0.125" style="stroke:none;fill:blue;"></circle>
+    <circle cx="0" cy="-18" r="0.125" style="stroke:none;fill:blue;"></circle>
+    <circle cx="0" cy="-19" r="0.125" style="stroke:none;fill:blue;"></circle>
+    <circle cx="0" cy="-20" r="0.125" style="stroke:none;fill:blue;"></circle>
+    <circle cx="0" cy="-21" r="0.125" style="stroke:none;fill:red;"></circle>
+
+    <circle cx="-5" cy="-7" r="0.125" style="stroke:none;fill:violet;"></circle>
+    <circle cx="5" cy="-7" r="0.125" style="stroke:none;fill:violet;"></circle>
+    <circle cx="-5" cy="-13" r="0.125" style="stroke:none;fill:violet;"></circle>
+    <circle cx="5" cy="-13" r="0.125" style="stroke:none;fill:violet;"></circle>
+</g>
+
 
         </svg>
