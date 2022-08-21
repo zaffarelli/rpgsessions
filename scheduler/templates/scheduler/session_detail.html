@@ -15,10 +15,6 @@
 {% endif %}
 <table>
     <tr>
-        <td colspan="2" class="text">{{ session.description|safe }}
-        </td>
-    </tr>
-    <tr>
         <th>Meneur de jeu</th>
         <td>{% include "scheduler/session_shortcut.html" with s=session u=session.mj g=session.game %}</td>
     </tr>
@@ -37,6 +33,10 @@
         <td>
             {% include "scheduler/game_shortcut.html" with g=session.game large=1 %}<br/>
             {{ session.game.name }} ({{ session.game.version }})</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="text">{{ session.description|safe }}
+        </td>
     </tr>
     <tr>
         <th>Démarrage</th>
