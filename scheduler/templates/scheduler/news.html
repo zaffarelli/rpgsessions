@@ -3,27 +3,27 @@
 <h1>Parties où vous êtes MJ</h1>
 <div class="all_propositions">
 
-    {% for s in incoming_games.sessions_where_mj %}
+    {% for x in incoming_games.sessions_where_mj %}
         <div class="proposition_block">
-            {% include "scheduler/session_detail.html" with session=s %}
+            {% include "scheduler/session_detail.html" with session=x %}
         </div>
     {% endfor %}
 </div>
     <h1>Parties où vous êtes sollicités</h1>
 <div class="all_propositions">
 
-    {% for s in incoming_games.sessions_where_wanted %}
+    {% for x in incoming_games.sessions_where_wanted %}
         <div class="proposition_block">
-            {% include "scheduler/session_detail.html" with session=s %}
+            {% include "scheduler/session_detail.html" with session=x %}
         </div>
     {% endfor %}
 </div>
 <h1>Parties où vous êtes inscrits</h1>
 <div class="all_propositions">
 
-    {% for s in incoming_games.sessions_where_subscribed %}
+    {% for x in incoming_games.sessions_where_subscribed %}
         <div class="proposition_block">
-            {% include "scheduler/session_detail.html" with session=s %}
+            {% include "scheduler/session_detail.html" with session=x %}
         </div>
     {% endfor %}
 </div>
