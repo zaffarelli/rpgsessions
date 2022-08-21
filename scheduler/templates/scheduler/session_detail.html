@@ -22,6 +22,16 @@
         <th>Meneur de jeu</th>
         <td>{% include "scheduler/session_shortcut.html" with s=session u=session.mj g=session.game %}</td>
     </tr>
+    {% if session.inscriptions %}
+    <tr>
+        <th>Inscrits (max: {{ session.max_players }})</th>
+        <td style="background:#ffcc44;">
+            {% for w in session.inscriptions %}
+                &nbsp;{% include "scheduler/player_shortcut.html" with u=w %}
+            {% endfor %}
+        </td>
+    </tr>
+    {% endif %}
     <tr>
         <th>Jeu</th>
         <td>
@@ -71,16 +81,7 @@
         </tr>
     {% endif %}
 
-    {% if session.inscriptions %}
-    <tr>
-        <th>Inscrits (max: {{ session.max_players }})</th>
-        <td style="background:#ffcc44;">
-            {% for w in session.inscriptions %}
-                &nbsp;{% include "scheduler/player_shortcut.html" with u=w %}
-            {% endfor %}
-        </td>
-    </tr>
-    {% endif %}
+
     {% if session.campaign %}
         <tr>
             <th>Campagne</th>
