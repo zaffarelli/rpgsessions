@@ -24,7 +24,7 @@
     </tr>
     {% if session.inscriptions %}
     <tr>
-        <th>Inscrits (max: {{ session.max_players }})</th>
+        <th>Inscrits (max: {{ session.optional_spots }})</th>
         <td style="background:#ffcc44;">
             {% for w in session.inscriptions %}
                 &nbsp;{% include "scheduler/player_shortcut.html" with u=w %}
