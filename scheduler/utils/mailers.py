@@ -23,11 +23,18 @@ def week_bounds():
     date_b = date_a + timedelta(days=7)
     return date_a.strftime(FMT_DATE_PRETTY), date_b.strftime(FMT_DATE_PRETTY), date_a, date_b
 
+def review_tracker_auto():
+    from scheduler.models.profile import Profile
+    profiles = Profile.objects.filter(tracker_auto=True)
+    for p in profiles:
+        p.clean_track()
+        p.save()
 
 def cyberpostit():
     """ Activity for the current day (if any) """
     from scheduler.models.profile import Profile
     from scheduler.views.gimme import gimme_profile
+
     profiles = Profile.objects.filter(mail_cyber_postit=True)
     d1 = date.today()
     d2 = date.today() + timedelta(days=0)

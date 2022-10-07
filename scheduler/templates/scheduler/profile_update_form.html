@@ -108,6 +108,18 @@
             <td></td>
         </tr>
         <tr>
+            {{ form.skin1.errors }}
+            <th><label for="skin1">Peau</label></th>
+            <td><input type="color" name="skin1" value="{{ form.skin1.value }}"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.skin2.errors }}
+            <th><label for="skin2">Nuance Peau</label></th>
+            <td><input type="color" name="skin2" value="{{ form.skin2.value }}"/></td>
+            <td></td>
+        </tr>
+        <tr>
             {{ form.need_drop.errors }}
             <th><label for="need_drop">Sans Véhicule</label></th>
             <td>{{ form.need_drop }}</td>
@@ -137,6 +149,12 @@
             <th><label for="mail_cyber_postit">Cyber PostIt</label></th>
             <td>{{ form.mail_cyber_postit }}</td>
             <td></td>
+        </tr>
+        <tr>
+            {{ form.tracker_auto.errors }}
+            <th><label for="tracker_auto">Traqueur Automatique</label></th>
+            <td>{{ form.tracker_auto }}</td>
+            <td>Nouveau! Si activé, vos traqués seront mis à jour quotidiennement en fonction des parties futures ou vous êtes inscrits, sollicité ou si vous êtes MJ.</td>
         </tr>
     </table>
 </form>

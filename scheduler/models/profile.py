@@ -57,6 +57,7 @@ class Profile(models.Model):
     can_drop = models.BooleanField(default=False)
     realm = models.ForeignKey(Realm, on_delete=models.SET_NULL, null=True, blank=True)
     is_girl = models.BooleanField(default=False)
+    tracker_auto = models.BooleanField(default=False)
     # shield = models.CharField(max_length=256, default='shield_base')
     # silhouette = models.CharField(max_length=256, default='player_base')
     # shieldstyle = models.CharField(max_length=256, default='mid', choices=SHIELD_STYLES)
@@ -100,6 +101,19 @@ class Profile(models.Model):
         for x in all:
             list.append(gimme_profile(x.target.id))
         return list
+
+    def clean_track(self):
+        from scheduler.models.follower import Follower
+        all = Follower.objects.filter(profile=self).order_by('target__nickname')
+        for x in all:
+            x.delete()
+
+    def auto_follow(self):
+        from scheduler.models.session import Session
+        import datetime
+        sessions_as_mj = Session.objects.filter(mj=self, date_start__gt=datetime.now()) #todo
+        sessions_where_wanted = Session.objects.filter(mj=self, date_start__gt=datetime.now())
+        subscribed_sessions = Session.objects.filter(mj=self, date_start__gt=datetime.now())
 
     @property
     def groupies(self):

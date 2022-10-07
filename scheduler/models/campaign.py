@@ -17,6 +17,7 @@ class Campaign(models.Model):
     toc = models.TextField(max_length=2048, default='', blank=True)
     full_run_duration = models.PositiveIntegerField(default=0, blank=True)
     is_visible = models.BooleanField(default=False, blank=True)
+    is_finished = models.BooleanField(default=False, blank=True)
 
 
     def __str__(self):
@@ -27,6 +28,12 @@ class Campaign(models.Model):
         from scheduler.utils.mechanics import json_default
         jstr = json.loads(json.dumps(self, default=json_default, sort_keys=True, indent=4))
         return jstr
+
+    @property
+    def sessions_summary(self):
+        list = []
+        return list
+
 
     @property
     def wanted_list(self):
