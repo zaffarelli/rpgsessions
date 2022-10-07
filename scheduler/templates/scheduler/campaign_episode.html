@@ -1,5 +1,7 @@
-
+{% load static %}
+{% load global_filters %}
 <div class="session_row">
-    {{ c }}
-    {{ c.s.title }}
+    {{ c.title }}
+    {{ c.date_start }}
+
 </div>
