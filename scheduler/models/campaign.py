@@ -31,7 +31,13 @@ class Campaign(models.Model):
 
     @property
     def sessions_summary(self):
+        from scheduler.views.organizer import gimme_session
+        from scheduler.models.session import Session
         list = []
+        episodes = Session.objects.filter(campaign=self).order_by("-date_start")
+        if len(episodes) > 0:
+            for episode in episodes:
+                list.append(gimme_session(episode))
         return list
 
 

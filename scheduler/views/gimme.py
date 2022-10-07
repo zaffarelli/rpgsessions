@@ -85,6 +85,7 @@ def gimme_campaign(x):
     context['game'] = gimme_game(c.game)
     context['wanted_list'] = c.wanted_list
     context['mj'] = gimme_profile(c.mj.id)
+    context['episodes'] = c.sessions_summary
     return context
 
 
