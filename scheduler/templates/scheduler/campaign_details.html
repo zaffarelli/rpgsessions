@@ -10,7 +10,7 @@
     <tr>
         <td>[EPISODES HERE]
             {% for x in c.episodes %}
-                {% include "scheduler/campaign_episode.html" with u=x %}
+                {% include "scheduler/campaign_episode.html" with c=x %}
             {% endfor %}
 
         </td>
