@@ -37,7 +37,7 @@ class Campaign(models.Model):
         episodes = Session.objects.filter(campaign=self).order_by("-date_start")
         if len(episodes) > 0:
             for episode in episodes:
-                list.append(gimme_session(episode))
+                list.append(gimme_session(None,episode))
         return list
 
 
