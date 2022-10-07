@@ -53,6 +53,21 @@ def as_date(value):
         res = "Proposition!"
     return res
 
+@register.filter(name='as_date_schedule')
+def as_date_schedule(value):
+    import datetime
+    now = datetime.now()
+    if value:
+        d = date(year=value['year'], month=value['month'], day=value['day'])
+        if d < now:
+            schedule = "past"
+        else:
+            schedule = "future"
+        res = "<span class='"+schedule+"'>"+d.strftime(FMT_DATE)+"</span>"
+    else:
+        res = "Proposition!"
+    return res
+
 
 @register.filter(name='as_level')
 def as_level(value):
