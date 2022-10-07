@@ -19,7 +19,6 @@ class Campaign(models.Model):
     is_visible = models.BooleanField(default=False, blank=True)
     is_finished = models.BooleanField(default=False, blank=True)
 
-
     def __str__(self):
         return f'{self.title} ({self.mj})'
 
@@ -37,9 +36,8 @@ class Campaign(models.Model):
         episodes = Session.objects.filter(campaign=self).order_by("-date_start")
         if len(episodes) > 0:
             for episode in episodes:
-                list.append(gimme_session(None,episode))
+                list.append(gimme_session(None, episode))
         return list
-
 
     @property
     def wanted_list(self):
