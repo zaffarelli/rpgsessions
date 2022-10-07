@@ -1,7 +1,8 @@
 {% load static %}
 {% load global_filters %}
-<div class="session_row">
-    {{ c.title }}
-    {{ c.date_start }}
-
-</div>
+<table>
+    <tr>
+        <td>{{ c.title }}</td>
+        <td>{{ c.date_start|as_date }}</td>
+    </tr>
+</table>
