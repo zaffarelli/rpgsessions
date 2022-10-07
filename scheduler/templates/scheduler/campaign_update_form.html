@@ -65,6 +65,11 @@
             <td>{{ form.is_visible }}</td>
             <td></td>
         </tr>
-
+        <tr>
+            {{ form.is_finished.errors }}
+            <th><label for="is_finished">Terminée</label></th>
+            <td>{{ form.is_finished }}</td>
+            <td></td>
+        </tr>
     </table>
 </form>
