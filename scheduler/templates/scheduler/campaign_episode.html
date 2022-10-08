@@ -3,6 +3,6 @@
 <table>
     <tr>
         <td style="text-align:left;">{{ c.title }}</td>
-        <td>{{ c.date_start|as_date_schedule }}</td>
+        <td>{{ c.date_start|as_date_schedule|safe }}</td>
     </tr>
 </table>

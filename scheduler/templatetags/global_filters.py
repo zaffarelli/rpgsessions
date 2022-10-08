@@ -56,7 +56,7 @@ def as_date(value):
 @register.filter(name='as_date_schedule')
 def as_date_schedule(value):
     import datetime
-    now = datetime.now()
+    now = datetime.date.today()
     if value:
         d = date(year=value['year'], month=value['month'], day=value['day'])
         if d < now:
