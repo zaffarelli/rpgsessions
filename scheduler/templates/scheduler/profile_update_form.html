@@ -5,6 +5,9 @@
         {{ form.management_form }}
         <input type="hidden" name="id" value="{{ profile_id }}"/>
         <input type="hidden" name="user" value="{{ form.user.value }}"/>
+{#        <input type="hidden" name="face_style" value="{{ form.face_style }}"/>#}
+{#        <input type="hidden" name="hair_style" value="{{ form.hair_style }}"/>#}
+{#        <input type="hidden" name="mouth_style" value="{{ form.mouth_style }}"/>#}
         <tr>
             {{ form.nickname.errors }}
             <th><label for="nickname">Surnom</label></th>
@@ -54,24 +57,24 @@
 {#            <td>{{ form.iconstyle }}</td>#}
 {#            <td></td>#}
 {#        </tr>#}
-        <tr>
-            {{ form.face_style.errors }}
-            <th><label for="face_style">Silhouette</label></th>
-            <td>{{ form.face_style }}</td>
-            <td></td>
-        </tr>
-        <tr>
-            {{ form.hair_style.errors }}
-            <th><label for="hair_style">Coiffure</label></th>
-            <td>{{ form.hair_style }}</td>
-            <td></td>
-        </tr>
-        <tr>
-            {{ form.mouth_style.errors }}
-            <th><label for="mouth_style">Bouche/Barbe</label></th>
-            <td>{{ form.mouth_style }}</td>
-            <td></td>
-        </tr>
+{#        <tr>#}
+{#            {{ form.face_style.errors }}#}
+{#            <th><label for="face_style">Silhouette</label></th>#}
+{#            <td>{{ form.face_style }}</td>#}
+{#            <td></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            {{ form.hair_style.errors }}#}
+{#            <th><label for="hair_style">Coiffure</label></th>#}
+{#            <td>{{ form.hair_style }}</td>#}
+{#            <td></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            {{ form.mouth_style.errors }}#}
+{#            <th><label for="mouth_style">Bouche/Barbe</label></th>#}
+{#            <td>{{ form.mouth_style }}</td>#}
+{#            <td></td>#}
+{#        </tr>#}
 
 
         <tr>
