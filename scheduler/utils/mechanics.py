@@ -85,3 +85,8 @@ def random_color():
     for x in range(6):
         str += random.choice(digits)
     return str
+
+SESSION_LANGUAGES = (
+    ('fr', 'Français'),
+    ('en', 'English'),
+)

@@ -8,7 +8,7 @@ import json
 def prepare_svg_artefact(sender, instance, **kwargs):
     # str = json.dumps(instance.build_svg_artefact(), indent=4, sort_keys=True)
     # instance.svg_artefact = str
-
+    instance.padid = str(instance.id).zfill(3)
     if not instance.realm:
         from scheduler.models.realm import Realm
         realm = Realm.objects.first()

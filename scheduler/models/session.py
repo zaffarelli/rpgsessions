@@ -6,8 +6,10 @@ from scheduler.models.game import Game
 from scheduler.models.profile import Profile
 from colorfield.fields import ColorField
 import json
-from scheduler.utils.mechanics import ADV_LEVEL
+from scheduler.utils.mechanics import ADV_LEVEL, SESSION_LANGUAGES
 from scheduler.models.campaign import Campaign
+
+
 
 
 class Session(models.Model):
@@ -32,6 +34,7 @@ class Session(models.Model):
     # is_ready = models.BooleanField(default=False, verbose_name='ok', blank=True)
     is_visible = models.BooleanField(default=False, blank=True)
     error_status = models.PositiveIntegerField(default=0)
+    language = models.CharField(default='fr', choices=SESSION_LANGUAGES, max_length=2)
 
     def __str__(self):
         str = f"{self.title}"

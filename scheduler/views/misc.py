@@ -7,6 +7,7 @@ from datetime import datetime
 
 def prepare_who(request, pk):
     from scheduler.views.gimme import gimme_profile
+
     u = gimme_profile(pk)
     context = {'fontset': FONTSET, 'u': u}
     return context
@@ -17,7 +18,7 @@ def who(request, pk=None):
     if not request.user.is_authenticated:
         return render(request, 'scheduler/registration/login_error.html')
     if pk is None:
-        pk = 1
+        pk = 0
     context = prepare_who(request, pk)
     return render(request, 'scheduler/who.html', context=context)
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.template.loader import get_template
 from scheduler.utils.mechanics import FONTSET, FMT_DATE, DOWS, FMT_DATE_PRETTY
 from scheduler.views.organizer import build_month, toggle_available, toggle_subscribe, prepare_day, prepare_month
@@ -124,7 +124,6 @@ def display_user(request, id=None):
 def toggle_follower(request, id):
     from scheduler.models.follower import Follower
     from scheduler.models.profile import Profile
-    # print("+++ HERE +++", id)
     profile = Profile.objects.get(pk=request.user.profile.id)
     target = Profile.objects.get(pk=id)
     context = {}
@@ -135,7 +134,6 @@ def toggle_follower(request, id):
     else:
         x = Follower(profile=profile, target=target)
         x.save()
-        # html = gimme_profile(target.id)
     context["set_followers"] = gimme_set_followers(request.user.profile.id)
     template = get_template("scheduler/set_followers.html")
     html = template.render(context, request)
@@ -258,9 +256,14 @@ def gimme_edit_session(session):
 
 def gimme_edit_profile(profile):
     from scheduler.forms.profile_form import ProfileForm
+    from scheduler.views.gimme import gimme_profile
+    stored = profile.build_face_artefact()
     response = {'form': '', 'data': '', 'callback': '', 'profile_id': profile.id}
     form = ProfileForm(instance=profile)
     response['form'] = form
+    response['profile'] = gimme_profile(profile.id)
+    response['profile']['face_artefact'] = stored
+    response['portrait'] = profile.get_portrait_codes
     return response
 
 
@@ -273,7 +276,8 @@ def gimme_edit_game(game):
 
 
 def prepare_overlay(request, slug, param=None, option=None):
-    from scheduler.views.gimme import gimme_new_session, gimme_new_campaign, gimme_session, gimme_campaign, gimme_set_followers
+    from scheduler.views.gimme import gimme_new_session, gimme_new_campaign, gimme_session, gimme_campaign, \
+        gimme_set_followers
     context = {}
     more = {}
     template_str = ""
@@ -293,6 +297,11 @@ def prepare_overlay(request, slug, param=None, option=None):
         p = Profile.objects.get(pk=int(param))
         context = gimme_edit_profile(p)
         template_str = "scheduler/profile_edit_dialog.html"
+    elif slug == "edit_portrait":
+        from scheduler.models.profile import Profile
+        p = Profile.objects.get(pk=int(param))
+        context = gimme_edit_profile(p)
+        template_str = "scheduler/portrait_update_form.html"
     elif slug == "edit_campaign":
         from scheduler.models.campaign import Campaign
         c = Campaign.objects.get(pk=int(param))
@@ -313,6 +322,12 @@ def prepare_overlay(request, slug, param=None, option=None):
         c = Campaign.objects.get(pk=int(param))
         context = {'campaign': gimme_campaign(c.id)}
         template_str = "scheduler/campaign_delete_dialog.html"
+    elif slug == "password_change":
+        from scheduler.models.profile import Profile
+        p = Profile.objects.get(pk=int(param))
+        context = gimme_edit_profile(p)
+        context['profile'] = gimme_profile(p.id)
+        template_str = "registration/password_change.html"
     elif slug == "about":
         template_str = "scheduler/about.html"
     elif slug == "followers":
@@ -326,6 +341,18 @@ def prepare_overlay(request, slug, param=None, option=None):
         from scheduler.models.campaign import Campaign
         c = Campaign.objects.get(pk=int(param))
         c.delete()
+    elif slug == "confirm_portrait":
+        from scheduler.models.profile import Profile
+        p = Profile.objects.get(pk=int(param))
+        p.update_portrait()
+        p.save()
+    elif slug == "close_portrait":
+        from scheduler.models.profile import Profile
+        p = Profile.objects.get(pk=int(param))
+        p.override = {}
+        p.save()
+
+
     return context, template_str, more
 
 
@@ -337,4 +364,25 @@ def display_overlay(request, slug, param=None, option=None):
         template = get_template(target_template)
         html = template.render(context, request)
     response = {'data': html, 'callback': callback}
+    return JsonResponse(response)
+
+
+def adjust_portrait(request, id=None):
+    from scheduler.models.profile import Profile, FACE_STYLES, HAIR_STYLES, MOUTH_STYLES
+    import json
+    profiles = Profile.objects.filter(pk=id)
+    response = {"status": 0}
+    if len(profiles) == 1:
+        profile = profiles.first()
+        override = {}
+        override['face_style'] = FACE_STYLES[int(request.POST['face_style'])][0]
+        override['hair_style'] = HAIR_STYLES[int(request.POST['hair_style'])][0]
+        override['mouth_style'] = MOUTH_STYLES[int(request.POST['mouth_style'])][0]
+        profile.override = json.dumps(override)
+        profile.save()
+        comment = profile.override
+        context = {'u': gimme_edit_profile(profile)['profile'], 'huge':1}
+        template = get_template("scheduler/player_shortcut.html")
+        data = template.render(context, request)
+        response = {'html': data, 'comment': comment, 'status': 1}
     return JsonResponse(response)

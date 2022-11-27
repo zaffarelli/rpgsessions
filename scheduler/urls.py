@@ -1,7 +1,7 @@
 from django.urls import re_path
 from scheduler.views.base import index, display_day, display_month, display_session, display_user, \
     display_overlay, toggle_follower, simple_toggle, delete_session, display_campaign, \
-    delete_campaign, display_game, validate_game, validate_session, validate_campaign, validate_profile
+    delete_campaign, display_game, validate_game, validate_session, validate_campaign, validate_profile, adjust_portrait
 from scheduler.views.misc import who, register_submit, handle_invitation, design
 from scheduler.views.page import propositions, members, campaigns, news
 from django.contrib.auth.views import LogoutView
@@ -34,5 +34,6 @@ urlpatterns = [
     re_path(r'^register_submit/$', register_submit, name="register_submit"),
     re_path(r'^who/(?P<pk>\d+)/$', who, name="who"),
     re_path(r'^design/$', design, name="design"),
+    re_path(r'^ajax/adjust_portrait/(?P<id>\d+)/$', adjust_portrait, name='adjust_portrait'),
 
 ]

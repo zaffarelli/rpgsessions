@@ -25,12 +25,6 @@
             <td></td>
         </tr>
         <tr>
-            {{ form.description.errors }}
-            <th><label for="description">Description</label></th>
-            <td>{{ form.description }}</td>
-            <td></td>
-        </tr>
-        <tr>
             {{ form.date_start.errors }}
             <th><label for="date_start">Date</label></th>
             <td>{{ form.date_start }}</td>
@@ -80,6 +74,14 @@
 
 
         </tr>
+
+        <tr>
+            {{ form.language.errors }}
+            <th><label for="language">Language</label></th>
+            <td>{{ form.language }}</td>
+            <td></td>
+        </tr>
+
         <tr>
             {{ form.wanted.errors }}
             <th><label for="wanted">Sollicités</label></th>
@@ -96,6 +98,12 @@
             {{ form.is_visible.errors }}
             <th><label for="is_visible">Visible (si proposition)</label></th>
             <td>{{ form.is_visible }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{ form.description.errors }}
+            <th><label for="description">Description</label></th>
+            <td>{{ form.description }}</td>
             <td></td>
         </tr>
     </table>

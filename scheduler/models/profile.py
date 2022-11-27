@@ -4,68 +4,64 @@ from django.contrib.auth.models import User
 from scheduler.models.realm import Realm
 from colorfield.fields import ColorField
 
-# SHIELD_STYLES = (
-#     ('mid', 'Gauche et droite'),
-#     ('quad', 'Quadrants NO, NE, SE, SW en damier'),
-#     ('half', 'Haut et bas séparés'),
-# )
-#
-# ICON_STYLES = (
-#     ('disk', 'Disque'),
-#     ('coins', 'Trois deniers'),
-#     ('cross', 'Croix'),
-#     ('claws', 'Griffure'),
-#     ('diamond', 'Losange'),
-#     ('crystal', 'Cristal'),
-# )
-
 FACE_STYLES = (
-    ('thin', 'Mince'),
-    ('standard', 'Moyen'),
-    ('bold', 'Large')
+    ('thin', '0'),
+    ('standard', '1'),
+    ('bold', '2')
 )
 
 HAIR_STYLES = (
-    ('standard', 'Sans'),
-    ('type1', 'Cheveux 1'),
-    ('type2', 'Cheveux 2'),
-    ('type3', 'Cheveux 3'),
-    ('type4', 'Cheveux 4'),
-    ('type5', 'Cheveux 5'),
-    ('type6', 'Cheveux 6'),
-    ('type7', 'Cheveux 7')
+    ('standard', '0'),
+    ('type1', '1'),
+    ('type2', '2'),
+    ('type3', '3'),
+    ('type4', '4'),
+    ('type5', '5'),
+    ('type6', '6'),
+    ('type7', '7'),
+    ('type8', '8'),
+    ('type9', '9'),
+    ('type10', '10'),
 )
 
 MOUTH_STYLES = (
-    ('standard', 'Sans'),
-    ('type1', 'Type 1'),
-    ('type2', 'Type 2'),
-    ('type3', 'Type 3'),
-    ('type4', 'Type 4'),
-    ('type5', 'Type 5'),
-    ('type6', 'Type 6')
+    ('standard', '0'),
+    ('type1', '1'),
+    ('type2', '2'),
+    ('type3', '3'),
+    ('type4', '4'),
+    ('type5', '5'),
+    ('type6', '6'),
+    ('type7', '7'),
+    ('type8', '8'),
+    ('type9', '9'),
+    ('type10', '10')
+)
+
+ENGLISH_LEVEL = (
+    ('0', 'No way!'),
+    ('1', 'I can try'),
+    ('2', 'Yes!'),
+    ('3', "Okidoki. I can be gamemaster."),
 )
 
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
     nickname = models.CharField(max_length=256)
+    padid = models.CharField(max_length=4, default='', blank=True)
     presentation = models.TextField(max_length=2048, default='', blank=True)
     favorites = models.TextField(max_length=1024, default='', blank=True)
     club = models.CharField(max_length=256, default='', blank=True)
     need_drop = models.BooleanField(default=False)
     can_drop = models.BooleanField(default=False)
+    gaming_in_english = models.CharField(max_length=1, choices=ENGLISH_LEVEL, default='0')
     realm = models.ForeignKey(Realm, on_delete=models.SET_NULL, null=True, blank=True)
     is_girl = models.BooleanField(default=False)
     tracker_auto = models.BooleanField(default=False)
-    # shield = models.CharField(max_length=256, default='shield_base')
-    # silhouette = models.CharField(max_length=256, default='player_base')
-    # shieldstyle = models.CharField(max_length=256, default='mid', choices=SHIELD_STYLES)
-    # iconstyle = models.CharField(max_length=256, default='disk', choices=ICON_STYLES)
     face_style = models.CharField(max_length=256, default='standard', choices=FACE_STYLES)
     hair_style = models.CharField(max_length=256, default='standard', choices=HAIR_STYLES)
     mouth_style = models.CharField(max_length=256, default='standard', choices=MOUTH_STYLES)
-    # svg_artefact = models.CharField(max_length=256, default='{}')
     weeks = models.PositiveIntegerField(default=0, blank=True, null=True)
     alpha = ColorField(default='#666666')
     beta = ColorField(default='#666666')
@@ -78,6 +74,7 @@ class Profile(models.Model):
     mail_sunday = models.BooleanField(default=False)
     mail_cyber_postit = models.BooleanField(default=False)
     processed = models.BooleanField(default=False)
+    override = models.CharField(max_length=256, default='{}', blank=True)
 
     def __str__(self):
         return f'{self.nickname}*'
@@ -111,7 +108,7 @@ class Profile(models.Model):
     def auto_follow(self):
         from scheduler.models.session import Session
         import datetime
-        sessions_as_mj = Session.objects.filter(mj=self, date_start__gt=datetime.now()) #todo
+        sessions_as_mj = Session.objects.filter(mj=self, date_start__gt=datetime.now())  # todo
         sessions_where_wanted = Session.objects.filter(mj=self, date_start__gt=datetime.now())
         subscribed_sessions = Session.objects.filter(mj=self, date_start__gt=datetime.now())
 
@@ -138,17 +135,6 @@ class Profile(models.Model):
         all = Inscription.objects.filter(profile=self)
         return len(all)
 
-    # @property
-    # def silhouette_symbol(self):
-    #     girl = ''
-    #     if self.is_girl:
-    #         girl = ''
-    #     return f"scheduler/svg/{self.silhouette}{girl}.svg"
-    #
-    # @property
-    # def shield_symbol(self):
-    #     return f"scheduler/svg/{self.shield}.svg"
-
     def send_pwd_reset_mail(self):
         from django.core.mail import send_mail
         send_mail(
@@ -160,57 +146,42 @@ class Profile(models.Model):
         )
         return
 
-    # def build_svg_artefact(self):
-    #     artefact = {
-    #         'shield_back': {
-    #             'mid': 0.0,
-    #             'half': 0.0,
-    #             'quad': 0.0
-    #         },
-    #         'icon': {
-    #             'disk': 0.0,
-    #             'coins': 0.0,
-    #             'cross': 0.0,
-    #             'claws': 0.0,
-    #             'diamond': 0.0,
-    #             'crystal': 0.0,
-    #         }
-    #     }
-    #     artefact['shield_back'][self.shieldstyle] = 1.0
-    #     artefact['icon'][self.iconstyle] = 1.0
-    #     return artefact
+    def update_portrait(self):
+        if self.override != "{}":
+            import json
+            override = json.loads(self.override)
+            self.face_style = override['face_style']
+            self.hair_style = override['hair_style']
+            self.mouth_style = override['mouth_style']
+            self.override = '{}'
 
     def build_face_artefact(self):
+        import json
+        # Initialization
+        mouth_styles_artefact = {}
+        for item in MOUTH_STYLES:
+            mouth_styles_artefact[item[0]] = 0.0
+        face_styles_artefact = {}
+        for item in FACE_STYLES:
+            face_styles_artefact[item[0]] = 0.0
+        hair_styles_artefact = {}
+        for item in MOUTH_STYLES:
+            hair_styles_artefact[item[0]] = 0.0
         artefact = {
-            'face_style': {
-                'thin': 0.0,
-                'standard': 0.0,
-                'bold': 0.0
-            },
-            'hair_style': {
-                'standard': 0.0,
-                'type1': 0.0,
-                'type2': 0.0,
-                'type3': 0.0,
-                'type4': 0.0,
-                'type5': 0.0,
-                'type6': 0.0,
-                'type7': 0.0
-
-            },
-            'mouth_style': {
-                'standard': 0.0,
-                'type1': 0.0,
-                'type2': 0.0,
-                'type3': 0.0,
-                'type4': 0.0,
-                'type5': 0.0,
-                'type6': 0.0
-            }
+            'face_style': face_styles_artefact,
+            'hair_style': hair_styles_artefact,
+            'mouth_style': mouth_styles_artefact
         }
-        artefact['face_style'][self.face_style] = 1.0
-        artefact['hair_style'][self.hair_style] = 1.0
-        artefact['mouth_style'][self.mouth_style] = 1.0
+        # Setting the values
+        if self.override == "{}":
+            artefact['face_style'][self.face_style] = 1.0
+            artefact['hair_style'][self.hair_style] = 1.0
+            artefact['mouth_style'][self.mouth_style] = 1.0
+        else:
+            override = json.loads(self.override)
+            artefact['face_style'][override['face_style']] = 1.0
+            artefact['hair_style'][override['hair_style']] = 1.0
+            artefact['mouth_style'][override['mouth_style']] = 1.0
         return artefact
 
     def fetch_week_sessions(self):
@@ -283,9 +254,7 @@ class Profile(models.Model):
         something_to_say = False
         for s in sessions:
             required = self.is_wanted(s)
-            # print("Required:", str(self.id), "in", s.wanted.split(';'), "?")
             if required:
-                # print("Required in", s.id)
                 if not self.is_absent(s.date_start):
 
                     if len(inscription_set) == 0:
@@ -331,9 +300,20 @@ class Profile(models.Model):
                     result = True
         return result
 
+    @property
+    def get_portrait_codes(self):
+        j = {
+            'all': f'{self.get_face_style_display()}:{self.get_hair_style_display()}:{self.get_mouth_style_display()}',
+            'face': self.get_face_style_display(),
+            'hair': self.get_hair_style_display(),
+            'mouth': self.get_mouth_style_display()
+        }
+        return j
+
+
 
 class ProfileAdmin(admin.ModelAdmin):
     ordering = ['nickname']
     list_display = ['nickname', 'user', 'realm', 'games_run', 'presentation', 'favorites', 'mail_cyber_postit',
-                    'mail_wednesday', 'mail_sunday']
+                    'mail_wednesday', 'mail_sunday', 'get_portrait_codes', 'override']
     list_filter = ['club']

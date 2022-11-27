@@ -8,6 +8,8 @@
     </div>
     <div class='righters'>
         {% csrf_token %}
+        <div class="button compact modal_switch" action="password_change" param="{{ profile.id }}"><i class="fa fa-key"></i>&nbsp;Mot de Passe</div>
+        <div class="button compact modal_switch" action="edit_portrait" param="{{ profile.id }}"><i class="fa fa-image-portrait"></i>&nbsp;Portrait</div>
         <div class="button compact modal_switch" action="edit_profile" param="{{ profile.id }}"><i class="fa fa-user"></i>&nbsp;Modifier</div>
         <div class="button compact modal_switch" action="followers"><i class="fa fa-compass"></i>&nbsp;Traqués</div>
         <div class="button compact pseudolink" action="logout"><i class="fa fa-sign-out-alt"></i>&nbsp;Déconnexion</div>

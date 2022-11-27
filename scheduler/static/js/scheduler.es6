@@ -103,17 +103,16 @@ class Scheduler {
                 url: url,
                 success: function (answer) {
                     let action_words = action.split("_")
-                    if (action == 'close' || action_words[0] == 'confirm') {
+                    if (action_words.includes('close') || action_words.includes('confirm')) {
                         $('#overlay').addClass('hidden');
                         $('#dialog').html("Nope");
                         if (option != undefined) {
                             $("#" + option).click();
-
-
                         }
                         $('.shuntable').removeClass('hidden')
                     } else {
                         $('#dialog').html(answer.data);
+                        me.registerAdjust()
                         $('#overlay').removeClass('hidden');
                     }
                     me.rebootLinks();
@@ -123,6 +122,40 @@ class Scheduler {
                     console.error(answer);
                     me.rebootLinks();
                 },
+            });
+        });
+    }
+
+    registerAdjust() {
+        let me = this;
+        $('.portrait_adjust').off().on('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            // let name = $(this).attr('name');
+            let param = $(this).attr('param');
+            // let val = $(this).val();
+            let url = "ajax/adjust_portrait/"+param+"/";
+            let form = $('#portrait_form');
+            let formdata = form.serialize();
+            // console.log("Portrait_Adjust: Name: "+name+" Param:"+param+" Value:"+val +" URL: "+url);
+            $.ajax({
+                url: url,
+                type: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: formdata,
+                dataType: 'json',
+                success: function (answer) {
+                    $('#portrait_preview').html(answer.html);
+                    console.log(answer.comment)
+                    me.rebootLinks();
+                },
+                error: function (answer) {
+                    console.error(answer);
+                    me.rebootLinks();
+                }
             });
         });
     }
