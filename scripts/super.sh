@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 set -e
-supervisorctl -c config/supervisord.conf $@
+supervisorctl -c server_config/supervisord.conf $@

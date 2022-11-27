@@ -7,10 +7,6 @@ sudo chmod -R a+w /srv
 
 pip install -r requirements.txt
 
-#git stash
-#git fetch --all
-#git pull
-
 python ./manage.py migrate
 python ./manage.py collectstatic --no-input
-./scripts/super.sh restart gunicorn
+./scripts/super.sh restart extraventures
