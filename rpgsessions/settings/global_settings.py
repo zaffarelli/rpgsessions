@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 
-VERSION = "0.9.21"
+VERSION = "0.9.22"
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = '^ghph5x=x*u+x6(^2y7p-is6zv)lkia0(+@74x076p0ot4ic*-'
@@ -19,8 +19,8 @@ INSTALLED_APPS = [
     'compressor',
     'fixture_magic',
     'colorfield',
-    'fontawesomefree',
-    'channels'
+    'fontawesomefree'
+
 ]
 
 MIDDLEWARE = [
