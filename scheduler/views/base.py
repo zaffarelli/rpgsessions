@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, Http404
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.template.loader import get_template
 from scheduler.utils.mechanics import FONTSET, FMT_DATE, DOWS, FMT_DATE_PRETTY
-from scheduler.views.organizer import build_month, toggle_available, toggle_subscribe, prepare_day, prepare_month
+from scheduler.views.organizer import build_month, toggle_available, toggle_subscribe, prepare_day, prepare_month, \
+    prepare_session
 from scheduler.views.gimme import gimme_profile, gimme_set_followers
 from scheduler.views.misc import system_flush
 from datetime import datetime
@@ -11,9 +12,21 @@ from datetime import datetime
 
 def prepare_index(request):
     d = datetime.now()
-    m = build_month(request, d.strftime(FMT_DATE))
     u = gimme_profile(request.user.profile.id)
-    context = {'fontset': FONTSET, 'month': m, 'u': u}
+    context = {'fontset': FONTSET, 'day': 'xxx', 'u': u}
+    if request.GET:
+        session_id = request.GET.get('session', 0)
+        if session_id:
+            from scheduler.models.session import Session
+            sessions = Session.objects.filter(pk=session_id)
+            if len(sessions) == 1:
+                s = sessions.first()
+                if s.date_start:
+                    d = s.date_start
+                    context["day"] = s.date_start.isoformat()
+                context["session_id"] = s.id
+
+    context['month'] = build_month(request, d.strftime(FMT_DATE))
     return context
 
 
@@ -28,8 +41,11 @@ def index(request):
 
 @login_required
 def display_day(request, slug=None):
+    print("Display day")
     if not request.user.is_authenticated:
+        print("Not Authenticated")
         return render(request, 'scheduler/registration/login_error.html')
+
     context = prepare_day(request, slug)
     template = get_template('scheduler/menu_dayzoom.html')
     menu_html = template.render(context, request)
@@ -352,7 +368,6 @@ def prepare_overlay(request, slug, param=None, option=None):
         p.override = {}
         p.save()
 
-
     return context, template_str, more
 
 
@@ -381,7 +396,7 @@ def adjust_portrait(request, id=None):
         profile.override = json.dumps(override)
         profile.save()
         comment = profile.override
-        context = {'u': gimme_edit_profile(profile)['profile'], 'huge':1}
+        context = {'u': gimme_edit_profile(profile)['profile'], 'huge': 1}
         template = get_template("scheduler/player_shortcut.html")
         data = template.render(context, request)
         response = {'html': data, 'comment': comment, 'status': 1}

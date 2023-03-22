@@ -14,6 +14,9 @@ def prepare_session(sender, instance, **kwargs):
         from scheduler.models.game import Game
         g = Game.objects.get(name='Autre')
         instance.game = g
+    if instance.campaign is not None:
+        instance.game = instance.campaign.game
+    instance.fix()
     # Test de cohérence des wanted
     instance.fix_wanted()
     # Supprimer les inscriptions d'une session déplacée dans le temps

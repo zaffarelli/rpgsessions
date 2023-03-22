@@ -43,6 +43,12 @@
             <td></td>
         </tr>
         <tr>
+            {{ form.episode.errors }}
+            <th><label for="duration">Episode</label></th>
+            <td>{{ form.episode }}</td>
+            <td><i class="fa fa-arrow-alt-circle-left" style="color:lemonchiffon;" title="Si cette partie est une proposition, l'épisode le plus bas sera sélectionné pour le prochain créneau disponible..."></i></td>
+        </tr>
+        <tr>
             {{ form.place.errors }}
             <th><label for="place">Lieu</label></th>
             <td>{{ form.place }}</td>

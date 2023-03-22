@@ -36,10 +36,19 @@
 
 {% block custom_js %}
 <script>
+    let s = {{ session_id }} ;
+    let day = '{{ day }}';
     _.defer(function () {
         let co = new Scheduler()
         co.perform();
         co.revealUI();
+        if (s != 0) {
+            console.log('Session id: ' + s + ' day: ' + day);
+            if (day != 'xxx') {
+                $("#day" + day).css('background','red');
+                $("#day" + day).trigger('click');
+            }
+        }
         {#console.log("Frontend loaded")#}
     });
 </script>

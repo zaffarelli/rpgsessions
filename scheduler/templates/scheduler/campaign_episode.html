@@ -2,7 +2,7 @@
 {% load global_filters %}
 <table>
     <tr>
-        <td style="text-align:left; width:60%;">{{ c.title }}</td>
+        <td style="text-align:left; width:60%;"><a href='{{ request.scheme }}://{{ request.META.HTTP_HOST }}/?session={{ c.id|safe }}'> {{ c.title }}</a></td>
         <td>{{ c.date_start|as_date_schedule|safe }}</td>
     </tr>
 </table>

@@ -154,17 +154,21 @@
                 <td>
                     {{ profile.can_drop|as_bool|safe }}
                 </td>
-                <th>Visage</th>
-                <td>{{ profile.face_style }}</td>
+                <th>Couleur 1</th>
+                <td>
+                    <center>
+                        <div style="background: {{ profile.skin1 }}; width:15px; height:15px; border:1px solid black;"></div>
+                    </center>
+                </td>
             </tr>
             <tr>
                 <th>Message du Mercredi</th>
                 <td>{{ profile.mail_wednesday|as_bool|safe }}</td>
-                <th>
-                    {#                Style de Bouclier#}
-                </th>
+                <th>Couleur 2</th>
                 <td>
-                    {#                {{ profile.shieldstyle_display|safe }}#}
+                    <center>
+                        <div style="background: {{ profile.skin2 }}; width:15px; height:15px; border:1px solid black;"></div>
+                    </center>
                 </td>
             </tr>
             <tr>

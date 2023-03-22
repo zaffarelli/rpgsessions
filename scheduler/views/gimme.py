@@ -19,6 +19,7 @@ def gimme_session(request, s):
     context['episode_tag'] = s.episode_tag
     context['user_wanted'] = s.wanted_list
     context['max_players'] = s.max_players
+    context['code_link'] = s.code_link
     context['mj'] = gimme_profile(s.mj.id)
     if s.campaign:
         context['campaign'] = s.campaign.to_json
@@ -28,6 +29,24 @@ def gimme_session(request, s):
     if request:
         context['owner'] = (s.mj == request.user.profile)
         context['user_requested'] = str(request.user.profile.id) in s.wanted.split(';')
+    context['user_subscribed'] = False
+    return context
+
+
+def gimme_spot(request, s):
+    context = s.to_json
+    context['episode_tag'] = s.session.episode_tag
+    context['user_wanted'] = s.session.wanted_list
+    context['max_players'] = s.session.max_players
+    context['mj'] = gimme_profile(s.session.mj.id)
+    if s.campaign:
+        context['campaign'] = s.session.campaign.to_json
+    if s.game:
+        context['game'] = gimme_game(s.session.game)
+    context['inscriptions'] = gimme_inscriptions(s.session)
+    if request:
+        context['owner'] = (s.session.mj == request.user.profile)
+        context['user_requested'] = str(request.user.profile.id) in s.session.wanted.split(';')
     context['user_subscribed'] = False
     return context
 
@@ -56,7 +75,6 @@ def gimme_profile(x):
             context['face_artefact'] = elem.build_face_artefact()
             context['games_run'] = elem.games_run
             context['games_played'] = elem.games_played
-
 
     return context
 
@@ -213,6 +231,15 @@ def gimme_sessions_of_the_day(request, d):
     for s in all:
         sessions.append(gimme_session(request, s))
     return sessions
+
+
+def gimme_spots_of_the_day(request, d):
+    from scheduler.models.spot import Spot
+    all = Spot.objects.filter(date_start=d).order_by('time_start')
+    spots = []
+    for s in all:
+        spots.append(gimme_spot(request, s))
+    return spots
 
 
 def gimme_all_availabilities(request, d, id):

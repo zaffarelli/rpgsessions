@@ -4,7 +4,7 @@
 
 <div class="oday {{ c.day_off | as_day_off }} {{ c.current_day | as_current_day }}"
      style="border-top-color: {{ c.month_color }};">
-    <div class="day_info display " action="dayzoom" param="{{ c.day }}">{{ c.day_info|safe }}
+    <div class="day_info display " action="dayzoom" param="{{ c.day }}" id="day{{ c.day }}">yo {{ c.day_info|safe }}
     </div>
     <div class="day_body">
         {% for x in c.day_body.sessions %}
