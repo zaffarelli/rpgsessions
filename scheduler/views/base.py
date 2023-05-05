@@ -13,7 +13,7 @@ from datetime import datetime
 def prepare_index(request):
     d = datetime.now()
     u = gimme_profile(request.user.profile.id)
-    context = {'fontset': FONTSET, 'day': 'xxx', 'u': u}
+    context = {'fontset': FONTSET, 'day': 'xxx', 'u': u, "session_id":0}
     if request.GET:
         session_id = request.GET.get('session', 0)
         if session_id:
@@ -25,7 +25,6 @@ def prepare_index(request):
                     d = s.date_start
                     context["day"] = s.date_start.isoformat()
                 context["session_id"] = s.id
-
     context['month'] = build_month(request, d.strftime(FMT_DATE))
     return context
 
